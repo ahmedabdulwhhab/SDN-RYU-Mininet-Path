@@ -32,3 +32,18 @@ Populate the Match based on srcip and dstip. <br>
 ::::::::::::::::::return<br>
 ::::::::::::::else:<br>
 ::::::::::::::::::self.add_flow(datapath, 1, match, actions)<br>
+
+
+
+Demo <br>
+Run Mininet topology<br>
+sudo mn --controller=remote,ip=127.0.0.1 --mac --switch=ovsk,protocols=OpenFlow13 --topo=single,4<br>
+<br>
+Run RYU hub application<br>
+ryu-manager l3_switch.py<br>
+do pingall from mininet. <br>
+<br>
+Check the openvswitch flows<br>
+
+
+sudo ovs-ofctl -O OpenFlow13 dump-flows s1
