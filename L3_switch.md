@@ -40,7 +40,7 @@ Run Mininet topology<br>
 sudo mn --controller=remote,ip=127.0.0.1 --mac --switch=ovsk,protocols=OpenFlow13 --topo=single,4<br>
 <br>
 Run RYU hub application<br>
-ryu-manager l3_switch.py<br>
+ryu-manager L3_switch.py<br>
 do pingall from mininet. <br>
 <br>
 Check the openvswitch flows<br>
