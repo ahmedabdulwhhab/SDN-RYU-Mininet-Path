@@ -25,3 +25,5 @@ ryu-manager hub.py
 Check the openvswitch flows
 sudo ovs-ofctl -O OpenFlow13 dump-flows s1
 do pingall from mininet.
+<br>
+flow table action is flood only
