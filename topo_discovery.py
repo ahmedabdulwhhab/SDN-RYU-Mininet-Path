@@ -19,6 +19,8 @@ sudo mn --controller=remote,ip=127.0.0.1 --mac -i 10.1.1.0/24 --switch=ovsk,prot
 ryu-manager --observe-links topology_discovery.py
 
 """
+
+
 from ryu.base import app_manager
 from ryu.controller import ofp_event
 from ryu.controller.handler import CONFIG_DISPATCHER, MAIN_DISPATCHER
@@ -29,7 +31,9 @@ from ryu.lib.packet import ethernet
 from ryu.lib.packet import ether_types
 
 from ryu.topology import event, switches
-from ryu.topology.api import get_switch, get_link
+from ryu.topology.api import get_switch, get_link, get_host
+from ryu.lib import hub				#new
+
 
 
 class SimpleSwitch13(app_manager.RyuApp):
@@ -39,17 +43,36 @@ class SimpleSwitch13(app_manager.RyuApp):
         super(SimpleSwitch13, self).__init__(*args, **kwargs)
         self.mac_to_port = {}
         self.topology_api_app = self
+        self.monitor_thread =   hub.spawn(self.myfunction)
 
 
+
+    def myfunction(self):
+        self.logger.info("started new thread")
+        i=0
+        if i<5:
+            hub.sleep(10)
+            i=i+1
+            switch_list = get_switch(self.topology_api_app, None)
+            self.switches = [switch.dp.id for switch in switch_list]
+            links_list = get_link(self.topology_api_app, None)
+            self.links = [(link.src.dpid, link.dst.dpid, {'port': link.src.port_no}) for link in links_list]
+            host_list = get_host(self.topology_api_app, None)
+            self.hosts = [(host.mac, host.port.dpid, {'port': host.port.port_no}) for host in host_list]
+            self.logger.info("*********Topology Information*************")
+            self.logger.info("Switches %s", self.switches)
+            self.logger.info("Links %s", self.links)
+            self.logger.info("Hosts %s", self.hosts)
+			
+			
     @set_ev_cls(event.EventSwitchEnter)
     def get_topology_data(self, ev):
         switch_list = get_switch(self.topology_api_app, None)
         switches = [switch.dp.id for switch in switch_list]
         links_list = get_link(self.topology_api_app, None)
         links = [(link.src.dpid, link.dst.dpid, {'port': link.src.port_no}) for link in links_list]
-        print( "switches ", switches)
-        print("[(link.src.dpid, link.dst.dpid, {'port': link.src.port_no})" )
-        print( "links ", links)
+        print ("switches ", switches)
+        print ("links ", links)
 
     @set_ev_cls(ofp_event.EventOFPSwitchFeatures, CONFIG_DISPATCHER)
     def switch_features_handler(self, ev):
