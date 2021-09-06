@@ -50,7 +50,7 @@ class SimpleSwitch13(app_manager.RyuApp):
     def myfunction(self):
         self.logger.info("started new thread")
         i=0
-        if i<5:
+        while (i<5):
             hub.sleep(10)
             i=i+1
             switch_list = get_switch(self.topology_api_app, None)
