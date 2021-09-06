@@ -51,7 +51,7 @@ class SimpleSwitch13(app_manager.RyuApp):
         self.logger.info("started new thread")
         i=0
         while (i<5):
-            hub.sleep(10)
+            hub.sleep(30)
             i=i+1
             switch_list = get_switch(self.topology_api_app, None)
             self.switches = [switch.dp.id for switch in switch_list]
