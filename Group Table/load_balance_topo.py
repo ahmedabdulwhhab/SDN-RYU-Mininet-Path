@@ -16,7 +16,7 @@ h1 ---Switch1         Switch4-----h2
 h1 arp -s 192.168.1.2 00:00:00:00:00:02
 h2 arp -s 192.168.1.1 00:00:00:00:00:01
 ryu stuff:
-ryu-manager group_table_lb.py
+
 """
 
 from mininet.topo import Topo
