@@ -2,6 +2,9 @@
 #https://mail.openvswitch.org/pipermail/ovs-discuss/2016-August/042394.html
 #https://stackoverflow.com/questions/36949861/group-table-issue-openflow-mininet
 
+##clear && sudo ryu-manager load_balancer_cont.py ../../flowmanager/flowmanager.py  --observe-links --ofp-tcp-listen-port 6633
+
+
 from ryu.base import app_manager
 from ryu.controller import ofp_event
 from ryu.controller.handler import CONFIG_DISPATCHER, MAIN_DISPATCHER
