@@ -2,7 +2,8 @@
 # sudo rm ./sdn/ryu-controller/ah_learn_ryu_00/ryu_multipath.py && sudo vim  ./sdn/ryu-controller/ah_learn_ryu_00/ryu_multipath.py
 # clear && ryu-manager ./sdn/ryu-controller/ah_learn_ryu_00/ryu_multipath.py --observe-links --ofp-tcp-listen-port 6633
 #clear && sudo ryu-manager ./sdn/ryu-controller/ah_learn_ryu_00/ryu_multipath.py ./sdn/ryu-controller/flowmanager/flowmanager.py  --observe-links --ofp-tcp-listen-port 6633
-#clear && sudo ryu-manager multi_path_controller.py ../flowmanager/flowmanager.py  --observe-links --ofp-tcp-listen-port 6633
+#clear && sudo ryu-manager multi_path_controller.py ../../flowmanager/flowmanager.py  ryu.app.ofctl_rest --observe-links --ofp-tcp-listen-port 6633
+
 #http://192.168.1.8:8080/home/topology.html
 #sudo ovs-ofctl -O openflow13 dump-flows s1
 #sudo ovs-ofctl -O openflow13 dump-groups s1
