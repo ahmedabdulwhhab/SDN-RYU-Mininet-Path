@@ -10,12 +10,9 @@
               Switch2 
             /         \                   
 h1 ---Switch1         Switch4-----h2
-            \         /
+h3 ----/    \         /
               Switch3
-# static arp entry addition
-h1 arp -s 192.168.1.2 00:00:00:00:00:02
-h2 arp -s 192.168.1.1 00:00:00:00:00:01
-ryu stuff:
+
 
 """
 
@@ -38,12 +35,14 @@ class SingleSwitchTopo(Topo):
 
         h1 = self.addHost('h1', mac="00:00:00:00:00:01", ip="192.168.1.1/24")
         h2 = self.addHost('h2', mac="00:00:00:00:00:02", ip="192.168.1.2/24")
+        h3 = self.addHost('h2', mac="00:00:00:00:00:03", ip="192.168.1.3/24")
         self.addLink(s1,s2,1,1)
         self.addLink(s1,s3,2,1)
         self.addLink(s4,s2,1,2)
         self.addLink(s4,s3,2,2)
         self.addLink(s1,h1,3,1)
         self.addLink(s4,h2,3,1)
+        self.addLink(s1,h3,4,1)
 
 
 if __name__ == '__main__':
