@@ -12,7 +12,7 @@ if '__main__' == __name__:
     net = Mininet(controller=RemoteController)
 
     c0 = net.addController('c0', port=6633)
-    c1 = net.addController('c0', port=6634)
+    c1 = net.addController('c1', port=6634)
 
 
     s1 = net.addSwitch('s1')
