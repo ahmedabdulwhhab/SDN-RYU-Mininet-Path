@@ -42,9 +42,9 @@ class SingleSwitchTopo(Topo):
 if __name__ == '__main__':
     setLogLevel('info')
     topo = SingleSwitchTopo()
-    c1 = RemoteController('c1', ip='127.0.0.1')
+    c1 = RemoteController('c1', ip='127.0.0.1',port=6633)
     net = Mininet(topo=topo, controller=c1)
     net.start()
     CLI(net)
     net.stop()
-© 2021 GitHub, Inc.
+Â© 2021 GitHub, Inc.
