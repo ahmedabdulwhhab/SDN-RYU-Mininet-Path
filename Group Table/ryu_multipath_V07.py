@@ -241,7 +241,6 @@ class ProjectController(app_manager.RyuApp):
                     self.en_clear_flow_entry=True
                     self.add_flow(dp, 32768, match_ip, actions)
                     self.add_flow(dp, 1, match_arp, actions)
-                break        
         print ("Path installation finished in ", time.time() - computation_start )
         return paths_with_ports[0][src_switch][1]
 
@@ -256,7 +255,7 @@ class ProjectController(app_manager.RyuApp):
         if buffer_id:
             if(self.en_clear_flow_entry):
                 mod = parser.OFPFlowMod(datapath=datapath, buffer_id=buffer_id,
-                                    priority=priority, match=match,idle_timeout=idle_time,
+                                    priority=priority, match=match,idle_timeout=idle_time*datapath.id,
                                     instructions=inst)
             else:
                 mod = parser.OFPFlowMod(datapath=datapath, buffer_id=buffer_id,
@@ -265,7 +264,7 @@ class ProjectController(app_manager.RyuApp):
         else:
             if(self.en_clear_flow_entry):
                 mod = parser.OFPFlowMod(datapath=datapath, priority=priority,
-                                    match=match, idle_timeout=idle_time,instructions=inst)
+                                    match=match, idle_timeout=idle_time*datapath.id,instructions=inst)
             else:
                 mod = parser.OFPFlowMod(datapath=datapath, priority=priority,
                                     match=match,instructions=inst)
