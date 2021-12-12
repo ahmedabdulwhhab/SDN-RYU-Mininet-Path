@@ -35,13 +35,14 @@ class SingleSwitchTopo(Topo):
         h2 = self.addHost('h2', mac="00:00:00:00:00:02", ip="192.168.1.2/24")
         h3 = self.addHost('h3', mac="00:00:00:00:00:03", ip="192.168.1.3/24")
 
+
         self.addLink(s1,s2,1,2)
         self.addLink(s1,s3,2,2)
         self.addLink(s4,s2,1,1)
         self.addLink(s4,s3,2,1)
         self.addLink(s1,h1,3,1)
         self.addLink(s4,h2,6,1)
-		self.addLink(s4,h3,7,1)
+        self.addLink(s4,h3,7,1)
 
 
 
