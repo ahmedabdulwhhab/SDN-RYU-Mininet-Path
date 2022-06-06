@@ -23,6 +23,7 @@ import signal #for timer
 import os #for process handling
 import numpy as np #for model features
 import pickle #to use ML model real-time
+
 proj_location = "/home/ubuntu/sdn/projects/a9khan/trafficclassifier-modified/"
 ## command to run ##
 cmd = "sudo ryu run "+proj_location+"simple_monitor_AK.py"
