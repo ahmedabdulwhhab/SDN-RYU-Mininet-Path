@@ -5,8 +5,8 @@ from prettytable import PrettyTable #to display output from ML model
 #sudo apt update
 #sudo apt install python3-prettytable
 #sudo apt install python3-numpy
-#sudo apt install python3-numpy
-#from prettytable import PrettyTable
+#Test
+#iperf h1 h3
 """
 from prettytable import PrettyTable
 PTables.add_row(["2", "Cheap Knife", "5 dp"])
