@@ -1,3 +1,4 @@
+#https://github.com/a9khan/trafficclassifier/blob/master/simple_monitor_AK.py
 from operator import attrgetter
 from datetime import datetime
 from ryu.app import simple_switch_13
@@ -64,3 +65,4 @@ class SimpleMonitor13(simple_switch_13.SimpleSwitch13):
             self.fields['total_bytes'] = stat.byte_count
 
             self.logger.info('data\t%s\t%x\t%x\t%s\t%s\t%x\t%d\t%d',self.fields['time'],self.fields['datapath'],self.fields['in-port'],self.fields['eth_src'],self.fields['eth_dst'],self.fields['out-port'],self.fields['total_packets'],self.fields['total_bytes'])
+
