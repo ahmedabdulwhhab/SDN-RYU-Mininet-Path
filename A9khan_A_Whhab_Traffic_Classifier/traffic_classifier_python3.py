@@ -1,7 +1,9 @@
 ##!/usr/bin/python
 from prettytable import PrettyTable #to display output from ML model
-#sudo python3 /home/ubuntu/sdn/projects/a9khan/trafficclassifier-modified/traffic_classifier_python3.py train tcp
-#sudo mn --controller=remote,ip=192.168.1.7 --mac --switch=ovsk,protocols=OpenFlow13 --topo=single,3
+
+#sudo rm /home/ubuntu/sdn/projects/a9khan/my_proj/traffic_classifier_python3_01.py && sudo vim /home/ubuntu/sdn/projects/a9khan/my_proj/traffic_classifier_python3_01.py
+#sudo python3 /home/ubuntu/sdn/projects/a9khan/my_proj/traffic_classifier_python3_01.py train ping
+# sudo mn -c && sudo mn --controller=remote,ip=127.0.0.1 --mac --switch=ovsk,protocols=OpenFlow13 --topo=single,3
 #sudo apt update
 #sudo apt install python3-prettytable
 #sudo apt install python3-numpy
@@ -24,9 +26,9 @@ import os #for process handling
 import numpy as np #for model features
 import pickle #to use ML model real-time
 
-proj_location = "/home/ubuntu/sdn/projects/a9khan/trafficclassifier-modified/"
+proj_location = "/home/ubuntu/sdn/projects/a9khan/my_proj/"
 ## command to run ##
-cmd = "sudo ryu run "+proj_location+"simple_monitor_AK.py"
+cmd = "sudo ryu run "+proj_location+"simple_monitor_AK.py    --verbose"
 flows = {} #empty flow dictionary
 TIMEOUT = 1*60 #15*60 #15 min #how long to collect training data
 
@@ -140,7 +142,8 @@ def printflows(traffic_type,f):
         str(flow.reverse_avg_bps),
         str(traffic_type)])
         f.write(outstring+'\n')
-        
+
+#   run_ryu(p,traffic_type=traffic_type,f=f)        
 def run_ryu(p,traffic_type=None,f=None,model=None):
     ## run it ##
     time = 0
@@ -150,11 +153,13 @@ def run_ryu(p,traffic_type=None,f=None,model=None):
         if out == '' and p.poll() != None:
             break
         if out != '' and out.startswith(b'data'): #when Ryu 'simple_monitor_AK.py' script returns output
+            print("out is ",out)                #Ahmed Abdulwhhab
             fields = out.split(b'\t')[1:] #split the flow details
             
             fields = [f.decode(encoding='utf-8', errors='strict') for f in fields] #decode flow details 
-            
+            print("fields is ",fields)                #Ahmed Abdulwhhab
             unique_id = hash(''.join([fields[1],fields[3],fields[4]])) #create unique ID for flow based on switch ID, source host,and destination host
+            print("unique_id is ",unique_id)                #Ahmed Abdulwhhab
             if unique_id in flows.keys():
                 flows[unique_id].updateforward(int(fields[6]),int(fields[7]),int(fields[0])) #update forward attributes with time, packet, and byte count
             else:
