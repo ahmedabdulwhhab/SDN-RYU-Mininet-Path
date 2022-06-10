@@ -30,7 +30,7 @@ proj_location = "/home/ubuntu/sdn/projects/a9khan/my_proj/"
 ## command to run ##
 cmd = "sudo ryu run "+proj_location+"simple_monitor_AK.py    --verbose"
 flows = {} #empty flow dictionary
-TIMEOUT = 1*60 #15*60 #15 min #how long to collect training data
+TIMEOUT = 3*60 #15*60 #15 min #how long to collect training data
 
 class Flow:
     def __init__(self, time_start, datapath, inport, ethsrc, ethdst, outport, packets, bytes):
