@@ -3,8 +3,7 @@ This project was exracted from A9khan Machine learning.
 
 <br>
 https://youtu.be/1tRJu4HnfnA
-<br> A9khan Time out is 15 minutes as per following line
-<br>TIMEOUT = 3*60 #15*60 #15 min #how long to collect training data
+
 <br> 
 difference between traffic_classifier_python3.py and traffic_classifier_python3_01.py 
 
@@ -36,3 +35,15 @@ Line 29
 <br>forward_avg_bps = bytes/float(curr_time-self.time_start)
 <br>forward_inst_bps = self.forward_delta_bytes/float(curr_time-self.forward_last_time)
 <br>forward_last_time = curr_time
+
+<br> a9khan project is based on monitor of     @set_ev_cls(ofp_event.EventOFPFlowStatsReply, MAIN_DISPATCHER)
+<br> FlowStatsReplay
+<br> important data is preceeded by word data
+<br> another issue, you can depend on     @set_ev_cls(ofp_event.EventOFPPortStatsReply, MAIN_DISPATCHER)
+<br> as per simple_monitor_AK_01 , but you have to modify the code by your self.
+<br> to view each port no. of packets
+<br>                self.logger.info('%016x %8x %8d %8d %8d %8d %8d %8d %12d %12d',
+                             ev.msg.datapath.id, stat.port_no,
+                             stat.rx_packets, stat.rx_bytes, stat.rx_errors,
+                             stat.tx_packets, stat.tx_bytes, stat.tx_errors,
+                             stat.duration_sec , stat.duration_nsec)
