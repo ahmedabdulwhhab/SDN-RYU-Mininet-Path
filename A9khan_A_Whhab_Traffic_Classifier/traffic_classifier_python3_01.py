@@ -153,11 +153,14 @@ def run_ryu(p,traffic_type=None,f=None,model=None):
         if out == '' and p.poll() != None:
             break
         if out != '' and out.startswith(b'data'): #when Ryu 'simple_monitor_AK.py' script returns output
-            print("out is ",out)                #Ahmed Abdulwhhab
+            print('Head\ttime\t\tdatapath\tin-port\teth_src\t\t\teth-dst\t\t\tout_port\ttotal_packet\ttotal_bytes')
+            #print("out is ",out)                #Ahmed Abdulwhhab
             fields = out.split(b'\t')[1:] #split the flow details
             
             fields = [f.decode(encoding='utf-8', errors='strict') for f in fields] #decode flow details 
-            print("fields is ",fields)                #Ahmed Abdulwhhab
+           #print("Head    time            datapath        in-port eth_src                 eth-dst                 out_port        total_packet    total_bytes")
+           #print("      ",1654900961        1              2       00:00:00:00:00:02                       00:00:00:00:00:01                       1       167916          11082460
+            print("      ",fields[0],"\t",fields[1],"\t\t",fields[2],"\t",fields[3],"\t",fields[4],"\t",fields[5],"\t\t",fields[6],"\t",fields[7])                #Ahmed Abdulwhhab
             unique_id = hash(''.join([fields[1],fields[3],fields[4]])) #create unique ID for flow based on switch ID, source host,and destination host
             print("unique_id is ",unique_id)                #Ahmed Abdulwhhab
             if unique_id in flows.keys():
