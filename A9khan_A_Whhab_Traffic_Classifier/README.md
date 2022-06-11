@@ -3,7 +3,8 @@ This project was exracted from A9khan Machine learning.
 
 <br>
 https://youtu.be/1tRJu4HnfnA
-
+<br> A9khan Time out is 15 minutes as per following line
+<br>TIMEOUT = 3*60 #15*60 #15 min #how long to collect training data
 <br> 
 difference between traffic_classifier_python3.py and traffic_classifier_python3_01.py 
 
