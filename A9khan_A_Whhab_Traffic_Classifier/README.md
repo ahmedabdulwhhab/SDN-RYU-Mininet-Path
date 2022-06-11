@@ -24,3 +24,14 @@ Line 29
 
 <br> collected data are
 <br>Forward Packets<br>Forward Bytes<br>Delta Forward Packets<br>Delta Forward Bytes<br>Forward Instantaneous Packets per Second<br>Forward Average Packets per second<br>Forward Instantaneous Bytes per Second<br>Forward Average Bytes per second<br>Reverse Packets<br>Reverse Bytes<br>Delta Reverse Packets<br>Delta Reverse Bytes<br>DeltaReverse Instantaneous Packets per Second<br>Reverse Average Packets per second<br>Reverse Instantaneous Bytes per Second<br>Reverse Average Bytes per second<br>Traffic Type
+<br>forward_avg_pps = packets/float(curr_time-self.time_start)
+<br>forward_delta_packets = packets - forward_packets
+<br>forward_packets = packets
+<br>forward_avg_pps = packets/float(curr_time-time_start)
+<br>forward_inst_pps = self.forward_delta_packets/float(curr_time-self.forward_last_time)
+        
+<br>forward_delta_bytes = bytes - self.forward_bytes
+<br>forward_bytes = bytes
+<br>forward_avg_bps = bytes/float(curr_time-self.time_start)
+<br>forward_inst_bps = self.forward_delta_bytes/float(curr_time-self.forward_last_time)
+<br>forward_last_time = curr_time
