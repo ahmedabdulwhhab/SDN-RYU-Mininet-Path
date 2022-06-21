@@ -26,7 +26,7 @@ import pickle #to use ML model real-time
 
 proj_location = "/home/ubuntu/sdn/projects/a9khan/trafficclassifier-modified/"
 ## command to run ##
-cmd = "sudo ryu run "+proj_location+"simple_monitor_AK.py"
+cmd = "sudo ryu run "+proj_location+"simple_monitor_AK.py --verbose"
 flows = {} #empty flow dictionary
 TIMEOUT = 1*60 #15*60 #15 min #how long to collect training data
 
