@@ -1,14 +1,6 @@
 #https://github.com/palakbhonsle/SDN-Simulation-using-RYU/blob/master/l4_switch1.py
 
-#sudo rm /home/ubuntu/sdn/projects/packet_analyzer/l4Switch/l4_switch1_03.py
-#sudo vimm /home/ubuntu/sdn/projects/packet_analyzer/l4Switch/l4_switch1_03.py
-
-# clear && sudo ryu-manager  --ofp-tcp-listen-port 6653  --observe-links  /home/ubuntu/sdn/sources/flowmanager/flowmanager.py /home/ubuntu/sdn/projects/packet_analyzer/l4Switch/l4_switch1_03.py
-
-
-
-#sudo mn -c && sudo python3 /home/ubuntu/sdn/projects/packet_analyzer/l4Switch/topo.py
-
+#sudo ryu-manager /home/ubuntu/sdn/projects/multi-path/app3_multi-path.py  /home/ubuntu/sdn/sources/flowmanager/flowmanager.py ryu.app.ofctl_rest   --observe-links --ofp-tcp-listen-port 6633
 
 from ryu.base import app_manager
 from ryu.controller import ofp_event
