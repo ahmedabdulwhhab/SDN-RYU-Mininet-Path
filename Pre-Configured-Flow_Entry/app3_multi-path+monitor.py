@@ -1,7 +1,9 @@
 #https://github.com/palakbhonsle/SDN-Simulation-using-RYU/blob/master/l4_switch1.py
 
-##sudo ryu-manager /home/ubuntu/sdn/projects/multi-path/app3_multi-path+monitor.py  /home/ubuntu/sdn/sources/flowmanager/flowmanager.py ryu.app.ofctl_rest   --observe-links --ofp-tcp-listen-port 6633
 
+#sudo ryu-manager /home/ubuntu/sdn/projects/multi-path/app3.py  /home/ubuntu/sdn/sources/flowmanager/flowmanager.py ryu.app.ofctl_rest   --observe-links --ofp-tcp-listen-port 6633
+
+#sudo mn -c && sudo python3 /home/ubuntu/sdn/projects/packet_analyzer/l4Switch/topo.py
 #curl -X POST -d '{"dpid": 1,"cookie": 1,"cookie_mask": 1,"table_id": 0,"idle_timeout": 3000,"hard_timeout": 3000,"priority": 2,"flags": 1,"match":{"eth_type": 2048,"ip_proto": 1,"ipv4_dst": "10.0.0.2"},"actions":[{"type":"OUTPUT","port": 2}]}' http://localhost:8080/stats/flowentry/add
 #curl -X POST -d '{"dpid": 1,"cookie": 1,"cookie_mask": 1,"table_id": 0,"idle_timeout": 3000,"hard_timeout": 3000,"priority": 2,"flags": 1,"match":{"in_port": 3,"dl_dst": "00:00:00:00:00:01","dl_src": "00:00:00:00:00:02"},"actions":[{"type":"OUTPUT","port": 1}]}' http://localhost:8081/stats/flowentry/add
 
@@ -407,7 +409,7 @@ class Switch(app_manager.RyuApp):
             self.logger.info('data\t%s\t%x\t\t%x\t%s\t%s\t%x\t\t%d\t\t%d',self.fields['time'],self.fields['datapath'],self.fields['in-port'],self.fields['eth_src'],self.fields['eth_dst'],self.fields['out-port'],self.fields['total_packets'],self.fields['total_bytes'])
 
 
-
+    """
     @set_ev_cls(ofp_event.EventOFPPortStatsReply, MAIN_DISPATCHER)
     def _port_stats_reply_handler(self, ev):
         body = ev.msg.body
@@ -427,4 +429,4 @@ class Switch(app_manager.RyuApp):
                              stat.rx_packets, stat.rx_bytes, stat.rx_errors,
                              stat.tx_packets, stat.tx_bytes, stat.tx_errors,
                              stat.duration_sec , stat.duration_nsec)
-            
+    """            
