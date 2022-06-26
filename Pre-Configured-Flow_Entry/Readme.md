@@ -22,4 +22,4 @@ app file is
 	<br>
 	<br>
 	youtube link is
-	<a href="https://youtu.be/7etUx5zl6OA">This is a link</a>
+	<a href="https://youtu.be/7etUx5zl6OA"> To view video about this project, visit this link</a>
