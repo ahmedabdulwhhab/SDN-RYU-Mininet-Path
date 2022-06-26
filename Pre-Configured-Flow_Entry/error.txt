@@ -1,46 +1,1174 @@
-e_count=1756,cookie=0,duration_nsec=145000000,duration_sec=38,flags=0,hard_timeout=0,idle_timeout=0,instructions=[OFPInstructionActions(actions=[OFPActionOutput(len=16,max_len=65535,port=4294967293,type=0)],len=24,type=4)],length=80,match=OFPMatch(oxm_fields={}),packet_count=21,priority=0,table_id=0)]
-body is  [OFPFlowStats(byte_count=3600,cookie=0,duration_nsec=35000000,duration_sec=383,flags=0,hard_timeout=0,idle_timeout=0,instructions=[OFPInstructionActions(actions=[OFPActionOutput(len=16,max_len=65535,port=4294967293,type=0)],len=24,type=4)],length=96,match=OFPMatch(oxm_fields={'eth_dst': '01:80:c2:00:00:0e', 'eth_type': 35020}),packet_count=60,priority=65535,table_id=0), OFPFlowStats(byte_count=36848,cookie=0,duration_nsec=144000000,duration_sec=39,flags=0,hard_timeout=0,idle_timeout=0,instructions=[OFPInstructionActions(actions=[OFPActionOutput(len=16,max_len=65509,port=1,type=0)],len=24,type=4)],length=96,match=OFPMatch(oxm_fields={'eth_type': 2048, 'ipv4_dst': '10.0.0.1', 'ip_proto': 1}),packet_count=376,priority=10,table_id=0), OFPFlowStats(byte_count=0,cookie=0,duration_nsec=144000000,duration_sec=39,flags=0,hard_timeout=0,idle_timeout=0,instructions=[OFPInstructionActions(actions=[OFPActionOutput(len=16,max_len=65509,port=2,type=0)],len=24,type=4)],length=96,match=OFPMatch(oxm_fields={'eth_type': 2048, 'ipv4_dst': '10.0.0.3', 'ip_proto': 1}),packet_count=0,priority=10,table_id=0), OFPFlowStats(byte_count=36848,cookie=0,duration_nsec=144000000,duration_sec=39,flags=0,hard_timeout=0,idle_timeout=0,instructions=[OFPInstructionActions(actions=[OFPActionOutput(len=16,max_len=65509,port=2,type=0)],len=24,type=4)],length=96,match=OFPMatch(oxm_fields={'eth_type': 2048, 'ipv4_dst': '10.0.0.2', 'ip_proto': 1}),packet_count=376,priority=10,table_id=0), OFPFlowStats(byte_count=0,cookie=0,duration_nsec=144000000,duration_sec=39,flags=0,hard_timeout=0,idle_timeout=0,instructions=[OFPInstructionActions(actions=[OFPActionOutput(len=16,max_len=65509,port=3,type=0)],len=24,type=4)],length=96,match=OFPMatch(oxm_fields={'eth_type': 2048, 'ipv4_dst': '10.0.0.4', 'ip_proto': 1}),packet_count=0,priority=10,table_id=0), OFPFlowStats(byte_count=2330,cookie=0,duration_nsec=144000000,duration_sec=39,flags=0,hard_timeout=0,idle_timeout=0,instructions=[OFPInstructionActions(actions=[OFPActionOutput(len=16,max_len=65535,port=4294967293,type=0)],len=24,type=4)],length=80,match=OFPMatch(oxm_fields={}),packet_count=32,priority=0,table_id=0)]
-body is  [OFPFlowStats(byte_count=3540,cookie=0,duration_nsec=23000000,duration_sec=383,flags=0,hard_timeout=0,idle_timeout=0,instructions=[OFPInstructionActions(actions=[OFPActionOutput(len=16,max_len=65535,port=4294967293,type=0)],len=24,type=4)],length=96,match=OFPMatch(oxm_fields={'eth_dst': '01:80:c2:00:00:0e', 'eth_type': 35020}),packet_count=59,priority=65535,table_id=0), OFPFlowStats(byte_count=0,cookie=0,duration_nsec=146000000,duration_sec=39,flags=0,hard_timeout=0,idle_timeout=0,instructions=[OFPInstructionActions(actions=[OFPActionOutput(len=16,max_len=65509,port=2,type=0)],len=24,type=4)],length=96,match=OFPMatch(oxm_fields={'eth_type': 2048, 'ipv4_dst': '10.0.0.1', 'ip_proto': 1}),packet_count=0,priority=10,table_id=0), OFPFlowStats(byte_count=0,cookie=0,duration_nsec=146000000,duration_sec=39,flags=0,hard_timeout=0,idle_timeout=0,instructions=[OFPInstructionActions(actions=[OFPActionOutput(len=16,max_len=65509,port=1,type=0)],len=24,type=4)],length=96,match=OFPMatch(oxm_fields={'eth_type': 2048, 'ipv4_dst': '10.0.0.3', 'ip_proto': 1}),packet_count=0,priority=10,table_id=0), OFPFlowStats(byte_count=0,cookie=0,duration_nsec=145000000,duration_sec=39,flags=0,hard_timeout=0,idle_timeout=0,instructions=[OFPInstructionActions(actions=[OFPActionOutput(len=16,max_len=65509,port=2,type=0)],len=24,type=4)],length=96,match=OFPMatch(oxm_fields={'eth_type': 2048, 'ipv4_dst': '10.0.0.2', 'ip_proto': 1}),packet_count=0,priority=10,table_id=0), OFPFlowStats(byte_count=0,cookie=0,duration_nsec=145000000,duration_sec=39,flags=0,hard_timeout=0,idle_timeout=0,instructions=[OFPInstructionActions(actions=[OFPActionOutput(len=16,max_len=65509,port=3,type=0)],len=24,type=4)],length=96,match=OFPMatch(oxm_fields={'eth_type': 2048, 'ipv4_dst': '10.0.0.4', 'ip_proto': 1}),packet_count=0,priority=10,table_id=0), OFPFlowStats(byte_count=1756,cookie=0,duration_nsec=147000000,duration_sec=39,flags=0,hard_timeout=0,idle_timeout=0,instructions=[OFPInstructionActions(actions=[OFPActionOutput(len=16,max_len=65535,port=4294967293,type=0)],len=24,type=4)],length=80,match=OFPMatch(oxm_fields={}),packet_count=21,priority=0,table_id=0)]
-body is  [OFPFlowStats(byte_count=3420,cookie=0,duration_nsec=24000000,duration_sec=383,flags=0,hard_timeout=0,idle_timeout=0,instructions=[OFPInstructionActions(actions=[OFPActionOutput(len=16,max_len=65535,port=4294967293,type=0)],len=24,type=4)],length=96,match=OFPMatch(oxm_fields={'eth_dst': '01:80:c2:00:00:0e', 'eth_type': 35020}),packet_count=57,priority=65535,table_id=0), OFPFlowStats(byte_count=0,cookie=0,duration_nsec=152000000,duration_sec=39,flags=0,hard_timeout=0,idle_timeout=0,instructions=[OFPInstructionActions(actions=[OFPActionOutput(len=16,max_len=65509,port=3,type=0)],len=24,type=4)],length=96,match=OFPMatch(oxm_fields={'eth_type': 2048, 'ipv4_dst': '10.0.0.1', 'ip_proto': 1}),packet_count=0,priority=10,table_id=0), OFPFlowStats(byte_count=0,cookie=0,duration_nsec=152000000,duration_sec=39,flags=0,hard_timeout=0,idle_timeout=0,instructions=[OFPInstructionActions(actions=[OFPActionOutput(len=16,max_len=65509,port=2,type=0)],len=24,type=4)],length=96,match=OFPMatch(oxm_fields={'eth_type': 2048, 'ipv4_dst': '10.0.0.3', 'ip_proto': 1}),packet_count=0,priority=10,table_id=0), OFPFlowStats(byte_count=0,cookie=0,duration_nsec=152000000,duration_sec=39,flags=0,hard_timeout=0,idle_timeout=0,instructions=[OFPInstructionActions(actions=[OFPActionOutput(len=16,max_len=65509,port=2,type=0)],len=24,type=4)],length=96,match=OFPMatch(oxm_fields={'eth_type': 2048, 'ipv4_dst': '10.0.0.2', 'ip_proto': 1}),packet_count=0,priority=10,table_id=0), OFPFlowStats(byte_count=0,cookie=0,duration_nsec=152000000,duration_sec=39,flags=0,hard_timeout=0,idle_timeout=0,instructions=[OFPInstructionActions(actions=[OFPActionOutput(len=16,max_len=65509,port=1,type=0)],len=24,type=4)],length=96,match=OFPMatch(oxm_fields={'eth_type': 2048, 'ipv4_dst': '10.0.0.4', 'ip_proto': 1}),packet_count=0,priority=10,table_id=0), OFPFlowStats(byte_count=1863,cookie=0,duration_nsec=152000000,duration_sec=39,flags=0,hard_timeout=0,idle_timeout=0,instructions=[OFPInstructionActions(actions=[OFPActionOutput(len=16,max_len=65535,port=4294967293,type=0)],len=24,type=4)],length=80,match=OFPMatch(oxm_fields={}),packet_count=22,priority=0,table_id=0)]
-body is  [OFPFlowStats(byte_count=3420,cookie=0,duration_nsec=28000000,duration_sec=383,flags=0,hard_timeout=0,idle_timeout=0,instructions=[OFPInstructionActions(actions=[OFPActionOutput(len=16,max_len=65535,port=4294967293,type=0)],len=24,type=4)],length=96,match=OFPMatch(oxm_fields={'eth_dst': '01:80:c2:00:00:0e', 'eth_type': 35020}),packet_count=57,priority=65535,table_id=0), OFPFlowStats(byte_count=36848,cookie=0,duration_nsec=149000000,duration_sec=39,flags=0,hard_timeout=0,idle_timeout=0,instructions=[OFPInstructionActions(actions=[OFPActionOutput(len=16,max_len=65509,port=2,type=0)],len=24,type=4)],length=96,match=OFPMatch(oxm_fields={'eth_type': 2048, 'ipv4_dst': '10.0.0.1', 'ip_proto': 1}),packet_count=376,priority=10,table_id=0), OFPFlowStats(byte_count=0,cookie=0,duration_nsec=149000000,duration_sec=39,flags=0,hard_timeout=0,idle_timeout=0,instructions=[OFPInstructionActions(actions=[OFPActionOutput(len=16,max_len=65509,port=3,type=0)],len=24,type=4)],length=96,match=OFPMatch(oxm_fields={'eth_type': 2048, 'ipv4_dst': '10.0.0.3', 'ip_proto': 1}),packet_count=0,priority=10,table_id=0), OFPFlowStats(byte_count=36848,cookie=0,duration_nsec=148000000,duration_sec=39,flags=0,hard_timeout=0,idle_timeout=0,instructions=[OFPInstructionActions(actions=[OFPActionOutput(len=16,max_len=65509,port=1,type=0)],len=24,type=4)],length=96,match=OFPMatch(oxm_fields={'eth_type': 2048, 'ipv4_dst': '10.0.0.2', 'ip_proto': 1}),packet_count=376,priority=10,table_id=0), OFPFlowStats(byte_count=0,cookie=0,duration_nsec=148000000,duration_sec=39,flags=0,hard_timeout=0,idle_timeout=0,instructions=[OFPInstructionActions(actions=[OFPActionOutput(len=16,max_len=65509,port=3,type=0)],len=24,type=4)],length=96,match=OFPMatch(oxm_fields={'eth_type': 2048, 'ipv4_dst': '10.0.0.4', 'ip_proto': 1}),packet_count=0,priority=10,table_id=0), OFPFlowStats(byte_count=2176,cookie=0,duration_nsec=149000000,duration_sec=39,flags=0,hard_timeout=0,idle_timeout=0,instructions=[OFPInstructionActions(actions=[OFPActionOutput(len=16,max_len=65535,port=4294967293,type=0)],len=24,type=4)],length=80,match=OFPMatch(oxm_fields={}),packet_count=31,priority=0,table_id=0)]
-body is  [OFPFlowStats(byte_count=3420,cookie=0,duration_nsec=27000000,duration_sec=384,flags=0,hard_timeout=0,idle_timeout=0,instructions=[OFPInstructionActions(actions=[OFPActionOutput(len=16,max_len=65535,port=4294967293,type=0)],len=24,type=4)],length=96,match=OFPMatch(oxm_fields={'eth_dst': '01:80:c2:00:00:0e', 'eth_type': 35020}),packet_count=57,priority=65535,table_id=0), OFPFlowStats(byte_count=0,cookie=0,duration_nsec=155000000,duration_sec=40,flags=0,hard_timeout=0,idle_timeout=0,instructions=[OFPInstructionActions(actions=[OFPActionOutput(len=16,max_len=65509,port=3,type=0)],len=24,type=4)],length=96,match=OFPMatch(oxm_fields={'eth_type': 2048, 'ipv4_dst': '10.0.0.1', 'ip_proto': 1}),packet_count=0,priority=10,table_id=0), OFPFlowStats(byte_count=0,cookie=0,duration_nsec=155000000,duration_sec=40,flags=0,hard_timeout=0,idle_timeout=0,instructions=[OFPInstructionActions(actions=[OFPActionOutput(len=16,max_len=65509,port=2,type=0)],len=24,type=4)],length=96,match=OFPMatch(oxm_fields={'eth_type': 2048, 'ipv4_dst': '10.0.0.3', 'ip_proto': 1}),packet_count=0,priority=10,table_id=0), OFPFlowStats(byte_count=0,cookie=0,duration_nsec=155000000,duration_sec=40,flags=0,hard_timeout=0,idle_timeout=0,instructions=[OFPInstructionActions(actions=[OFPActionOutput(len=16,max_len=65509,port=2,type=0)],len=24,type=4)],length=96,match=OFPMatch(oxm_fields={'eth_type': 2048, 'ipv4_dst': '10.0.0.2', 'ip_proto': 1}),packet_count=0,priority=10,table_id=0), OFPFlowStats(byte_count=0,cookie=0,duration_nsec=155000000,duration_sec=40,flags=0,hard_timeout=0,idle_timeout=0,instructions=[OFPInstructionActions(actions=[OFPActionOutput(len=16,max_len=65509,port=1,type=0)],len=24,type=4)],length=96,match=OFPMatch(oxm_fields={'eth_type': 2048, 'ipv4_dst': '10.0.0.4', 'ip_proto': 1}),packet_count=0,priority=10,table_id=0), OFPFlowStats(byte_count=1863,cookie=0,duration_nsec=155000000,duration_sec=40,flags=0,hard_timeout=0,idle_timeout=0,instructions=[OFPInstructionActions(actions=[OFPActionOutput(len=16,max_len=65535,port=4294967293,type=0)],len=24,type=4)],length=80,match=OFPMatch(oxm_fields={}),packet_count=22,priority=0,table_id=0)]
-body is  [OFPFlowStats(byte_count=3600,cookie=0,duration_nsec=40000000,duration_sec=384,flags=0,hard_timeout=0,idle_timeout=0,instructions=[OFPInstructionActions(actions=[OFPActionOutput(len=16,max_len=65535,port=4294967293,type=0)],len=24,type=4)],length=96,match=OFPMatch(oxm_fields={'eth_dst': '01:80:c2:00:00:0e', 'eth_type': 35020}),packet_count=60,priority=65535,table_id=0), OFPFlowStats(byte_count=36946,cookie=0,duration_nsec=149000000,duration_sec=40,flags=0,hard_timeout=0,idle_timeout=0,instructions=[OFPInstructionActions(actions=[OFPActionOutput(len=16,max_len=65509,port=1,type=0)],len=24,type=4)],length=96,match=OFPMatch(oxm_fields={'eth_type': 2048, 'ipv4_dst': '10.0.0.1', 'ip_proto': 1}),packet_count=377,priority=10,table_id=0), OFPFlowStats(byte_count=0,cookie=0,duration_nsec=149000000,duration_sec=40,flags=0,hard_timeout=0,idle_timeout=0,instructions=[OFPInstructionActions(actions=[OFPActionOutput(len=16,max_len=65509,port=2,type=0)],len=24,type=4)],length=96,match=OFPMatch(oxm_fields={'eth_type': 2048, 'ipv4_dst': '10.0.0.3', 'ip_proto': 1}),packet_count=0,priority=10,table_id=0), OFPFlowStats(byte_count=36946,cookie=0,duration_nsec=149000000,duration_sec=40,flags=0,hard_timeout=0,idle_timeout=0,instructions=[OFPInstructionActions(actions=[OFPActionOutput(len=16,max_len=65509,port=2,type=0)],len=24,type=4)],length=96,match=OFPMatch(oxm_fields={'eth_type': 2048, 'ipv4_dst': '10.0.0.2', 'ip_proto': 1}),packet_count=377,priority=10,table_id=0), OFPFlowStats(byte_count=0,cookie=0,duration_nsec=149000000,duration_sec=40,flags=0,hard_timeout=0,idle_timeout=0,instructions=[OFPInstructionActions(actions=[OFPActionOutput(len=16,max_len=65509,port=3,type=0)],len=24,type=4)],length=96,match=OFPMatch(oxm_fields={'eth_type': 2048, 'ipv4_dst': '10.0.0.4', 'ip_proto': 1}),packet_count=0,priority=10,table_id=0), OFPFlowStats(byte_count=2330,cookie=0,duration_nsec=149000000,duration_sec=40,flags=0,hard_timeout=0,idle_timeout=0,instructions=[OFPInstructionActions(actions=[OFPActionOutput(len=16,max_len=65535,port=4294967293,type=0)],len=24,type=4)],length=80,match=OFPMatch(oxm_fields={}),packet_count=32,priority=0,table_id=0)]
-body is  [OFPFlowStats(byte_count=3540,cookie=0,duration_nsec=28000000,duration_sec=384,flags=0,hard_timeout=0,idle_timeout=0,instructions=[OFPInstructionActions(actions=[OFPActionOutput(len=16,max_len=65535,port=4294967293,type=0)],len=24,type=4)],length=96,match=OFPMatch(oxm_fields={'eth_dst': '01:80:c2:00:00:0e', 'eth_type': 35020}),packet_count=59,priority=65535,table_id=0), OFPFlowStats(byte_count=0,cookie=0,duration_nsec=151000000,duration_sec=40,flags=0,hard_timeout=0,idle_timeout=0,instructions=[OFPInstructionActions(actions=[OFPActionOutput(len=16,max_len=65509,port=2,type=0)],len=24,type=4)],length=96,match=OFPMatch(oxm_fields={'eth_type': 2048, 'ipv4_dst': '10.0.0.1', 'ip_proto': 1}),packet_count=0,priority=10,table_id=0), OFPFlowStats(byte_count=0,cookie=0,duration_nsec=151000000,duration_sec=40,flags=0,hard_timeout=0,idle_timeout=0,instructions=[OFPInstructionActions(actions=[OFPActionOutput(len=16,max_len=65509,port=1,type=0)],len=24,type=4)],length=96,match=OFPMatch(oxm_fields={'eth_type': 2048, 'ipv4_dst': '10.0.0.3', 'ip_proto': 1}),packet_count=0,priority=10,table_id=0), OFPFlowStats(byte_count=0,cookie=0,duration_nsec=150000000,duration_sec=40,flags=0,hard_timeout=0,idle_timeout=0,instructions=[OFPInstructionActions(actions=[OFPActionOutput(len=16,max_len=65509,port=2,type=0)],len=24,type=4)],length=96,match=OFPMatch(oxm_fields={'eth_type': 2048, 'ipv4_dst': '10.0.0.2', 'ip_proto': 1}),packet_count=0,priority=10,table_id=0), OFPFlowStats(byte_count=0,cookie=0,duration_nsec=150000000,duration_sec=40,flags=0,hard_timeout=0,idle_timeout=0,instructions=[OFPInstructionActions(actions=[OFPActionOutput(len=16,max_len=65509,port=3,type=0)],len=24,type=4)],length=96,match=OFPMatch(oxm_fields={'eth_type': 2048, 'ipv4_dst': '10.0.0.4', 'ip_proto': 1}),packet_count=0,priority=10,table_id=0), OFPFlowStats(byte_count=1756,cookie=0,duration_nsec=152000000,duration_sec=40,flags=0,hard_timeout=0,idle_timeout=0,instructions=[OFPInstructionActions(actions=[OFPActionOutput(len=16,max_len=65535,port=4294967293,type=0)],len=24,type=4)],length=80,match=OFPMatch(oxm_fields={}),packet_count=21,priority=0,table_id=0)]
-body is  [OFPFlowStats(byte_count=3420,cookie=0,duration_nsec=32000000,duration_sec=384,flags=0,hard_timeout=0,idle_timeout=0,instructions=[OFPInstructionActions(actions=[OFPActionOutput(len=16,max_len=65535,port=4294967293,type=0)],len=24,type=4)],length=96,match=OFPMatch(oxm_fields={'eth_dst': '01:80:c2:00:00:0e', 'eth_type': 35020}),packet_count=57,priority=65535,table_id=0), OFPFlowStats(byte_count=36946,cookie=0,duration_nsec=153000000,duration_sec=40,flags=0,hard_timeout=0,idle_timeout=0,instructions=[OFPInstructionActions(actions=[OFPActionOutput(len=16,max_len=65509,port=2,type=0)],len=24,type=4)],length=96,match=OFPMatch(oxm_fields={'eth_type': 2048, 'ipv4_dst': '10.0.0.1', 'ip_proto': 1}),packet_count=377,priority=10,table_id=0), OFPFlowStats(byte_count=0,cookie=0,duration_nsec=153000000,duration_sec=40,flags=0,hard_timeout=0,idle_timeout=0,instructions=[OFPInstructionActions(actions=[OFPActionOutput(len=16,max_len=65509,port=3,type=0)],len=24,type=4)],length=96,match=OFPMatch(oxm_fields={'eth_type': 2048, 'ipv4_dst': '10.0.0.3', 'ip_proto': 1}),packet_count=0,priority=10,table_id=0), OFPFlowStats(byte_count=36946,cookie=0,duration_nsec=152000000,duration_sec=40,flags=0,hard_timeout=0,idle_timeout=0,instructions=[OFPInstructionActions(actions=[OFPActionOutput(len=16,max_len=65509,port=1,type=0)],len=24,type=4)],length=96,match=OFPMatch(oxm_fields={'eth_type': 2048, 'ipv4_dst': '10.0.0.2', 'ip_proto': 1}),packet_count=377,priority=10,table_id=0), OFPFlowStats(byte_count=0,cookie=0,duration_nsec=152000000,duration_sec=40,flags=0,hard_timeout=0,idle_timeout=0,instructions=[OFPInstructionActions(actions=[OFPActionOutput(len=16,max_len=65509,port=3,type=0)],len=24,type=4)],length=96,match=OFPMatch(oxm_fields={'eth_type': 2048, 'ipv4_dst': '10.0.0.4', 'ip_proto': 1}),packet_count=0,priority=10,table_id=0), OFPFlowStats(byte_count=2176,cookie=0,duration_nsec=153000000,duration_sec=40,flags=0,hard_timeout=0,idle_timeout=0,instructions=[OFPInstructionActions(actions=[OFPActionOutput(len=16,max_len=65535,port=4294967293,type=0)],len=24,type=4)],length=80,match=OFPMatch(oxm_fields={}),packet_count=31,priority=0,table_id=0)]
-body is  [OFPFlowStats(byte_count=3420,cookie=0,duration_nsec=30000000,duration_sec=385,flags=0,hard_timeout=0,idle_timeout=0,instructions=[OFPInstructionActions(actions=[OFPActionOutput(len=16,max_len=65535,port=4294967293,type=0)],len=24,type=4)],length=96,match=OFPMatch(oxm_fields={'eth_dst': '01:80:c2:00:00:0e', 'eth_type': 35020}),packet_count=57,priority=65535,table_id=0), OFPFlowStats(byte_count=0,cookie=0,duration_nsec=158000000,duration_sec=41,flags=0,hard_timeout=0,idle_timeout=0,instructions=[OFPInstructionActions(actions=[OFPActionOutput(len=16,max_len=65509,port=3,type=0)],len=24,type=4)],length=96,match=OFPMatch(oxm_fields={'eth_type': 2048, 'ipv4_dst': '10.0.0.1', 'ip_proto': 1}),packet_count=0,priority=10,table_id=0), OFPFlowStats(byte_count=0,cookie=0,duration_nsec=158000000,duration_sec=41,flags=0,hard_timeout=0,idle_timeout=0,instructions=[OFPInstructionActions(actions=[OFPActionOutput(len=16,max_len=65509,port=2,type=0)],len=24,type=4)],length=96,match=OFPMatch(oxm_fields={'eth_type': 2048, 'ipv4_dst': '10.0.0.3', 'ip_proto': 1}),packet_count=0,priority=10,table_id=0), OFPFlowStats(byte_count=0,cookie=0,duration_nsec=158000000,duration_sec=41,flags=0,hard_timeout=0,idle_timeout=0,instructions=[OFPInstructionActions(actions=[OFPActionOutput(len=16,max_len=65509,port=2,type=0)],len=24,type=4)],length=96,match=OFPMatch(oxm_fields={'eth_type': 2048, 'ipv4_dst': '10.0.0.2', 'ip_proto': 1}),packet_count=0,priority=10,table_id=0), OFPFlowStats(byte_count=0,cookie=0,duration_nsec=158000000,duration_sec=41,flags=0,hard_timeout=0,idle_timeout=0,instructions=[OFPInstructionActions(actions=[OFPActionOutput(len=16,max_len=65509,port=1,type=0)],len=24,type=4)],length=96,match=OFPMatch(oxm_fields={'eth_type': 2048, 'ipv4_dst': '10.0.0.4', 'ip_proto': 1}),packet_count=0,priority=10,table_id=0), OFPFlowStats(byte_count=1863,cookie=0,duration_nsec=158000000,duration_sec=41,flags=0,hard_timeout=0,idle_timeout=0,instructions=[OFPInstructionActions(actions=[OFPActionOutput(len=16,max_len=65535,port=4294967293,type=0)],len=24,type=4)],length=80,match=OFPMatch(oxm_fields={}),packet_count=22,priority=0,table_id=0)]
-body is  [OFPFlowStats(byte_count=3600,cookie=0,duration_nsec=41000000,duration_sec=385,flags=0,hard_timeout=0,idle_timeout=0,instructions=[OFPInstructionActions(actions=[OFPActionOutput(len=16,max_len=65535,port=4294967293,type=0)],len=24,type=4)],length=96,match=OFPMatch(oxm_fields={'eth_dst': '01:80:c2:00:00:0e', 'eth_type': 35020}),packet_count=60,priority=65535,table_id=0), OFPFlowStats(byte_count=37044,cookie=0,duration_nsec=150000000,duration_sec=41,flags=0,hard_timeout=0,idle_timeout=0,instructions=[OFPInstructionActions(actions=[OFPActionOutput(len=16,max_len=65509,port=1,type=0)],len=24,type=4)],length=96,match=OFPMatch(oxm_fields={'eth_type': 2048, 'ipv4_dst': '10.0.0.1', 'ip_proto': 1}),packet_count=378,priority=10,table_id=0), OFPFlowStats(byte_count=0,cookie=0,duration_nsec=150000000,duration_sec=41,flags=0,hard_timeout=0,idle_timeout=0,instructions=[OFPInstructionActions(actions=[OFPActionOutput(len=16,max_len=65509,port=2,type=0)],len=24,type=4)],length=96,match=OFPMatch(oxm_fields={'eth_type': 2048, 'ipv4_dst': '10.0.0.3', 'ip_proto': 1}),packet_count=0,priority=10,table_id=0), OFPFlowStats(byte_count=37044,cookie=0,duration_nsec=150000000,duration_sec=41,flags=0,hard_timeout=0,idle_timeout=0,instructions=[OFPInstructionActions(actions=[OFPActionOutput(len=16,max_len=65509,port=2,type=0)],len=24,type=4)],length=96,match=OFPMatch(oxm_fields={'eth_type': 2048, 'ipv4_dst': '10.0.0.2', 'ip_proto': 1}),packet_count=378,priority=10,table_id=0), OFPFlowStats(byte_count=0,cookie=0,duration_nsec=150000000,duration_sec=41,flags=0,hard_timeout=0,idle_timeout=0,instructions=[OFPInstructionActions(actions=[OFPActionOutput(len=16,max_len=65509,port=3,type=0)],len=24,type=4)],length=96,match=OFPMatch(oxm_fields={'eth_type': 2048, 'ipv4_dst': '10.0.0.4', 'ip_proto': 1}),packet_count=0,priority=10,table_id=0), OFPFlowStats(byte_count=2330,cookie=0,duration_nsec=150000000,duration_sec=41,flags=0,hard_timeout=0,idle_timeout=0,instructions=[OFPInstructionActions(actions=[OFPActionOutput(len=16,max_len=65535,port=4294967293,type=0)],len=24,type=4)],length=80,match=OFPMatch(oxm_fields={}),packet_count=32,priority=0,table_id=0)]
-body is  [OFPFlowStats(byte_count=3540,cookie=0,duration_nsec=29000000,duration_sec=385,flags=0,hard_timeout=0,idle_timeout=0,instructions=[OFPInstructionActions(actions=[OFPActionOutput(len=16,max_len=65535,port=4294967293,type=0)],len=24,type=4)],length=96,match=OFPMatch(oxm_fields={'eth_dst': '01:80:c2:00:00:0e', 'eth_type': 35020}),packet_count=59,priority=65535,table_id=0), OFPFlowStats(byte_count=0,cookie=0,duration_nsec=152000000,duration_sec=41,flags=0,hard_timeout=0,idle_timeout=0,instructions=[OFPInstructionActions(actions=[OFPActionOutput(len=16,max_len=65509,port=2,type=0)],len=24,type=4)],length=96,match=OFPMatch(oxm_fields={'eth_type': 2048, 'ipv4_dst': '10.0.0.1', 'ip_proto': 1}),packet_count=0,priority=10,table_id=0), OFPFlowStats(byte_count=0,cookie=0,duration_nsec=152000000,duration_sec=41,flags=0,hard_timeout=0,idle_timeout=0,instructions=[OFPInstructionActions(actions=[OFPActionOutput(len=16,max_len=65509,port=1,type=0)],len=24,type=4)],length=96,match=OFPMatch(oxm_fields={'eth_type': 2048, 'ipv4_dst': '10.0.0.3', 'ip_proto': 1}),packet_count=0,priority=10,table_id=0), OFPFlowStats(byte_count=0,cookie=0,duration_nsec=151000000,duration_sec=41,flags=0,hard_timeout=0,idle_timeout=0,instructions=[OFPInstructionActions(actions=[OFPActionOutput(len=16,max_len=65509,port=2,type=0)],len=24,type=4)],length=96,match=OFPMatch(oxm_fields={'eth_type': 2048, 'ipv4_dst': '10.0.0.2', 'ip_proto': 1}),packet_count=0,priority=10,table_id=0), OFPFlowStats(byte_count=0,cookie=0,duration_nsec=151000000,duration_sec=41,flags=0,hard_timeout=0,idle_timeout=0,instructions=[OFPInstructionActions(actions=[OFPActionOutput(len=16,max_len=65509,port=3,type=0)],len=24,type=4)],length=96,match=OFPMatch(oxm_fields={'eth_type': 2048, 'ipv4_dst': '10.0.0.4', 'ip_proto': 1}),packet_count=0,priority=10,table_id=0), OFPFlowStats(byte_count=1756,cookie=0,duration_nsec=153000000,duration_sec=41,flags=0,hard_timeout=0,idle_timeout=0,instructions=[OFPInstructionActions(actions=[OFPActionOutput(len=16,max_len=65535,port=4294967293,type=0)],len=24,type=4)],length=80,match=OFPMatch(oxm_fields={}),packet_count=21,priority=0,table_id=0)]
-body is  [OFPFlowStats(byte_count=3420,cookie=0,duration_nsec=34000000,duration_sec=385,flags=0,hard_timeout=0,idle_timeout=0,instructions=[OFPInstructionActions(actions=[OFPActionOutput(len=16,max_len=65535,port=4294967293,type=0)],len=24,type=4)],length=96,match=OFPMatch(oxm_fields={'eth_dst': '01:80:c2:00:00:0e', 'eth_type': 35020}),packet_count=57,priority=65535,table_id=0), OFPFlowStats(byte_count=37044,cookie=0,duration_nsec=155000000,duration_sec=41,flags=0,hard_timeout=0,idle_timeout=0,instructions=[OFPInstructionActions(actions=[OFPActionOutput(len=16,max_len=65509,port=2,type=0)],len=24,type=4)],length=96,match=OFPMatch(oxm_fields={'eth_type': 2048, 'ipv4_dst': '10.0.0.1', 'ip_proto': 1}),packet_count=378,priority=10,table_id=0), OFPFlowStats(byte_count=0,cookie=0,duration_nsec=155000000,duration_sec=41,flags=0,hard_timeout=0,idle_timeout=0,instructions=[OFPInstructionActions(actions=[OFPActionOutput(len=16,max_len=65509,port=3,type=0)],len=24,type=4)],length=96,match=OFPMatch(oxm_fields={'eth_type': 2048, 'ipv4_dst': '10.0.0.3', 'ip_proto': 1}),packet_count=0,priority=10,table_id=0), OFPFlowStats(byte_count=37044,cookie=0,duration_nsec=154000000,duration_sec=41,flags=0,hard_timeout=0,idle_timeout=0,instructions=[OFPInstructionActions(actions=[OFPActionOutput(len=16,max_len=65509,port=1,type=0)],len=24,type=4)],length=96,match=OFPMatch(oxm_fields={'eth_type': 2048, 'ipv4_dst': '10.0.0.2', 'ip_proto': 1}),packet_count=378,priority=10,table_id=0), OFPFlowStats(byte_count=0,cookie=0,duration_nsec=154000000,duration_sec=41,flags=0,hard_timeout=0,idle_timeout=0,instructions=[OFPInstructionActions(actions=[OFPActionOutput(len=16,max_len=65509,port=3,type=0)],len=24,type=4)],length=96,match=OFPMatch(oxm_fields={'eth_type': 2048, 'ipv4_dst': '10.0.0.4', 'ip_proto': 1}),packet_count=0,priority=10,table_id=0), OFPFlowStats(byte_count=2176,cookie=0,duration_nsec=155000000,duration_sec=41,flags=0,hard_timeout=0,idle_timeout=0,instructions=[OFPInstructionActions(actions=[OFPActionOutput(len=16,max_len=65535,port=4294967293,type=0)],len=24,type=4)],length=80,match=OFPMatch(oxm_fields={}),packet_count=31,priority=0,table_id=0)]
-body is  [OFPFlowStats(byte_count=3420,cookie=0,duration_nsec=33000000,duration_sec=386,flags=0,hard_timeout=0,idle_timeout=0,instructions=[OFPInstructionActions(actions=[OFPActionOutput(len=16,max_len=65535,port=4294967293,type=0)],len=24,type=4)],length=96,match=OFPMatch(oxm_fields={'eth_dst': '01:80:c2:00:00:0e', 'eth_type': 35020}),packet_count=57,priority=65535,table_id=0), OFPFlowStats(byte_count=37142,cookie=0,duration_nsec=154000000,duration_sec=42,flags=0,hard_timeout=0,idle_timeout=0,instructions=[OFPInstructionActions(actions=[OFPActionOutput(len=16,max_len=65509,port=2,type=0)],len=24,type=4)],length=96,match=OFPMatch(oxm_fields={'eth_type': 2048, 'ipv4_dst': '10.0.0.1', 'ip_proto': 1}),packet_count=379,priority=10,table_id=0), OFPFlowStats(byte_count=0,cookie=0,duration_nsec=154000000,duration_sec=42,flags=0,hard_timeout=0,idle_timeout=0,instructions=[OFPInstructionActions(actions=[OFPActionOutput(len=16,max_len=65509,port=3,type=0)],len=24,type=4)],length=96,match=OFPMatch(oxm_fields={'eth_type': 2048, 'ipv4_dst': '10.0.0.3', 'ip_proto': 1}),packet_count=0,priority=10,table_id=0), OFPFlowStats(byte_count=37142,cookie=0,duration_nsec=153000000,duration_sec=42,flags=0,hard_timeout=0,idle_timeout=0,instructions=[OFPInstructionActions(actions=[OFPActionOutput(len=16,max_len=65509,port=1,type=0)],len=24,type=4)],length=96,match=OFPMatch(oxm_fields={'eth_type': 2048, 'ipv4_dst': '10.0.0.2', 'ip_proto': 1}),packet_count=379,priority=10,table_id=0), OFPFlowStats(byte_count=0,cookie=0,duration_nsec=153000000,duration_sec=42,flags=0,hard_timeout=0,idle_timeout=0,instructions=[OFPInstructionActions(actions=[OFPActionOutput(len=16,max_len=65509,port=3,type=0)],len=24,type=4)],length=96,match=OFPMatch(oxm_fields={'eth_type': 2048, 'ipv4_dst': '10.0.0.4', 'ip_proto': 1}),packet_count=0,priority=10,table_id=0), OFPFlowStats(byte_count=2176,cookie=0,duration_nsec=154000000,duration_sec=42,flags=0,hard_timeout=0,idle_timeout=0,instructions=[OFPInstructionActions(actions=[OFPActionOutput(len=16,max_len=65535,port=4294967293,type=0)],len=24,type=4)],length=80,match=OFPMatch(oxm_fields={}),packet_count=31,priority=0,table_id=0)]
-body is  [OFPFlowStats(byte_count=3600,cookie=0,duration_nsec=44000000,duration_sec=386,flags=0,hard_timeout=0,idle_timeout=0,instructions=[OFPInstructionActions(actions=[OFPActionOutput(len=16,max_len=65535,port=4294967293,type=0)],len=24,type=4)],length=96,match=OFPMatch(oxm_fields={'eth_dst': '01:80:c2:00:00:0e', 'eth_type': 35020}),packet_count=60,priority=65535,table_id=0), OFPFlowStats(byte_count=37142,cookie=0,duration_nsec=153000000,duration_sec=42,flags=0,hard_timeout=0,idle_timeout=0,instructions=[OFPInstructionActions(actions=[OFPActionOutput(len=16,max_len=65509,port=1,type=0)],len=24,type=4)],length=96,match=OFPMatch(oxm_fields={'eth_type': 2048, 'ipv4_dst': '10.0.0.1', 'ip_proto': 1}),packet_count=379,priority=10,table_id=0), OFPFlowStats(byte_count=0,cookie=0,duration_nsec=153000000,duration_sec=42,flags=0,hard_timeout=0,idle_timeout=0,instructions=[OFPInstructionActions(actions=[OFPActionOutput(len=16,max_len=65509,port=2,type=0)],len=24,type=4)],length=96,match=OFPMatch(oxm_fields={'eth_type': 2048, 'ipv4_dst': '10.0.0.3', 'ip_proto': 1}),packet_count=0,priority=10,table_id=0), OFPFlowStats(byte_count=37142,cookie=0,duration_nsec=153000000,duration_sec=42,flags=0,hard_timeout=0,idle_timeout=0,instructions=[OFPInstructionActions(actions=[OFPActionOutput(len=16,max_len=65509,port=2,type=0)],len=24,type=4)],length=96,match=OFPMatch(oxm_fields={'eth_type': 2048, 'ipv4_dst': '10.0.0.2', 'ip_proto': 1}),packet_count=379,priority=10,table_id=0), OFPFlowStats(byte_count=0,cookie=0,duration_nsec=153000000,duration_sec=42,flags=0,hard_timeout=0,idle_timeout=0,instructions=[OFPInstructionActions(actions=[OFPActionOutput(len=16,max_len=65509,port=3,type=0)],len=24,type=4)],length=96,match=OFPMatch(oxm_fields={'eth_type': 2048, 'ipv4_dst': '10.0.0.4', 'ip_proto': 1}),packet_count=0,priority=10,table_id=0), OFPFlowStats(byte_count=2330,cookie=0,duration_nsec=153000000,duration_sec=42,flags=0,hard_timeout=0,idle_timeout=0,instructions=[OFPInstructionActions(actions=[OFPActionOutput(len=16,max_len=65535,port=4294967293,type=0)],len=24,type=4)],length=80,match=OFPMatch(oxm_fields={}),packet_count=32,priority=0,table_id=0)]
-body is  [OFPFlowStats(byte_count=3540,cookie=0,duration_nsec=32000000,duration_sec=386,flags=0,hard_timeout=0,idle_timeout=0,instructions=[OFPInstructionActions(actions=[OFPActionOutput(len=16,max_len=65535,port=4294967293,type=0)],len=24,type=4)],length=96,match=OFPMatch(oxm_fields={'eth_dst': '01:80:c2:00:00:0e', 'eth_type': 35020}),packet_count=59,priority=65535,table_id=0), OFPFlowStats(byte_count=0,cookie=0,duration_nsec=155000000,duration_sec=42,flags=0,hard_timeout=0,idle_timeout=0,instructions=[OFPInstructionActions(actions=[OFPActionOutput(len=16,max_len=65509,port=2,type=0)],len=24,type=4)],length=96,match=OFPMatch(oxm_fields={'eth_type': 2048, 'ipv4_dst': '10.0.0.1', 'ip_proto': 1}),packet_count=0,priority=10,table_id=0), OFPFlowStats(byte_count=0,cookie=0,duration_nsec=155000000,duration_sec=42,flags=0,hard_timeout=0,idle_timeout=0,instructions=[OFPInstructionActions(actions=[OFPActionOutput(len=16,max_len=65509,port=1,type=0)],len=24,type=4)],length=96,match=OFPMatch(oxm_fields={'eth_type': 2048, 'ipv4_dst': '10.0.0.3', 'ip_proto': 1}),packet_count=0,priority=10,table_id=0), OFPFlowStats(byte_count=0,cookie=0,duration_nsec=154000000,duration_sec=42,flags=0,hard_timeout=0,idle_timeout=0,instructions=[OFPInstructionActions(actions=[OFPActionOutput(len=16,max_len=65509,port=2,type=0)],len=24,type=4)],length=96,match=OFPMatch(oxm_fields={'eth_type': 2048, 'ipv4_dst': '10.0.0.2', 'ip_proto': 1}),packet_count=0,priority=10,table_id=0), OFPFlowStats(byte_count=0,cookie=0,duration_nsec=154000000,duration_sec=42,flags=0,hard_timeout=0,idle_timeout=0,instructions=[OFPInstructionActions(actions=[OFPActionOutput(len=16,max_len=65509,port=3,type=0)],len=24,type=4)],length=96,match=OFPMatch(oxm_fields={'eth_type': 2048, 'ipv4_dst': '10.0.0.4', 'ip_proto': 1}),packet_count=0,priority=10,table_id=0), OFPFlowStats(byte_count=1756,cookie=0,duration_nsec=156000000,duration_sec=42,flags=0,hard_timeout=0,idle_timeout=0,instructions=[OFPInstructionActions(actions=[OFPActionOutput(len=16,max_len=65535,port=4294967293,type=0)],len=24,type=4)],length=80,match=OFPMatch(oxm_fields={}),packet_count=21,priority=0,table_id=0)]
-body is  [OFPFlowStats(byte_count=3420,cookie=0,duration_nsec=33000000,duration_sec=386,flags=0,hard_timeout=0,idle_timeout=0,instructions=[OFPInstructionActions(actions=[OFPActionOutput(len=16,max_len=65535,port=4294967293,type=0)],len=24,type=4)],length=96,match=OFPMatch(oxm_fields={'eth_dst': '01:80:c2:00:00:0e', 'eth_type': 35020}),packet_count=57,priority=65535,table_id=0), OFPFlowStats(byte_count=0,cookie=0,duration_nsec=161000000,duration_sec=42,flags=0,hard_timeout=0,idle_timeout=0,instructions=[OFPInstructionActions(actions=[OFPActionOutput(len=16,max_len=65509,port=3,type=0)],len=24,type=4)],length=96,match=OFPMatch(oxm_fields={'eth_type': 2048, 'ipv4_dst': '10.0.0.1', 'ip_proto': 1}),packet_count=0,priority=10,table_id=0), OFPFlowStats(byte_count=0,cookie=0,duration_nsec=161000000,duration_sec=42,flags=0,hard_timeout=0,idle_timeout=0,instructions=[OFPInstructionActions(actions=[OFPActionOutput(len=16,max_len=65509,port=2,type=0)],len=24,type=4)],length=96,match=OFPMatch(oxm_fields={'eth_type': 2048, 'ipv4_dst': '10.0.0.3', 'ip_proto': 1}),packet_count=0,priority=10,table_id=0), OFPFlowStats(byte_count=0,cookie=0,duration_nsec=161000000,duration_sec=42,flags=0,hard_timeout=0,idle_timeout=0,instructions=[OFPInstructionActions(actions=[OFPActionOutput(len=16,max_len=65509,port=2,type=0)],len=24,type=4)],length=96,match=OFPMatch(oxm_fields={'eth_type': 2048, 'ipv4_dst': '10.0.0.2', 'ip_proto': 1}),packet_count=0,priority=10,table_id=0), OFPFlowStats(byte_count=0,cookie=0,duration_nsec=161000000,duration_sec=42,flags=0,hard_timeout=0,idle_timeout=0,instructions=[OFPInstructionActions(actions=[OFPActionOutput(len=16,max_len=65509,port=1,type=0)],len=24,type=4)],length=96,match=OFPMatch(oxm_fields={'eth_type': 2048, 'ipv4_dst': '10.0.0.4', 'ip_proto': 1}),packet_count=0,priority=10,table_id=0), OFPFlowStats(byte_count=1863,cookie=0,duration_nsec=161000000,duration_sec=42,flags=0,hard_timeout=0,idle_timeout=0,instructions=[OFPInstructionActions(actions=[OFPActionOutput(len=16,max_len=65535,port=4294967293,type=0)],len=24,type=4)],length=80,match=OFPMatch(oxm_fields={}),packet_count=22,priority=0,table_id=0)]
-body is  [OFPFlowStats(byte_count=3420,cookie=0,duration_nsec=35000000,duration_sec=387,flags=0,hard_timeout=0,idle_timeout=0,instructions=[OFPInstructionActions(actions=[OFPActionOutput(len=16,max_len=65535,port=4294967293,type=0)],len=24,type=4)],length=96,match=OFPMatch(oxm_fields={'eth_dst': '01:80:c2:00:00:0e', 'eth_type': 35020}),packet_count=57,priority=65535,table_id=0), OFPFlowStats(byte_count=0,cookie=0,duration_nsec=163000000,duration_sec=43,flags=0,hard_timeout=0,idle_timeout=0,instructions=[OFPInstructionActions(actions=[OFPActionOutput(len=16,max_len=65509,port=3,type=0)],len=24,type=4)],length=96,match=OFPMatch(oxm_fields={'eth_type': 2048, 'ipv4_dst': '10.0.0.1', 'ip_proto': 1}),packet_count=0,priority=10,table_id=0), OFPFlowStats(byte_count=0,cookie=0,duration_nsec=163000000,duration_sec=43,flags=0,hard_timeout=0,idle_timeout=0,instructions=[OFPInstructionActions(actions=[OFPActionOutput(len=16,max_len=65509,port=2,type=0)],len=24,type=4)],length=96,match=OFPMatch(oxm_fields={'eth_type': 2048, 'ipv4_dst': '10.0.0.3', 'ip_proto': 1}),packet_count=0,priority=10,table_id=0), OFPFlowStats(byte_count=0,cookie=0,duration_nsec=163000000,duration_sec=43,flags=0,hard_timeout=0,idle_timeout=0,instructions=[OFPInstructionActions(actions=[OFPActionOutput(len=16,max_len=65509,port=2,type=0)],len=24,type=4)],length=96,match=OFPMatch(oxm_fields={'eth_type': 2048, 'ipv4_dst': '10.0.0.2', 'ip_proto': 1}),packet_count=0,priority=10,table_id=0), OFPFlowStats(byte_count=0,cookie=0,duration_nsec=163000000,duration_sec=43,flags=0,hard_timeout=0,idle_timeout=0,instructions=[OFPInstructionActions(actions=[OFPActionOutput(len=16,max_len=65509,port=1,type=0)],len=24,type=4)],length=96,match=OFPMatch(oxm_fields={'eth_type': 2048, 'ipv4_dst': '10.0.0.4', 'ip_proto': 1}),packet_count=0,priority=10,table_id=0), OFPFlowStats(byte_count=1863,cookie=0,duration_nsec=163000000,duration_sec=43,flags=0,hard_timeout=0,idle_timeout=0,instructions=[OFPInstructionActions(actions=[OFPActionOutput(len=16,max_len=65535,port=4294967293,type=0)],len=24,type=4)],length=80,match=OFPMatch(oxm_fields={}),packet_count=22,priority=0,table_id=0)]
-body is  [OFPFlowStats(byte_count=3540,cookie=0,duration_nsec=34000000,duration_sec=387,flags=0,hard_timeout=0,idle_timeout=0,instructions=[OFPInstructionActions(actions=[OFPActionOutput(len=16,max_len=65535,port=4294967293,type=0)],len=24,type=4)],length=96,match=OFPMatch(oxm_fields={'eth_dst': '01:80:c2:00:00:0e', 'eth_type': 35020}),packet_count=59,priority=65535,table_id=0), OFPFlowStats(byte_count=0,cookie=0,duration_nsec=157000000,duration_sec=43,flags=0,hard_timeout=0,idle_timeout=0,instructions=[OFPInstructionActions(actions=[OFPActionOutput(len=16,max_len=65509,port=2,type=0)],len=24,type=4)],length=96,match=OFPMatch(oxm_fields={'eth_type': 2048, 'ipv4_dst': '10.0.0.1', 'ip_proto': 1}),packet_count=0,priority=10,table_id=0), OFPFlowStats(byte_count=0,cookie=0,duration_nsec=157000000,duration_sec=43,flags=0,hard_timeout=0,idle_timeout=0,instructions=[OFPInstructionActions(actions=[OFPActionOutput(len=16,max_len=65509,port=1,type=0)],len=24,type=4)],length=96,match=OFPMatch(oxm_fields={'eth_type': 2048, 'ipv4_dst': '10.0.0.3', 'ip_proto': 1}),packet_count=0,priority=10,table_id=0), OFPFlowStats(byte_count=0,cookie=0,duration_nsec=156000000,duration_sec=43,flags=0,hard_timeout=0,idle_timeout=0,instructions=[OFPInstructionActions(actions=[OFPActionOutput(len=16,max_len=65509,port=2,type=0)],len=24,type=4)],length=96,match=OFPMatch(oxm_fields={'eth_type': 2048, 'ipv4_dst': '10.0.0.2', 'ip_proto': 1}),packet_count=0,priority=10,table_id=0), OFPFlowStats(byte_count=0,cookie=0,duration_nsec=156000000,duration_sec=43,flags=0,hard_timeout=0,idle_timeout=0,instructions=[OFPInstructionActions(actions=[OFPActionOutput(len=16,max_len=65509,port=3,type=0)],len=24,type=4)],length=96,match=OFPMatch(oxm_fields={'eth_type': 2048, 'ipv4_dst': '10.0.0.4', 'ip_proto': 1}),packet_count=0,priority=10,table_id=0), OFPFlowStats(byte_count=1756,cookie=0,duration_nsec=158000000,duration_sec=43,flags=0,hard_timeout=0,idle_timeout=0,instructions=[OFPInstructionActions(actions=[OFPActionOutput(len=16,max_len=65535,port=4294967293,type=0)],len=24,type=4)],length=80,match=OFPMatch(oxm_fields={}),packet_count=21,priority=0,table_id=0)]
-body is  [OFPFlowStats(byte_count=3600,cookie=0,duration_nsec=46000000,duration_sec=387,flags=0,hard_timeout=0,idle_timeout=0,instructions=[OFPInstructionActions(actions=[OFPActionOutput(len=16,max_len=65535,port=4294967293,type=0)],len=24,type=4)],length=96,match=OFPMatch(oxm_fields={'eth_dst': '01:80:c2:00:00:0e', 'eth_type': 35020}),packet_count=60,priority=65535,table_id=0), OFPFlowStats(byte_count=37240,cookie=0,duration_nsec=155000000,duration_sec=43,flags=0,hard_timeout=0,idle_timeout=0,instructions=[OFPInstructionActions(actions=[OFPActionOutput(len=16,max_len=65509,port=1,type=0)],len=24,type=4)],length=96,match=OFPMatch(oxm_fields={'eth_type': 2048, 'ipv4_dst': '10.0.0.1', 'ip_proto': 1}),packet_count=380,priority=10,table_id=0), OFPFlowStats(byte_count=0,cookie=0,duration_nsec=155000000,duration_sec=43,flags=0,hard_timeout=0,idle_timeout=0,instructions=[OFPInstructionActions(actions=[OFPActionOutput(len=16,max_len=65509,port=2,type=0)],len=24,type=4)],length=96,match=OFPMatch(oxm_fields={'eth_type': 2048, 'ipv4_dst': '10.0.0.3', 'ip_proto': 1}),packet_count=0,priority=10,table_id=0), OFPFlowStats(byte_count=37240,cookie=0,duration_nsec=155000000,duration_sec=43,flags=0,hard_timeout=0,idle_timeout=0,instructions=[OFPInstructionActions(actions=[OFPActionOutput(len=16,max_len=65509,port=2,type=0)],len=24,type=4)],length=96,match=OFPMatch(oxm_fields={'eth_type': 2048, 'ipv4_dst': '10.0.0.2', 'ip_proto': 1}),packet_count=380,priority=10,table_id=0), OFPFlowStats(byte_count=0,cookie=0,duration_nsec=155000000,duration_sec=43,flags=0,hard_timeout=0,idle_timeout=0,instructions=[OFPInstructionActions(actions=[OFPActionOutput(len=16,max_len=65509,port=3,type=0)],len=24,type=4)],length=96,match=OFPMatch(oxm_fields={'eth_type': 2048, 'ipv4_dst': '10.0.0.4', 'ip_proto': 1}),packet_count=0,priority=10,table_id=0), OFPFlowStats(byte_count=2330,cookie=0,duration_nsec=155000000,duration_sec=43,flags=0,hard_timeout=0,idle_timeout=0,instructions=[OFPInstructionActions(actions=[OFPActionOutput(len=16,max_len=65535,port=4294967293,type=0)],len=24,type=4)],length=80,match=OFPMatch(oxm_fields={}),packet_count=32,priority=0,table_id=0)]
-body is  [OFPFlowStats(byte_count=3420,cookie=0,duration_nsec=43000000,duration_sec=387,flags=0,hard_timeout=0,idle_timeout=0,instructions=[OFPInstructionActions(actions=[OFPActionOutput(len=16,max_len=65535,port=4294967293,type=0)],len=24,type=4)],length=96,match=OFPMatch(oxm_fields={'eth_dst': '01:80:c2:00:00:0e', 'eth_type': 35020}),packet_count=57,priority=65535,table_id=0), OFPFlowStats(byte_count=37240,cookie=0,duration_nsec=164000000,duration_sec=43,flags=0,hard_timeout=0,idle_timeout=0,instructions=[OFPInstructionActions(actions=[OFPActionOutput(len=16,max_len=65509,port=2,type=0)],len=24,type=4)],length=96,match=OFPMatch(oxm_fields={'eth_type': 2048, 'ipv4_dst': '10.0.0.1', 'ip_proto': 1}),packet_count=380,priority=10,table_id=0), OFPFlowStats(byte_count=0,cookie=0,duration_nsec=164000000,duration_sec=43,flags=0,hard_timeout=0,idle_timeout=0,instructions=[OFPInstructionActions(actions=[OFPActionOutput(len=16,max_len=65509,port=3,type=0)],len=24,type=4)],length=96,match=OFPMatch(oxm_fields={'eth_type': 2048, 'ipv4_dst': '10.0.0.3', 'ip_proto': 1}),packet_count=0,priority=10,table_id=0), OFPFlowStats(byte_count=37240,cookie=0,duration_nsec=163000000,duration_sec=43,flags=0,hard_timeout=0,idle_timeout=0,instructions=[OFPInstructionActions(actions=[OFPActionOutput(len=16,max_len=65509,port=1,type=0)],len=24,type=4)],length=96,match=OFPMatch(oxm_fields={'eth_type': 2048, 'ipv4_dst': '10.0.0.2', 'ip_proto': 1}),packet_count=380,priority=10,table_id=0), OFPFlowStats(byte_count=0,cookie=0,duration_nsec=163000000,duration_sec=43,flags=0,hard_timeout=0,idle_timeout=0,instructions=[OFPInstructionActions(actions=[OFPActionOutput(len=16,max_len=65509,port=3,type=0)],len=24,type=4)],length=96,match=OFPMatch(oxm_fields={'eth_type': 2048, 'ipv4_dst': '10.0.0.4', 'ip_proto': 1}),packet_count=0,priority=10,table_id=0), OFPFlowStats(byte_count=2176,cookie=0,duration_nsec=164000000,duration_sec=43,flags=0,hard_timeout=0,idle_timeout=0,instructions=[OFPInstructionActions(actions=[OFPActionOutput(len=16,max_len=65535,port=4294967293,type=0)],len=24,type=4)],length=80,match=OFPMatch(oxm_fields={}),packet_count=31,priority=0,table_id=0)]
-body is  [OFPFlowStats(byte_count=3600,cookie=0,duration_nsec=48000000,duration_sec=388,flags=0,hard_timeout=0,idle_timeout=0,instructions=[OFPInstructionActions(actions=[OFPActionOutput(len=16,max_len=65535,port=4294967293,type=0)],len=24,type=4)],length=96,match=OFPMatch(oxm_fields={'eth_dst': '01:80:c2:00:00:0e', 'eth_type': 35020}),packet_count=60,priority=65535,table_id=0), OFPFlowStats(byte_count=37338,cookie=0,duration_nsec=157000000,duration_sec=44,flags=0,hard_timeout=0,idle_timeout=0,instructions=[OFPInstructionActions(actions=[OFPActionOutput(len=16,max_len=65509,port=1,type=0)],len=24,type=4)],length=96,match=OFPMatch(oxm_fields={'eth_type': 2048, 'ipv4_dst': '10.0.0.1', 'ip_proto': 1}),packet_count=381,priority=10,table_id=0), OFPFlowStats(byte_count=0,cookie=0,duration_nsec=157000000,duration_sec=44,flags=0,hard_timeout=0,idle_timeout=0,instructions=[OFPInstructionActions(actions=[OFPActionOutput(len=16,max_len=65509,port=2,type=0)],len=24,type=4)],length=96,match=OFPMatch(oxm_fields={'eth_type': 2048, 'ipv4_dst': '10.0.0.3', 'ip_proto': 1}),packet_count=0,priority=10,table_id=0), OFPFlowStats(byte_count=37338,cookie=0,duration_nsec=157000000,duration_sec=44,flags=0,hard_timeout=0,idle_timeout=0,instructions=[OFPInstructionActions(actions=[OFPActionOutput(len=16,max_len=65509,port=2,type=0)],len=24,type=4)],length=96,match=OFPMatch(oxm_fields={'eth_type': 2048, 'ipv4_dst': '10.0.0.2', 'ip_proto': 1}),packet_count=381,priority=10,table_id=0), OFPFlowStats(byte_count=0,cookie=0,duration_nsec=157000000,duration_sec=44,flags=0,hard_timeout=0,idle_timeout=0,instructions=[OFPInstructionActions(actions=[OFPActionOutput(len=16,max_len=65509,port=3,type=0)],len=24,type=4)],length=96,match=OFPMatch(oxm_fields={'eth_type': 2048, 'ipv4_dst': '10.0.0.4', 'ip_proto': 1}),packet_count=0,priority=10,table_id=0), OFPFlowStats(byte_count=2330,cookie=0,duration_nsec=157000000,duration_sec=44,flags=0,hard_timeout=0,idle_timeout=0,instructions=[OFPInstructionActions(actions=[OFPActionOutput(len=16,max_len=65535,port=4294967293,type=0)],len=24,type=4)],length=80,match=OFPMatch(oxm_fields={}),packet_count=32,priority=0,table_id=0)]
-body is  [OFPFlowStats(byte_count=3540,cookie=0,duration_nsec=36000000,duration_sec=388,flags=0,hard_timeout=0,idle_timeout=0,instructions=[OFPInstructionActions(actions=[OFPActionOutput(len=16,max_len=65535,port=4294967293,type=0)],len=24,type=4)],length=96,match=OFPMatch(oxm_fields={'eth_dst': '01:80:c2:00:00:0e', 'eth_type': 35020}),packet_count=59,priority=65535,table_id=0), OFPFlowStats(byte_count=0,cookie=0,duration_nsec=159000000,duration_sec=44,flags=0,hard_timeout=0,idle_timeout=0,instructions=[OFPInstructionActions(actions=[OFPActionOutput(len=16,max_len=65509,port=2,type=0)],len=24,type=4)],length=96,match=OFPMatch(oxm_fields={'eth_type': 2048, 'ipv4_dst': '10.0.0.1', 'ip_proto': 1}),packet_count=0,priority=10,table_id=0), OFPFlowStats(byte_count=0,cookie=0,duration_nsec=159000000,duration_sec=44,flags=0,hard_timeout=0,idle_timeout=0,instructions=[OFPInstructionActions(actions=[OFPActionOutput(len=16,max_len=65509,port=1,type=0)],len=24,type=4)],length=96,match=OFPMatch(oxm_fields={'eth_type': 2048, 'ipv4_dst': '10.0.0.3', 'ip_proto': 1}),packet_count=0,priority=10,table_id=0), OFPFlowStats(byte_count=0,cookie=0,duration_nsec=158000000,duration_sec=44,flags=0,hard_timeout=0,idle_timeout=0,instructions=[OFPInstructionActions(actions=[OFPActionOutput(len=16,max_len=65509,port=2,type=0)],len=24,type=4)],length=96,match=OFPMatch(oxm_fields={'eth_type': 2048, 'ipv4_dst': '10.0.0.2', 'ip_proto': 1}),packet_count=0,priority=10,table_id=0), OFPFlowStats(byte_count=0,cookie=0,duration_nsec=158000000,duration_sec=44,flags=0,hard_timeout=0,idle_timeout=0,instructions=[OFPInstructionActions(actions=[OFPActionOutput(len=16,max_len=65509,port=3,type=0)],len=24,type=4)],length=96,match=OFPMatch(oxm_fields={'eth_type': 2048, 'ipv4_dst': '10.0.0.4', 'ip_proto': 1}),packet_count=0,priority=10,table_id=0), OFPFlowStats(byte_count=1756,cookie=0,duration_nsec=160000000,duration_sec=44,flags=0,hard_timeout=0,idle_timeout=0,instructions=[OFPInstructionActions(actions=[OFPActionOutput(len=16,max_len=65535,port=4294967293,type=0)],len=24,type=4)],length=80,match=OFPMatch(oxm_fields={}),packet_count=21,priority=0,table_id=0)]
-body is  [OFPFlowStats(byte_count=3420,cookie=0,duration_nsec=37000000,duration_sec=388,flags=0,hard_timeout=0,idle_timeout=0,instructions=[OFPInstructionActions(actions=[OFPActionOutput(len=16,max_len=65535,port=4294967293,type=0)],len=24,type=4)],length=96,match=OFPMatch(oxm_fields={'eth_dst': '01:80:c2:00:00:0e', 'eth_type': 35020}),packet_count=57,priority=65535,table_id=0), OFPFlowStats(byte_count=0,cookie=0,duration_nsec=165000000,duration_sec=44,flags=0,hard_timeout=0,idle_timeout=0,instructions=[OFPInstructionActions(actions=[OFPActionOutput(len=16,max_len=65509,port=3,type=0)],len=24,type=4)],length=96,match=OFPMatch(oxm_fields={'eth_type': 2048, 'ipv4_dst': '10.0.0.1', 'ip_proto': 1}),packet_count=0,priority=10,table_id=0), OFPFlowStats(byte_count=0,cookie=0,duration_nsec=165000000,duration_sec=44,flags=0,hard_timeout=0,idle_timeout=0,instructions=[OFPInstructionActions(actions=[OFPActionOutput(len=16,max_len=65509,port=2,type=0)],len=24,type=4)],length=96,match=OFPMatch(oxm_fields={'eth_type': 2048, 'ipv4_dst': '10.0.0.3', 'ip_proto': 1}),packet_count=0,priority=10,table_id=0), OFPFlowStats(byte_count=0,cookie=0,duration_nsec=165000000,duration_sec=44,flags=0,hard_timeout=0,idle_timeout=0,instructions=[OFPInstructionActions(actions=[OFPActionOutput(len=16,max_len=65509,port=2,type=0)],len=24,type=4)],length=96,match=OFPMatch(oxm_fields={'eth_type': 2048, 'ipv4_dst': '10.0.0.2', 'ip_proto': 1}),packet_count=0,priority=10,table_id=0), OFPFlowStats(byte_count=0,cookie=0,duration_nsec=165000000,duration_sec=44,flags=0,hard_timeout=0,idle_timeout=0,instructions=[OFPInstructionActions(actions=[OFPActionOutput(len=16,max_len=65509,port=1,type=0)],len=24,type=4)],length=96,match=OFPMatch(oxm_fields={'eth_type': 2048, 'ipv4_dst': '10.0.0.4', 'ip_proto': 1}),packet_count=0,priority=10,table_id=0), OFPFlowStats(byte_count=1863,cookie=0,duration_nsec=165000000,duration_sec=44,flags=0,hard_timeout=0,idle_timeout=0,instructions=[OFPInstructionActions(actions=[OFPActionOutput(len=16,max_len=65535,port=4294967293,type=0)],len=24,type=4)],length=80,match=OFPMatch(oxm_fields={}),packet_count=22,priority=0,table_id=0)]
-body is  [OFPFlowStats(byte_count=3420,cookie=0,duration_nsec=43000000,duration_sec=388,flags=0,hard_timeout=0,idle_timeout=0,instructions=[OFPInstructionActions(actions=[OFPActionOutput(len=16,max_len=65535,port=4294967293,type=0)],len=24,type=4)],length=96,match=OFPMatch(oxm_fields={'eth_dst': '01:80:c2:00:00:0e', 'eth_type': 35020}),packet_count=57,priority=65535,table_id=0), OFPFlowStats(byte_count=37338,cookie=0,duration_nsec=164000000,duration_sec=44,flags=0,hard_timeout=0,idle_timeout=0,instructions=[OFPInstructionActions(actions=[OFPActionOutput(len=16,max_len=65509,port=2,type=0)],len=24,type=4)],length=96,match=OFPMatch(oxm_fields={'eth_type': 2048, 'ipv4_dst': '10.0.0.1', 'ip_proto': 1}),packet_count=381,priority=10,table_id=0), OFPFlowStats(byte_count=0,cookie=0,duration_nsec=164000000,duration_sec=44,flags=0,hard_timeout=0,idle_timeout=0,instructions=[OFPInstructionActions(actions=[OFPActionOutput(len=16,max_len=65509,port=3,type=0)],len=24,type=4)],length=96,match=OFPMatch(oxm_fields={'eth_type': 2048, 'ipv4_dst': '10.0.0.3', 'ip_proto': 1}),packet_count=0,priority=10,table_id=0), OFPFlowStats(byte_count=37338,cookie=0,duration_nsec=163000000,duration_sec=44,flags=0,hard_timeout=0,idle_timeout=0,instructions=[OFPInstructionActions(actions=[OFPActionOutput(len=16,max_len=65509,port=1,type=0)],len=24,type=4)],length=96,match=OFPMatch(oxm_fields={'eth_type': 2048, 'ipv4_dst': '10.0.0.2', 'ip_proto': 1}),packet_count=381,priority=10,table_id=0), OFPFlowStats(byte_count=0,cookie=0,duration_nsec=163000000,duration_sec=44,flags=0,hard_timeout=0,idle_timeout=0,instructions=[OFPInstructionActions(actions=[OFPActionOutput(len=16,max_len=65509,port=3,type=0)],len=24,type=4)],length=96,match=OFPMatch(oxm_fields={'eth_type': 2048, 'ipv4_dst': '10.0.0.4', 'ip_proto': 1}),packet_count=0,priority=10,table_id=0), OFPFlowStats(byte_count=2176,cookie=0,duration_nsec=164000000,duration_sec=44,flags=0,hard_timeout=0,idle_timeout=0,instructions=[OFPInstructionActions(actions=[OFPActionOutput(len=16,max_len=65535,port=4294967293,type=0)],len=24,type=4)],length=80,match=OFPMatch(oxm_fields={}),packet_count=31,priority=0,table_id=0)]
-body is  [OFPFlowStats(byte_count=3420,cookie=0,duration_nsec=40000000,duration_sec=389,flags=0,hard_timeout=0,idle_timeout=0,instructions=[OFPInstructionActions(actions=[OFPActionOutput(len=16,max_len=65535,port=4294967293,type=0)],len=24,type=4)],length=96,match=OFPMatch(oxm_fields={'eth_dst': '01:80:c2:00:00:0e', 'eth_type': 35020}),packet_count=57,priority=65535,table_id=0), OFPFlowStats(byte_count=0,cookie=0,duration_nsec=168000000,duration_sec=45,flags=0,hard_timeout=0,idle_timeout=0,instructions=[OFPInstructionActions(actions=[OFPActionOutput(len=16,max_len=65509,port=3,type=0)],len=24,type=4)],length=96,match=OFPMatch(oxm_fields={'eth_type': 2048, 'ipv4_dst': '10.0.0.1', 'ip_proto': 1}),packet_count=0,priority=10,table_id=0), OFPFlowStats(byte_count=0,cookie=0,duration_nsec=168000000,duration_sec=45,flags=0,hard_timeout=0,idle_timeout=0,instructions=[OFPInstructionActions(actions=[OFPActionOutput(len=16,max_len=65509,port=2,type=0)],len=24,type=4)],length=96,match=OFPMatch(oxm_fields={'eth_type': 2048, 'ipv4_dst': '10.0.0.3', 'ip_proto': 1}),packet_count=0,priority=10,table_id=0), OFPFlowStats(byte_count=0,cookie=0,duration_nsec=168000000,duration_sec=45,flags=0,hard_timeout=0,idle_timeout=0,instructions=[OFPInstructionActions(actions=[OFPActionOutput(len=16,max_len=65509,port=2,type=0)],len=24,type=4)],length=96,match=OFPMatch(oxm_fields={'eth_type': 2048, 'ipv4_dst': '10.0.0.2', 'ip_proto': 1}),packet_count=0,priority=10,table_id=0), OFPFlowStats(byte_count=0,cookie=0,duration_nsec=168000000,duration_sec=45,flags=0,hard_timeout=0,idle_timeout=0,instructions=[OFPInstructionActions(actions=[OFPActionOutput(len=16,max_len=65509,port=1,type=0)],len=24,type=4)],length=96,match=OFPMatch(oxm_fields={'eth_type': 2048, 'ipv4_dst': '10.0.0.4', 'ip_proto': 1}),packet_count=0,priority=10,table_id=0), OFPFlowStats(byte_count=1863,cookie=0,duration_nsec=168000000,duration_sec=45,flags=0,hard_timeout=0,idle_timeout=0,instructions=[OFPInstructionActions(actions=[OFPActionOutput(len=16,max_len=65535,port=4294967293,type=0)],len=24,type=4)],length=80,match=OFPMatch(oxm_fields={}),packet_count=22,priority=0,table_id=0)]
-body is  [OFPFlowStats(byte_count=3420,cookie=0,duration_nsec=45000000,duration_sec=389,flags=0,hard_timeout=0,idle_timeout=0,instructions=[OFPInstructionActions(actions=[OFPActionOutput(len=16,max_len=65535,port=4294967293,type=0)],len=24,type=4)],length=96,match=OFPMatch(oxm_fields={'eth_dst': '01:80:c2:00:00:0e', 'eth_type': 35020}),packet_count=57,priority=65535,table_id=0), OFPFlowStats(byte_count=37436,cookie=0,duration_nsec=166000000,duration_sec=45,flags=0,hard_timeout=0,idle_timeout=0,instructions=[OFPInstructionActions(actions=[OFPActionOutput(len=16,max_len=65509,port=2,type=0)],len=24,type=4)],length=96,match=OFPMatch(oxm_fields={'eth_type': 2048, 'ipv4_dst': '10.0.0.1', 'ip_proto': 1}),packet_count=382,priority=10,table_id=0), OFPFlowStats(byte_count=0,cookie=0,duration_nsec=166000000,duration_sec=45,flags=0,hard_timeout=0,idle_timeout=0,instructions=[OFPInstructionActions(actions=[OFPActionOutput(len=16,max_len=65509,port=3,type=0)],len=24,type=4)],length=96,match=OFPMatch(oxm_fields={'eth_type': 2048, 'ipv4_dst': '10.0.0.3', 'ip_proto': 1}),packet_count=0,priority=10,table_id=0), OFPFlowStats(byte_count=37436,cookie=0,duration_nsec=165000000,duration_sec=45,flags=0,hard_timeout=0,idle_timeout=0,instructions=[OFPInstructionActions(actions=[OFPActionOutput(len=16,max_len=65509,port=1,type=0)],len=24,type=4)],length=96,match=OFPMatch(oxm_fields={'eth_type': 2048, 'ipv4_dst': '10.0.0.2', 'ip_proto': 1}),packet_count=382,priority=10,table_id=0), OFPFlowStats(byte_count=0,cookie=0,duration_nsec=165000000,duration_sec=45,flags=0,hard_timeout=0,idle_timeout=0,instructions=[OFPInstructionActions(actions=[OFPActionOutput(len=16,max_len=65509,port=3,type=0)],len=24,type=4)],length=96,match=OFPMatch(oxm_fields={'eth_type': 2048, 'ipv4_dst': '10.0.0.4', 'ip_proto': 1}),packet_count=0,priority=10,table_id=0), OFPFlowStats(byte_count=2176,cookie=0,duration_nsec=166000000,duration_sec=45,flags=0,hard_timeout=0,idle_timeout=0,instructions=[OFPInstructionActions(actions=[OFPActionOutput(len=16,max_len=65535,port=4294967293,type=0)],len=24,type=4)],length=80,match=OFPMatch(oxm_fields={}),packet_count=31,priority=0,table_id=0)]
-body is  [OFPFlowStats(byte_count=3600,cookie=0,duration_nsec=52000000,duration_sec=389,flags=0,hard_timeout=0,idle_timeout=0,instructions=[OFPInstructionActions(actions=[OFPActionOutput(len=16,max_len=65535,port=4294967293,type=0)],len=24,type=4)],length=96,match=OFPMatch(oxm_fields={'eth_dst': '01:80:c2:00:00:0e', 'eth_type': 35020}),packet_count=60,priority=65535,table_id=0), OFPFlowStats(byte_count=37436,cookie=0,duration_nsec=161000000,duration_sec=45,flags=0,hard_timeout=0,idle_timeout=0,instructions=[OFPInstructionActions(actions=[OFPActionOutput(len=16,max_len=65509,port=1,type=0)],len=24,type=4)],length=96,match=OFPMatch(oxm_fields={'eth_type': 2048, 'ipv4_dst': '10.0.0.1', 'ip_proto': 1}),packet_count=382,priority=10,table_id=0), OFPFlowStats(byte_count=0,cookie=0,duration_nsec=161000000,duration_sec=45,flags=0,hard_timeout=0,idle_timeout=0,instructions=[OFPInstructionActions(actions=[OFPActionOutput(len=16,max_len=65509,port=2,type=0)],len=24,type=4)],length=96,match=OFPMatch(oxm_fields={'eth_type': 2048, 'ipv4_dst': '10.0.0.3', 'ip_proto': 1}),packet_count=0,priority=10,table_id=0), OFPFlowStats(byte_count=37436,cookie=0,duration_nsec=161000000,duration_sec=45,flags=0,hard_timeout=0,idle_timeout=0,instructions=[OFPInstructionActions(actions=[OFPActionOutput(len=16,max_len=65509,port=2,type=0)],len=24,type=4)],length=96,match=OFPMatch(oxm_fields={'eth_type': 2048, 'ipv4_dst': '10.0.0.2', 'ip_proto': 1}),packet_count=382,priority=10,table_id=0), OFPFlowStats(byte_count=0,cookie=0,duration_nsec=161000000,duration_sec=45,flags=0,hard_timeout=0,idle_timeout=0,instructions=[OFPInstructionActions(actions=[OFPActionOutput(len=16,max_len=65509,port=3,type=0)],len=24,type=4)],length=96,match=OFPMatch(oxm_fields={'eth_type': 2048, 'ipv4_dst': '10.0.0.4', 'ip_proto': 1}),packet_count=0,priority=10,table_id=0), OFPFlowStats(byte_count=2330,cookie=0,duration_nsec=161000000,duration_sec=45,flags=0,hard_timeout=0,idle_timeout=0,instructions=[OFPInstructionActions(actions=[OFPActionOutput(len=16,max_len=65535,port=4294967293,type=0)],len=24,type=4)],length=80,match=OFPMatch(oxm_fields={}),packet_count=32,priority=0,table_id=0)]
-body is  [OFPFlowStats(byte_count=3540,cookie=0,duration_nsec=40000000,duration_sec=389,flags=0,hard_timeout=0,idle_timeout=0,instructions=[OFPInstructionActions(actions=[OFPActionOutput(len=16,max_len=65535,port=4294967293,type=0)],len=24,type=4)],length=96,match=OFPMatch(oxm_fields={'eth_dst': '01:80:c2:00:00:0e', 'eth_type': 35020}),packet_count=59,priority=65535,table_id=0), OFPFlowStats(byte_count=0,cookie=0,duration_nsec=163000000,duration_sec=45,flags=0,hard_timeout=0,idle_timeout=0,instructions=[OFPInstructionActions(actions=[OFPActionOutput(len=16,max_len=65509,port=2,type=0)],len=24,type=4)],length=96,match=OFPMatch(oxm_fields={'eth_type': 2048, 'ipv4_dst': '10.0.0.1', 'ip_proto': 1}),packet_count=0,priority=10,table_id=0), OFPFlowStats(byte_count=0,cookie=0,duration_nsec=163000000,duration_sec=45,flags=0,hard_timeout=0,idle_timeout=0,instructions=[OFPInstructionActions(actions=[OFPActionOutput(len=16,max_len=65509,port=1,type=0)],len=24,type=4)],length=96,match=OFPMatch(oxm_fields={'eth_type': 2048, 'ipv4_dst': '10.0.0.3', 'ip_proto': 1}),packet_count=0,priority=10,table_id=0), OFPFlowStats(byte_count=0,cookie=0,duration_nsec=162000000,duration_sec=45,flags=0,hard_timeout=0,idle_timeout=0,instructions=[OFPInstructionActions(actions=[OFPActionOutput(len=16,max_len=65509,port=2,type=0)],len=24,type=4)],length=96,match=OFPMatch(oxm_fields={'eth_type': 2048, 'ipv4_dst': '10.0.0.2', 'ip_proto': 1}),packet_count=0,priority=10,table_id=0), OFPFlowStats(byte_count=0,cookie=0,duration_nsec=162000000,duration_sec=45,flags=0,hard_timeout=0,idle_timeout=0,instructions=[OFPInstructionActions(actions=[OFPActionOutput(len=16,max_len=65509,port=3,type=0)],len=24,type=4)],length=96,match=OFPMatch(oxm_fields={'eth_type': 2048, 'ipv4_dst': '10.0.0.4', 'ip_proto': 1}),packet_count=0,priority=10,table_id=0), OFPFlowStats(byte_count=1756,cookie=0,duration_nsec=164000000,duration_sec=45,flags=0,hard_timeout=0,idle_timeout=0,instructions=[OFPInstructionActions(actions=[OFPActionOutput(len=16,max_len=65535,port=4294967293,type=0)],len=24,type=4)],length=80,match=OFPMatch(oxm_fields={}),packet_count=21,priority=0,table_id=0)]
-Executing ARP Reply IP  10.0.0.2  located at datapath.id  2  at port  1
-body is  [OFPFlowStats(byte_count=3420,cookie=0,duration_nsec=41000000,duration_sec=390,flags=0,hard_timeout=0,idle_timeout=0,instructions=[OFPInstructionActions(actions=[OFPActionOutput(len=16,max_len=65535,port=4294967293,type=0)],len=24,type=4)],length=96,match=OFPMatch(oxm_fields={'eth_dst': '01:80:c2:00:00:0e', 'eth_type': 35020}),packet_count=57,priority=65535,table_id=0), OFPFlowStats(byte_count=37534,cookie=0,duration_nsec=162000000,duration_sec=46,flags=0,hard_timeout=0,idle_timeout=0,instructions=[OFPInstructionActions(actions=[OFPActionOutput(len=16,max_len=65509,port=2,type=0)],len=24,type=4)],length=96,match=OFPMatch(oxm_fields={'eth_type': 2048, 'ipv4_dst': '10.0.0.1', 'ip_proto': 1}),packet_count=383,priority=10,table_id=0), OFPFlowStats(byte_count=0,cookie=0,duration_nsec=162000000,duration_sec=46,flags=0,hard_timeout=0,idle_timeout=0,instructions=[OFPInstructionActions(actions=[OFPActionOutput(len=16,max_len=65509,port=3,type=0)],len=24,type=4)],length=96,match=OFPMatch(oxm_fields={'eth_type': 2048, 'ipv4_dst': '10.0.0.3', 'ip_proto': 1}),packet_count=0,priority=10,table_id=0), OFPFlowStats(byte_count=37534,cookie=0,duration_nsec=161000000,duration_sec=46,flags=0,hard_timeout=0,idle_timeout=0,instructions=[OFPInstructionActions(actions=[OFPActionOutput(len=16,max_len=65509,port=1,type=0)],len=24,type=4)],length=96,match=OFPMatch(oxm_fields={'eth_type': 2048, 'ipv4_dst': '10.0.0.2', 'ip_proto': 1}),packet_count=383,priority=10,table_id=0), OFPFlowStats(byte_count=0,cookie=0,duration_nsec=161000000,duration_sec=46,flags=0,hard_timeout=0,idle_timeout=0,instructions=[OFPInstructionActions(actions=[OFPActionOutput(len=16,max_len=65509,port=3,type=0)],len=24,type=4)],length=96,match=OFPMatch(oxm_fields={'eth_type': 2048, 'ipv4_dst': '10.0.0.4', 'ip_proto': 1}),packet_count=0,priority=10,table_id=0), OFPFlowStats(byte_count=2218,cookie=0,duration_nsec=162000000,duration_sec=46,flags=0,hard_timeout=0,idle_timeout=0,instructions=[OFPInstructionActions(actions=[OFPActionOutput(len=16,max_len=65535,port=4294967293,type=0)],len=24,type=4)],length=80,match=OFPMatch(oxm_fields={}),packet_count=32,priority=0,table_id=0)]
-body is  [OFPFlowStats(byte_count=3600,cookie=0,duration_nsec=51000000,duration_sec=390,flags=0,hard_timeout=0,idle_timeout=0,instructions=[OFPInstructionActions(actions=[OFPActionOutput(len=16,max_len=65535,port=4294967293,type=0)],len=24,type=4)],length=96,match=OFPMatch(oxm_fields={'eth_dst': '01:80:c2:00:00:0e', 'eth_type': 35020}),packet_count=60,priority=65535,table_id=0), OFPFlowStats(byte_count=37534,cookie=0,duration_nsec=160000000,duration_sec=46,flags=0,hard_timeout=0,idle_timeout=0,instructions=[OFPInstructionActions(actions=[OFPActionOutput(len=16,max_len=65509,port=1,type=0)],len=24,type=4)],length=96,match=OFPMatch(oxm_fields={'eth_type': 2048, 'ipv4_dst': '10.0.0.1', 'ip_proto': 1}),packet_count=383,priority=10,table_id=0), OFPFlowStats(byte_count=0,cookie=0,duration_nsec=160000000,duration_sec=46,flags=0,hard_timeout=0,idle_timeout=0,instructions=[OFPInstructionActions(actions=[OFPActionOutput(len=16,max_len=65509,port=2,type=0)],len=24,type=4)],length=96,match=OFPMatch(oxm_fields={'eth_type': 2048, 'ipv4_dst': '10.0.0.3', 'ip_proto': 1}),packet_count=0,priority=10,table_id=0), OFPFlowStats(byte_count=37534,cookie=0,duration_nsec=160000000,duration_sec=46,flags=0,hard_timeout=0,idle_timeout=0,instructions=[OFPInstructionActions(actions=[OFPActionOutput(len=16,max_len=65509,port=2,type=0)],len=24,type=4)],length=96,match=OFPMatch(oxm_fields={'eth_type': 2048, 'ipv4_dst': '10.0.0.2', 'ip_proto': 1}),packet_count=383,priority=10,table_id=0), OFPFlowStats(byte_count=0,cookie=0,duration_nsec=160000000,duration_sec=46,flags=0,hard_timeout=0,idle_timeout=0,instructions=[OFPInstructionActions(actions=[OFPActionOutput(len=16,max_len=65509,port=3,type=0)],len=24,type=4)],length=96,match=OFPMatch(oxm_fields={'eth_type': 2048, 'ipv4_dst': '10.0.0.4', 'ip_proto': 1}),packet_count=0,priority=10,table_id=0), OFPFlowStats(byte_count=2330,cookie=0,duration_nsec=160000000,duration_sec=46,flags=0,hard_timeout=0,idle_timeout=0,instructions=[OFPInstructionActions(actions=[OFPActionOutput(len=16,max_len=65535,port=4294967293,type=0)],len=24,type=4)],length=80,match=OFPMatch(oxm_fields={}),packet_count=32,priority=0,table_id=0)]
-body is  [OFPFlowStats(byte_count=3420,cookie=0,duration_nsec=41000000,duration_sec=390,flags=0,hard_timeout=0,idle_timeout=0,instructions=[OFPInstructionActions(actions=[OFPActionOutput(len=16,max_len=65535,port=4294967293,type=0)],len=24,type=4)],length=96,match=OFPMatch(oxm_fields={'eth_dst': '01:80:c2:00:00:0e', 'eth_type': 35020}),packet_count=57,priority=65535,table_id=0), OFPFlowStats(byte_count=0,cookie=0,duration_nsec=169000000,duration_sec=46,flags=0,hard_timeout=0,idle_timeout=0,instructions=[OFPInstructionActions(actions=[OFPActionOutput(len=16,max_len=65509,port=3,type=0)],len=24,type=4)],length=96,match=OFPMatch(oxm_fields={'eth_type': 2048, 'ipv4_dst': '10.0.0.1', 'ip_proto': 1}),packet_count=0,priority=10,table_id=0), OFPFlowStats(byte_count=0,cookie=0,duration_nsec=169000000,duration_sec=46,flags=0,hard_timeout=0,idle_timeout=0,instructions=[OFPInstructionActions(actions=[OFPActionOutput(len=16,max_len=65509,port=2,type=0)],len=24,type=4)],length=96,match=OFPMatch(oxm_fields={'eth_type': 2048, 'ipv4_dst': '10.0.0.3', 'ip_proto': 1}),packet_count=0,priority=10,table_id=0), OFPFlowStats(byte_count=0,cookie=0,duration_nsec=169000000,duration_sec=46,flags=0,hard_timeout=0,idle_timeout=0,instructions=[OFPInstructionActions(actions=[OFPActionOutput(len=16,max_len=65509,port=2,type=0)],len=24,type=4)],length=96,match=OFPMatch(oxm_fields={'eth_type': 2048, 'ipv4_dst': '10.0.0.2', 'ip_proto': 1}),packet_count=0,priority=10,table_id=0), OFPFlowStats(byte_count=0,cookie=0,duration_nsec=169000000,duration_sec=46,flags=0,hard_timeout=0,idle_timeout=0,instructions=[OFPInstructionActions(actions=[OFPActionOutput(len=16,max_len=65509,port=1,type=0)],len=24,type=4)],length=96,match=OFPMatch(oxm_fields={'eth_type': 2048, 'ipv4_dst': '10.0.0.4', 'ip_proto': 1}),packet_count=0,priority=10,table_id=0), OFPFlowStats(byte_count=1863,cookie=0,duration_nsec=169000000,duration_sec=46,flags=0,hard_timeout=0,idle_timeout=0,instructions=[OFPInstructionActions(actions=[OFPActionOutput(len=16,max_len=65535,port=4294967293,type=0)],len=24,type=4)],length=80,match=OFPMatch(oxm_fields={}),packet_count=22,priority=0,table_id=0)]
-body is  [OFPFlowStats(byte_count=3540,cookie=0,duration_nsec=38000000,duration_sec=390,flags=0,hard_timeout=0,idle_timeout=0,instructions=[OFPInstructionActions(actions=[OFPActionOutput(len=16,max_len=65535,port=4294967293,type=0)],len=24,type=4)],length=96,match=OFPMatch(oxm_fields={'eth_dst': '01:80:c2:00:00:0e', 'eth_type': 35020}),packet_count=59,priority=65535,table_id=0), OFPFlowStats(byte_count=0,cookie=0,duration_nsec=161000000,duration_sec=46,flags=0,hard_timeout=0,idle_timeout=0,instructions=[OFPInstructionActions(actions=[OFPActionOutput(len=16,max_len=65509,port=2,type=0)],len=24,type=4)],length=96,match=OFPMatch(oxm_fields={'eth_type': 2048, 'ipv4_dst': '10.0.0.1', 'ip_proto': 1}),packet_count=0,priority=10,table_id=0), OFPFlowStats(byte_count=0,cookie=0,duration_nsec=161000000,duration_sec=46,flags=0,hard_timeout=0,idle_timeout=0,instructions=[OFPInstructionActions(actions=[OFPActionOutput(len=16,max_len=65509,port=1,type=0)],len=24,type=4)],length=96,match=OFPMatch(oxm_fields={'eth_type': 2048, 'ipv4_dst': '10.0.0.3', 'ip_proto': 1}),packet_count=0,priority=10,table_id=0), OFPFlowStats(byte_count=0,cookie=0,duration_nsec=160000000,duration_sec=46,flags=0,hard_timeout=0,idle_timeout=0,instructions=[OFPInstructionActions(actions=[OFPActionOutput(len=16,max_len=65509,port=2,type=0)],len=24,type=4)],length=96,match=OFPMatch(oxm_fields={'eth_type': 2048, 'ipv4_dst': '10.0.0.2', 'ip_proto': 1}),packet_count=0,priority=10,table_id=0), OFPFlowStats(byte_count=0,cookie=0,duration_nsec=160000000,duration_sec=46,flags=0,hard_timeout=0,idle_timeout=0,instructions=[OFPInstructionActions(actions=[OFPActionOutput(len=16,max_len=65509,port=3,type=0)],len=24,type=4)],length=96,match=OFPMatch(oxm_fields={'eth_type': 2048, 'ipv4_dst': '10.0.0.4', 'ip_proto': 1}),packet_count=0,priority=10,table_id=0), OFPFlowStats(byte_count=1756,cookie=0,duration_nsec=162000000,duration_sec=46,flags=0,hard_timeout=0,idle_timeout=0,instructions=[OFPInstructionActions(actions=[OFPActionOutput(len=16,max_len=65535,port=4294967293,type=0)],len=24,type=4)],length=80,match=OFPMatch(oxm_fields={}),packet_count=21,priority=0,table_id=0)]
-body is  [OFPFlowStats(byte_count=3600,cookie=0,duration_nsec=53000000,duration_sec=391,flags=0,hard_timeout=0,idle_timeout=0,instructions=[OFPInstructionActions(actions=[OFPActionOutput(len=16,max_len=65535,port=4294967293,type=0)],len=24,type=4)],length=96,match=OFPMatch(oxm_fields={'eth_dst': '01:80:c2:00:00:0e', 'eth_type': 35020}),packet_count=60,priority=65535,table_id=0), OFPFlowStats(byte_count=37632,cookie=0,duration_nsec=162000000,duration_sec=47,flags=0,hard_timeout=0,idle_timeout=0,instructions=[OFPInstructionActions(actions=[OFPActionOutput(len=16,max_len=65509,port=1,type=0)],len=24,type=4)],length=96,match=OFPMatch(oxm_fields={'eth_type': 2048, 'ipv4_dst': '10.0.0.1', 'ip_proto': 1}),packet_count=384,priority=10,table_id=0), OFPFlowStats(byte_count=0,cookie=0,duration_nsec=162000000,duration_sec=47,flags=0,hard_timeout=0,idle_timeout=0,instructions=[OFPInstructionActions(actions=[OFPActionOutput(len=16,max_len=65509,port=2,type=0)],len=24,type=4)],length=96,match=OFPMatch(oxm_fields={'eth_type': 2048, 'ipv4_dst': '10.0.0.3', 'ip_proto': 1}),packet_count=0,priority=10,table_id=0), OFPFlowStats(byte_count=37632,cookie=0,duration_nsec=162000000,duration_sec=47,flags=0,hard_timeout=0,idle_timeout=0,instructions=[OFPInstructionActions(actions=[OFPActionOutput(len=16,max_len=65509,port=2,type=0)],len=24,type=4)],length=96,match=OFPMatch(oxm_fields={'eth_type': 2048, 'ipv4_dst': '10.0.0.2', 'ip_proto': 1}),packet_count=384,priority=10,table_id=0), OFPFlowStats(byte_count=0,cookie=0,duration_nsec=162000000,duration_sec=47,flags=0,hard_timeout=0,idle_timeout=0,instructions=[OFPInstructionActions(actions=[OFPActionOutput(len=16,max_len=65509,port=3,type=0)],len=24,type=4)],length=96,match=OFPMatch(oxm_fields={'eth_type': 2048, 'ipv4_dst': '10.0.0.4', 'ip_proto': 1}),packet_count=0,priority=10,table_id=0), OFPFlowStats(byte_count=2330,cookie=0,duration_nsec=162000000,duration_sec=47,flags=0,hard_timeout=0,idle_timeout=0,instructions=[OFPInstructionActions(actions=[OFPActionOutput(len=16,max_len=65535,port=4294967293,type=0)],len=24,type=4)],length=80,match=OFPMatch(oxm_fields={}),packet_count=32,priority=0,table_id=0)]
-body is  [OFPFlowStats(byte_count=3420,cookie=0,duration_nsec=42000000,duration_sec=391,flags=0,hard_timeout=0,idle_timeout=0,instructions=[OFPInstructionActions(actions=[OFPActionOutput(len=16,max_len=65535,port=4294967293,type=0)],len=24,type=4)],length=96,match=OFPMatch(oxm_fields={'eth_dst': '01:80:c2:00:00:0e', 'eth_type': 35020}),packet_count=57,priority=65535,table_id=0), OFPFlowStats(byte_count=0,cookie=0,duration_nsec=170000000,duration_sec=47,flags=0,hard_timeout=0,idle_timeout=0,instructions=[OFPInstructionActions(actions=[OFPActionOutput(len=16,max_len=65509,port=3,type=0)],len=24,type=4)],length=96,match=OFPMatch(oxm_fields={'eth_type': 2048, 'ipv4_dst': '10.0.0.1', 'ip_proto': 1}),packet_count=0,priority=10,table_id=0), OFPFlowStats(byte_count=0,cookie=0,duration_nsec=170000000,duration_sec=47,flags=0,hard_timeout=0,idle_timeout=0,instructions=[OFPInstructionActions(actions=[OFPActionOutput(len=16,max_len=65509,port=2,type=0)],len=24,type=4)],length=96,match=OFPMatch(oxm_fields={'eth_type': 2048, 'ipv4_dst': '10.0.0.3', 'ip_proto': 1}),packet_count=0,priority=10,table_id=0), OFPFlowStats(byte_count=0,cookie=0,duration_nsec=170000000,duration_sec=47,flags=0,hard_timeout=0,idle_timeout=0,instructions=[OFPInstructionActions(actions=[OFPActionOutput(len=16,max_len=65509,port=2,type=0)],len=24,type=4)],length=96,match=OFPMatch(oxm_fields={'eth_type': 2048, 'ipv4_dst': '10.0.0.2', 'ip_proto': 1}),packet_count=0,priority=10,table_id=0), OFPFlowStats(byte_count=0,cookie=0,duration_nsec=170000000,duration_sec=47,flags=0,hard_timeout=0,idle_timeout=0,instructions=[OFPInstructionActions(actions=[OFPActionOutput(len=16,max_len=65509,port=1,type=0)],len=24,type=4)],length=96,match=OFPMatch(oxm_fields={'eth_type': 2048, 'ipv4_dst': '10.0.0.4', 'ip_proto': 1}),packet_count=0,priority=10,table_id=0), OFPFlowStats(byte_count=1863,cookie=0,duration_nsec=170000000,duration_sec=47,flags=0,hard_timeout=0,idle_timeout=0,instructions=[OFPInstructionActions(actions=[OFPActionOutput(len=16,max_len=65535,port=4294967293,type=0)],len=24,type=4)],length=80,match=OFPMatch(oxm_fields={}),packet_count=22,priority=0,table_id=0)]
-body is  [OFPFlowStats(byte_count=3540,cookie=0,duration_nsec=41000000,duration_sec=391,flags=0,hard_timeout=0,idle_timeout=0,instructions=[OFPInstructionActions(actions=[OFPActionOutput(len=16,max_len=65535,port=4294967293,type=0)],len=24,type=4)],length=96,match=OFPMatch(oxm_fields={'eth_dst': '01:80:c2:00:00:0e', 'eth_type': 35020}),packet_count=59,priority=65535,table_id=0), OFPFlowStats(byte_count=0,cookie=0,duration_nsec=164000000,duration_sec=47,flags=0,hard_timeout=0,idle_timeout=0,instructions=[OFPInstructionActions(actions=[OFPActionOutput(len=16,max_len=65509,port=2,type=0)],len=24,type=4)],length=96,match=OFPMatch(oxm_fields={'eth_type': 2048, 'ipv4_dst': '10.0.0.1', 'ip_proto': 1}),packet_count=0,priority=10,table_id=0), OFPFlowStats(byte_count=0,cookie=0,duration_nsec=164000000,duration_sec=47,flags=0,hard_timeout=0,idle_timeout=0,instructions=[OFPInstructionActions(actions=[OFPActionOutput(len=16,max_len=65509,port=1,type=0)],len=24,type=4)],length=96,match=OFPMatch(oxm_fields={'eth_type': 2048, 'ipv4_dst': '10.0.0.3', 'ip_proto': 1}),packet_count=0,priority=10,table_id=0), OFPFlowStats(byte_count=0,cookie=0,duration_nsec=163000000,duration_sec=47,flags=0,hard_timeout=0,idle_timeout=0,instructions=[OFPInstructionActions(actions=[OFPActionOutput(len=16,max_len=65509,port=2,type=0)],len=24,type=4)],length=96,match=OFPMatch(oxm_fields={'eth_type': 2048, 'ipv4_dst': '10.0.0.2', 'ip_proto': 1}),packet_count=0,priority=10,table_id=0), OFPFlowStats(byte_count=0,cookie=0,duration_nsec=163000000,duration_sec=47,flags=0,hard_timeout=0,idle_timeout=0,instructions=[OFPInstructionActions(actions=[OFPActionOutput(len=16,max_len=65509,port=3,type=0)],len=24,type=4)],length=96,match=OFPMatch(oxm_fields={'eth_type': 2048, 'ipv4_dst': '10.0.0.4', 'ip_proto': 1}),packet_count=0,priority=10,table_id=0), OFPFlowStats(byte_count=1756,cookie=0,duration_nsec=165000000,duration_sec=47,flags=0,hard_timeout=0,idle_timeout=0,instructions=[OFPInstructionActions(actions=[OFPActionOutput(len=16,max_len=65535,port=4294967293,type=0)],len=24,type=4)],length=80,match=OFPMatch(oxm_fields={}),packet_count=21,priority=0,table_id=0)]
-body is  [OFPFlowStats(byte_count=3420,cookie=0,duration_nsec=50000000,duration_sec=391,flags=0,hard_timeout=0,idle_timeout=0,instructions=[OFPInstructionActions(actions=[OFPActionOutput(len=16,max_len=65535,port=4294967293,type=0)],len=24,type=4)],length=96,match=OFPMatch(oxm_fields={'eth_dst': '01:80:c2:00:00:0e', 'eth_type': 35020}),packet_count=57,priority=65535,table_id=0), OFPFlowStats(byte_count=37632,cookie=0,duration_nsec=171000000,duration_sec=47,flags=0,hard_timeout=0,idle_timeout=0,instructions=[OFPInstructionActions(actions=[OFPActionOutput(len=16,max_len=65509,port=2,type=0)],len=24,type=4)],length=96,match=OFPMatch(oxm_fields={'eth_type': 2048, 'ipv4_dst': '10.0.0.1', 'ip_proto': 1}),packet_count=384,priority=10,table_id=0), OFPFlowStats(byte_count=0,cookie=0,duration_nsec=171000000,duration_sec=47,flags=0,hard_timeout=0,idle_timeout=0,instructions=[OFPInstructionActions(actions=[OFPActionOutput(len=16,max_len=65509,port=3,type=0)],len=24,type=4)],length=96,match=OFPMatch(oxm_fields={'eth_type': 2048, 'ipv4_dst': '10.0.0.3', 'ip_proto': 1}),packet_count=0,priority=10,table_id=0), OFPFlowStats(byte_count=37632,cookie=0,duration_nsec=170000000,duration_sec=47,flags=0,hard_timeout=0,idle_timeout=0,instructions=[OFPInstructionActions(actions=[OFPActionOutput(len=16,max_len=65509,port=1,type=0)],len=24,type=4)],length=96,match=OFPMatch(oxm_fields={'eth_type': 2048, 'ipv4_dst': '10.0.0.2', 'ip_proto': 1}),packet_count=384,priority=10,table_id=0), OFPFlowStats(byte_count=0,cookie=0,duration_nsec=170000000,duration_sec=47,flags=0,hard_timeout=0,idle_timeout=0,instructions=[OFPInstructionActions(actions=[OFPActionOutput(len=16,max_len=65509,port=3,type=0)],len=24,type=4)],length=96,match=OFPMatch(oxm_fields={'eth_type': 2048, 'ipv4_dst': '10.0.0.4', 'ip_proto': 1}),packet_count=0,priority=10,table_id=0), OFPFlowStats(byte_count=2218,cookie=0,duration_nsec=171000000,duration_sec=47,flags=0,hard_timeout=0,idle_timeout=0,instructions=[OFPInstructionActions(actions=[OFPActionOutput(len=16,max_len=65535,port=4294967293,type=0)],len=24,type=4)],length=80,match=OFPMatch(oxm_fields={}),packet_count=32,priority=0,table_id=0)]
-body is  [OFPFlowStats(byte_count=3420,cookie=0,duration_nsec=45000000,duration_sec=392,flags=0,hard_timeout=0,idle_timeout=0,instructions=[OFPInstructionActions(actions=[OFPActionOutput(len=16,max_len=65535,port=4294967293,type=0)],len=24,type=4)],length=96,match=OFPMatch(oxm_fields={'eth_dst': '01:80:c2:00:00:0e', 'eth_type': 35020}),packet_count=57,priority=65535,table_id=0), OFPFlowStats(byte_count=37730,cookie=0,duration_nsec=166000000,duration_sec=48,flags=0,hard_timeout=0,idle_timeout=0,instructions=[OFPInstructionActions(actions=[OFPActionOutput(len=16,max_len=65509,port=2,type=0)],len=24,type=4)],length=96,match=OFPMatch(oxm_fields={'eth_type': 2048, 'ipv4_dst': '10.0.0.1', 'ip_proto': 1}),packet_count=385,priority=10,table_id=0), OFPFlowStats(byte_count=0,cookie=0,duration_nsec=166000000,duration_sec=48,flags=0,hard_timeout=0,idle_timeout=0,instructions=[OFPInstructionActions(actions=[OFPActionOutput(len=16,max_len=65509,port=3,type=0)],len=24,type=4)],length=96,match=OFPMatch(oxm_fields={'eth_type': 2048, 'ipv4_dst': '10.0.0.3', 'ip_proto': 1}),packet_count=0,priority=10,table_id=0), OFPFlowStats(byte_count=37730,cookie=0,duration_nsec=165000000,duration_sec=48,flags=0,hard_timeout=0,idle_timeout=0,instructions=[OFPInstructionActions(actions=[OFPActionOutput(len=16,max_len=65509,port=1,type=0)],len=24,type=4)],length=96,match=OFPMatch(oxm_fields={'eth_type': 2048, 'ipv4_dst': '10.0.0.2', 'ip_proto': 1}),packet_count=385,priority=10,table_id=0), OFPFlowStats(byte_count=0,cookie=0,duration_nsec=165000000,duration_sec=48,flags=0,hard_timeout=0,idle_timeout=0,instructions=[OFPInstructionActions(actions=[OFPActionOutput(len=16,max_len=65509,port=3,type=0)],len=24,type=4)],length=96,match=OFPMatch(oxm_fields={'eth_type': 2048, 'ipv4_dst': '10.0.0.4', 'ip_proto': 1}),packet_count=0,priority=10,table_id=0), OFPFlowStats(byte_count=2218,cookie=0,duration_nsec=166000000,duration_sec=48,flags=0,hard_timeout=0,idle_timeout=0,instructions=[OFPInstructionActions(actions=[OFPActionOutput(len=16,max_len=65535,port=4294967293,type=0)],len=24,type=4)],length=80,match=OFPMatch(oxm_fields={}),packet_count=32,priority=0,table_id=0)]
-body is  [OFPFlowStats(byte_count=3420,cookie=0,duration_nsec=51000000,duration_sec=392,flags=0,hard_timeout=0,idle_timeout=0,instructions=[OFPInstructionActions(actions=[OFPActionOutput(len=16,max_len=65535,port=4294967293,type=0)],len=24,type=4)],length=96,match=OFPMatch(oxm_fields={'eth_dst': '01:80:c2:00:00:0e', 'eth_type': 35020}),packet_count=57,priority=65535,table_id=0), OFPFlowStats(byte_count=0,cookie=0,duration_nsec=179000000,duration_sec=48,flags=0,hard_timeout=0,idle_timeout=0,instructions=[OFPInstructionActions(actions=[OFPActionOutput(len=16,max_len=65509,port=3,type=0)],len=24,type=4)],length=96,match=OFPMatch(oxm_fields={'eth_type': 2048, 'ipv4_dst': '10.0.0.1', 'ip_proto': 1}),packet_count=0,priority=10,table_id=0), OFPFlowStats(byte_count=0,cookie=0,duration_nsec=179000000,duration_sec=48,flags=0,hard_timeout=0,idle_timeout=0,instructions=[OFPInstructionActions(actions=[OFPActionOutput(len=16,max_len=65509,port=2,type=0)],len=24,type=4)],length=96,match=OFPMatch(oxm_fields={'eth_type': 2048, 'ipv4_dst': '10.0.0.3', 'ip_proto': 1}),packet_count=0,priority=10,table_id=0), OFPFlowStats(byte_count=0,cookie=0,duration_nsec=179000000,duration_sec=48,flags=0,hard_timeout=0,idle_timeout=0,instructions=[OFPInstructionActions(actions=[OFPActionOutput(len=16,max_len=65509,port=2,type=0)],len=24,type=4)],length=96,match=OFPMatch(oxm_fields={'eth_type': 2048, 'ipv4_dst': '10.0.0.2', 'ip_proto': 1}),packet_count=0,priority=10,table_id=0), OFPFlowStats(byte_count=0,cookie=0,duration_nsec=179000000,duration_sec=48,flags=0,hard_timeout=0,idle_timeout=0,instructions=[OFPInstructionActions(actions=[OFPActionOutput(len=16,max_len=65509,port=1,type=0)],len=24,type=4)],length=96,match=OFPMatch(oxm_fields={'eth_type': 2048, 'ipv4_dst': '10.0.0.4', 'ip_proto': 1}),packet_count=0,priority=10,table_id=0), OFPFlowStats(byte_count=1863,cookie=0,duration_nsec=179000000,duration_sec=48,flags=0,hard_timeout=0,idle_timeout=0,instructions=[OFPInstructionActions(actions=[OFPActionOutput(len=16,max_len=65535,port=4294967293,type=0)],len=24,type=4)],length=80,match=OFPMatch(oxm_fields={}),packet_count=22,priority=0,table_id=0)]
-body is  [OFPFlowStats(byte_count=3600,cookie=0,duration_nsec=61000000,duration_sec=392,flags=0,hard_timeout=0,idle_timeout=0,instructions=[OFPInstructionActions(actions=[OFPActionOutput(len=16,max_len=65535,port=4294967293,type=0)],len=24,type=4)],length=96,match=OFPMatch(oxm_fields={'eth_dst': '01:80:c2:00:00:0e', 'eth_type': 35020}),packet_count=60,priority=65535,table_id=0), OFPFlowStats(byte_count=37730,cookie=0,duration_nsec=170000000,duration_sec=48,flags=0,hard_timeout=0,idle_timeout=0,instructions=[OFPInstructionActions(actions=[OFPActionOutput(len=16,max_len=65509,port=1,type=0)],len=24,type=4)],length=96,match=OFPMatch(oxm_fields={'eth_type': 2048, 'ipv4_dst': '10.0.0.1', 'ip_proto': 1}),packet_count=385,priority=10,table_id=0), OFPFlowStats(byte_count=0,cookie=0,duration_nsec=170000000,duration_sec=48,flags=0,hard_timeout=0,idle_timeout=0,instructions=[OFPInstructionActions(actions=[OFPActionOutput(len=16,max_len=65509,port=2,type=0)],len=24,type=4)],length=96,match=OFPMatch(oxm_fields={'eth_type': 2048, 'ipv4_dst': '10.0.0.3', 'ip_proto': 1}),packet_count=0,priority=10,table_id=0), OFPFlowStats(byte_count=37730,cookie=0,duration_nsec=170000000,duration_sec=48,flags=0,hard_timeout=0,idle_timeout=0,instructions=[OFPInstructionActions(actions=[OFPActionOutput(len=16,max_len=65509,port=2,type=0)],len=24,type=4)],length=96,match=OFPMatch(oxm_fields={'eth_type': 2048, 'ipv4_dst': '10.0.0.2', 'ip_proto': 1}),packet_count=385,priority=10,table_id=0), OFPFlowStats(byte_count=0,cookie=0,duration_nsec=170000000,duration_sec=48,flags=0,hard_timeout=0,idle_timeout=0,instructions=[OFPInstructionActions(actions=[OFPActionOutput(len=16,max_len=65509,port=3,type=0)],len=24,type=4)],length=96,match=OFPMatch(oxm_fields={'eth_type': 2048, 'ipv4_dst': '10.0.0.4', 'ip_proto': 1}),packet_count=0,priority=10,table_id=0), OFPFlowStats(byte_count=2330,cookie=0,duration_nsec=170000000,duration_sec=48,flags=0,hard_timeout=0,idle_timeout=0,instructions=[OFPInstructionActions(actions=[OFPActionOutput(len=16,max_len=65535,port=4294967293,type=0)],len=24,type=4)],length=80,match=OFPMatch(oxm_fields={}),packet_count=32,priority=0,table_id=0)]
-body is  [OFPFlowStats(byte_count=3540,cookie=0,duration_nsec=49000000,duration_sec=392,flags=0,hard_timeout=0,idle_timeout=0,instructions=[OFPInstructionActions(actions=[OFPActionOutput(len=16,max_len=65535,port=4294967293,type=0)],len=24,type=4)],length=96,match=OFPMatch(oxm_fields={'eth_dst': '01:80:c2:00:00:0e', 'eth_type': 35020}),packet_count=59,priority=65535,table_id=0), OFPFlowStats(byte_count=0,cookie=0,duration_nsec=172000000,duration_sec=48,flags=0,hard_timeout=0,idle_timeout=0,instructions=[OFPInstructionActions(actions=[OFPActionOutput(len=16,max_len=65509,port=2,type=0)],len=24,type=4)],length=96,match=OFPMatch(oxm_fields={'eth_type': 2048, 'ipv4_dst': '10.0.0.1', 'ip_proto': 1}),packet_count=0,priority=10,table_id=0), OFPFlowStats(byte_count=0,cookie=0,duration_nsec=172000000,duration_sec=48,flags=0,hard_timeout=0,idle_timeout=0,instructions=[OFPInstructionActions(actions=[OFPActionOutput(len=16,max_len=65509,port=1,type=0)],len=24,type=4)],length=96,match=OFPMatch(oxm_fields={'eth_type': 2048, 'ipv4_dst': '10.0.0.3', 'ip_proto': 1}),packet_count=0,priority=10,table_id=0), OFPFlowStats(byte_count=0,cookie=0,duration_nsec=171000000,duration_sec=48,flags=0,hard_timeout=0,idle_timeout=0,instructions=[OFPInstructionActions(actions=[OFPActionOutput(len=16,max_len=65509,port=2,type=0)],len=24,type=4)],length=96,match=OFPMatch(oxm_fields={'eth_type': 2048, 'ipv4_dst': '10.0.0.2', 'ip_proto': 1}),packet_count=0,priority=10,table_id=0), OFPFlowStats(byte_count=0,cookie=0,duration_nsec=171000000,duration_sec=48,flags=0,hard_timeout=0,idle_timeout=0,instructions=[OFPInstructionActions(actions=[OFPActionOutput(len=16,max_len=65509,port=3,type=0)],len=24,type=4)],length=96,match=OFPMatch(oxm_fields={'eth_type': 2048, 'ipv4_dst': '10.0.0.4', 'ip_proto': 1}),packet_count=0,priority=10,table_id=0), OFPFlowStats(byte_count=1756,cookie=0,duration_nsec=173000000,duration_sec=48,flags=0,hard_timeout=0,idle_timeout=0,instructions=[OFPInstructionActions(actions=[OFPActionOutput(len=16,max_len=65535,port=4294967293,type=0)],len=24,type=4)],length=80,match=OFPMatch(oxm_fields={}),packet_count=21,priority=0,table_id=0)]
-body is  [OFPFlowStats(byte_count=3540,cookie=0,duration_nsec=45000000,duration_sec=393,flags=0,hard_timeout=0,idle_timeout=0,instructions=[OFPInstructionActions(actions=[OFPActionOutput(len=16,max_len=65535,port=4294967293,type=0)],len=24,type=4)],length=96,match=OFPMatch(oxm_fields={'eth_dst': '01:80:c2:00:00:0e', 'eth_type': 35020}),packet_count=59,priority=65535,table_id=0), OFPFlowStats(byte_count=0,cookie=0,duration_nsec=168000000,duration_sec=49,flags=0,hard_timeout=0,idle_timeout=0,instructions=[OFPInstructionActions(actions=[OFPActionOutput(len=16,max_len=65509,port=2,type=0)],len=24,type=4)],length=96,match=OFPMatch(oxm_fields={'eth_type': 2048, 'ipv4_dst': '10.0.0.1', 'ip_proto': 1}),packet_count=0,priority=10,table_id=0), OFPFlowStats(byte_count=0,cookie=0,duration_nsec=168000000,duration_sec=49,flags=0,hard_timeout=0,idle_timeout=0,instructions=[OFPInstructionActions(actions=[OFPActionOutput(len=16,max_len=65509,port=1,type=0)],len=24,type=4)],length=96,match=OFPMatch(oxm_fields={'eth_type': 2048, 'ipv4_dst': '10.0.0.3', 'ip_proto': 1}),packet_count=0,priority=10,table_id=0), OFPFlowStats(byte_count=0,cookie=0,duration_nsec=167000000,duration_sec=49,flags=0,hard_timeout=0,idle_timeout=0,instructions=[OFPInstructionActions(actions=[OFPActionOutput(len=16,max_len=65509,port=2,type=0)],len=24,type=4)],length=96,match=OFPMatch(oxm_fields={'eth_type': 2048, 'ipv4_dst': '10.0.0.2', 'ip_proto': 1}),packet_count=0,priority=10,table_id=0), OFPFlowStats(byte_count=0,cookie=0,duration_nsec=167000000,duration_sec=49,flags=0,hard_timeout=0,idle_timeout=0,instructions=[OFPInstructionActions(actions=[OFPActionOutput(len=16,max_len=65509,port=3,type=0)],len=24,type=4)],length=96,match=OFPMatch(oxm_fields={'eth_type': 2048, 'ipv4_dst': '10.0.0.4', 'ip_proto': 1}),packet_count=0,priority=10,table_id=0), OFPFlowStats(byte_count=1756,cookie=0,duration_nsec=169000000,duration_sec=49,flags=0,hard_timeout=0,idle_timeout=0,instructions=[OFPInstructionActions(actions=[OFPActionOutput(len=16,max_len=65535,port=4294967293,type=0)],len=24,type=4)],length=80,match=OFPMatch(oxm_fields={}),packet_count=21,priority=0,table_id=0)]
-body is  [OFPFlowStats(byte_count=3420,cookie=0,duration_nsec=47000000,duration_sec=393,flags=0,hard_timeout=0,idle_timeout=0,instructions=[OFPInstructionActions(actions=[OFPActionOutput(len=16,max_len=65535,port=4294967293,type=0)],len=24,type=4)],length=96,match=OFPMatch(oxm_fields={'eth_dst': '01:80:c2:00:00:0e', 'eth_type': 35020}),packet_count=57,priority=65535,table_id=0), OFPFlowStats(byte_count=0,cookie=0,duration_nsec=175000000,duration_sec=49,flags=0,hard_timeout=0,idle_timeout=0,instructions=[OFPInstructionActions(actions=[OFPActionOutput(len=16,max_len=65509,port=3,type=0)],len=24,type=4)],length=96,match=OFPMatch(oxm_fields={'eth_type': 2048, 'ipv4_dst': '10.0.0.1', 'ip_proto': 1}),packet_count=0,priority=10,table_id=0), OFPFlowStats(byte_count=0,cookie=0,duration_nsec=175000000,duration_sec=49,flags=0,hard_timeout=0,idle_timeout=0,instructions=[OFPInstructionActions(actions=[OFPActionOutput(len=16,max_len=65509,port=2,type=0)],len=24,type=4)],length=96,match=OFPMatch(oxm_fields={'eth_type': 2048, 'ipv4_dst': '10.0.0.3', 'ip_proto': 1}),packet_count=0,priority=10,table_id=0), OFPFlowStats(byte_count=0,cookie=0,duration_nsec=175000000,duration_sec=49,flags=0,hard_timeout=0,idle_timeout=0,instructions=[OFPInstructionActions(actions=[OFPActionOutput(len=16,max_len=65509,port=2,type=0)],len=24,type=4)],length=96,match=OFPMatch(oxm_fields={'eth_type': 2048, 'ipv4_dst': '10.0.0.2', 'ip_proto': 1}),packet_count=0,priority=10,table_id=0), OFPFlowStats(byte_count=0,cookie=0,duration_nsec=175000000,duration_sec=49,flags=0,hard_timeout=0,idle_timeout=0,instructions=[OFPInstructionActions(actions=[OFPActionOutput(len=16,max_len=65509,port=1,type=0)],len=24,type=4)],length=96,match=OFPMatch(oxm_fields={'eth_type': 2048, 'ipv4_dst': '10.0.0.4', 'ip_proto': 1}),packet_count=0,priority=10,table_id=0), OFPFlowStats(byte_count=1863,cookie=0,duration_nsec=175000000,duration_sec=49,flags=0,hard_timeout=0,idle_timeout=0,instructions=[OFPInstructionActions(actions=[OFPActionOutput(len=16,max_len=65535,port=4294967293,type=0)],len=24,type=4)],length=80,match=OFPMatch(oxm_fields={}),packet_count=22,priority=0,table_id=0)]
-body is  [OFPFlowStats(byte_count=3420,cookie=0,duration_nsec=49000000,duration_sec=393,flags=0,hard_timeout=0,idle_timeout=0,instructions=[OFPInstructionActions(actions=[OFPActionOutput(len=16,max_len=65535,port=4294967293,type=0)],len=24,type=4)],length=96,match=OFPMatch(oxm_fields={'eth_dst': '01:80:c2:00:00:0e', 'eth_type': 35020}),packet_count=57,priority=65535,table_id=0), OFPFlowStats(byte_count=37828,cookie=0,duration_nsec=170000000,duration_sec=49,flags=0,hard_timeout=0,idle_timeout=0,instructions=[OFPInstructionActions(actions=[OFPActionOutput(len=16,max_len=65509,port=2,type=0)],len=24,type=4)],length=96,match=OFPMatch(oxm_fields={'eth_type': 2048, 'ipv4_dst': '10.0.0.1', 'ip_proto': 1}),packet_count=386,priority=10,table_id=0), OFPFlowStats(byte_count=0,cookie=0,duration_nsec=170000000,duration_sec=49,flags=0,hard_timeout=0,idle_timeout=0,instructions=[OFPInstructionActions(actions=[OFPActionOutput(len=16,max_len=65509,port=3,type=0)],len=24,type=4)],length=96,match=OFPMatch(oxm_fields={'eth_type': 2048, 'ipv4_dst': '10.0.0.3', 'ip_proto': 1}),packet_count=0,priority=10,table_id=0), OFPFlowStats(byte_count=37828,cookie=0,duration_nsec=169000000,duration_sec=49,flags=0,hard_timeout=0,idle_timeout=0,instructions=[OFPInstructionActions(actions=[OFPActionOutput(len=16,max_len=65509,port=1,type=0)],len=24,type=4)],length=96,match=OFPMatch(oxm_fields={'eth_type': 2048, 'ipv4_dst': '10.0.0.2', 'ip_proto': 1}),packet_count=386,priority=10,table_id=0), OFPFlowStats(byte_count=0,cookie=0,duration_nsec=169000000,duration_sec=49,flags=0,hard_timeout=0,idle_timeout=0,instructions=[OFPInstructionActions(actions=[OFPActionOutput(len=16,max_len=65509,port=3,type=0)],len=24,type=4)],length=96,match=OFPMatch(oxm_fields={'eth_type': 2048, 'ipv4_dst': '10.0.0.4', 'ip_proto': 1}),packet_count=0,priority=10,table_id=0), OFPFlowStats(byte_count=2218,cookie=0,duration_nsec=170000000,duration_sec=49,flags=0,hard_timeout=0,idle_timeout=0,instructions=[OFPInstructionActions(actions=[OFPActionOutput(len=16,max_len=65535,port=4294967293,type=0)],len=24,type=4)],length=80,match=OFPMatch(oxm_fields={}),packet_count=32,priority=0,table_id=0)]
-body is  [OFPFlowStats(byte_count=3600,cookie=0,duration_nsec=57000000,duration_sec=393,flags=0,hard_timeout=0,idle_timeout=0,instructions=[OFPInstructionActions(actions=[OFPActionOutput(len=16,max_len=65535,port=4294967293,type=0)],len=24,type=4)],length=96,match=OFPMatch(oxm_fields={'eth_dst': '01:80:c2:00:00:0e', 'eth_type': 35020}),packet_count=60,priority=65535,table_id=0), OFPFlowStats(byte_count=37828,cookie=0,duration_nsec=166000000,duration_sec=49,flags=0,hard_timeout=0,idle_timeout=0,instructions=[OFPInstructionActions(actions=[OFPActionOutput(len=16,max_len=65509,port=1,type=0)],len=24,type=4)],length=96,match=OFPMatch(oxm_fields={'eth_type': 2048, 'ipv4_dst': '10.0.0.1', 'ip_proto': 1}),packet_count=386,priority=10,table_id=0), OFPFlowStats(byte_count=0,cookie=0,duration_nsec=166000000,duration_sec=49,flags=0,hard_timeout=0,idle_timeout=0,instructions=[OFPInstructionActions(actions=[OFPActionOutput(len=16,max_len=65509,port=2,type=0)],len=24,type=4)],length=96,match=OFPMatch(oxm_fields={'eth_type': 2048, 'ipv4_dst': '10.0.0.3', 'ip_proto': 1}),packet_count=0,priority=10,table_id=0), OFPFlowStats(byte_count=37828,cookie=0,duration_nsec=166000000,duration_sec=49,flags=0,hard_timeout=0,idle_timeout=0,instructions=[OFPInstructionActions(actions=[OFPActionOutput(len=16,max_len=65509,port=2,type=0)],len=24,type=4)],length=96,match=OFPMatch(oxm_fields={'eth_type': 2048, 'ipv4_dst': '10.0.0.2', 'ip_proto': 1}),packet_count=386,priority=10,table_id=0), OFPFlowStats(byte_count=0,cookie=0,duration_nsec=166000000,duration_sec=49,flags=0,hard_timeout=0,idle_timeout=0,instructions=[OFPInstructionActions(actions=[OFPActionOutput(len=16,max_len=65509,port=3,type=0)],len=24,type=4)],length=96,match=OFPMatch(oxm_fields={'eth_type': 2048, 'ipv4_dst': '10.0.0.4', 'ip_proto': 1}),packet_count=0,priority=10,table_id=0), OFPFlowStats(byte_count=2330,cookie=0,duration_nsec=166000000,duration_sec=49,flags=0,hard_timeout=0,idle_timeout=0,instructions=[OFPInstructionActions(actions=[OFPActionOutput(len=16,max_len=65535,port=4294967293,type=0)],len=24,type=4)],length=80,match=OFPMatch(oxm_fields={}),packet_count=32,priority=0,table_id=0)]
+datapath         in-port  eth-dst           out-port packets  bytes
+---------------- -------- ----------------- -------- -------- --------
+Switch: Exception occurred during handler processing. Backtrace from offending handler [_flow_stats_reply_handler] servicing event [EventOFPFlowStatsReply] follows.
+Traceback (most recent call last):
+  File "/usr/lib/python3/dist-packages/ryu/base/app_manager.py", line 290, in _event_loop
+    handler(ev)
+  File "/home/ubuntu/sdn/projects/multi-path/app3_multi-path+monitor.py", line 398, in _flow_stats_reply_handler
+    for stat in sorted([flow for flow in body if flow.priority == 10],
+  File "/home/ubuntu/sdn/projects/multi-path/app3_multi-path+monitor.py", line 399, in <lambda>
+    key=lambda flow: (flow.match['in_port'],
+  File "/usr/lib/python3/dist-packages/ryu/ofproto/ofproto_v1_3_parser.py", line 904, in __getitem__
+    return dict(self._fields2)[key]
+KeyError: 'in_port'
+datapath         in-port  eth-dst           out-port packets  bytes
+---------------- -------- ----------------- -------- -------- --------
+Switch: Exception occurred during handler processing. Backtrace from offending handler [_flow_stats_reply_handler] servicing event [EventOFPFlowStatsReply] follows.
+Traceback (most recent call last):
+  File "/usr/lib/python3/dist-packages/ryu/base/app_manager.py", line 290, in _event_loop
+    handler(ev)
+  File "/home/ubuntu/sdn/projects/multi-path/app3_multi-path+monitor.py", line 398, in _flow_stats_reply_handler
+    for stat in sorted([flow for flow in body if flow.priority == 10],
+  File "/home/ubuntu/sdn/projects/multi-path/app3_multi-path+monitor.py", line 399, in <lambda>
+    key=lambda flow: (flow.match['in_port'],
+  File "/usr/lib/python3/dist-packages/ryu/ofproto/ofproto_v1_3_parser.py", line 904, in __getitem__
+    return dict(self._fields2)[key]
+KeyError: 'in_port'
+--- Logging error ---
+Traceback (most recent call last):
+  File "/usr/lib/python3.8/logging/__init__.py", line 1085, in emit
+    msg = self.format(record)
+  File "/usr/lib/python3.8/logging/__init__.py", line 929, in format
+    return fmt.format(record)
+  File "/usr/lib/python3.8/logging/__init__.py", line 668, in format
+    record.message = record.getMessage()
+  File "/usr/lib/python3.8/logging/__init__.py", line 373, in getMessage
+    msg = msg % self.args
+TypeError: not all arguments converted during string formatting
+Call stack:
+  File "/usr/lib/python3/dist-packages/eventlet/greenthread.py", line 221, in main
+    result = function(*args, **kwargs)
+  File "/usr/lib/python3/dist-packages/ryu/lib/hub.py", line 59, in _launch
+    return func(*args, **kwargs)
+  File "/usr/lib/python3/dist-packages/ryu/base/app_manager.py", line 290, in _event_loop
+    handler(ev)
+  File "/home/ubuntu/sdn/projects/multi-path/app3_multi-path+monitor.py", line 411, in _port_stats_reply_handler
+    self.logger.info('body is ', body)
+Message: 'body is '
+Arguments: ([OFPPortStats(port_no=4294967294,rx_packets=0,tx_packets=0,rx_bytes=0,tx_bytes=0,rx_dropped=6270,tx_dropped=0,rx_errors=0,tx_errors=0,rx_frame_err=0,rx_over_err=0,rx_crc_err=0,collisions=0,duration_sec=13841,duration_nsec=865000000), OFPPortStats(port_no=1,rx_packets=21,tx_packets=21369,rx_bytes=1662,tx_bytes=1171277,rx_dropped=0,tx_dropped=0,rx_errors=0,tx_errors=0,rx_frame_err=0,rx_over_err=0,rx_crc_err=0,collisions=0,duration_sec=13841,duration_nsec=924000000), OFPPortStats(port_no=2,rx_packets=18233,tx_packets=18233,rx_bytes=1039487,tx_bytes=1039487,rx_dropped=0,tx_dropped=0,rx_errors=0,tx_errors=0,rx_frame_err=0,rx_over_err=0,rx_crc_err=0,collisions=0,duration_sec=13841,duration_nsec=908000000), OFPPortStats(port_no=3,rx_packets=18234,tx_packets=18233,rx_bytes=1039547,tx_bytes=1039487,rx_dropped=2,tx_dropped=0,rx_errors=0,tx_errors=0,rx_frame_err=0,rx_over_err=0,rx_crc_err=0,collisions=0,duration_sec=13841,duration_nsec=933000000)],)
+datapath         port     rx-pkts  rx-bytes rx-error tx-pkts  tx-bytes tx-error
+---------------- -------- -------- -------- -------- -------- -------- --------
+0000000000000004        1       21     1662        0    21369  1171277        0
+0000000000000004        2    18233  1039487        0    18233  1039487        0
+0000000000000004        3    18234  1039547        0    18233  1039487        0
+0000000000000004 fffffffe        0        0        0        0        0        0
+datapath         in-port  eth-dst           out-port packets  bytes
+---------------- -------- ----------------- -------- -------- --------
+Switch: Exception occurred during handler processing. Backtrace from offending handler [_flow_stats_reply_handler] servicing event [EventOFPFlowStatsReply] follows.
+Traceback (most recent call last):
+  File "/usr/lib/python3/dist-packages/ryu/base/app_manager.py", line 290, in _event_loop
+    handler(ev)
+  File "/home/ubuntu/sdn/projects/multi-path/app3_multi-path+monitor.py", line 398, in _flow_stats_reply_handler
+    for stat in sorted([flow for flow in body if flow.priority == 10],
+  File "/home/ubuntu/sdn/projects/multi-path/app3_multi-path+monitor.py", line 399, in <lambda>
+    key=lambda flow: (flow.match['in_port'],
+  File "/usr/lib/python3/dist-packages/ryu/ofproto/ofproto_v1_3_parser.py", line 904, in __getitem__
+    return dict(self._fields2)[key]
+KeyError: 'in_port'
+--- Logging error ---
+Traceback (most recent call last):
+  File "/usr/lib/python3.8/logging/__init__.py", line 1085, in emit
+    msg = self.format(record)
+  File "/usr/lib/python3.8/logging/__init__.py", line 929, in format
+    return fmt.format(record)
+  File "/usr/lib/python3.8/logging/__init__.py", line 668, in format
+    record.message = record.getMessage()
+  File "/usr/lib/python3.8/logging/__init__.py", line 373, in getMessage
+    msg = msg % self.args
+TypeError: not all arguments converted during string formatting
+Call stack:
+  File "/usr/lib/python3/dist-packages/eventlet/greenthread.py", line 221, in main
+    result = function(*args, **kwargs)
+  File "/usr/lib/python3/dist-packages/ryu/lib/hub.py", line 59, in _launch
+    return func(*args, **kwargs)
+  File "/usr/lib/python3/dist-packages/ryu/base/app_manager.py", line 290, in _event_loop
+    handler(ev)
+  File "/home/ubuntu/sdn/projects/multi-path/app3_multi-path+monitor.py", line 411, in _port_stats_reply_handler
+    self.logger.info('body is ', body)
+Message: 'body is '
+Arguments: ([OFPPortStats(port_no=4294967294,rx_packets=0,tx_packets=0,rx_bytes=0,tx_bytes=0,rx_dropped=6269,tx_dropped=0,rx_errors=0,tx_errors=0,rx_frame_err=0,rx_over_err=0,rx_crc_err=0,collisions=0,duration_sec=13842,duration_nsec=572000000), OFPPortStats(port_no=1,rx_packets=20169,tx_packets=35243,rx_bytes=1602478,tx_bytes=2515587,rx_dropped=0,tx_dropped=0,rx_errors=0,tx_errors=0,rx_frame_err=0,rx_over_err=0,rx_crc_err=0,collisions=0,duration_sec=13842,duration_nsec=653000000), OFPPortStats(port_no=2,rx_packets=31721,tx_packets=37986,rx_bytes=2360601,tx_bytes=2623695,rx_dropped=0,tx_dropped=0,rx_errors=0,tx_errors=0,rx_frame_err=0,rx_over_err=0,rx_crc_err=0,collisions=0,duration_sec=13842,duration_nsec=673000000), OFPPortStats(port_no=3,rx_packets=18231,tx_packets=18233,rx_bytes=1039367,tx_bytes=1039487,rx_dropped=0,tx_dropped=0,rx_errors=0,tx_errors=0,rx_frame_err=0,rx_over_err=0,rx_crc_err=0,collisions=0,duration_sec=13842,duration_nsec=663000000)],)
+datapath         port     rx-pkts  rx-bytes rx-error tx-pkts  tx-bytes tx-error
+---------------- -------- -------- -------- -------- -------- -------- --------
+0000000000000002        1    20169  1602478        0    35243  2515587        0
+0000000000000002        2    31721  2360601        0    37986  2623695        0
+0000000000000002        3    18231  1039367        0    18233  1039487        0
+0000000000000002 fffffffe        0        0        0        0        0        0
+--- Logging error ---
+Traceback (most recent call last):
+  File "/usr/lib/python3.8/logging/__init__.py", line 1085, in emit
+    msg = self.format(record)
+  File "/usr/lib/python3.8/logging/__init__.py", line 929, in format
+    return fmt.format(record)
+  File "/usr/lib/python3.8/logging/__init__.py", line 668, in format
+    record.message = record.getMessage()
+  File "/usr/lib/python3.8/logging/__init__.py", line 373, in getMessage
+    msg = msg % self.args
+TypeError: not all arguments converted during string formatting
+Call stack:
+  File "/usr/lib/python3/dist-packages/eventlet/greenthread.py", line 221, in main
+    result = function(*args, **kwargs)
+  File "/usr/lib/python3/dist-packages/ryu/lib/hub.py", line 59, in _launch
+    return func(*args, **kwargs)
+  File "/usr/lib/python3/dist-packages/ryu/base/app_manager.py", line 290, in _event_loop
+    handler(ev)
+  File "/home/ubuntu/sdn/projects/multi-path/app3_multi-path+monitor.py", line 411, in _port_stats_reply_handler
+    self.logger.info('body is ', body)
+Message: 'body is '
+Arguments: ([OFPPortStats(port_no=4294967294,rx_packets=0,tx_packets=0,rx_bytes=0,tx_bytes=0,rx_dropped=6270,tx_dropped=0,rx_errors=0,tx_errors=0,rx_frame_err=0,rx_over_err=0,rx_crc_err=0,collisions=0,duration_sec=13842,duration_nsec=884000000), OFPPortStats(port_no=1,rx_packets=13936,tx_packets=41514,rx_bytes=1340600,tx_bytes=2779005,rx_dropped=0,tx_dropped=0,rx_errors=0,tx_errors=0,rx_frame_err=0,rx_over_err=0,rx_crc_err=0,collisions=0,duration_sec=13843,duration_nsec=18000000), OFPPortStats(port_no=2,rx_packets=37986,tx_packets=31721,rx_bytes=2623695,tx_bytes=2360601,rx_dropped=0,tx_dropped=0,rx_errors=0,tx_errors=0,rx_frame_err=0,rx_over_err=0,rx_crc_err=0,collisions=0,duration_sec=13843,duration_nsec=49000000), OFPPortStats(port_no=3,rx_packets=18233,tx_packets=18234,rx_bytes=1039487,tx_bytes=1039547,rx_dropped=0,tx_dropped=0,rx_errors=0,tx_errors=0,rx_frame_err=0,rx_over_err=0,rx_crc_err=0,collisions=0,duration_sec=13842,duration_nsec=943000000)],)
+datapath         port     rx-pkts  rx-bytes rx-error tx-pkts  tx-bytes tx-error
+---------------- -------- -------- -------- -------- -------- -------- --------
+0000000000000001        1    13936  1340600        0    41514  2779005        0
+0000000000000001        2    37986  2623695        0    31721  2360601        0
+0000000000000001        3    18233  1039487        0    18234  1039547        0
+0000000000000001 fffffffe        0        0        0        0        0        0
+datapath         in-port  eth-dst           out-port packets  bytes
+---------------- -------- ----------------- -------- -------- --------
+Switch: Exception occurred during handler processing. Backtrace from offending handler [_flow_stats_reply_handler] servicing event [EventOFPFlowStatsReply] follows.
+Traceback (most recent call last):
+  File "/usr/lib/python3/dist-packages/ryu/base/app_manager.py", line 290, in _event_loop
+    handler(ev)
+  File "/home/ubuntu/sdn/projects/multi-path/app3_multi-path+monitor.py", line 398, in _flow_stats_reply_handler
+    for stat in sorted([flow for flow in body if flow.priority == 10],
+  File "/home/ubuntu/sdn/projects/multi-path/app3_multi-path+monitor.py", line 399, in <lambda>
+    key=lambda flow: (flow.match['in_port'],
+  File "/usr/lib/python3/dist-packages/ryu/ofproto/ofproto_v1_3_parser.py", line 904, in __getitem__
+    return dict(self._fields2)[key]
+KeyError: 'in_port'
+--- Logging error ---
+Traceback (most recent call last):
+  File "/usr/lib/python3.8/logging/__init__.py", line 1085, in emit
+    msg = self.format(record)
+  File "/usr/lib/python3.8/logging/__init__.py", line 929, in format
+    return fmt.format(record)
+  File "/usr/lib/python3.8/logging/__init__.py", line 668, in format
+    record.message = record.getMessage()
+  File "/usr/lib/python3.8/logging/__init__.py", line 373, in getMessage
+    msg = msg % self.args
+TypeError: not all arguments converted during string formatting
+Call stack:
+  File "/usr/lib/python3/dist-packages/eventlet/greenthread.py", line 221, in main
+    result = function(*args, **kwargs)
+  File "/usr/lib/python3/dist-packages/ryu/lib/hub.py", line 59, in _launch
+    return func(*args, **kwargs)
+  File "/usr/lib/python3/dist-packages/ryu/base/app_manager.py", line 290, in _event_loop
+    handler(ev)
+  File "/home/ubuntu/sdn/projects/multi-path/app3_multi-path+monitor.py", line 411, in _port_stats_reply_handler
+    self.logger.info('body is ', body)
+Message: 'body is '
+Arguments: ([OFPPortStats(port_no=4294967294,rx_packets=0,tx_packets=0,rx_bytes=0,tx_bytes=0,rx_dropped=6270,tx_dropped=0,rx_errors=0,tx_errors=0,rx_frame_err=0,rx_over_err=0,rx_crc_err=0,collisions=0,duration_sec=13842,duration_nsec=229000000), OFPPortStats(port_no=1,rx_packets=21,tx_packets=21367,rx_bytes=1662,tx_bytes=1171147,rx_dropped=0,tx_dropped=0,rx_errors=0,tx_errors=0,rx_frame_err=0,rx_over_err=0,rx_crc_err=0,collisions=0,duration_sec=13842,duration_nsec=262000000), OFPPortStats(port_no=2,rx_packets=18233,tx_packets=18231,rx_bytes=1039487,tx_bytes=1039367,rx_dropped=0,tx_dropped=0,rx_errors=0,tx_errors=0,rx_frame_err=0,rx_over_err=0,rx_crc_err=0,collisions=0,duration_sec=13842,duration_nsec=281000000), OFPPortStats(port_no=3,rx_packets=18233,tx_packets=18233,rx_bytes=1039487,tx_bytes=1039487,rx_dropped=0,tx_dropped=0,rx_errors=0,tx_errors=0,rx_frame_err=0,rx_over_err=0,rx_crc_err=0,collisions=0,duration_sec=13842,duration_nsec=271000000)],)
+datapath         port     rx-pkts  rx-bytes rx-error tx-pkts  tx-bytes tx-error
+---------------- -------- -------- -------- -------- -------- -------- --------
+0000000000000003        1       21     1662        0    21367  1171147        0
+0000000000000003        2    18233  1039487        0    18231  1039367        0
+0000000000000003        3    18233  1039487        0    18233  1039487        0
+0000000000000003 fffffffe        0        0        0        0        0        0
+datapath         in-port  eth-dst           out-port packets  bytes
+---------------- -------- ----------------- -------- -------- --------
+Switch: Exception occurred during handler processing. Backtrace from offending handler [_flow_stats_reply_handler] servicing event [EventOFPFlowStatsReply] follows.
+Traceback (most recent call last):
+  File "/usr/lib/python3/dist-packages/ryu/base/app_manager.py", line 290, in _event_loop
+    handler(ev)
+  File "/home/ubuntu/sdn/projects/multi-path/app3_multi-path+monitor.py", line 398, in _flow_stats_reply_handler
+    for stat in sorted([flow for flow in body if flow.priority == 10],
+  File "/home/ubuntu/sdn/projects/multi-path/app3_multi-path+monitor.py", line 399, in <lambda>
+    key=lambda flow: (flow.match['in_port'],
+  File "/usr/lib/python3/dist-packages/ryu/ofproto/ofproto_v1_3_parser.py", line 904, in __getitem__
+    return dict(self._fields2)[key]
+KeyError: 'in_port'
+--- Logging error ---
+Traceback (most recent call last):
+  File "/usr/lib/python3.8/logging/__init__.py", line 1085, in emit
+    msg = self.format(record)
+  File "/usr/lib/python3.8/logging/__init__.py", line 929, in format
+    return fmt.format(record)
+  File "/usr/lib/python3.8/logging/__init__.py", line 668, in format
+    record.message = record.getMessage()
+  File "/usr/lib/python3.8/logging/__init__.py", line 373, in getMessage
+    msg = msg % self.args
+TypeError: not all arguments converted during string formatting
+Call stack:
+  File "/usr/lib/python3/dist-packages/eventlet/greenthread.py", line 221, in main
+    result = function(*args, **kwargs)
+  File "/usr/lib/python3/dist-packages/ryu/lib/hub.py", line 59, in _launch
+    return func(*args, **kwargs)
+  File "/usr/lib/python3/dist-packages/ryu/base/app_manager.py", line 290, in _event_loop
+    handler(ev)
+  File "/home/ubuntu/sdn/projects/multi-path/app3_multi-path+monitor.py", line 411, in _port_stats_reply_handler
+    self.logger.info('body is ', body)
+Message: 'body is '
+Arguments: ([OFPPortStats(port_no=4294967294,rx_packets=0,tx_packets=0,rx_bytes=0,tx_bytes=0,rx_dropped=6270,tx_dropped=0,rx_errors=0,tx_errors=0,rx_frame_err=0,rx_over_err=0,rx_crc_err=0,collisions=0,duration_sec=13843,duration_nsec=881000000), OFPPortStats(port_no=1,rx_packets=13937,tx_packets=41516,rx_bytes=1340698,tx_bytes=2779163,rx_dropped=0,tx_dropped=0,rx_errors=0,tx_errors=0,rx_frame_err=0,rx_over_err=0,rx_crc_err=0,collisions=0,duration_sec=13844,duration_nsec=15000000), OFPPortStats(port_no=2,rx_packets=37988,tx_packets=31723,rx_bytes=2623853,tx_bytes=2360759,rx_dropped=0,tx_dropped=0,rx_errors=0,tx_errors=0,rx_frame_err=0,rx_over_err=0,rx_crc_err=0,collisions=0,duration_sec=13844,duration_nsec=46000000), OFPPortStats(port_no=3,rx_packets=18234,tx_packets=18235,rx_bytes=1039547,tx_bytes=1039607,rx_dropped=0,tx_dropped=0,rx_errors=0,tx_errors=0,rx_frame_err=0,rx_over_err=0,rx_crc_err=0,collisions=0,duration_sec=13843,duration_nsec=940000000)],)
+datapath         port     rx-pkts  rx-bytes rx-error tx-pkts  tx-bytes tx-error
+---------------- -------- -------- -------- -------- -------- -------- --------
+0000000000000001        1    13937  1340698        0    41516  2779163        0
+0000000000000001        2    37988  2623853        0    31723  2360759        0
+0000000000000001        3    18234  1039547        0    18235  1039607        0
+0000000000000001 fffffffe        0        0        0        0        0        0
+datapath         in-port  eth-dst           out-port packets  bytes
+---------------- -------- ----------------- -------- -------- --------
+Switch: Exception occurred during handler processing. Backtrace from offending handler [_flow_stats_reply_handler] servicing event [EventOFPFlowStatsReply] follows.
+Traceback (most recent call last):
+  File "/usr/lib/python3/dist-packages/ryu/base/app_manager.py", line 290, in _event_loop
+    handler(ev)
+  File "/home/ubuntu/sdn/projects/multi-path/app3_multi-path+monitor.py", line 398, in _flow_stats_reply_handler
+    for stat in sorted([flow for flow in body if flow.priority == 10],
+  File "/home/ubuntu/sdn/projects/multi-path/app3_multi-path+monitor.py", line 399, in <lambda>
+    key=lambda flow: (flow.match['in_port'],
+  File "/usr/lib/python3/dist-packages/ryu/ofproto/ofproto_v1_3_parser.py", line 904, in __getitem__
+    return dict(self._fields2)[key]
+KeyError: 'in_port'
+--- Logging error ---
+Traceback (most recent call last):
+  File "/usr/lib/python3.8/logging/__init__.py", line 1085, in emit
+    msg = self.format(record)
+  File "/usr/lib/python3.8/logging/__init__.py", line 929, in format
+    return fmt.format(record)
+  File "/usr/lib/python3.8/logging/__init__.py", line 668, in format
+    record.message = record.getMessage()
+  File "/usr/lib/python3.8/logging/__init__.py", line 373, in getMessage
+    msg = msg % self.args
+TypeError: not all arguments converted during string formatting
+Call stack:
+  File "/usr/lib/python3/dist-packages/eventlet/greenthread.py", line 221, in main
+    result = function(*args, **kwargs)
+  File "/usr/lib/python3/dist-packages/ryu/lib/hub.py", line 59, in _launch
+    return func(*args, **kwargs)
+  File "/usr/lib/python3/dist-packages/ryu/base/app_manager.py", line 290, in _event_loop
+    handler(ev)
+  File "/home/ubuntu/sdn/projects/multi-path/app3_multi-path+monitor.py", line 411, in _port_stats_reply_handler
+    self.logger.info('body is ', body)
+Message: 'body is '
+Arguments: ([OFPPortStats(port_no=4294967294,rx_packets=0,tx_packets=0,rx_bytes=0,tx_bytes=0,rx_dropped=6270,tx_dropped=0,rx_errors=0,tx_errors=0,rx_frame_err=0,rx_over_err=0,rx_crc_err=0,collisions=0,duration_sec=13842,duration_nsec=867000000), OFPPortStats(port_no=1,rx_packets=21,tx_packets=21370,rx_bytes=1662,tx_bytes=1171337,rx_dropped=0,tx_dropped=0,rx_errors=0,tx_errors=0,rx_frame_err=0,rx_over_err=0,rx_crc_err=0,collisions=0,duration_sec=13842,duration_nsec=926000000), OFPPortStats(port_no=2,rx_packets=18234,tx_packets=18234,rx_bytes=1039547,tx_bytes=1039547,rx_dropped=0,tx_dropped=0,rx_errors=0,tx_errors=0,rx_frame_err=0,rx_over_err=0,rx_crc_err=0,collisions=0,duration_sec=13842,duration_nsec=910000000), OFPPortStats(port_no=3,rx_packets=18235,tx_packets=18234,rx_bytes=1039607,tx_bytes=1039547,rx_dropped=2,tx_dropped=0,rx_errors=0,tx_errors=0,rx_frame_err=0,rx_over_err=0,rx_crc_err=0,collisions=0,duration_sec=13842,duration_nsec=934000000)],)
+datapath         port     rx-pkts  rx-bytes rx-error tx-pkts  tx-bytes tx-error
+---------------- -------- -------- -------- -------- -------- -------- --------
+0000000000000004        1       21     1662        0    21370  1171337        0
+0000000000000004        2    18234  1039547        0    18234  1039547        0
+0000000000000004        3    18235  1039607        0    18234  1039547        0
+0000000000000004 fffffffe        0        0        0        0        0        0
+datapath         in-port  eth-dst           out-port packets  bytes
+---------------- -------- ----------------- -------- -------- --------
+Switch: Exception occurred during handler processing. Backtrace from offending handler [_flow_stats_reply_handler] servicing event [EventOFPFlowStatsReply] follows.
+Traceback (most recent call last):
+  File "/usr/lib/python3/dist-packages/ryu/base/app_manager.py", line 290, in _event_loop
+    handler(ev)
+  File "/home/ubuntu/sdn/projects/multi-path/app3_multi-path+monitor.py", line 398, in _flow_stats_reply_handler
+    for stat in sorted([flow for flow in body if flow.priority == 10],
+  File "/home/ubuntu/sdn/projects/multi-path/app3_multi-path+monitor.py", line 399, in <lambda>
+    key=lambda flow: (flow.match['in_port'],
+  File "/usr/lib/python3/dist-packages/ryu/ofproto/ofproto_v1_3_parser.py", line 904, in __getitem__
+    return dict(self._fields2)[key]
+KeyError: 'in_port'
+--- Logging error ---
+Traceback (most recent call last):
+  File "/usr/lib/python3.8/logging/__init__.py", line 1085, in emit
+    msg = self.format(record)
+  File "/usr/lib/python3.8/logging/__init__.py", line 929, in format
+    return fmt.format(record)
+  File "/usr/lib/python3.8/logging/__init__.py", line 668, in format
+    record.message = record.getMessage()
+  File "/usr/lib/python3.8/logging/__init__.py", line 373, in getMessage
+    msg = msg % self.args
+TypeError: not all arguments converted during string formatting
+Call stack:
+  File "/usr/lib/python3/dist-packages/eventlet/greenthread.py", line 221, in main
+    result = function(*args, **kwargs)
+  File "/usr/lib/python3/dist-packages/ryu/lib/hub.py", line 59, in _launch
+    return func(*args, **kwargs)
+  File "/usr/lib/python3/dist-packages/ryu/base/app_manager.py", line 290, in _event_loop
+    handler(ev)
+  File "/home/ubuntu/sdn/projects/multi-path/app3_multi-path+monitor.py", line 411, in _port_stats_reply_handler
+    self.logger.info('body is ', body)
+Message: 'body is '
+Arguments: ([OFPPortStats(port_no=4294967294,rx_packets=0,tx_packets=0,rx_bytes=0,tx_bytes=0,rx_dropped=6270,tx_dropped=0,rx_errors=0,tx_errors=0,rx_frame_err=0,rx_over_err=0,rx_crc_err=0,collisions=0,duration_sec=13843,duration_nsec=228000000), OFPPortStats(port_no=1,rx_packets=21,tx_packets=21368,rx_bytes=1662,tx_bytes=1171207,rx_dropped=0,tx_dropped=0,rx_errors=0,tx_errors=0,rx_frame_err=0,rx_over_err=0,rx_crc_err=0,collisions=0,duration_sec=13843,duration_nsec=261000000), OFPPortStats(port_no=2,rx_packets=18235,tx_packets=18232,rx_bytes=1039607,tx_bytes=1039427,rx_dropped=0,tx_dropped=0,rx_errors=0,tx_errors=0,rx_frame_err=0,rx_over_err=0,rx_crc_err=0,collisions=0,duration_sec=13843,duration_nsec=281000000), OFPPortStats(port_no=3,rx_packets=18234,tx_packets=18234,rx_bytes=1039547,tx_bytes=1039547,rx_dropped=0,tx_dropped=0,rx_errors=0,tx_errors=0,rx_frame_err=0,rx_over_err=0,rx_crc_err=0,collisions=0,duration_sec=13843,duration_nsec=271000000)],)
+datapath         port     rx-pkts  rx-bytes rx-error tx-pkts  tx-bytes tx-error
+---------------- -------- -------- -------- -------- -------- -------- --------
+0000000000000003        1       21     1662        0    21368  1171207        0
+0000000000000003        2    18235  1039607        0    18232  1039427        0
+0000000000000003        3    18234  1039547        0    18234  1039547        0
+0000000000000003 fffffffe        0        0        0        0        0        0
+datapath         in-port  eth-dst           out-port packets  bytes
+---------------- -------- ----------------- -------- -------- --------
+Switch: Exception occurred during handler processing. Backtrace from offending handler [_flow_stats_reply_handler] servicing event [EventOFPFlowStatsReply] follows.
+Traceback (most recent call last):
+  File "/usr/lib/python3/dist-packages/ryu/base/app_manager.py", line 290, in _event_loop
+    handler(ev)
+  File "/home/ubuntu/sdn/projects/multi-path/app3_multi-path+monitor.py", line 398, in _flow_stats_reply_handler
+    for stat in sorted([flow for flow in body if flow.priority == 10],
+  File "/home/ubuntu/sdn/projects/multi-path/app3_multi-path+monitor.py", line 399, in <lambda>
+    key=lambda flow: (flow.match['in_port'],
+  File "/usr/lib/python3/dist-packages/ryu/ofproto/ofproto_v1_3_parser.py", line 904, in __getitem__
+    return dict(self._fields2)[key]
+KeyError: 'in_port'
+--- Logging error ---
+Traceback (most recent call last):
+  File "/usr/lib/python3.8/logging/__init__.py", line 1085, in emit
+    msg = self.format(record)
+  File "/usr/lib/python3.8/logging/__init__.py", line 929, in format
+    return fmt.format(record)
+  File "/usr/lib/python3.8/logging/__init__.py", line 668, in format
+    record.message = record.getMessage()
+  File "/usr/lib/python3.8/logging/__init__.py", line 373, in getMessage
+    msg = msg % self.args
+TypeError: not all arguments converted during string formatting
+Call stack:
+  File "/usr/lib/python3/dist-packages/eventlet/greenthread.py", line 221, in main
+    result = function(*args, **kwargs)
+  File "/usr/lib/python3/dist-packages/ryu/lib/hub.py", line 59, in _launch
+    return func(*args, **kwargs)
+  File "/usr/lib/python3/dist-packages/ryu/base/app_manager.py", line 290, in _event_loop
+    handler(ev)
+  File "/home/ubuntu/sdn/projects/multi-path/app3_multi-path+monitor.py", line 411, in _port_stats_reply_handler
+    self.logger.info('body is ', body)
+Message: 'body is '
+Arguments: ([OFPPortStats(port_no=4294967294,rx_packets=0,tx_packets=0,rx_bytes=0,tx_bytes=0,rx_dropped=6269,tx_dropped=0,rx_errors=0,tx_errors=0,rx_frame_err=0,rx_over_err=0,rx_crc_err=0,collisions=0,duration_sec=13843,duration_nsec=571000000), OFPPortStats(port_no=1,rx_packets=20170,tx_packets=35245,rx_bytes=1602576,tx_bytes=2515745,rx_dropped=0,tx_dropped=0,rx_errors=0,tx_errors=0,rx_frame_err=0,rx_over_err=0,rx_crc_err=0,collisions=0,duration_sec=13843,duration_nsec=652000000), OFPPortStats(port_no=2,rx_packets=31723,tx_packets=37988,rx_bytes=2360759,tx_bytes=2623853,rx_dropped=0,tx_dropped=0,rx_errors=0,tx_errors=0,rx_frame_err=0,rx_over_err=0,rx_crc_err=0,collisions=0,duration_sec=13843,duration_nsec=673000000), OFPPortStats(port_no=3,rx_packets=18232,tx_packets=18235,rx_bytes=1039427,tx_bytes=1039607,rx_dropped=0,tx_dropped=0,rx_errors=0,tx_errors=0,rx_frame_err=0,rx_over_err=0,rx_crc_err=0,collisions=0,duration_sec=13843,duration_nsec=663000000)],)
+datapath         port     rx-pkts  rx-bytes rx-error tx-pkts  tx-bytes tx-error
+---------------- -------- -------- -------- -------- -------- -------- --------
+0000000000000002        1    20170  1602576        0    35245  2515745        0
+0000000000000002        2    31723  2360759        0    37988  2623853        0
+0000000000000002        3    18232  1039427        0    18235  1039607        0
+0000000000000002 fffffffe        0        0        0        0        0        0
+datapath         in-port  eth-dst           out-port packets  bytes
+---------------- -------- ----------------- -------- -------- --------
+Switch: Exception occurred during handler processing. Backtrace from offending handler [_flow_stats_reply_handler] servicing event [EventOFPFlowStatsReply] follows.
+Traceback (most recent call last):
+  File "/usr/lib/python3/dist-packages/ryu/base/app_manager.py", line 290, in _event_loop
+    handler(ev)
+  File "/home/ubuntu/sdn/projects/multi-path/app3_multi-path+monitor.py", line 398, in _flow_stats_reply_handler
+    for stat in sorted([flow for flow in body if flow.priority == 10],
+  File "/home/ubuntu/sdn/projects/multi-path/app3_multi-path+monitor.py", line 399, in <lambda>
+    key=lambda flow: (flow.match['in_port'],
+  File "/usr/lib/python3/dist-packages/ryu/ofproto/ofproto_v1_3_parser.py", line 904, in __getitem__
+    return dict(self._fields2)[key]
+KeyError: 'in_port'
+--- Logging error ---
+Traceback (most recent call last):
+  File "/usr/lib/python3.8/logging/__init__.py", line 1085, in emit
+    msg = self.format(record)
+  File "/usr/lib/python3.8/logging/__init__.py", line 929, in format
+    return fmt.format(record)
+  File "/usr/lib/python3.8/logging/__init__.py", line 668, in format
+    record.message = record.getMessage()
+  File "/usr/lib/python3.8/logging/__init__.py", line 373, in getMessage
+    msg = msg % self.args
+TypeError: not all arguments converted during string formatting
+Call stack:
+  File "/usr/lib/python3/dist-packages/eventlet/greenthread.py", line 221, in main
+    result = function(*args, **kwargs)
+  File "/usr/lib/python3/dist-packages/ryu/lib/hub.py", line 59, in _launch
+    return func(*args, **kwargs)
+  File "/usr/lib/python3/dist-packages/ryu/base/app_manager.py", line 290, in _event_loop
+    handler(ev)
+  File "/home/ubuntu/sdn/projects/multi-path/app3_multi-path+monitor.py", line 411, in _port_stats_reply_handler
+    self.logger.info('body is ', body)
+Message: 'body is '
+Arguments: ([OFPPortStats(port_no=4294967294,rx_packets=0,tx_packets=0,rx_bytes=0,tx_bytes=0,rx_dropped=6270,tx_dropped=0,rx_errors=0,tx_errors=0,rx_frame_err=0,rx_over_err=0,rx_crc_err=0,collisions=0,duration_sec=13844,duration_nsec=885000000), OFPPortStats(port_no=1,rx_packets=13938,tx_packets=41518,rx_bytes=1340796,tx_bytes=2779321,rx_dropped=0,tx_dropped=0,rx_errors=0,tx_errors=0,rx_frame_err=0,rx_over_err=0,rx_crc_err=0,collisions=0,duration_sec=13845,duration_nsec=19000000), OFPPortStats(port_no=2,rx_packets=37991,tx_packets=31725,rx_bytes=2624071,tx_bytes=2360917,rx_dropped=0,tx_dropped=0,rx_errors=0,tx_errors=0,rx_frame_err=0,rx_over_err=0,rx_crc_err=0,collisions=0,duration_sec=13845,duration_nsec=51000000), OFPPortStats(port_no=3,rx_packets=18235,tx_packets=18236,rx_bytes=1039607,tx_bytes=1039667,rx_dropped=0,tx_dropped=0,rx_errors=0,tx_errors=0,rx_frame_err=0,rx_over_err=0,rx_crc_err=0,collisions=0,duration_sec=13844,duration_nsec=945000000)],)
+datapath         port     rx-pkts  rx-bytes rx-error tx-pkts  tx-bytes tx-error
+---------------- -------- -------- -------- -------- -------- -------- --------
+0000000000000001        1    13938  1340796        0    41518  2779321        0
+0000000000000001        2    37991  2624071        0    31725  2360917        0
+0000000000000001        3    18235  1039607        0    18236  1039667        0
+0000000000000001 fffffffe        0        0        0        0        0        0
+datapath         in-port  eth-dst           out-port packets  bytes
+---------------- -------- ----------------- -------- -------- --------
+Switch: Exception occurred during handler processing. Backtrace from offending handler [_flow_stats_reply_handler] servicing event [EventOFPFlowStatsReply] follows.
+Traceback (most recent call last):
+  File "/usr/lib/python3/dist-packages/ryu/base/app_manager.py", line 290, in _event_loop
+    handler(ev)
+  File "/home/ubuntu/sdn/projects/multi-path/app3_multi-path+monitor.py", line 398, in _flow_stats_reply_handler
+    for stat in sorted([flow for flow in body if flow.priority == 10],
+  File "/home/ubuntu/sdn/projects/multi-path/app3_multi-path+monitor.py", line 399, in <lambda>
+    key=lambda flow: (flow.match['in_port'],
+  File "/usr/lib/python3/dist-packages/ryu/ofproto/ofproto_v1_3_parser.py", line 904, in __getitem__
+    return dict(self._fields2)[key]
+KeyError: 'in_port'
+--- Logging error ---
+Traceback (most recent call last):
+  File "/usr/lib/python3.8/logging/__init__.py", line 1085, in emit
+    msg = self.format(record)
+  File "/usr/lib/python3.8/logging/__init__.py", line 929, in format
+    return fmt.format(record)
+  File "/usr/lib/python3.8/logging/__init__.py", line 668, in format
+    record.message = record.getMessage()
+  File "/usr/lib/python3.8/logging/__init__.py", line 373, in getMessage
+    msg = msg % self.args
+TypeError: not all arguments converted during string formatting
+Call stack:
+  File "/usr/lib/python3/dist-packages/eventlet/greenthread.py", line 221, in main
+    result = function(*args, **kwargs)
+  File "/usr/lib/python3/dist-packages/ryu/lib/hub.py", line 59, in _launch
+    return func(*args, **kwargs)
+  File "/usr/lib/python3/dist-packages/ryu/base/app_manager.py", line 290, in _event_loop
+    handler(ev)
+  File "/home/ubuntu/sdn/projects/multi-path/app3_multi-path+monitor.py", line 411, in _port_stats_reply_handler
+    self.logger.info('body is ', body)
+Message: 'body is '
+Arguments: ([OFPPortStats(port_no=4294967294,rx_packets=0,tx_packets=0,rx_bytes=0,tx_bytes=0,rx_dropped=6270,tx_dropped=0,rx_errors=0,tx_errors=0,rx_frame_err=0,rx_over_err=0,rx_crc_err=0,collisions=0,duration_sec=13843,duration_nsec=872000000), OFPPortStats(port_no=1,rx_packets=21,tx_packets=21371,rx_bytes=1662,tx_bytes=1171397,rx_dropped=0,tx_dropped=0,rx_errors=0,tx_errors=0,rx_frame_err=0,rx_over_err=0,rx_crc_err=0,collisions=0,duration_sec=13843,duration_nsec=931000000), OFPPortStats(port_no=2,rx_packets=18235,tx_packets=18235,rx_bytes=1039607,tx_bytes=1039607,rx_dropped=0,tx_dropped=0,rx_errors=0,tx_errors=0,rx_frame_err=0,rx_over_err=0,rx_crc_err=0,collisions=0,duration_sec=13843,duration_nsec=915000000), OFPPortStats(port_no=3,rx_packets=18236,tx_packets=18235,rx_bytes=1039667,tx_bytes=1039607,rx_dropped=2,tx_dropped=0,rx_errors=0,tx_errors=0,rx_frame_err=0,rx_over_err=0,rx_crc_err=0,collisions=0,duration_sec=13843,duration_nsec=939000000)],)
+datapath         port     rx-pkts  rx-bytes rx-error tx-pkts  tx-bytes tx-error
+---------------- -------- -------- -------- -------- -------- -------- --------
+0000000000000004        1       21     1662        0    21371  1171397        0
+0000000000000004        2    18235  1039607        0    18235  1039607        0
+0000000000000004        3    18236  1039667        0    18235  1039607        0
+0000000000000004 fffffffe        0        0        0        0        0        0
+datapath         in-port  eth-dst           out-port packets  bytes
+---------------- -------- ----------------- -------- -------- --------
+Switch: Exception occurred during handler processing. Backtrace from offending handler [_flow_stats_reply_handler] servicing event [EventOFPFlowStatsReply] follows.
+Traceback (most recent call last):
+  File "/usr/lib/python3/dist-packages/ryu/base/app_manager.py", line 290, in _event_loop
+    handler(ev)
+  File "/home/ubuntu/sdn/projects/multi-path/app3_multi-path+monitor.py", line 398, in _flow_stats_reply_handler
+    for stat in sorted([flow for flow in body if flow.priority == 10],
+  File "/home/ubuntu/sdn/projects/multi-path/app3_multi-path+monitor.py", line 399, in <lambda>
+    key=lambda flow: (flow.match['in_port'],
+  File "/usr/lib/python3/dist-packages/ryu/ofproto/ofproto_v1_3_parser.py", line 904, in __getitem__
+    return dict(self._fields2)[key]
+KeyError: 'in_port'
+--- Logging error ---
+Traceback (most recent call last):
+  File "/usr/lib/python3.8/logging/__init__.py", line 1085, in emit
+    msg = self.format(record)
+  File "/usr/lib/python3.8/logging/__init__.py", line 929, in format
+    return fmt.format(record)
+  File "/usr/lib/python3.8/logging/__init__.py", line 668, in format
+    record.message = record.getMessage()
+  File "/usr/lib/python3.8/logging/__init__.py", line 373, in getMessage
+    msg = msg % self.args
+TypeError: not all arguments converted during string formatting
+Call stack:
+  File "/usr/lib/python3/dist-packages/eventlet/greenthread.py", line 221, in main
+    result = function(*args, **kwargs)
+  File "/usr/lib/python3/dist-packages/ryu/lib/hub.py", line 59, in _launch
+    return func(*args, **kwargs)
+  File "/usr/lib/python3/dist-packages/ryu/base/app_manager.py", line 290, in _event_loop
+    handler(ev)
+  File "/home/ubuntu/sdn/projects/multi-path/app3_multi-path+monitor.py", line 411, in _port_stats_reply_handler
+    self.logger.info('body is ', body)
+Message: 'body is '
+Arguments: ([OFPPortStats(port_no=4294967294,rx_packets=0,tx_packets=0,rx_bytes=0,tx_bytes=0,rx_dropped=6270,tx_dropped=0,rx_errors=0,tx_errors=0,rx_frame_err=0,rx_over_err=0,rx_crc_err=0,collisions=0,duration_sec=13844,duration_nsec=232000000), OFPPortStats(port_no=1,rx_packets=21,tx_packets=21369,rx_bytes=1662,tx_bytes=1171267,rx_dropped=0,tx_dropped=0,rx_errors=0,tx_errors=0,rx_frame_err=0,rx_over_err=0,rx_crc_err=0,collisions=0,duration_sec=13844,duration_nsec=265000000), OFPPortStats(port_no=2,rx_packets=18236,tx_packets=18233,rx_bytes=1039667,tx_bytes=1039487,rx_dropped=0,tx_dropped=0,rx_errors=0,tx_errors=0,rx_frame_err=0,rx_over_err=0,rx_crc_err=0,collisions=0,duration_sec=13844,duration_nsec=285000000), OFPPortStats(port_no=3,rx_packets=18235,tx_packets=18235,rx_bytes=1039607,tx_bytes=1039607,rx_dropped=0,tx_dropped=0,rx_errors=0,tx_errors=0,rx_frame_err=0,rx_over_err=0,rx_crc_err=0,collisions=0,duration_sec=13844,duration_nsec=275000000)],)
+datapath         port     rx-pkts  rx-bytes rx-error tx-pkts  tx-bytes tx-error
+---------------- -------- -------- -------- -------- -------- -------- --------
+0000000000000003        1       21     1662        0    21369  1171267        0
+0000000000000003        2    18236  1039667        0    18233  1039487        0
+0000000000000003        3    18235  1039607        0    18235  1039607        0
+0000000000000003 fffffffe        0        0        0        0        0        0
+datapath         in-port  eth-dst           out-port packets  bytes
+---------------- -------- ----------------- -------- -------- --------
+Switch: Exception occurred during handler processing. Backtrace from offending handler [_flow_stats_reply_handler] servicing event [EventOFPFlowStatsReply] follows.
+Traceback (most recent call last):
+  File "/usr/lib/python3/dist-packages/ryu/base/app_manager.py", line 290, in _event_loop
+    handler(ev)
+  File "/home/ubuntu/sdn/projects/multi-path/app3_multi-path+monitor.py", line 398, in _flow_stats_reply_handler
+    for stat in sorted([flow for flow in body if flow.priority == 10],
+  File "/home/ubuntu/sdn/projects/multi-path/app3_multi-path+monitor.py", line 399, in <lambda>
+    key=lambda flow: (flow.match['in_port'],
+  File "/usr/lib/python3/dist-packages/ryu/ofproto/ofproto_v1_3_parser.py", line 904, in __getitem__
+    return dict(self._fields2)[key]
+KeyError: 'in_port'
+--- Logging error ---
+Traceback (most recent call last):
+  File "/usr/lib/python3.8/logging/__init__.py", line 1085, in emit
+    msg = self.format(record)
+  File "/usr/lib/python3.8/logging/__init__.py", line 929, in format
+    return fmt.format(record)
+  File "/usr/lib/python3.8/logging/__init__.py", line 668, in format
+    record.message = record.getMessage()
+  File "/usr/lib/python3.8/logging/__init__.py", line 373, in getMessage
+    msg = msg % self.args
+TypeError: not all arguments converted during string formatting
+Call stack:
+  File "/usr/lib/python3/dist-packages/eventlet/greenthread.py", line 221, in main
+    result = function(*args, **kwargs)
+  File "/usr/lib/python3/dist-packages/ryu/lib/hub.py", line 59, in _launch
+    return func(*args, **kwargs)
+  File "/usr/lib/python3/dist-packages/ryu/base/app_manager.py", line 290, in _event_loop
+    handler(ev)
+  File "/home/ubuntu/sdn/projects/multi-path/app3_multi-path+monitor.py", line 411, in _port_stats_reply_handler
+    self.logger.info('body is ', body)
+Message: 'body is '
+Arguments: ([OFPPortStats(port_no=4294967294,rx_packets=0,tx_packets=0,rx_bytes=0,tx_bytes=0,rx_dropped=6269,tx_dropped=0,rx_errors=0,tx_errors=0,rx_frame_err=0,rx_over_err=0,rx_crc_err=0,collisions=0,duration_sec=13844,duration_nsec=575000000), OFPPortStats(port_no=1,rx_packets=20171,tx_packets=35247,rx_bytes=1602674,tx_bytes=2515903,rx_dropped=0,tx_dropped=0,rx_errors=0,tx_errors=0,rx_frame_err=0,rx_over_err=0,rx_crc_err=0,collisions=0,duration_sec=13844,duration_nsec=656000000), OFPPortStats(port_no=2,rx_packets=31725,tx_packets=37991,rx_bytes=2360917,tx_bytes=2624071,rx_dropped=0,tx_dropped=0,rx_errors=0,tx_errors=0,rx_frame_err=0,rx_over_err=0,rx_crc_err=0,collisions=0,duration_sec=13844,duration_nsec=677000000), OFPPortStats(port_no=3,rx_packets=18233,tx_packets=18236,rx_bytes=1039487,tx_bytes=1039667,rx_dropped=0,tx_dropped=0,rx_errors=0,tx_errors=0,rx_frame_err=0,rx_over_err=0,rx_crc_err=0,collisions=0,duration_sec=13844,duration_nsec=667000000)],)
+datapath         port     rx-pkts  rx-bytes rx-error tx-pkts  tx-bytes tx-error
+---------------- -------- -------- -------- -------- -------- -------- --------
+0000000000000002        1    20171  1602674        0    35247  2515903        0
+0000000000000002        2    31725  2360917        0    37991  2624071        0
+0000000000000002        3    18233  1039487        0    18236  1039667        0
+0000000000000002 fffffffe        0        0        0        0        0        0
+datapath         in-port  eth-dst           out-port packets  bytes
+---------------- -------- ----------------- -------- -------- --------
+Switch: Exception occurred during handler processing. Backtrace from offending handler [_flow_stats_reply_handler] servicing event [EventOFPFlowStatsReply] follows.
+Traceback (most recent call last):
+  File "/usr/lib/python3/dist-packages/ryu/base/app_manager.py", line 290, in _event_loop
+    handler(ev)
+  File "/home/ubuntu/sdn/projects/multi-path/app3_multi-path+monitor.py", line 398, in _flow_stats_reply_handler
+    for stat in sorted([flow for flow in body if flow.priority == 10],
+  File "/home/ubuntu/sdn/projects/multi-path/app3_multi-path+monitor.py", line 399, in <lambda>
+    key=lambda flow: (flow.match['in_port'],
+  File "/usr/lib/python3/dist-packages/ryu/ofproto/ofproto_v1_3_parser.py", line 904, in __getitem__
+    return dict(self._fields2)[key]
+KeyError: 'in_port'
+--- Logging error ---
+Traceback (most recent call last):
+  File "/usr/lib/python3.8/logging/__init__.py", line 1085, in emit
+    msg = self.format(record)
+  File "/usr/lib/python3.8/logging/__init__.py", line 929, in format
+    return fmt.format(record)
+  File "/usr/lib/python3.8/logging/__init__.py", line 668, in format
+    record.message = record.getMessage()
+  File "/usr/lib/python3.8/logging/__init__.py", line 373, in getMessage
+    msg = msg % self.args
+TypeError: not all arguments converted during string formatting
+Call stack:
+  File "/usr/lib/python3/dist-packages/eventlet/greenthread.py", line 221, in main
+    result = function(*args, **kwargs)
+  File "/usr/lib/python3/dist-packages/ryu/lib/hub.py", line 59, in _launch
+    return func(*args, **kwargs)
+  File "/usr/lib/python3/dist-packages/ryu/base/app_manager.py", line 290, in _event_loop
+    handler(ev)
+  File "/home/ubuntu/sdn/projects/multi-path/app3_multi-path+monitor.py", line 411, in _port_stats_reply_handler
+    self.logger.info('body is ', body)
+Message: 'body is '
+Arguments: ([OFPPortStats(port_no=4294967294,rx_packets=0,tx_packets=0,rx_bytes=0,tx_bytes=0,rx_dropped=6270,tx_dropped=0,rx_errors=0,tx_errors=0,rx_frame_err=0,rx_over_err=0,rx_crc_err=0,collisions=0,duration_sec=13844,duration_nsec=871000000), OFPPortStats(port_no=1,rx_packets=21,tx_packets=21372,rx_bytes=1662,tx_bytes=1171457,rx_dropped=0,tx_dropped=0,rx_errors=0,tx_errors=0,rx_frame_err=0,rx_over_err=0,rx_crc_err=0,collisions=0,duration_sec=13844,duration_nsec=930000000), OFPPortStats(port_no=2,rx_packets=18236,tx_packets=18236,rx_bytes=1039667,tx_bytes=1039667,rx_dropped=0,tx_dropped=0,rx_errors=0,tx_errors=0,rx_frame_err=0,rx_over_err=0,rx_crc_err=0,collisions=0,duration_sec=13844,duration_nsec=914000000), OFPPortStats(port_no=3,rx_packets=18237,tx_packets=18237,rx_bytes=1039727,tx_bytes=1039727,rx_dropped=2,tx_dropped=0,rx_errors=0,tx_errors=0,rx_frame_err=0,rx_over_err=0,rx_crc_err=0,collisions=0,duration_sec=13844,duration_nsec=939000000)],)
+datapath         port     rx-pkts  rx-bytes rx-error tx-pkts  tx-bytes tx-error
+---------------- -------- -------- -------- -------- -------- -------- --------
+0000000000000004        1       21     1662        0    21372  1171457        0
+0000000000000004        2    18236  1039667        0    18236  1039667        0
+0000000000000004        3    18237  1039727        0    18237  1039727        0
+0000000000000004 fffffffe        0        0        0        0        0        0
+datapath         in-port  eth-dst           out-port packets  bytes
+---------------- -------- ----------------- -------- -------- --------
+Switch: Exception occurred during handler processing. Backtrace from offending handler [_flow_stats_reply_handler] servicing event [EventOFPFlowStatsReply] follows.
+Traceback (most recent call last):
+  File "/usr/lib/python3/dist-packages/ryu/base/app_manager.py", line 290, in _event_loop
+    handler(ev)
+  File "/home/ubuntu/sdn/projects/multi-path/app3_multi-path+monitor.py", line 398, in _flow_stats_reply_handler
+    for stat in sorted([flow for flow in body if flow.priority == 10],
+  File "/home/ubuntu/sdn/projects/multi-path/app3_multi-path+monitor.py", line 399, in <lambda>
+    key=lambda flow: (flow.match['in_port'],
+  File "/usr/lib/python3/dist-packages/ryu/ofproto/ofproto_v1_3_parser.py", line 904, in __getitem__
+    return dict(self._fields2)[key]
+KeyError: 'in_port'
+--- Logging error ---
+Traceback (most recent call last):
+  File "/usr/lib/python3.8/logging/__init__.py", line 1085, in emit
+    msg = self.format(record)
+  File "/usr/lib/python3.8/logging/__init__.py", line 929, in format
+    return fmt.format(record)
+  File "/usr/lib/python3.8/logging/__init__.py", line 668, in format
+    record.message = record.getMessage()
+  File "/usr/lib/python3.8/logging/__init__.py", line 373, in getMessage
+    msg = msg % self.args
+TypeError: not all arguments converted during string formatting
+Call stack:
+  File "/usr/lib/python3/dist-packages/eventlet/greenthread.py", line 221, in main
+    result = function(*args, **kwargs)
+  File "/usr/lib/python3/dist-packages/ryu/lib/hub.py", line 59, in _launch
+    return func(*args, **kwargs)
+  File "/usr/lib/python3/dist-packages/ryu/base/app_manager.py", line 290, in _event_loop
+    handler(ev)
+  File "/home/ubuntu/sdn/projects/multi-path/app3_multi-path+monitor.py", line 411, in _port_stats_reply_handler
+    self.logger.info('body is ', body)
+Message: 'body is '
+Arguments: ([OFPPortStats(port_no=4294967294,rx_packets=0,tx_packets=0,rx_bytes=0,tx_bytes=0,rx_dropped=6270,tx_dropped=0,rx_errors=0,tx_errors=0,rx_frame_err=0,rx_over_err=0,rx_crc_err=0,collisions=0,duration_sec=13845,duration_nsec=888000000), OFPPortStats(port_no=1,rx_packets=13939,tx_packets=41520,rx_bytes=1340894,tx_bytes=2779479,rx_dropped=0,tx_dropped=0,rx_errors=0,tx_errors=0,rx_frame_err=0,rx_over_err=0,rx_crc_err=0,collisions=0,duration_sec=13846,duration_nsec=22000000), OFPPortStats(port_no=2,rx_packets=37993,tx_packets=31727,rx_bytes=2624229,tx_bytes=2361075,rx_dropped=0,tx_dropped=0,rx_errors=0,tx_errors=0,rx_frame_err=0,rx_over_err=0,rx_crc_err=0,collisions=0,duration_sec=13846,duration_nsec=53000000), OFPPortStats(port_no=3,rx_packets=18237,tx_packets=18237,rx_bytes=1039727,tx_bytes=1039727,rx_dropped=0,tx_dropped=0,rx_errors=0,tx_errors=0,rx_frame_err=0,rx_over_err=0,rx_crc_err=0,collisions=0,duration_sec=13845,duration_nsec=947000000)],)
+datapath         port     rx-pkts  rx-bytes rx-error tx-pkts  tx-bytes tx-error
+---------------- -------- -------- -------- -------- -------- -------- --------
+0000000000000001        1    13939  1340894        0    41520  2779479        0
+0000000000000001        2    37993  2624229        0    31727  2361075        0
+0000000000000001        3    18237  1039727        0    18237  1039727        0
+0000000000000001 fffffffe        0        0        0        0        0        0
+datapath         in-port  eth-dst           out-port packets  bytes
+---------------- -------- ----------------- -------- -------- --------
+Switch: Exception occurred during handler processing. Backtrace from offending handler [_flow_stats_reply_handler] servicing event [EventOFPFlowStatsReply] follows.
+Traceback (most recent call last):
+  File "/usr/lib/python3/dist-packages/ryu/base/app_manager.py", line 290, in _event_loop
+    handler(ev)
+  File "/home/ubuntu/sdn/projects/multi-path/app3_multi-path+monitor.py", line 398, in _flow_stats_reply_handler
+    for stat in sorted([flow for flow in body if flow.priority == 10],
+  File "/home/ubuntu/sdn/projects/multi-path/app3_multi-path+monitor.py", line 399, in <lambda>
+    key=lambda flow: (flow.match['in_port'],
+  File "/usr/lib/python3/dist-packages/ryu/ofproto/ofproto_v1_3_parser.py", line 904, in __getitem__
+    return dict(self._fields2)[key]
+KeyError: 'in_port'
+--- Logging error ---
+Traceback (most recent call last):
+  File "/usr/lib/python3.8/logging/__init__.py", line 1085, in emit
+    msg = self.format(record)
+  File "/usr/lib/python3.8/logging/__init__.py", line 929, in format
+    return fmt.format(record)
+  File "/usr/lib/python3.8/logging/__init__.py", line 668, in format
+    record.message = record.getMessage()
+  File "/usr/lib/python3.8/logging/__init__.py", line 373, in getMessage
+    msg = msg % self.args
+TypeError: not all arguments converted during string formatting
+Call stack:
+  File "/usr/lib/python3/dist-packages/eventlet/greenthread.py", line 221, in main
+    result = function(*args, **kwargs)
+  File "/usr/lib/python3/dist-packages/ryu/lib/hub.py", line 59, in _launch
+    return func(*args, **kwargs)
+  File "/usr/lib/python3/dist-packages/ryu/base/app_manager.py", line 290, in _event_loop
+    handler(ev)
+  File "/home/ubuntu/sdn/projects/multi-path/app3_multi-path+monitor.py", line 411, in _port_stats_reply_handler
+    self.logger.info('body is ', body)
+Message: 'body is '
+Arguments: ([OFPPortStats(port_no=4294967294,rx_packets=0,tx_packets=0,rx_bytes=0,tx_bytes=0,rx_dropped=6270,tx_dropped=0,rx_errors=0,tx_errors=0,rx_frame_err=0,rx_over_err=0,rx_crc_err=0,collisions=0,duration_sec=13845,duration_nsec=233000000), OFPPortStats(port_no=1,rx_packets=21,tx_packets=21370,rx_bytes=1662,tx_bytes=1171327,rx_dropped=0,tx_dropped=0,rx_errors=0,tx_errors=0,rx_frame_err=0,rx_over_err=0,rx_crc_err=0,collisions=0,duration_sec=13845,duration_nsec=266000000), OFPPortStats(port_no=2,rx_packets=18237,tx_packets=18234,rx_bytes=1039727,tx_bytes=1039547,rx_dropped=0,tx_dropped=0,rx_errors=0,tx_errors=0,rx_frame_err=0,rx_over_err=0,rx_crc_err=0,collisions=0,duration_sec=13845,duration_nsec=285000000), OFPPortStats(port_no=3,rx_packets=18236,tx_packets=18236,rx_bytes=1039667,tx_bytes=1039667,rx_dropped=0,tx_dropped=0,rx_errors=0,tx_errors=0,rx_frame_err=0,rx_over_err=0,rx_crc_err=0,collisions=0,duration_sec=13845,duration_nsec=275000000)],)
+datapath         port     rx-pkts  rx-bytes rx-error tx-pkts  tx-bytes tx-error
+---------------- -------- -------- -------- -------- -------- -------- --------
+0000000000000003        1       21     1662        0    21370  1171327        0
+0000000000000003        2    18237  1039727        0    18234  1039547        0
+0000000000000003        3    18236  1039667        0    18236  1039667        0
+0000000000000003 fffffffe        0        0        0        0        0        0
+datapath         in-port  eth-dst           out-port packets  bytes
+---------------- -------- ----------------- -------- -------- --------
+Switch: Exception occurred during handler processing. Backtrace from offending handler [_flow_stats_reply_handler] servicing event [EventOFPFlowStatsReply] follows.
+Traceback (most recent call last):
+  File "/usr/lib/python3/dist-packages/ryu/base/app_manager.py", line 290, in _event_loop
+    handler(ev)
+  File "/home/ubuntu/sdn/projects/multi-path/app3_multi-path+monitor.py", line 398, in _flow_stats_reply_handler
+    for stat in sorted([flow for flow in body if flow.priority == 10],
+  File "/home/ubuntu/sdn/projects/multi-path/app3_multi-path+monitor.py", line 399, in <lambda>
+    key=lambda flow: (flow.match['in_port'],
+  File "/usr/lib/python3/dist-packages/ryu/ofproto/ofproto_v1_3_parser.py", line 904, in __getitem__
+    return dict(self._fields2)[key]
+KeyError: 'in_port'
+--- Logging error ---
+Traceback (most recent call last):
+  File "/usr/lib/python3.8/logging/__init__.py", line 1085, in emit
+    msg = self.format(record)
+  File "/usr/lib/python3.8/logging/__init__.py", line 929, in format
+    return fmt.format(record)
+  File "/usr/lib/python3.8/logging/__init__.py", line 668, in format
+    record.message = record.getMessage()
+  File "/usr/lib/python3.8/logging/__init__.py", line 373, in getMessage
+    msg = msg % self.args
+TypeError: not all arguments converted during string formatting
+Call stack:
+  File "/usr/lib/python3/dist-packages/eventlet/greenthread.py", line 221, in main
+    result = function(*args, **kwargs)
+  File "/usr/lib/python3/dist-packages/ryu/lib/hub.py", line 59, in _launch
+    return func(*args, **kwargs)
+  File "/usr/lib/python3/dist-packages/ryu/base/app_manager.py", line 290, in _event_loop
+    handler(ev)
+  File "/home/ubuntu/sdn/projects/multi-path/app3_multi-path+monitor.py", line 411, in _port_stats_reply_handler
+    self.logger.info('body is ', body)
+Message: 'body is '
+Arguments: ([OFPPortStats(port_no=4294967294,rx_packets=0,tx_packets=0,rx_bytes=0,tx_bytes=0,rx_dropped=6269,tx_dropped=0,rx_errors=0,tx_errors=0,rx_frame_err=0,rx_over_err=0,rx_crc_err=0,collisions=0,duration_sec=13845,duration_nsec=575000000), OFPPortStats(port_no=1,rx_packets=20172,tx_packets=35249,rx_bytes=1602772,tx_bytes=2516061,rx_dropped=0,tx_dropped=0,rx_errors=0,tx_errors=0,rx_frame_err=0,rx_over_err=0,rx_crc_err=0,collisions=0,duration_sec=13845,duration_nsec=656000000), OFPPortStats(port_no=2,rx_packets=31727,tx_packets=37993,rx_bytes=2361075,tx_bytes=2624229,rx_dropped=0,tx_dropped=0,rx_errors=0,tx_errors=0,rx_frame_err=0,rx_over_err=0,rx_crc_err=0,collisions=0,duration_sec=13845,duration_nsec=677000000), OFPPortStats(port_no=3,rx_packets=18234,tx_packets=18237,rx_bytes=1039547,tx_bytes=1039727,rx_dropped=0,tx_dropped=0,rx_errors=0,tx_errors=0,rx_frame_err=0,rx_over_err=0,rx_crc_err=0,collisions=0,duration_sec=13845,duration_nsec=667000000)],)
+datapath         port     rx-pkts  rx-bytes rx-error tx-pkts  tx-bytes tx-error
+---------------- -------- -------- -------- -------- -------- -------- --------
+0000000000000002        1    20172  1602772        0    35249  2516061        0
+0000000000000002        2    31727  2361075        0    37993  2624229        0
+0000000000000002        3    18234  1039547        0    18237  1039727        0
+0000000000000002 fffffffe        0        0        0        0        0        0
+datapath         in-port  eth-dst           out-port packets  bytes
+---------------- -------- ----------------- -------- -------- --------
+Switch: Exception occurred during handler processing. Backtrace from offending handler [_flow_stats_reply_handler] servicing event [EventOFPFlowStatsReply] follows.
+Traceback (most recent call last):
+  File "/usr/lib/python3/dist-packages/ryu/base/app_manager.py", line 290, in _event_loop
+    handler(ev)
+  File "/home/ubuntu/sdn/projects/multi-path/app3_multi-path+monitor.py", line 398, in _flow_stats_reply_handler
+    for stat in sorted([flow for flow in body if flow.priority == 10],
+  File "/home/ubuntu/sdn/projects/multi-path/app3_multi-path+monitor.py", line 399, in <lambda>
+    key=lambda flow: (flow.match['in_port'],
+  File "/usr/lib/python3/dist-packages/ryu/ofproto/ofproto_v1_3_parser.py", line 904, in __getitem__
+    return dict(self._fields2)[key]
+KeyError: 'in_port'
+--- Logging error ---
+Traceback (most recent call last):
+  File "/usr/lib/python3.8/logging/__init__.py", line 1085, in emit
+    msg = self.format(record)
+  File "/usr/lib/python3.8/logging/__init__.py", line 929, in format
+    return fmt.format(record)
+  File "/usr/lib/python3.8/logging/__init__.py", line 668, in format
+    record.message = record.getMessage()
+  File "/usr/lib/python3.8/logging/__init__.py", line 373, in getMessage
+    msg = msg % self.args
+TypeError: not all arguments converted during string formatting
+Call stack:
+  File "/usr/lib/python3/dist-packages/eventlet/greenthread.py", line 221, in main
+    result = function(*args, **kwargs)
+  File "/usr/lib/python3/dist-packages/ryu/lib/hub.py", line 59, in _launch
+    return func(*args, **kwargs)
+  File "/usr/lib/python3/dist-packages/ryu/base/app_manager.py", line 290, in _event_loop
+    handler(ev)
+  File "/home/ubuntu/sdn/projects/multi-path/app3_multi-path+monitor.py", line 411, in _port_stats_reply_handler
+    self.logger.info('body is ', body)
+Message: 'body is '
+Arguments: ([OFPPortStats(port_no=4294967294,rx_packets=0,tx_packets=0,rx_bytes=0,tx_bytes=0,rx_dropped=6270,tx_dropped=0,rx_errors=0,tx_errors=0,rx_frame_err=0,rx_over_err=0,rx_crc_err=0,collisions=0,duration_sec=13846,duration_nsec=234000000), OFPPortStats(port_no=1,rx_packets=21,tx_packets=21371,rx_bytes=1662,tx_bytes=1171387,rx_dropped=0,tx_dropped=0,rx_errors=0,tx_errors=0,rx_frame_err=0,rx_over_err=0,rx_crc_err=0,collisions=0,duration_sec=13846,duration_nsec=267000000), OFPPortStats(port_no=2,rx_packets=18238,tx_packets=18235,rx_bytes=1039787,tx_bytes=1039607,rx_dropped=0,tx_dropped=0,rx_errors=0,tx_errors=0,rx_frame_err=0,rx_over_err=0,rx_crc_err=0,collisions=0,duration_sec=13846,duration_nsec=286000000), OFPPortStats(port_no=3,rx_packets=18238,tx_packets=18237,rx_bytes=1039787,tx_bytes=1039727,rx_dropped=0,tx_dropped=0,rx_errors=0,tx_errors=0,rx_frame_err=0,rx_over_err=0,rx_crc_err=0,collisions=0,duration_sec=13846,duration_nsec=276000000)],)
+datapath         port     rx-pkts  rx-bytes rx-error tx-pkts  tx-bytes tx-error
+---------------- -------- -------- -------- -------- -------- -------- --------
+0000000000000003        1       21     1662        0    21371  1171387        0
+0000000000000003        2    18238  1039787        0    18235  1039607        0
+0000000000000003        3    18238  1039787        0    18237  1039727        0
+0000000000000003 fffffffe        0        0        0        0        0        0
+datapath         in-port  eth-dst           out-port packets  bytes
+---------------- -------- ----------------- -------- -------- --------
+Switch: Exception occurred during handler processing. Backtrace from offending handler [_flow_stats_reply_handler] servicing event [EventOFPFlowStatsReply] follows.
+Traceback (most recent call last):
+  File "/usr/lib/python3/dist-packages/ryu/base/app_manager.py", line 290, in _event_loop
+    handler(ev)
+  File "/home/ubuntu/sdn/projects/multi-path/app3_multi-path+monitor.py", line 398, in _flow_stats_reply_handler
+    for stat in sorted([flow for flow in body if flow.priority == 10],
+  File "/home/ubuntu/sdn/projects/multi-path/app3_multi-path+monitor.py", line 399, in <lambda>
+    key=lambda flow: (flow.match['in_port'],
+  File "/usr/lib/python3/dist-packages/ryu/ofproto/ofproto_v1_3_parser.py", line 904, in __getitem__
+    return dict(self._fields2)[key]
+KeyError: 'in_port'
+--- Logging error ---
+Traceback (most recent call last):
+  File "/usr/lib/python3.8/logging/__init__.py", line 1085, in emit
+    msg = self.format(record)
+  File "/usr/lib/python3.8/logging/__init__.py", line 929, in format
+    return fmt.format(record)
+  File "/usr/lib/python3.8/logging/__init__.py", line 668, in format
+    record.message = record.getMessage()
+  File "/usr/lib/python3.8/logging/__init__.py", line 373, in getMessage
+    msg = msg % self.args
+TypeError: not all arguments converted during string formatting
+Call stack:
+  File "/usr/lib/python3/dist-packages/eventlet/greenthread.py", line 221, in main
+    result = function(*args, **kwargs)
+  File "/usr/lib/python3/dist-packages/ryu/lib/hub.py", line 59, in _launch
+    return func(*args, **kwargs)
+  File "/usr/lib/python3/dist-packages/ryu/base/app_manager.py", line 290, in _event_loop
+    handler(ev)
+  File "/home/ubuntu/sdn/projects/multi-path/app3_multi-path+monitor.py", line 411, in _port_stats_reply_handler
+    self.logger.info('body is ', body)
+Message: 'body is '
+Arguments: ([OFPPortStats(port_no=4294967294,rx_packets=0,tx_packets=0,rx_bytes=0,tx_bytes=0,rx_dropped=6269,tx_dropped=0,rx_errors=0,tx_errors=0,rx_frame_err=0,rx_over_err=0,rx_crc_err=0,collisions=0,duration_sec=13846,duration_nsec=576000000), OFPPortStats(port_no=1,rx_packets=20174,tx_packets=35252,rx_bytes=1602912,tx_bytes=2516261,rx_dropped=0,tx_dropped=0,rx_errors=0,tx_errors=0,rx_frame_err=0,rx_over_err=0,rx_crc_err=0,collisions=0,duration_sec=13846,duration_nsec=657000000), OFPPortStats(port_no=2,rx_packets=31730,tx_packets=37996,rx_bytes=2361275,tx_bytes=2624429,rx_dropped=0,tx_dropped=0,rx_errors=0,tx_errors=0,rx_frame_err=0,rx_over_err=0,rx_crc_err=0,collisions=0,duration_sec=13846,duration_nsec=677000000), OFPPortStats(port_no=3,rx_packets=18235,tx_packets=18238,rx_bytes=1039607,tx_bytes=1039787,rx_dropped=0,tx_dropped=0,rx_errors=0,tx_errors=0,rx_frame_err=0,rx_over_err=0,rx_crc_err=0,collisions=0,duration_sec=13846,duration_nsec=668000000)],)
+datapath         port     rx-pkts  rx-bytes rx-error tx-pkts  tx-bytes tx-error
+---------------- -------- -------- -------- -------- -------- -------- --------
+0000000000000002        1    20174  1602912        0    35252  2516261        0
+0000000000000002        2    31730  2361275        0    37996  2624429        0
+0000000000000002        3    18235  1039607        0    18238  1039787        0
+0000000000000002 fffffffe        0        0        0        0        0        0
+datapath         in-port  eth-dst           out-port packets  bytes
+---------------- -------- ----------------- -------- -------- --------
+Switch: Exception occurred during handler processing. Backtrace from offending handler [_flow_stats_reply_handler] servicing event [EventOFPFlowStatsReply] follows.
+Traceback (most recent call last):
+  File "/usr/lib/python3/dist-packages/ryu/base/app_manager.py", line 290, in _event_loop
+    handler(ev)
+  File "/home/ubuntu/sdn/projects/multi-path/app3_multi-path+monitor.py", line 398, in _flow_stats_reply_handler
+    for stat in sorted([flow for flow in body if flow.priority == 10],
+  File "/home/ubuntu/sdn/projects/multi-path/app3_multi-path+monitor.py", line 399, in <lambda>
+    key=lambda flow: (flow.match['in_port'],
+  File "/usr/lib/python3/dist-packages/ryu/ofproto/ofproto_v1_3_parser.py", line 904, in __getitem__
+    return dict(self._fields2)[key]
+KeyError: 'in_port'
+--- Logging error ---
+Traceback (most recent call last):
+  File "/usr/lib/python3.8/logging/__init__.py", line 1085, in emit
+    msg = self.format(record)
+  File "/usr/lib/python3.8/logging/__init__.py", line 929, in format
+    return fmt.format(record)
+  File "/usr/lib/python3.8/logging/__init__.py", line 668, in format
+    record.message = record.getMessage()
+  File "/usr/lib/python3.8/logging/__init__.py", line 373, in getMessage
+    msg = msg % self.args
+TypeError: not all arguments converted during string formatting
+Call stack:
+  File "/usr/lib/python3/dist-packages/eventlet/greenthread.py", line 221, in main
+    result = function(*args, **kwargs)
+  File "/usr/lib/python3/dist-packages/ryu/lib/hub.py", line 59, in _launch
+    return func(*args, **kwargs)
+  File "/usr/lib/python3/dist-packages/ryu/base/app_manager.py", line 290, in _event_loop
+    handler(ev)
+  File "/home/ubuntu/sdn/projects/multi-path/app3_multi-path+monitor.py", line 411, in _port_stats_reply_handler
+    self.logger.info('body is ', body)
+Message: 'body is '
+Arguments: ([OFPPortStats(port_no=4294967294,rx_packets=0,tx_packets=0,rx_bytes=0,tx_bytes=0,rx_dropped=6270,tx_dropped=0,rx_errors=0,tx_errors=0,rx_frame_err=0,rx_over_err=0,rx_crc_err=0,collisions=0,duration_sec=13845,duration_nsec=873000000), OFPPortStats(port_no=1,rx_packets=21,tx_packets=21373,rx_bytes=1662,tx_bytes=1171517,rx_dropped=0,tx_dropped=0,rx_errors=0,tx_errors=0,rx_frame_err=0,rx_over_err=0,rx_crc_err=0,collisions=0,duration_sec=13845,duration_nsec=933000000), OFPPortStats(port_no=2,rx_packets=18237,tx_packets=18237,rx_bytes=1039727,tx_bytes=1039727,rx_dropped=0,tx_dropped=0,rx_errors=0,tx_errors=0,rx_frame_err=0,rx_over_err=0,rx_crc_err=0,collisions=0,duration_sec=13845,duration_nsec=917000000), OFPPortStats(port_no=3,rx_packets=18238,tx_packets=18238,rx_bytes=1039787,tx_bytes=1039787,rx_dropped=2,tx_dropped=0,rx_errors=0,tx_errors=0,rx_frame_err=0,rx_over_err=0,rx_crc_err=0,collisions=0,duration_sec=13845,duration_nsec=941000000)],)
+datapath         port     rx-pkts  rx-bytes rx-error tx-pkts  tx-bytes tx-error
+---------------- -------- -------- -------- -------- -------- -------- --------
+0000000000000004        1       21     1662        0    21373  1171517        0
+0000000000000004        2    18237  1039727        0    18237  1039727        0
+0000000000000004        3    18238  1039787        0    18238  1039787        0
+0000000000000004 fffffffe        0        0        0        0        0        0
+datapath         in-port  eth-dst           out-port packets  bytes
+---------------- -------- ----------------- -------- -------- --------
+Switch: Exception occurred during handler processing. Backtrace from offending handler [_flow_stats_reply_handler] servicing event [EventOFPFlowStatsReply] follows.
+Traceback (most recent call last):
+  File "/usr/lib/python3/dist-packages/ryu/base/app_manager.py", line 290, in _event_loop
+    handler(ev)
+  File "/home/ubuntu/sdn/projects/multi-path/app3_multi-path+monitor.py", line 398, in _flow_stats_reply_handler
+    for stat in sorted([flow for flow in body if flow.priority == 10],
+  File "/home/ubuntu/sdn/projects/multi-path/app3_multi-path+monitor.py", line 399, in <lambda>
+    key=lambda flow: (flow.match['in_port'],
+  File "/usr/lib/python3/dist-packages/ryu/ofproto/ofproto_v1_3_parser.py", line 904, in __getitem__
+    return dict(self._fields2)[key]
+KeyError: 'in_port'
+--- Logging error ---
+Traceback (most recent call last):
+  File "/usr/lib/python3.8/logging/__init__.py", line 1085, in emit
+    msg = self.format(record)
+  File "/usr/lib/python3.8/logging/__init__.py", line 929, in format
+    return fmt.format(record)
+  File "/usr/lib/python3.8/logging/__init__.py", line 668, in format
+    record.message = record.getMessage()
+  File "/usr/lib/python3.8/logging/__init__.py", line 373, in getMessage
+    msg = msg % self.args
+TypeError: not all arguments converted during string formatting
+Call stack:
+  File "/usr/lib/python3/dist-packages/eventlet/greenthread.py", line 221, in main
+    result = function(*args, **kwargs)
+  File "/usr/lib/python3/dist-packages/ryu/lib/hub.py", line 59, in _launch
+    return func(*args, **kwargs)
+  File "/usr/lib/python3/dist-packages/ryu/base/app_manager.py", line 290, in _event_loop
+    handler(ev)
+  File "/home/ubuntu/sdn/projects/multi-path/app3_multi-path+monitor.py", line 411, in _port_stats_reply_handler
+    self.logger.info('body is ', body)
+Message: 'body is '
+Arguments: ([OFPPortStats(port_no=4294967294,rx_packets=0,tx_packets=0,rx_bytes=0,tx_bytes=0,rx_dropped=6270,tx_dropped=0,rx_errors=0,tx_errors=0,rx_frame_err=0,rx_over_err=0,rx_crc_err=0,collisions=0,duration_sec=13846,duration_nsec=889000000), OFPPortStats(port_no=1,rx_packets=13941,tx_packets=41523,rx_bytes=1341034,tx_bytes=2779679,rx_dropped=0,tx_dropped=0,rx_errors=0,tx_errors=0,rx_frame_err=0,rx_over_err=0,rx_crc_err=0,collisions=0,duration_sec=13847,duration_nsec=23000000), OFPPortStats(port_no=2,rx_packets=37996,tx_packets=31730,rx_bytes=2624429,tx_bytes=2361275,rx_dropped=0,tx_dropped=0,rx_errors=0,tx_errors=0,rx_frame_err=0,rx_over_err=0,rx_crc_err=0,collisions=0,duration_sec=13847,duration_nsec=54000000), OFPPortStats(port_no=3,rx_packets=18238,tx_packets=18238,rx_bytes=1039787,tx_bytes=1039787,rx_dropped=0,tx_dropped=0,rx_errors=0,tx_errors=0,rx_frame_err=0,rx_over_err=0,rx_crc_err=0,collisions=0,duration_sec=13846,duration_nsec=948000000)],)
+datapath         port     rx-pkts  rx-bytes rx-error tx-pkts  tx-bytes tx-error
+---------------- -------- -------- -------- -------- -------- -------- --------
+0000000000000001        1    13941  1341034        0    41523  2779679        0
+0000000000000001        2    37996  2624429        0    31730  2361275        0
+0000000000000001        3    18238  1039787        0    18238  1039787        0
+0000000000000001 fffffffe        0        0        0        0        0        0
+datapath         in-port  eth-dst           out-port packets  bytes
+---------------- -------- ----------------- -------- -------- --------
+Switch: Exception occurred during handler processing. Backtrace from offending handler [_flow_stats_reply_handler] servicing event [EventOFPFlowStatsReply] follows.
+Traceback (most recent call last):
+  File "/usr/lib/python3/dist-packages/ryu/base/app_manager.py", line 290, in _event_loop
+    handler(ev)
+  File "/home/ubuntu/sdn/projects/multi-path/app3_multi-path+monitor.py", line 398, in _flow_stats_reply_handler
+    for stat in sorted([flow for flow in body if flow.priority == 10],
+  File "/home/ubuntu/sdn/projects/multi-path/app3_multi-path+monitor.py", line 399, in <lambda>
+    key=lambda flow: (flow.match['in_port'],
+  File "/usr/lib/python3/dist-packages/ryu/ofproto/ofproto_v1_3_parser.py", line 904, in __getitem__
+    return dict(self._fields2)[key]
+KeyError: 'in_port'
+--- Logging error ---
+Traceback (most recent call last):
+  File "/usr/lib/python3.8/logging/__init__.py", line 1085, in emit
+    msg = self.format(record)
+  File "/usr/lib/python3.8/logging/__init__.py", line 929, in format
+    return fmt.format(record)
+  File "/usr/lib/python3.8/logging/__init__.py", line 668, in format
+    record.message = record.getMessage()
+  File "/usr/lib/python3.8/logging/__init__.py", line 373, in getMessage
+    msg = msg % self.args
+TypeError: not all arguments converted during string formatting
+Call stack:
+  File "/usr/lib/python3/dist-packages/eventlet/greenthread.py", line 221, in main
+    result = function(*args, **kwargs)
+  File "/usr/lib/python3/dist-packages/ryu/lib/hub.py", line 59, in _launch
+    return func(*args, **kwargs)
+  File "/usr/lib/python3/dist-packages/ryu/base/app_manager.py", line 290, in _event_loop
+    handler(ev)
+  File "/home/ubuntu/sdn/projects/multi-path/app3_multi-path+monitor.py", line 411, in _port_stats_reply_handler
+    self.logger.info('body is ', body)
+Message: 'body is '
+Arguments: ([OFPPortStats(port_no=4294967294,rx_packets=0,tx_packets=0,rx_bytes=0,tx_bytes=0,rx_dropped=6270,tx_dropped=0,rx_errors=0,tx_errors=0,rx_frame_err=0,rx_over_err=0,rx_crc_err=0,collisions=0,duration_sec=13847,duration_nsec=890000000), OFPPortStats(port_no=1,rx_packets=13942,tx_packets=41525,rx_bytes=1341132,tx_bytes=2779837,rx_dropped=0,tx_dropped=0,rx_errors=0,tx_errors=0,rx_frame_err=0,rx_over_err=0,rx_crc_err=0,collisions=0,duration_sec=13848,duration_nsec=24000000), OFPPortStats(port_no=2,rx_packets=37998,tx_packets=31732,rx_bytes=2624587,tx_bytes=2361433,rx_dropped=0,tx_dropped=0,rx_errors=0,tx_errors=0,rx_frame_err=0,rx_over_err=0,rx_crc_err=0,collisions=0,duration_sec=13848,duration_nsec=55000000), OFPPortStats(port_no=3,rx_packets=18239,tx_packets=18239,rx_bytes=1039847,tx_bytes=1039847,rx_dropped=0,tx_dropped=0,rx_errors=0,tx_errors=0,rx_frame_err=0,rx_over_err=0,rx_crc_err=0,collisions=0,duration_sec=13847,duration_nsec=949000000)],)
+datapath         port     rx-pkts  rx-bytes rx-error tx-pkts  tx-bytes tx-error
+---------------- -------- -------- -------- -------- -------- -------- --------
+0000000000000001        1    13942  1341132        0    41525  2779837        0
+0000000000000001        2    37998  2624587        0    31732  2361433        0
+0000000000000001        3    18239  1039847        0    18239  1039847        0
+0000000000000001 fffffffe        0        0        0        0        0        0
+datapath         in-port  eth-dst           out-port packets  bytes
+---------------- -------- ----------------- -------- -------- --------
+Switch: Exception occurred during handler processing. Backtrace from offending handler [_flow_stats_reply_handler] servicing event [EventOFPFlowStatsReply] follows.
+Traceback (most recent call last):
+  File "/usr/lib/python3/dist-packages/ryu/base/app_manager.py", line 290, in _event_loop
+    handler(ev)
+  File "/home/ubuntu/sdn/projects/multi-path/app3_multi-path+monitor.py", line 398, in _flow_stats_reply_handler
+    for stat in sorted([flow for flow in body if flow.priority == 10],
+  File "/home/ubuntu/sdn/projects/multi-path/app3_multi-path+monitor.py", line 399, in <lambda>
+    key=lambda flow: (flow.match['in_port'],
+  File "/usr/lib/python3/dist-packages/ryu/ofproto/ofproto_v1_3_parser.py", line 904, in __getitem__
+    return dict(self._fields2)[key]
+KeyError: 'in_port'
+--- Logging error ---
+Traceback (most recent call last):
+  File "/usr/lib/python3.8/logging/__init__.py", line 1085, in emit
+    msg = self.format(record)
+  File "/usr/lib/python3.8/logging/__init__.py", line 929, in format
+    return fmt.format(record)
+  File "/usr/lib/python3.8/logging/__init__.py", line 668, in format
+    record.message = record.getMessage()
+  File "/usr/lib/python3.8/logging/__init__.py", line 373, in getMessage
+    msg = msg % self.args
+TypeError: not all arguments converted during string formatting
+Call stack:
+  File "/usr/lib/python3/dist-packages/eventlet/greenthread.py", line 221, in main
+    result = function(*args, **kwargs)
+  File "/usr/lib/python3/dist-packages/ryu/lib/hub.py", line 59, in _launch
+    return func(*args, **kwargs)
+  File "/usr/lib/python3/dist-packages/ryu/base/app_manager.py", line 290, in _event_loop
+    handler(ev)
+  File "/home/ubuntu/sdn/projects/multi-path/app3_multi-path+monitor.py", line 411, in _port_stats_reply_handler
+    self.logger.info('body is ', body)
+Message: 'body is '
+Arguments: ([OFPPortStats(port_no=4294967294,rx_packets=0,tx_packets=0,rx_bytes=0,tx_bytes=0,rx_dropped=6270,tx_dropped=0,rx_errors=0,tx_errors=0,rx_frame_err=0,rx_over_err=0,rx_crc_err=0,collisions=0,duration_sec=13846,duration_nsec=876000000), OFPPortStats(port_no=1,rx_packets=21,tx_packets=21375,rx_bytes=1662,tx_bytes=1171637,rx_dropped=0,tx_dropped=0,rx_errors=0,tx_errors=0,rx_frame_err=0,rx_over_err=0,rx_crc_err=0,collisions=0,duration_sec=13846,duration_nsec=935000000), OFPPortStats(port_no=2,rx_packets=18238,tx_packets=18239,rx_bytes=1039787,tx_bytes=1039847,rx_dropped=0,tx_dropped=0,rx_errors=0,tx_errors=0,rx_frame_err=0,rx_over_err=0,rx_crc_err=0,collisions=0,duration_sec=13846,duration_nsec=919000000), OFPPortStats(port_no=3,rx_packets=18239,tx_packets=18239,rx_bytes=1039847,tx_bytes=1039847,rx_dropped=2,tx_dropped=0,rx_errors=0,tx_errors=0,rx_frame_err=0,rx_over_err=0,rx_crc_err=0,collisions=0,duration_sec=13846,duration_nsec=944000000)],)
+datapath         port     rx-pkts  rx-bytes rx-error tx-pkts  tx-bytes tx-error
+---------------- -------- -------- -------- -------- -------- -------- --------
+0000000000000004        1       21     1662        0    21375  1171637        0
+0000000000000004        2    18238  1039787        0    18239  1039847        0
+0000000000000004        3    18239  1039847        0    18239  1039847        0
+0000000000000004 fffffffe        0        0        0        0        0        0
+datapath         in-port  eth-dst           out-port packets  bytes
+---------------- -------- ----------------- -------- -------- --------
+Switch: Exception occurred during handler processing. Backtrace from offending handler [_flow_stats_reply_handler] servicing event [EventOFPFlowStatsReply] follows.
+Traceback (most recent call last):
+  File "/usr/lib/python3/dist-packages/ryu/base/app_manager.py", line 290, in _event_loop
+    handler(ev)
+  File "/home/ubuntu/sdn/projects/multi-path/app3_multi-path+monitor.py", line 398, in _flow_stats_reply_handler
+    for stat in sorted([flow for flow in body if flow.priority == 10],
+  File "/home/ubuntu/sdn/projects/multi-path/app3_multi-path+monitor.py", line 399, in <lambda>
+    key=lambda flow: (flow.match['in_port'],
+  File "/usr/lib/python3/dist-packages/ryu/ofproto/ofproto_v1_3_parser.py", line 904, in __getitem__
+    return dict(self._fields2)[key]
+KeyError: 'in_port'
+--- Logging error ---
+Traceback (most recent call last):
+  File "/usr/lib/python3.8/logging/__init__.py", line 1085, in emit
+    msg = self.format(record)
+  File "/usr/lib/python3.8/logging/__init__.py", line 929, in format
+    return fmt.format(record)
+  File "/usr/lib/python3.8/logging/__init__.py", line 668, in format
+    record.message = record.getMessage()
+  File "/usr/lib/python3.8/logging/__init__.py", line 373, in getMessage
+    msg = msg % self.args
+TypeError: not all arguments converted during string formatting
+Call stack:
+  File "/usr/lib/python3/dist-packages/eventlet/greenthread.py", line 221, in main
+    result = function(*args, **kwargs)
+  File "/usr/lib/python3/dist-packages/ryu/lib/hub.py", line 59, in _launch
+    return func(*args, **kwargs)
+  File "/usr/lib/python3/dist-packages/ryu/base/app_manager.py", line 290, in _event_loop
+    handler(ev)
+  File "/home/ubuntu/sdn/projects/multi-path/app3_multi-path+monitor.py", line 411, in _port_stats_reply_handler
+    self.logger.info('body is ', body)
+Message: 'body is '
+Arguments: ([OFPPortStats(port_no=4294967294,rx_packets=0,tx_packets=0,rx_bytes=0,tx_bytes=0,rx_dropped=6269,tx_dropped=0,rx_errors=0,tx_errors=0,rx_frame_err=0,rx_over_err=0,rx_crc_err=0,collisions=0,duration_sec=13847,duration_nsec=579000000), OFPPortStats(port_no=1,rx_packets=20175,tx_packets=35254,rx_bytes=1603010,tx_bytes=2516419,rx_dropped=0,tx_dropped=0,rx_errors=0,tx_errors=0,rx_frame_err=0,rx_over_err=0,rx_crc_err=0,collisions=0,duration_sec=13847,duration_nsec=661000000), OFPPortStats(port_no=2,rx_packets=31732,tx_packets=37998,rx_bytes=2361433,tx_bytes=2624587,rx_dropped=0,tx_dropped=0,rx_errors=0,tx_errors=0,rx_frame_err=0,rx_over_err=0,rx_crc_err=0,collisions=0,duration_sec=13847,duration_nsec=683000000), OFPPortStats(port_no=3,rx_packets=18236,tx_packets=18239,rx_bytes=1039667,tx_bytes=1039847,rx_dropped=0,tx_dropped=0,rx_errors=0,tx_errors=0,rx_frame_err=0,rx_over_err=0,rx_crc_err=0,collisions=0,duration_sec=13847,duration_nsec=673000000)],)
+datapath         port     rx-pkts  rx-bytes rx-error tx-pkts  tx-bytes tx-error
+---------------- -------- -------- -------- -------- -------- -------- --------
+0000000000000002        1    20175  1603010        0    35254  2516419        0
+0000000000000002        2    31732  2361433        0    37998  2624587        0
+0000000000000002        3    18236  1039667        0    18239  1039847        0
+0000000000000002 fffffffe        0        0        0        0        0        0
+datapath         in-port  eth-dst           out-port packets  bytes
+---------------- -------- ----------------- -------- -------- --------
+Switch: Exception occurred during handler processing. Backtrace from offending handler [_flow_stats_reply_handler] servicing event [EventOFPFlowStatsReply] follows.
+Traceback (most recent call last):
+  File "/usr/lib/python3/dist-packages/ryu/base/app_manager.py", line 290, in _event_loop
+    handler(ev)
+  File "/home/ubuntu/sdn/projects/multi-path/app3_multi-path+monitor.py", line 398, in _flow_stats_reply_handler
+    for stat in sorted([flow for flow in body if flow.priority == 10],
+  File "/home/ubuntu/sdn/projects/multi-path/app3_multi-path+monitor.py", line 399, in <lambda>
+    key=lambda flow: (flow.match['in_port'],
+  File "/usr/lib/python3/dist-packages/ryu/ofproto/ofproto_v1_3_parser.py", line 904, in __getitem__
+    return dict(self._fields2)[key]
+KeyError: 'in_port'
+--- Logging error ---
+Traceback (most recent call last):
+  File "/usr/lib/python3.8/logging/__init__.py", line 1085, in emit
+    msg = self.format(record)
+  File "/usr/lib/python3.8/logging/__init__.py", line 929, in format
+    return fmt.format(record)
+  File "/usr/lib/python3.8/logging/__init__.py", line 668, in format
+    record.message = record.getMessage()
+  File "/usr/lib/python3.8/logging/__init__.py", line 373, in getMessage
+    msg = msg % self.args
+TypeError: not all arguments converted during string formatting
+Call stack:
+  File "/usr/lib/python3/dist-packages/eventlet/greenthread.py", line 221, in main
+    result = function(*args, **kwargs)
+  File "/usr/lib/python3/dist-packages/ryu/lib/hub.py", line 59, in _launch
+    return func(*args, **kwargs)
+  File "/usr/lib/python3/dist-packages/ryu/base/app_manager.py", line 290, in _event_loop
+    handler(ev)
+  File "/home/ubuntu/sdn/projects/multi-path/app3_multi-path+monitor.py", line 411, in _port_stats_reply_handler
+    self.logger.info('body is ', body)
+Message: 'body is '
+Arguments: ([OFPPortStats(port_no=4294967294,rx_packets=0,tx_packets=0,rx_bytes=0,tx_bytes=0,rx_dropped=6270,tx_dropped=0,rx_errors=0,tx_errors=0,rx_frame_err=0,rx_over_err=0,rx_crc_err=0,collisions=0,duration_sec=13847,duration_nsec=237000000), OFPPortStats(port_no=1,rx_packets=21,tx_packets=21372,rx_bytes=1662,tx_bytes=1171447,rx_dropped=0,tx_dropped=0,rx_errors=0,tx_errors=0,rx_frame_err=0,rx_over_err=0,rx_crc_err=0,collisions=0,duration_sec=13847,duration_nsec=270000000), OFPPortStats(port_no=2,rx_packets=18239,tx_packets=18236,rx_bytes=1039847,tx_bytes=1039667,rx_dropped=0,tx_dropped=0,rx_errors=0,tx_errors=0,rx_frame_err=0,rx_over_err=0,rx_crc_err=0,collisions=0,duration_sec=13847,duration_nsec=289000000), OFPPortStats(port_no=3,rx_packets=18239,tx_packets=18238,rx_bytes=1039847,tx_bytes=1039787,rx_dropped=0,tx_dropped=0,rx_errors=0,tx_errors=0,rx_frame_err=0,rx_over_err=0,rx_crc_err=0,collisions=0,duration_sec=13847,duration_nsec=279000000)],)
+datapath         port     rx-pkts  rx-bytes rx-error tx-pkts  tx-bytes tx-error
+---------------- -------- -------- -------- -------- -------- -------- --------
+0000000000000003        1       21     1662        0    21372  1171447        0
+0000000000000003        2    18239  1039847        0    18236  1039667        0
+0000000000000003        3    18239  1039847        0    18238  1039787        0
+0000000000000003 fffffffe        0        0        0        0        0        0
+datapath         in-port  eth-dst           out-port packets  bytes
+---------------- -------- ----------------- -------- -------- --------
+Switch: Exception occurred during handler processing. Backtrace from offending handler [_flow_stats_reply_handler] servicing event [EventOFPFlowStatsReply] follows.
+Traceback (most recent call last):
+  File "/usr/lib/python3/dist-packages/ryu/base/app_manager.py", line 290, in _event_loop
+    handler(ev)
+  File "/home/ubuntu/sdn/projects/multi-path/app3_multi-path+monitor.py", line 398, in _flow_stats_reply_handler
+    for stat in sorted([flow for flow in body if flow.priority == 10],
+  File "/home/ubuntu/sdn/projects/multi-path/app3_multi-path+monitor.py", line 399, in <lambda>
+    key=lambda flow: (flow.match['in_port'],
+  File "/usr/lib/python3/dist-packages/ryu/ofproto/ofproto_v1_3_parser.py", line 904, in __getitem__
+    return dict(self._fields2)[key]
+KeyError: 'in_port'
+--- Logging error ---
+Traceback (most recent call last):
+  File "/usr/lib/python3.8/logging/__init__.py", line 1085, in emit
+    msg = self.format(record)
+  File "/usr/lib/python3.8/logging/__init__.py", line 929, in format
+    return fmt.format(record)
+  File "/usr/lib/python3.8/logging/__init__.py", line 668, in format
+    record.message = record.getMessage()
+  File "/usr/lib/python3.8/logging/__init__.py", line 373, in getMessage
+    msg = msg % self.args
+TypeError: not all arguments converted during string formatting
+Call stack:
+  File "/usr/lib/python3/dist-packages/eventlet/greenthread.py", line 221, in main
+    result = function(*args, **kwargs)
+  File "/usr/lib/python3/dist-packages/ryu/lib/hub.py", line 59, in _launch
+    return func(*args, **kwargs)
+  File "/usr/lib/python3/dist-packages/ryu/base/app_manager.py", line 290, in _event_loop
+    handler(ev)
+  File "/home/ubuntu/sdn/projects/multi-path/app3_multi-path+monitor.py", line 411, in _port_stats_reply_handler
+    self.logger.info('body is ', body)
+Message: 'body is '
+Arguments: ([OFPPortStats(port_no=4294967294,rx_packets=0,tx_packets=0,rx_bytes=0,tx_bytes=0,rx_dropped=6270,tx_dropped=0,rx_errors=0,tx_errors=0,rx_frame_err=0,rx_over_err=0,rx_crc_err=0,collisions=0,duration_sec=13848,duration_nsec=892000000), OFPPortStats(port_no=1,rx_packets=13943,tx_packets=41527,rx_bytes=1341230,tx_bytes=2779995,rx_dropped=0,tx_dropped=0,rx_errors=0,tx_errors=0,rx_frame_err=0,rx_over_err=0,rx_crc_err=0,collisions=0,duration_sec=13849,duration_nsec=26000000), OFPPortStats(port_no=2,rx_packets=38000,tx_packets=31735,rx_bytes=2624745,tx_bytes=2361651,rx_dropped=0,tx_dropped=0,rx_errors=0,tx_errors=0,rx_frame_err=0,rx_over_err=0,rx_crc_err=0,collisions=0,duration_sec=13849,duration_nsec=57000000), OFPPortStats(port_no=3,rx_packets=18240,tx_packets=18240,rx_bytes=1039907,tx_bytes=1039907,rx_dropped=0,tx_dropped=0,rx_errors=0,tx_errors=0,rx_frame_err=0,rx_over_err=0,rx_crc_err=0,collisions=0,duration_sec=13848,duration_nsec=952000000)],)
+datapath         port     rx-pkts  rx-bytes rx-error tx-pkts  tx-bytes tx-error
+---------------- -------- -------- -------- -------- -------- -------- --------
+0000000000000001        1    13943  1341230        0    41527  2779995        0
+0000000000000001        2    38000  2624745        0    31735  2361651        0
+0000000000000001        3    18240  1039907        0    18240  1039907        0
+0000000000000001 fffffffe        0        0        0        0        0        0
+datapath         in-port  eth-dst           out-port packets  bytes
+---------------- -------- ----------------- -------- -------- --------
+Switch: Exception occurred during handler processing. Backtrace from offending handler [_flow_stats_reply_handler] servicing event [EventOFPFlowStatsReply] follows.
+Traceback (most recent call last):
+  File "/usr/lib/python3/dist-packages/ryu/base/app_manager.py", line 290, in _event_loop
+    handler(ev)
+  File "/home/ubuntu/sdn/projects/multi-path/app3_multi-path+monitor.py", line 398, in _flow_stats_reply_handler
+    for stat in sorted([flow for flow in body if flow.priority == 10],
+  File "/home/ubuntu/sdn/projects/multi-path/app3_multi-path+monitor.py", line 399, in <lambda>
+    key=lambda flow: (flow.match['in_port'],
+  File "/usr/lib/python3/dist-packages/ryu/ofproto/ofproto_v1_3_parser.py", line 904, in __getitem__
+    return dict(self._fields2)[key]
+KeyError: 'in_port'
+--- Logging error ---
+Traceback (most recent call last):
+  File "/usr/lib/python3.8/logging/__init__.py", line 1085, in emit
+    msg = self.format(record)
+  File "/usr/lib/python3.8/logging/__init__.py", line 929, in format
+    return fmt.format(record)
+  File "/usr/lib/python3.8/logging/__init__.py", line 668, in format
+    record.message = record.getMessage()
+  File "/usr/lib/python3.8/logging/__init__.py", line 373, in getMessage
+    msg = msg % self.args
+TypeError: not all arguments converted during string formatting
+Call stack:
+  File "/usr/lib/python3/dist-packages/eventlet/greenthread.py", line 221, in main
+    result = function(*args, **kwargs)
+  File "/usr/lib/python3/dist-packages/ryu/lib/hub.py", line 59, in _launch
+    return func(*args, **kwargs)
+  File "/usr/lib/python3/dist-packages/ryu/base/app_manager.py", line 290, in _event_loop
+    handler(ev)
+  File "/home/ubuntu/sdn/projects/multi-path/app3_multi-path+monitor.py", line 411, in _port_stats_reply_handler
+    self.logger.info('body is ', body)
+Message: 'body is '
+Arguments: ([OFPPortStats(port_no=4294967294,rx_packets=0,tx_packets=0,rx_bytes=0,tx_bytes=0,rx_dropped=6270,tx_dropped=0,rx_errors=0,tx_errors=0,rx_frame_err=0,rx_over_err=0,rx_crc_err=0,collisions=0,duration_sec=13847,duration_nsec=879000000), OFPPortStats(port_no=1,rx_packets=21,tx_packets=21376,rx_bytes=1662,tx_bytes=1171697,rx_dropped=0,tx_dropped=0,rx_errors=0,tx_errors=0,rx_frame_err=0,rx_over_err=0,rx_crc_err=0,collisions=0,duration_sec=13847,duration_nsec=938000000), OFPPortStats(port_no=2,rx_packets=18239,tx_packets=18240,rx_bytes=1039847,tx_bytes=1039907,rx_dropped=0,tx_dropped=0,rx_errors=0,tx_errors=0,rx_frame_err=0,rx_over_err=0,rx_crc_err=0,collisions=0,duration_sec=13847,duration_nsec=922000000), OFPPortStats(port_no=3,rx_packets=18240,tx_packets=18240,rx_bytes=1039907,tx_bytes=1039907,rx_dropped=2,tx_dropped=0,rx_errors=0,tx_errors=0,rx_frame_err=0,rx_over_err=0,rx_crc_err=0,collisions=0,duration_sec=13847,duration_nsec=946000000)],)
+datapath         port     rx-pkts  rx-bytes rx-error tx-pkts  tx-bytes tx-error
+---------------- -------- -------- -------- -------- -------- -------- --------
+0000000000000004        1       21     1662        0    21376  1171697        0
+0000000000000004        2    18239  1039847        0    18240  1039907        0
+0000000000000004        3    18240  1039907        0    18240  1039907        0
+0000000000000004 fffffffe        0        0        0        0        0        0
+datapath         in-port  eth-dst           out-port packets  bytes
+---------------- -------- ----------------- -------- -------- --------
+Switch: Exception occurred during handler processing. Backtrace from offending handler [_flow_stats_reply_handler] servicing event [EventOFPFlowStatsReply] follows.
+Traceback (most recent call last):
+  File "/usr/lib/python3/dist-packages/ryu/base/app_manager.py", line 290, in _event_loop
+    handler(ev)
+  File "/home/ubuntu/sdn/projects/multi-path/app3_multi-path+monitor.py", line 398, in _flow_stats_reply_handler
+    for stat in sorted([flow for flow in body if flow.priority == 10],
+  File "/home/ubuntu/sdn/projects/multi-path/app3_multi-path+monitor.py", line 399, in <lambda>
+    key=lambda flow: (flow.match['in_port'],
+  File "/usr/lib/python3/dist-packages/ryu/ofproto/ofproto_v1_3_parser.py", line 904, in __getitem__
+    return dict(self._fields2)[key]
+KeyError: 'in_port'
+--- Logging error ---
+Traceback (most recent call last):
+  File "/usr/lib/python3.8/logging/__init__.py", line 1085, in emit
+    msg = self.format(record)
+  File "/usr/lib/python3.8/logging/__init__.py", line 929, in format
+    return fmt.format(record)
+  File "/usr/lib/python3.8/logging/__init__.py", line 668, in format
+    record.message = record.getMessage()
+  File "/usr/lib/python3.8/logging/__init__.py", line 373, in getMessage
+    msg = msg % self.args
+TypeError: not all arguments converted during string formatting
+Call stack:
+  File "/usr/lib/python3/dist-packages/eventlet/greenthread.py", line 221, in main
+    result = function(*args, **kwargs)
+  File "/usr/lib/python3/dist-packages/ryu/lib/hub.py", line 59, in _launch
+    return func(*args, **kwargs)
+  File "/usr/lib/python3/dist-packages/ryu/base/app_manager.py", line 290, in _event_loop
+    handler(ev)
+  File "/home/ubuntu/sdn/projects/multi-path/app3_multi-path+monitor.py", line 411, in _port_stats_reply_handler
+    self.logger.info('body is ', body)
+Message: 'body is '
+Arguments: ([OFPPortStats(port_no=4294967294,rx_packets=0,tx_packets=0,rx_bytes=0,tx_bytes=0,rx_dropped=6270,tx_dropped=0,rx_errors=0,tx_errors=0,rx_frame_err=0,rx_over_err=0,rx_crc_err=0,collisions=0,duration_sec=13848,duration_nsec=240000000), OFPPortStats(port_no=1,rx_packets=21,tx_packets=21373,rx_bytes=1662,tx_bytes=1171507,rx_dropped=0,tx_dropped=0,rx_errors=0,tx_errors=0,rx_frame_err=0,rx_over_err=0,rx_crc_err=0,collisions=0,duration_sec=13848,duration_nsec=273000000), OFPPortStats(port_no=2,rx_packets=18240,tx_packets=18237,rx_bytes=1039907,tx_bytes=1039727,rx_dropped=0,tx_dropped=0,rx_errors=0,tx_errors=0,rx_frame_err=0,rx_over_err=0,rx_crc_err=0,collisions=0,duration_sec=13848,duration_nsec=293000000), OFPPortStats(port_no=3,rx_packets=18240,tx_packets=18239,rx_bytes=1039907,tx_bytes=1039847,rx_dropped=0,tx_dropped=0,rx_errors=0,tx_errors=0,rx_frame_err=0,rx_over_err=0,rx_crc_err=0,collisions=0,duration_sec=13848,duration_nsec=283000000)],)
+datapath         port     rx-pkts  rx-bytes rx-error tx-pkts  tx-bytes tx-error
+---------------- -------- -------- -------- -------- -------- -------- --------
+0000000000000003        1       21     1662        0    21373  1171507        0
+0000000000000003        2    18240  1039907        0    18237  1039727        0
+0000000000000003        3    18240  1039907        0    18239  1039847        0
+0000000000000003 fffffffe        0        0        0        0        0        0
+datapath         in-port  eth-dst           out-port packets  bytes
+---------------- -------- ----------------- -------- -------- --------
+Switch: Exception occurred during handler processing. Backtrace from offending handler [_flow_stats_reply_handler] servicing event [EventOFPFlowStatsReply] follows.
+Traceback (most recent call last):
+  File "/usr/lib/python3/dist-packages/ryu/base/app_manager.py", line 290, in _event_loop
+    handler(ev)
+  File "/home/ubuntu/sdn/projects/multi-path/app3_multi-path+monitor.py", line 398, in _flow_stats_reply_handler
+    for stat in sorted([flow for flow in body if flow.priority == 10],
+  File "/home/ubuntu/sdn/projects/multi-path/app3_multi-path+monitor.py", line 399, in <lambda>
+    key=lambda flow: (flow.match['in_port'],
+  File "/usr/lib/python3/dist-packages/ryu/ofproto/ofproto_v1_3_parser.py", line 904, in __getitem__
+    return dict(self._fields2)[key]
+KeyError: 'in_port'
+--- Logging error ---
+Traceback (most recent call last):
+  File "/usr/lib/python3.8/logging/__init__.py", line 1085, in emit
+    msg = self.format(record)
+  File "/usr/lib/python3.8/logging/__init__.py", line 929, in format
+    return fmt.format(record)
+  File "/usr/lib/python3.8/logging/__init__.py", line 668, in format
+    record.message = record.getMessage()
+  File "/usr/lib/python3.8/logging/__init__.py", line 373, in getMessage
+    msg = msg % self.args
+TypeError: not all arguments converted during string formatting
+Call stack:
+  File "/usr/lib/python3/dist-packages/eventlet/greenthread.py", line 221, in main
+    result = function(*args, **kwargs)
+  File "/usr/lib/python3/dist-packages/ryu/lib/hub.py", line 59, in _launch
+    return func(*args, **kwargs)
+  File "/usr/lib/python3/dist-packages/ryu/base/app_manager.py", line 290, in _event_loop
+    handler(ev)
+  File "/home/ubuntu/sdn/projects/multi-path/app3_multi-path+monitor.py", line 411, in _port_stats_reply_handler
+    self.logger.info('body is ', body)
+Message: 'body is '
+Arguments: ([OFPPortStats(port_no=4294967294,rx_packets=0,tx_packets=0,rx_bytes=0,tx_bytes=0,rx_dropped=6269,tx_dropped=0,rx_errors=0,tx_errors=0,rx_frame_err=0,rx_over_err=0,rx_crc_err=0,collisions=0,duration_sec=13848,duration_nsec=583000000), OFPPortStats(port_no=1,rx_packets=20176,tx_packets=35256,rx_bytes=1603108,tx_bytes=2516577,rx_dropped=0,tx_dropped=0,rx_errors=0,tx_errors=0,rx_frame_err=0,rx_over_err=0,rx_crc_err=0,collisions=0,duration_sec=13848,duration_nsec=664000000), OFPPortStats(port_no=2,rx_packets=31735,tx_packets=38000,rx_bytes=2361651,tx_bytes=2624745,rx_dropped=0,tx_dropped=0,rx_errors=0,tx_errors=0,rx_frame_err=0,rx_over_err=0,rx_crc_err=0,collisions=0,duration_sec=13848,duration_nsec=684000000), OFPPortStats(port_no=3,rx_packets=18237,tx_packets=18240,rx_bytes=1039727,tx_bytes=1039907,rx_dropped=0,tx_dropped=0,rx_errors=0,tx_errors=0,rx_frame_err=0,rx_over_err=0,rx_crc_err=0,collisions=0,duration_sec=13848,duration_nsec=675000000)],)
+datapath         port     rx-pkts  rx-bytes rx-error tx-pkts  tx-bytes tx-error
+---------------- -------- -------- -------- -------- -------- -------- --------
+0000000000000002        1    20176  1603108        0    35256  2516577        0
+0000000000000002        2    31735  2361651        0    38000  2624745        0
+0000000000000002        3    18237  1039727        0    18240  1039907        0
+0000000000000002 fffffffe        0        0        0        0        0        0
+^C^CTraceback (most recent call last):
+  File "/usr/bin/ryu-manager", line 11, in <module>
+    load_entry_point('ryu==4.30', 'console_scripts', 'ryu-manager')()
+  File "/usr/lib/python3/dist-packages/ryu/cmd/manager.py", line 114, in main
+    app_mgr.close()
+  File "/usr/lib/python3/dist-packages/ryu/base/app_manager.py", line 549, in close
+    self.uninstantiate(app_name)
+  File "/usr/lib/python3/dist-packages/ryu/base/app_manager.py", line 533, in uninstantiate
+    app.stop()
+  File "/usr/lib/python3/dist-packages/ryu/base/app_manager.py", line 185, in stop
+    hub.joinall(self.threads)
+  File "/usr/lib/python3/dist-packages/ryu/lib/hub.py", line 102, in joinall
+    t.wait()
+  File "/usr/lib/python3/dist-packages/eventlet/greenthread.py", line 181, in wait
+    return self._exit_event.wait()
+  File "/usr/lib/python3/dist-packages/eventlet/event.py", line 125, in wait
+    result = hub.switch()
+  File "/usr/lib/python3/dist-packages/eventlet/hubs/hub.py", line 298, in switch
+    return self.greenlet.switch()
+  File "/usr/lib/python3/dist-packages/eventlet/hubs/hub.py", line 350, in run
+    self.wait(sleep_time)
+  File "/usr/lib/python3/dist-packages/eventlet/hubs/poll.py", line 80, in wait
+    presult = self.do_poll(seconds)
+  File "/usr/lib/python3/dist-packages/eventlet/hubs/epolls.py", line 31, in do_poll
+    return self.poll.poll(seconds)
+KeyboardInterrupt
