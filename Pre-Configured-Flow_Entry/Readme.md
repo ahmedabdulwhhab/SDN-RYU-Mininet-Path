@@ -8,8 +8,7 @@ https://github.com/ahmedabdulwhhab/SDN-RYU-Mininet-Path/blob/main/Pre-Configured
 app file is
  <br> https://github.com/ahmedabdulwhhab/SDN-RYU-Mininet-Path/blob/main/Pre-Configured-Flow_Entry/app3_multi-path.py
  <br>
- <br>app file and monitor is
- <br>https://github.com/ahmedabdulwhhab/SDN-RYU-Mininet-Path/blob/main/Pre-Configured-Flow_Entry/app3_multi-path%2Bmonitor.py
+
 
  <br> <br>we use also
  <br>- flowmanager to view topo and flowentries
