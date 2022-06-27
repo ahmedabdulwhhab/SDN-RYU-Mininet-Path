@@ -1,7 +1,7 @@
 #https://github.com/palakbhonsle/SDN-Simulation-using-RYU/blob/master/l4_switch1.py
 
 
-#sudo ryu-manager /home/ubuntu/sdn/projects/multi-path/app4_multi-path+monitor.py  /home/ubuntu/sdn/sources/flowmanager/flowmanager.py ryu.app.ofctl_rest   --observe-links --ofp-tcp-listen-port 6653
+#sudo ryu-manager /home/ubuntu/sdn/projects/multi-path/app5_multi-path+monitor.py  /home/ubuntu/sdn/sources/flowmanager/flowmanager.py ryu.app.ofctl_rest   --observe-links --ofp-tcp-listen-port 6653
 
 #sudo mn -c && sudo python3 /home/ubuntu/sdn/projects/packet_analyzer/l4Switch/topo.py
 #curl -X POST -d '{"dpid": 1,"cookie": 1,"cookie_mask": 1,"table_id": 0,"idle_timeout": 3000,"hard_timeout": 3000,"priority": 2,"flags": 1,"match":{"eth_type": 2048,"ip_proto": 1,"ipv4_dst": "10.0.0.2"},"actions":[{"type":"OUTPUT","port": 2}]}' http://localhost:8080/stats/flowentry/add
