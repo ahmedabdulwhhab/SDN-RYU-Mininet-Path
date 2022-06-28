@@ -27,15 +27,17 @@ app file is
 	
 	
 	
-	<br><br><br>
-	in bleow Link, <br> each flow entry is based on in_port, src_ip, Dst_ip to be used as layer3 switch.<br>
+	<br>
+	<br>
+	<br>
+	in bleow Link, <br> each flow entry is based on in_port, src_ip, Dst_ip to be used as layer3 switch. <br>
 	https://github.com/ahmedabdulwhhab/SDN-RYU-Mininet-Path/blob/main/Pre-Configured-Flow_Entry/app5_multi-path.py
 	
-		<br><br><br>
-	in bleow Link, <br> each flow entry is based on in_port, src_ip, Dst_ip to be used as layer3 monitor as AKhan machine learning database generator.<br>
+		<br> <br> <br>
+	in bleow Link, <br> each flow entry is based on in_port, src_ip, Dst_ip to be used as layer3 monitor as AKhan machine learning database generator. <br>
 	https://github.com/ahmedabdulwhhab/SDN-RYU-Mininet-Path/blob/main/Pre-Configured-Flow_Entry/app5_multi-path%2Bmonitor.py
 
 
-		<br><br><br>
-	in bleow Link, <br> can be used as traffic_classifier as aKhan (BUT NOT Tested<br>
+		<br> <br>  <br>
+	in bleow Link, <br> can be used as traffic_classifier as aKhan (BUT NOT Tested) <br>
 https://github.com/ahmedabdulwhhab/SDN-RYU-Mininet-Path/blob/main/Pre-Configured-Flow_Entry/traffic_classifier_python3_MP.py
