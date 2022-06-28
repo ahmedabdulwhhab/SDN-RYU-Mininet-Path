@@ -17,27 +17,24 @@ app file is
  <br>after running app,
  <br>if you want to change the default path, you can use curl cmd
  <br>curl -X POST -d '{"dpid": 1,"cookie": 1,"cookie_mask": 1,"table_id": 0,"idle_timeout": 3000,"hard_timeout": 3000,"priority": 102,"flags": 1,"match":{"eth_type": 2048,"ip_proto": 1,"ipv4_dst": "10.0.0.2"},"actions":[{"type":"OUTPUT","port": 3}]}' http://localhost:8080/stats/flowentry/add
-	 <br><t><t>	<t>			which switch<t>	<t><t><t><t><t><t><t>				opthion timeout<t>	<t>	opthoin timeout<t><t>		priority						<t><t>match criteria	<t>	ICMP<t><t>	which destation			<t>	output port	
-	<br>
-	<br>
-	youtube link is
-	<a href="https://youtu.be/7etUx5zl6OA"> To view video about this project, visit this link</a>
+	 <br><t><t>	<t>			which switch<t>	<t><t><t><t><t><t><t>				opthion timeout<t>	<t>	opthoin timeout<t><t>		priority						<t><t>match criteria	<t>	ICMP<t><t>	which destation			<t>	output port
+
+<br>
+<br>
+youtube link is
+<a href="https://youtu.be/7etUx5zl6OA"> To view video about this project, visit this link</a>
 
 	
-	
-	
-	
-	<br>
-	<br>
-	<br>
-	in bleow Link, <br> each flow entry is based on in_port, src_ip, Dst_ip to be used as layer3 switch. <br>
-	https://github.com/ahmedabdulwhhab/SDN-RYU-Mininet-Path/blob/main/Pre-Configured-Flow_Entry/app5_multi-path.py
-	
-		<br> <br> <br>
-	in bleow Link, <br> each flow entry is based on in_port, src_ip, Dst_ip to be used as layer3 monitor as AKhan machine learning database generator. <br>
-	https://github.com/ahmedabdulwhhab/SDN-RYU-Mininet-Path/blob/main/Pre-Configured-Flow_Entry/app5_multi-path%2Bmonitor.py
-
-
-		<br> <br>  <br>
-	in bleow Link, <br> can be used as traffic_classifier as aKhan (BUT NOT Tested) <br>
+<br>
+<br>
+<br>
+in bleow Link, <br> each flow entry is based on in_port, src_ip, Dst_ip to be used as layer3 switch. <br>
+https://github.com/ahmedabdulwhhab/SDN-RYU-Mininet-Path/blob/main/Pre-Configured-Flow_Entry/app5_multi-path.py
+<br> 
+<br> 
+<br>
+in bleow Link, <br> each flow entry is based on in_port, src_ip, Dst_ip to be used as layer3 monitor as AKhan machine learning database generator. <br>
+https://github.com/ahmedabdulwhhab/SDN-RYU-Mininet-Path/blob/main/Pre-Configured-Flow_Entry/app5_multi-path%2Bmonitor.py
+<br> <br>  <br>
+in bleow Link, <br> can be used as traffic_classifier as aKhan (BUT NOT Tested) <br>
 https://github.com/ahmedabdulwhhab/SDN-RYU-Mininet-Path/blob/main/Pre-Configured-Flow_Entry/traffic_classifier_python3_MP.py
