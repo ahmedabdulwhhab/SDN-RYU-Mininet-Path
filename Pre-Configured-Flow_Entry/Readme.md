@@ -22,3 +22,15 @@ app file is
 	<br>
 	youtube link is
 	<a href="https://youtu.be/7etUx5zl6OA"> To view video about this project, visit this link</a>
+
+	
+	
+	
+	
+	<br><br><br>
+	in bleow Link, <br> each flow entry is based on in_port, src_ip, Dst_ip to be used as layer3 switch.<br>
+	https://github.com/ahmedabdulwhhab/SDN-RYU-Mininet-Path/blob/main/Pre-Configured-Flow_Entry/app5_multi-path.py
+	
+		<br><br><br>
+	in bleow Link, <br> each flow entry is based on in_port, src_ip, Dst_ip to be used as layer3 AKhan machine learning database generator.<br>
+	https://github.com/ahmedabdulwhhab/SDN-RYU-Mininet-Path/blob/main/Pre-Configured-Flow_Entry/app5_multi-path.py
