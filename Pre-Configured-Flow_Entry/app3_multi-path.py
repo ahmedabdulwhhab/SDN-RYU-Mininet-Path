@@ -1,6 +1,6 @@
 #https://github.com/palakbhonsle/SDN-Simulation-using-RYU/blob/master/l4_switch1.py
 
-#sudo ryu-manager /home/ubuntu/sdn/projects/multi-path/app3_multi-path.py  /home/ubuntu/sdn/sources/flowmanager/flowmanager.py ryu.app.ofctl_rest   --observe-links --ofp-tcp-listen-port 6633
+#sudo ryu-manager /home/ubuntu/sdn/projects/multi-path/app3_multi-path.py  /home/ubuntu/sdn/sources/flowmanager/flowmanager.py ryu.app.ofctl_rest   --observe-links --ofp-tcp-listen-port 6653
 
 from ryu.base import app_manager
 from ryu.controller import ofp_event
