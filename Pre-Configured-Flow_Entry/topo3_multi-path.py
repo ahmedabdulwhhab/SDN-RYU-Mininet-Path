@@ -1,4 +1,5 @@
 #clear && sudo ryu-manager /home/ubuntu/sdn/projects/multi-path/app3.py  /home/ubuntu/sdn/sources/flowmanager/flowmanager.py   --observe-links --ofp-tcp-listen-port 6633
+# sudo python3 /home/ubuntu/sdn/projects/multi-path/topo3.py
 
 #https://github.com/palakbhonsle/SDN-Simulation-using-RYU/blob/master/custom1%20(1).py
 from mininet.net import Mininet
