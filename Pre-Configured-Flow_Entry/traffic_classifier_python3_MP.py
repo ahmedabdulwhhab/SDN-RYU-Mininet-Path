@@ -26,7 +26,7 @@ import pickle #to 3use ML model real-time
 proj_location = "/home/ubuntu/sdn/projects/multi-path/"
 """ sudo ryu-manager app4_multi-path_mac+monitor.py /home/ubuntu/sdn/sources/flowmanager/flowmanager.py /home/ubuntu/sdn/sources/faucetsdn/ryu/ryu/app/ofctl_rest.py   --observe-links --ofp-tcp-listen-port 6653 """
 ## command to run ##
-cmd = "sudo ryu-manager "+proj_location+"app5_multi-path+monitor.py  /home/ubuntu/sdn/sources/flowmanager/flowmanager.py /home/ubuntu/sdn/sources/faucetsdn/ryu/ryu/app/ofctl_rest.py   --observe-links --ofp-tcp-listen-port 6653 "
+cmd = "sudo ryu-manager "+proj_location+"app4_multi-path_mac+monitor.py  /home/ubuntu/sdn/sources/flowmanager/flowmanager.py /home/ubuntu/sdn/sources/faucetsdn/ryu/ryu/app/ofctl_rest.py   --observe-links --ofp-tcp-listen-port 6653 "
 print("cmd is ",cmd)
 flows = {} #empty flow dictionary
 TIMEOUT = 2*60 #15*60 #15 min #how long to collect training data 
