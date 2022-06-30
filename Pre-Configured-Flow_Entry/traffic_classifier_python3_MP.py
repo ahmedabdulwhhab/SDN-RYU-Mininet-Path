@@ -24,7 +24,7 @@ import os #for process handling
 import numpy as np #for model features
 import pickle #to 3use ML model real-time
 proj_location = "/home/ubuntu/sdn/projects/multi-path/"
-""" sudo ryu-manager app5_multi-path+monitor.py /home/ubuntu/sdn/sources/flowmanager/flowmanager.py /home/ubuntu/sdn/sources/faucetsdn/ryu/ryu/app/ofctl_rest.py   --observe-links --ofp-tcp-listen-port 6653 """
+""" sudo ryu-manager app4_multi-path_mac+monitor.py /home/ubuntu/sdn/sources/flowmanager/flowmanager.py /home/ubuntu/sdn/sources/faucetsdn/ryu/ryu/app/ofctl_rest.py   --observe-links --ofp-tcp-listen-port 6653 """
 ## command to run ##
 cmd = "sudo ryu-manager "+proj_location+"app5_multi-path+monitor.py  /home/ubuntu/sdn/sources/flowmanager/flowmanager.py /home/ubuntu/sdn/sources/faucetsdn/ryu/ryu/app/ofctl_rest.py   --observe-links --ofp-tcp-listen-port 6653 "
 print("cmd is ",cmd)
