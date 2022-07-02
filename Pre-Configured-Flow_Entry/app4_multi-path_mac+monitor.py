@@ -355,4 +355,4 @@ class Switch(app_manager.RyuApp):
             
             #self.logger.info('\ttime\t\tdp\tin-port\t\teth_src\t\teth_dst\t\tout-port\tpackets\tbytes')            
             self.logger.info('data\t%s\t%x\t%x\t%s\t%s\t%x\t%d\t%d',self.fields['time'],self.fields['datapath'],self.fields['in-port'],self.fields['eth_src'],self.fields['eth_dst'],self.fields['out-port'],self.fields['total_packets'],self.fields['total_bytes'])
-
+		
