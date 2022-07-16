@@ -177,11 +177,12 @@ class SimpleSwitch13(app_manager.RyuApp):
     def _flow_stats_reply_handler(self, ev):
         body = ev.msg.body
         
-        #self.logger.info('body is ', body)
+        self.logger.info('body is ', body)
         self.logger.info('time      datapath    dpid    '
                          'in-port  ipv4_src     ipv4_dst    '
                          'out-port total_packets  total_bytes')
 
+"""
         self.logger.info('---------------- '
                          '-------- ----------------- '
                          '-------- -------- --------')
@@ -200,3 +201,4 @@ class SimpleSwitch13(app_manager.RyuApp):
 
 
             self.logger.info('data\t%s\t%x\t%x\t%s\t%s\t%x\t%d\t%d',self.fields['time'],self.fields['datapath'],self.fields['in-port'],self.fields['eth_src'],self.fields['eth_dst'],self.fields['out-port'],self.fields['total_packets'],self.fields['total_bytes'])
+"""
