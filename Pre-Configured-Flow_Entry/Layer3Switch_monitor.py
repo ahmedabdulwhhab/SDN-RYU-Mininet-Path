@@ -187,13 +187,13 @@ class SimpleSwitch13(app_manager.RyuApp):
                          '-------- -------- --------')
         for stat in sorted([flow for flow in body if flow.priority == 10],
                            key=lambda flow: (flow.match['in_port'],
-                                             flow.match['ipv4_dst'])):
+                                             flow.match['nw_dst'])):
             #print details of flows
             self.fields['time'] = datetime.utcnow().strftime('%s')
             self.fields['datapath'] = ev.msg.datapath.id
             self.fields['in-port'] = stat.match['in_port']
-            self.fields['eth_src'] = stat.match['ipv4_src']
-            self.fields['eth_dst'] = stat.match['ipv4_dst']
+            self.fields['eth_src'] = stat.match['nw_src']
+            self.fields['eth_dst'] = stat.match['nw_dst']
             self.fields['out-port'] = stat.instructions[0].actions[0].port
             self.fields['total_packets'] = stat.packet_count
             self.fields['total_bytes'] = stat.byte_count
