@@ -72,20 +72,35 @@ y = df['Traffic Type']
 
 X_train, X_test, y_train, y_test = train_test_split(X,y,test_size=0.5, random_state=101)        #Line 705
 
-model = LogisticRegression()
-model.fit(X_train,y_train)
-idx = 2590 #random number\n",
+model = LogisticRegression()        #Line 724
+model.fit(X_train,y_train)          #Line 749
+idx = 2590 #random number       #line 768
 single_x_test = [df.iloc[idx].drop('Traffic Type').tolist()]
 single_y_test = df.iloc[idx]['Traffic Type']
 
-single_prediction = model.predict(single_x_test)
+single_prediction = model.predict(single_x_test)        #Line 789
 print('For this sample, our model predicted %s and it was actually %s' % (single_prediction[0], single_y_test))
-predictions = model.predict(X_test)
+predictions = model.predict(X_test)     #Line 808
 
 resultsDF = pd.DataFrame({
             'true':y_test,
             'predicted':predictions
-        })
-resultsDF.head()
-print('Accuracy: %.2f%%' % (accuracy_score(predictions,y_test)*100))
-print(pickle.format_version)
+        })      #Line 898
+resultsDF.head()        #Line 899
+print('Accuracy: %.2f%%' % (accuracy_score(predictions,y_test)*100))    #Line 925
+print(pickle.format_version)        #Line 949
+pickle.dump(model,open('LogisticRegression','wb'))  #Line 958
+#confusion matrix
+cm = confusion_matrix(predictions,y_test, labels=y.cat.categories)
+print(cm)           #Line 989
+
+cmDF = pd.DataFrame()
+
+for i, row in enumerate(y.cat.categories):
+    temp = {}\n",
+    for j, col in enumerate(y.cat.categories): \n",
+        temp[col]=cm[i,j]\n",
+    cmDF = cmDF.append(pd.DataFrame.from_dict({row:temp},orient='index'))
+print(cmDF)]        #Line 1027
+
+
