@@ -97,10 +97,9 @@ print(cm)           #Line 989
 cmDF = pd.DataFrame()
 
 for i, row in enumerate(y.cat.categories):
-    temp = {}\n",
-    for j, col in enumerate(y.cat.categories): \n",
-        temp[col]=cm[i,j]\n",
-    cmDF = cmDF.append(pd.DataFrame.from_dict({row:temp},orient='index'))
-print(cmDF)]        #Line 1027
-
+  temp = {}
+  for j, col in enumerate(y.cat.categories):
+    temp[col]=cm[i,j]
+  cmDF = cmDF.append(pd.DataFrame.from_dict({row:temp},orient='index'))
+print(cmDF)        #Line 1027
 
