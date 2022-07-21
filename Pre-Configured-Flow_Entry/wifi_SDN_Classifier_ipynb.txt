@@ -62,14 +62,15 @@ df['Traffic Type'] = df['Traffic Type'].astype('category')  #Line 514
 df['Traffic Type'].cat.categories
 df['Traffic Type'].cat.codes.head()     #line 577
 print('Features:',df.columns[:-1].values)   #Line 611
-df['Traffic Type'].value_counts()
+df['Traffic Type'].value_counts()       #Line 652
 
+#First we will split the dataset into features and targets.
 
 X = df.drop('Traffic Type',axis=1)
 
 y = df['Traffic Type']
 
-X_train, X_test, y_train, y_test = train_test_split(X,y,test_size=0.5, random_state=101)
+X_train, X_test, y_train, y_test = train_test_split(X,y,test_size=0.5, random_state=101)        #Line 705
 
 model = LogisticRegression()
 model.fit(X_train,y_train)
