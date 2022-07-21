@@ -49,19 +49,19 @@ df = pd.concat([ping_df, voice_df, dns_df, telnet_df], ignore_index=True)
     "Drop any rows that contain NaN (this happens when the training script ends abruptly)"
 """
 
-df.dropna(inplace=True)
+df.dropna(inplace=True)         #Line 137
 #Drop the Forward Packets, Forward Bytes, Reverse Packets, Reverse Bytes data. This data increases linearly and at a certain point in time can be any value so it is not helpful as a feature in the model.
 df.drop('Forward Packets', axis=1, inplace=True)
 df.drop('Forward Bytes', axis=1, inplace=True)
 df.drop('Reverse Packets', axis=1, inplace=True)
 df.drop('Reverse Bytes', axis=1, inplace=True)
-print(df.shape)
-df.describe()
+print(df.shape)     #Line 187
+df.describe()       #Line 462
 df.info()
-df['Traffic Type'] = df['Traffic Type'].astype('category')
+df['Traffic Type'] = df['Traffic Type'].astype('category')  #Line 514
 df['Traffic Type'].cat.categories
 df['Traffic Type'].cat.codes.head()     #line 577
-print('Features:',df.columns[:-1].values)
+print('Features:',df.columns[:-1].values)   #Line 611
 df['Traffic Type'].value_counts()
 
 
