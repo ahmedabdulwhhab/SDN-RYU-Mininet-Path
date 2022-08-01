@@ -104,10 +104,10 @@ class Flow:
 def printclassifier(model):
     x = PrettyTable()
     x.field_names = ["Flow ID", "Src MAC", "Dest MAC", "Traffic Type","Forward Status","Reverse Status"]
-
+     print("x.field_names   ", x.field_names)
     for key,flow in flows.items():
         features = np.asarray([flow.forward_delta_packets,flow.forward_delta_bytes,flow.forward_inst_pps,flow.forward_avg_pps,flow.forward_inst_bps, flow.forward_avg_bps, flow.reverse_delta_packets,flow.reverse_delta_bytes,flow.reverse_inst_pps,flow.reverse_avg_pps,flow.reverse_inst_bps,flow.reverse_avg_bps]).reshape(1,-1) #convert to array so the model can understand the features properly
-        
+        print(" features   ", features)
         label = model.predict(features.tolist()) #if model is supervised (logistic regression) then the label is the type of traffic
         
         #if the model is unsupervised, the label is a cluster number. Refer to Jupyter notebook to see how cluster numbers map to labels
