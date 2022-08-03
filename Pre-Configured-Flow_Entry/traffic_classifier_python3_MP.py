@@ -232,9 +232,11 @@ if __name__ == '__main__':
         else:
             p = subprocess.Popen(cmd, shell=True, stdout=subprocess.PIPE, stderr=subprocess.STDOUT) #start ryu process
             if sys.argv[1] == 'supervised':
+                print("sys.argv[1] == supervised':")
                 infile = open('LogisticRegression','rb') 
             elif sys.argv[1] == 'unsupervised':
                 infile = open('KMeans_Clustering','rb')
+                print("sys.argv[1] == unsupervised':")
             model = pickle.load(infile) #unload previously trained ML model (refer to Jupyter notebook for details)
             infile.close()
             run_ryu(p,model=model)
