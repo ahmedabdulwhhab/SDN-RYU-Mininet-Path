@@ -1,214 +1,243 @@
-# Copyright (C) 2011 Nippon Telegraph and Telephone Corporation.
-#
-# Licensed under the Apache License, Version 2.0 (the "License");
-# you may not use this file except in compliance with the License.
-# You may obtain a copy of the License at
-#
-#    http://www.apache.org/licenses/LICENSE-2.0
-#
-# Unless required by applicable law or agreed to in writing, software
-# distributed under the License is distributed on an "AS IS" BASIS,
-# WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or
-# implied.
-# See the License for the specific language governing permissions and
-# limitations under the License.
+##!/usr/bin/python
+from prettytable import PrettyTable #to display output from ML model
+#sudo apt-get install d-itg
+#sudo rm /home/ubuntu/sdn/projects/a9khan/my_proj/traffic_classifier_python3_01.py && sudo vim /home/ubuntu/sdn/projects/a9khan/my_proj/traffic_classifier_python3_01.py
+#sudo python3 /home/ubuntu/sdn/projects/a9khan/my_proj/traffic_classifier_python3_01.py train ping
+# sudo mn -c && sudo mn --controller=remote,ip=127.0.0.1 --mac --switch=ovsk,protocols=OpenFlow13 --topo=single,3
+#sudo apt update
+#sudo apt install python3-prettytable
+#sudo apt install python3-numpy
+#Test
+#iperf h1 h3
+"""
+from prettytable import PrettyTable
+PTables.add_row(["2", "Cheap Knife", "5 dp"])
+PTables = PrettyTable()
+PTables.field_names = ["Selection No.", "Weapon Name", "Damage"]
+PTables.add_row(["0", "Fist", "1 dp"])
+PTables.add_row(["1", "Knuckle Busters", "2.5 dp"])
+PTables.add_row(["2", "Cheap Knife", "5 dp"])
+PTables.add_row(["3", "Wooden Baton", "6 dp"])
+print(PTables)
+"""
+import subprocess, sys #to handle the Ryu output
+import signal #for timer
+import os #for process handling
+import numpy as np #for model features
+import pickle #to use ML model real-time
 
+proj_location = "/home/ubuntu/sdn/projects/wifi/"
+## command to run ##
+cmd = "sudo ryu run "+proj_location+ "wifi_monitor_001.py    /home/ubuntu/sdn/sources/flowmanager/flowmanager.py   --observe-links --ofp-tcp-listen-port 6634"
 
-#sudo ryu-manager wifi_monitor.py ../../sources/flowmanager/flowmanager.py   --observe-links --ofp-tcp-listen-port 6634
+flows = {} #empty flow dictionary
+TIMEOUT = 15*60 #15*60 #15 min #how long to collect training data
 
-
-
-
-from ryu.base import app_manager
-from ryu.controller import ofp_event
-from ryu.controller.handler import CONFIG_DISPATCHER, MAIN_DISPATCHER
-from ryu.controller.handler import set_ev_cls
-from ryu.ofproto import ofproto_v1_3
-from ryu.lib.packet import packet
-from ryu.lib.packet import ethernet
-from ryu.lib.packet import ether_types
-
-from ryu.lib.packet import ipv4
-
-###############
-from operator import attrgetter
-from datetime import datetime
-from ryu.app import simple_switch_13
-from ryu.controller import ofp_event
-from ryu.controller.handler import MAIN_DISPATCHER, DEAD_DISPATCHER
-from ryu.controller.handler import set_ev_cls
-from ryu.lib import hub
-##################
-
-class SimpleSwitch13(app_manager.RyuApp):
-    OFP_VERSIONS = [ofproto_v1_3.OFP_VERSION]
-
-    def __init__(self, *args, **kwargs):
-        super(SimpleSwitch13, self).__init__(*args, **kwargs)
-        self.mac_to_port = {}
-        self.datapaths = {}
-        self.monitor_thread = hub.spawn(self._monitor)
-        self.fields = {'time':'','datapath':'','in-port':'','eth_src':'','eth_dst':'','out-port':'','total_packets':0,'total_bytes':0}
-
-
-    @set_ev_cls(ofp_event.EventOFPSwitchFeatures, CONFIG_DISPATCHER)
-    def switch_features_handler(self, ev):
-        datapath = ev.msg.datapath
-        ofproto = datapath.ofproto
-        parser = datapath.ofproto_parser
-
-        # install table-miss flow entry
-        #
-        # We specify NO BUFFER to max_len of the output action due to
-        # OVS bug. At this moment, if we specify a lesser number, e.g.,
-        # 128, OVS will send Packet-In with invalid buffer_id and
-        # truncated packet data. In that case, we cannot output packets
-        # correctly.  The bug has been fixed in OVS v2.1.0.
-        match = parser.OFPMatch()
-        actions = [parser.OFPActionOutput(ofproto.OFPP_CONTROLLER,
-                                          ofproto.OFPCML_NO_BUFFER)]
-        self.add_flow(datapath, 0, match, actions)
-
-    def add_flow(self, datapath, priority, match, actions, buffer_id=None):
-        ofproto = datapath.ofproto
-        parser = datapath.ofproto_parser
-
-        inst = [parser.OFPInstructionActions(ofproto.OFPIT_APPLY_ACTIONS,
-                                             actions)]
-        if buffer_id:
-            mod = parser.OFPFlowMod(datapath=datapath, buffer_id=buffer_id,
-                                    priority=priority, match=match,
-                                    instructions=inst)
-        else:
-            mod = parser.OFPFlowMod(datapath=datapath, priority=priority,
-                                    match=match, instructions=inst)
-        datapath.send_msg(mod)
-
-    @set_ev_cls(ofp_event.EventOFPPacketIn, MAIN_DISPATCHER)
-    def _packet_in_handler(self, ev):
-        # If you hit this you might want to increase
-        # the "miss_send_length" of your switch
-        if ev.msg.msg_len < ev.msg.total_len:
-            self.logger.debug("packet truncated: only %s of %s bytes",
-                              ev.msg.msg_len, ev.msg.total_len)
-        msg = ev.msg
-        datapath = msg.datapath
-        ofproto = datapath.ofproto
-        parser = datapath.ofproto_parser
-        in_port = msg.match['in_port']
-
-        pkt = packet.Packet(msg.data)
-        eth = pkt.get_protocols(ethernet.ethernet)[0]
-
-        if eth.ethertype == ether_types.ETH_TYPE_LLDP:
-            # ignore lldp packet
-            return
-        dst = eth.dst
-        src = eth.src
-
-        dpid = format(datapath.id, "d").zfill(16)
-        self.mac_to_port.setdefault(dpid, {})
-
-        #self.logger.info("packet in %s %s %s %s", dpid, src, dst, in_port)
-
-        # learn a mac address to avoid FLOOD next time.
-        self.mac_to_port[dpid][src] = in_port
-
-        if dst in self.mac_to_port[dpid]:
-            out_port = self.mac_to_port[dpid][dst]
-        else:
-            out_port = ofproto.OFPP_FLOOD
-
-        actions = [parser.OFPActionOutput(out_port)]
-
-        # install a flow to avoid packet_in next time
-        if out_port != ofproto.OFPP_FLOOD:
-            # check IP Protocol and create a match for IP
-            if eth.ethertype == ether_types.ETH_TYPE_IP:
-                ip = pkt.get_protocol(ipv4.ipv4)
-                srcip = ip.src
-                dstip = ip.dst
-                match = parser.OFPMatch(eth_type=ether_types.ETH_TYPE_IP,
-                                ipv4_src=srcip,
-                                ipv4_dst=dstip,
-                                in_port =in_port
-                                )
-                # verify if we have a valid buffer_id, if yes avoid to send both
-                # flow_mod & packet_out
-                if msg.buffer_id != ofproto.OFP_NO_BUFFER:
-                    self.add_flow(datapath, 10, match, actions, msg.buffer_id)
-                    return
-                else:
-                    self.add_flow(datapath, 10, match, actions)
-        data = None
-        if msg.buffer_id == ofproto.OFP_NO_BUFFER:
-            data = msg.data
-
-        out = parser.OFPPacketOut(datapath=datapath, buffer_id=msg.buffer_id,
-                                  in_port=in_port, actions=actions, data=data)
-        datapath.send_msg(out)
-##############new code
-    @set_ev_cls(ofp_event.EventOFPStateChange,
-                [MAIN_DISPATCHER, DEAD_DISPATCHER])
-    def _state_change_handler(self, ev):
-        datapath = ev.datapath
-        if ev.state == MAIN_DISPATCHER:
-            if datapath.id not in self.datapaths:
-                self.logger.debug('register datapath: %016x', datapath.id)
-                self.datapaths[datapath.id] = datapath
-        elif ev.state == DEAD_DISPATCHER:
-            if datapath.id in self.datapaths:
-                self.logger.debug('unregister datapath: %016x', datapath.id)
-                del self.datapaths[datapath.id]
-
-    def _monitor(self):
-        while True:
-            for dp in self.datapaths.values():
-                self._request_stats(dp)
-            hub.sleep(1)
-
-    def _request_stats(self, datapath):
-        self.logger.debug('send stats request: %016x', datapath.id)
-        ofproto = datapath.ofproto
-        parser = datapath.ofproto_parser
-
-        req = parser.OFPFlowStatsRequest(datapath)
-        datapath.send_msg(req)
-
-        #req = parser.OFPPortStatsRequest(datapath, 0, ofproto.OFPP_ANY)
-        #datapath.send_msg(req)
-
-
-    @set_ev_cls(ofp_event.EventOFPFlowStatsReply, MAIN_DISPATCHER)
-    def _flow_stats_reply_handler(self, ev):
-        body = ev.msg.body
+class Flow:
+    def __init__(self, time_start, datapath, inport, ethsrc, ethdst, outport, packets, bytes):
+        self.time_start = time_start
+        self.datapath = datapath
+        self.inport = inport
+        self.ethsrc = ethsrc
+        self.ethdst = ethdst
+        self.outport = outport
         
-        #self.logger.info('body is ', body)
-        #self.logger.info('time      datapath    dpid    '
-        #                 'in-port  ipv4_src     ipv4_dst    '
-        #                 'out-port total_packets  total_bytes')
+        #attributes for forward flow direction (source -> destination)
+        self.forward_packets = packets
+        self.forward_bytes = bytes
+        self.forward_delta_packets = 0
+        self.forward_delta_bytes = 0
+        self.forward_inst_pps = 0.00
+        self.forward_avg_pps = 0.00
+        self.forward_inst_bps = 0.00
+        self.forward_avg_bps = 0.00
+        self.forward_status = 'ACTIVE'
+        self.forward_last_time = time_start
+        
+        #attributes for reverse flow direction (destination -> source)
+        self.reverse_packets = 0
+        self.reverse_bytes = 0
+        self.reverse_delta_packets = 0
+        self.reverse_delta_bytes = 0
+        self.reverse_inst_pps = 0.00
+        self.reverse_avg_pps = 0.00
+        self.reverse_inst_bps = 0.00
+        self.reverse_avg_bps = 0.00
+        self.reverse_status = 'INACTIVE'
+        self.reverse_last_time = time_start
+        
+    #updates the attributes in the forward flow direction
+    def updateforward(self, packets, bytes, curr_time):
+        self.forward_delta_packets = packets - self.forward_packets
+        self.forward_packets = packets
+        if curr_time != self.time_start: self.forward_avg_pps = packets/float(curr_time-self.time_start)
+        if curr_time != self.forward_last_time: self.forward_inst_pps = self.forward_delta_packets/float(curr_time-self.forward_last_time)
+        
+        self.forward_delta_bytes = bytes - self.forward_bytes
+        self.forward_bytes = bytes
+        if curr_time != self.time_start: self.forward_avg_bps = bytes/float(curr_time-self.time_start)
+        if curr_time != self.forward_last_time: self.forward_inst_bps = self.forward_delta_bytes/float(curr_time-self.forward_last_time)
+        self.forward_last_time = curr_time
+        
+        if (self.forward_delta_bytes==0 or self.forward_delta_packets==0): #if the flow did not receive any packets of bytes
+            self.forward_status = 'INACTIVE'
+        else:
+            self.forward_status = 'ACTIVE'
 
+    #updates the attributes in the reverse flow direction
+    def updatereverse(self, packets, bytes, curr_time):
+        self.reverse_delta_packets = packets - self.reverse_packets
+        self.reverse_packets = packets
+        if curr_time != self.time_start: self.reverse_avg_pps = packets/float(curr_time-self.time_start)
+        if curr_time != self.reverse_last_time: self.reverse_inst_pps = self.reverse_delta_packets/float(curr_time-self.reverse_last_time)
+        
+        self.reverse_delta_bytes = bytes - self.reverse_bytes
+        self.reverse_bytes = bytes
+        if curr_time != self.time_start: self.reverse_avg_bps = bytes/float(curr_time-self.time_start)
+        if curr_time != self.reverse_last_time: self.reverse_inst_bps = self.reverse_delta_bytes/float(curr_time-self.reverse_last_time)
+        self.reverse_last_time = curr_time
 
-        #self.logger.info('---------------- '
-        #                 '-------- ----------------- '
-        #                 '-------- -------- --------')
-        for stat in sorted([flow for flow in body if flow.priority == 10],
-                           key=lambda flow: (flow.match['in_port'],
-                                             flow.match['ipv4_dst'])):
-            #print details of flows
-            self.fields['time'] = datetime.utcnow().strftime('%s')
-            self.fields['datapath'] = ev.msg.datapath.id
-            self.fields['in-port'] = stat.match['in_port']
-            self.fields['eth_src'] = stat.match['ipv4_src']
-            self.fields['eth_dst'] = stat.match['ipv4_dst']
-            self.fields['out-port'] = stat.instructions[0].actions[0].port
-            self.fields['total_packets'] = stat.packet_count
-            self.fields['total_bytes'] = stat.byte_count
-            self.logger.info('data\t%s\t%x\t%x\t%s\t%s\t%x\t%d\t%d',self.fields['time'],self.fields['datapath'],self.fields['in-port'],self.fields['eth_src'],self.fields['eth_dst'],self.fields['out-port'],self.fields['total_packets'],self.fields['total_bytes'])
+        if (self.reverse_delta_bytes==0 or self.reverse_delta_packets==0): #if the flow did not receive any packets of bytes
+            self.reverse_status = 'INACTIVE'
+        else:
+            self.reverse_status = 'ACTIVE'
 
+#function to print flow attributes and output of ML model to classify the flow
+def printclassifier(model):
+    x = PrettyTable()
+    x.field_names = ["Flow ID", "Src MAC", "Dest MAC", "Traffic Type","Forward Status","Reverse Status"]
 
+    for key,flow in flows.items():
+        features = np.asarray([flow.forward_delta_packets,flow.forward_delta_bytes,flow.forward_inst_pps,flow.forward_avg_pps,flow.forward_inst_bps, flow.forward_avg_bps, flow.reverse_delta_packets,flow.reverse_delta_bytes,flow.reverse_inst_pps,flow.reverse_avg_pps,flow.reverse_inst_bps,flow.reverse_avg_bps]).reshape(1,-1) #convert to array so the model can understand the features properly
+        
+        label = model.predict(features.tolist()) #if model is supervised (logistic regression) then the label is the type of traffic
+        
+        #if the model is unsupervised, the label is a cluster number. Refer to Jupyter notebook to see how cluster numbers map to labels
+        if label == 0: label = ['dns']
+        elif label == 1: label = ['ping']
+        elif label == 2: label = ['telnet']
+        elif label == 3: label = ['voice']
+        
+        x.add_row([key, flow.ethsrc, flow.ethdst, label[0],flow.forward_status,flow.reverse_status]) 
+    print(x)#print output in pretty mode (i.e. formatted table)
 
-"""
-Arguments: ([OFPFlowStats(byte_count=240,cookie=0,duration_nsec=371000000,duration_sec=184,flags=0,hard_timeout=0,idle_timeout=0,instructions=[OFPInstructionActions(actions=[OFPActionOutput(len=16,max_len=65535,port=4294967293,type=0)],len=24,type=4)],length=96,match=OFPMatch(oxm_fields={'eth_dst': '01:80:c2:00:00:0e', 'eth_type': 35020}),packet_count=4,priority=65535,table_id=0), OFPFlowStats(byte_count=98,cookie=0,duration_nsec=207000000,duration_sec=16,flags=0,hard_timeout=0,idle_timeout=0,instructions=[OFPInstructionActions(actions=[OFPActionOutput(len=16,max_len=65509,port=4,type=0)],len=24,type=4)],length=112,match=OFPMatch(oxm_fields={'in_port': 2, 'eth_type': 2048, 'ipv4_src': '10.0.0.3', 'ipv4_dst': '10.0.0.5'}),packet_count=1,priority=10,table_id=0), OFPFlowStats(byte_count=98,cookie=0,duration_nsec=194000000,duration_sec=16,flags=0,hard_timeout=0,idle_timeout=0,instructions=[OFPInstructionActions(actions=[OFPActionOutput(len=16,max_len=65509,port=2,type=0)],len=24,type=4)],length=112,match=OFPMatch(oxm_fields={'in_port': 4, 'eth_type': 2048, 'ipv4_src': '10.0.0.5', 'ipv4_dst': '10.0.0.3'}),packet_count=1,priority=10,table_id=0), OFPFlowStats(byte_count=98,cookie=0,duration_nsec=169000000,duration_sec=16,flags=0,hard_timeout=0,idle_timeout=0,instructions=[OFPInstructionActions(actions=[OFPActionOutput(len=16,max_len=65509,port=4,type=0)],len=24,type=4)],length=112,match=OFPMatch(oxm_fields={'in_port': 2, 'eth_type': 2048, 'ipv4_src': '10.0.0.3', 'ipv4_dst': '10.0.0.4'}),packet_count=1,priority=10,table_id=0), OFPFlowStats(byte_count=98,cookie=0,duration_nsec=153000000,duration_sec=16,flags=0,hard_timeout=0,idle_timeout=0,instructions=[OFPInstructionActions(actions=[OFPActionOutput(len=16,max_len=65509,port=2,type=0)],len=24,type=4)],length=112,match=OFPMatch(oxm_fields={'in_port': 4, 'eth_type': 2048, 'ipv4_src': '10.0.0.4', 'ipv4_dst': '10.0.0.3'}),packet_count=1,priority=10,table_id=0), OFPFlowStats(byte_count=98,cookie=0,duration_nsec=126000000,duration_sec=16,flags=0,hard_timeout=0,idle_timeout=0,instructions=[OFPInstructionActions(actions=[OFPActionOutput(len=16,max_len=65509,port=3,type=0)],len=24,type=4)],length=112,match=OFPMatch(oxm_fields={'in_port': 2, 'eth_type': 2048, 'ipv4_src': '10.0.0.3', 'ipv4_dst': '10.0.0.1'}),packet_count=1,priority=10,table_id=0), OFPFlowStats(byte_count=98,cookie=0,duration_nsec=111000000,duration_sec=16,flags=0,hard_timeout=0,idle_timeout=0,instructions=[OFPInstructionActions(actions=[OFPActionOutput(len=16,max_len=65509,port=2,type=0)],len=24,type=4)],length=112,match=OFPMatch(oxm_fields={'in_port': 3, 'eth_type': 2048, 'ipv4_src': '10.0.0.1', 'ipv4_dst': '10.0.0.3'}),packet_count=1,priority=10,table_id=0), OFPFlowStats(byte_count=98,cookie=0,duration_nsec=87000000,duration_sec=16,flags=0,hard_timeout=0,idle_timeout=0,instructions=[OFPInstructionActions(actions=[OFPActionOutput(len=16,max_len=65509,port=1,type=0)],len=24,type=4)],length=112,match=OFPMatch(oxm_fields={'in_port': 2, 'eth_type': 2048, 'ipv4_src': '10.0.0.3', 'ipv4_dst': '10.0.0.2'}),packet_count=1,priority=10,table_id=0), OFPFlowStats(byte_count=98,cookie=0,duration_nsec=81000000,duration_sec=16,flags=0,hard_timeout=0,idle_timeout=0,instructions=[OFPInstructionActions(actions=[OFPActionOutput(len=16,max_len=65509,port=2,type=0)],len=24,type=4)],length=112,match=OFPMatch(oxm_fields={'in_port': 1, 'eth_type': 2048, 'ipv4_src': '10.0.0.2', 'ipv4_dst': '10.0.0.3'}),packet_count=1,priority=10,table_id=0), OFPFlowStats(byte_count=98,cookie=0,duration_nsec=44000000,duration_sec=16,flags=0,hard_timeout=0,idle_timeout=0,instructions=[OFPInstructionActions(actions=[OFPActionOutput(len=16,max_len=65509,port=3,type=0)],len=24,type=4)],length=112,match=OFPMatch(oxm_fields={'in_port': 2, 'eth_type': 2048, 'ipv4_src': '10.0.0.3', 'ipv4_dst': '10.0.0.101'}),packet_count=1,priority=10,table_id=0), OFPFlowStats(byte_count=98,cookie=0,duration_nsec=989000000,duration_sec=15,flags=0,hard_timeout=0,idle_timeout=0,instructions=[OFPInstructionActions(actions=[OFPActionOutput(len=16,max_len=65509,port=2,type=0)],len=24,type=4)],length=112,match=OFPMatch(oxm_fields={'in_port': 3, 'eth_type': 2048, 'ipv4_src': '10.0.0.101', 'ipv4_dst': '10.0.0.3'}),packet_count=1,priority=10,table_id=0), OFPFlowStats(byte_count=98,cookie=0,duration_nsec=955000000,duration_sec=15,flags=0,hard_timeout=0,idle_timeout=0,instructions=[OFPInstructionActions(actions=[OFPActionOutput(len=16,max_len=65509,port=3,type=0)],len=24,type=4)],length=112,match=OFPMatch(oxm_fields={'in_port': 2, 'eth_type': 2048, 'ipv4_src': '10.0.0.3', 'ipv4_dst': '10.0.0.102'}),packet_count=1,priority=10,table_id=0), OFPFlowStats(byte_count=98,cookie=0,duration_nsec=930000000,duration_sec=15,flags=0,hard_timeout=0,idle_timeout=0,instructions=[OFPInstructionActions(actions=[OFPActionOutput(len=16,max_len=65509,port=2,type=0)],len=24,type=4)],length=112,match=OFPMatch(oxm_fields={'in_port': 3, 'eth_type': 2048, 'ipv4_src': '10.0.0.102', 'ipv4_dst': '10.0.0.3'}),packet_count=1,priority=10,table_id=0), OFPFlowStats(byte_count=98,cookie=0,duration_nsec=856000000,duration_sec=15,flags=0,hard_timeout=0,idle_timeout=0,instructions=[OFPInstructionActions(actions=[OFPActionOutput(len=16,max_len=65509,port=3,type=0)],len=24,type=4)],length=112,match=OFPMatch(oxm_fields={'in_port': 4, 'eth_type': 2048, 'ipv4_src': '10.0.0.5', 'ipv4_dst': '10.0.0.1'}),packet_count=1,priority=10,table_id=0), OFPFlowStats(byte_count=98,cookie=0,duration_nsec=843000000,duration_sec=15,flags=0,hard_timeout=0,idle_timeout=0,instructions=[OFPInstructionActions(actions=[OFPActionOutput(len=16,max_len=65509,port=4,type=0)],len=24,type=4)],length=112,match=OFPMatch(oxm_fields={'in_port': 3, 'eth_type': 2048, 'ipv4_src': '10.0.0.1', 'ipv4_dst': '10.0.0.5'}),packet_count=1,priority=10,table_id=0), OFPFlowStats(byte_count=98,cookie=0,duration_nsec=808000000,duration_sec=15,flags=0,hard_timeout=0,idle_timeout=0,instructions=[OFPInstructionActions(actions=[OFPActionOutput(len=16,max_len=65509,port=1,type=0)],len=24,type=4)],length=112,match=OFPMatch(oxm_fields={'in_port': 4, 'eth_type': 2048, 'ipv4_src': '10.0.0.5', 'ipv4_dst': '10.0.0.2'}),packet_count=1,priority=10,table_id=0), OFPFlowStats(byte_count=98,cookie=0,duration_nsec=804000000,duration_sec=15,flags=0,hard_timeout=0,idle_timeout=0,instructions=[OFPInstructionActions(actions=[OFPActionOutput(len=16,max_len=65509,port=4,type=0)],len=24,type=4)],length=112,match=OFPMatch(oxm_fields={'in_port': 1, 'eth_type': 2048, 'ipv4_src': '10.0.0.2', 'ipv4_dst': '10.0.0.5'}),packet_count=1,priority=10,table_id=0), OFPFlowStats(byte_count=98,cookie=0,duration_nsec=757000000,duration_sec=15,flags=0,hard_timeout=0,idle_timeout=0,instructions=[OFPInstructionActions(actions=[OFPActionOutput(len=16,max_len=65509,port=3,type=0)],len=24,type=4)],length=112,match=OFPMatch(oxm_fields={'in_port': 4, 'eth_type': 2048, 'ipv4_src': '10.0.0.5', 'ipv4_dst': '10.0.0.101'}),packet_count=1,priority=10,table_id=0), OFPFlowStats(byte_count=98,cookie=0,duration_nsec=735000000,duration_sec=15,flags=0,hard_timeout=0,idle_timeout=0,instructions=[OFPInstructionActions(actions=[OFPActionOutput(len=16,max_len=65509,port=4,type=0)],len=24,type=4)],length=112,match=OFPMatch(oxm_fields={'in_port': 3, 'eth_type': 2048, 'ipv4_src': '10.0.0.101', 'ipv4_dst': '10.0.0.5'}),packet_count=1,priority=10,table_id=0), OFPFlowStats(byte_count=98,cookie=0,duration_nsec=687000000,duration_sec=15,flags=0,hard_timeout=0,idle_timeout=0,instructions=[OFPInstructionActions(actions=[OFPActionOutput(len=16,max_len=65509,port=3,type=0)],len=24,type=4)],length=112,match=OFPMatch(oxm_fields={'in_port': 4, 'eth_type': 2048, 'ipv4_src': '10.0.0.5', 'ipv4_dst': '10.0.0.102'}),packet_count=1,priority=10,table_id=0), OFPFlowStats(byte_count=98,cookie=0,duration_nsec=664000000,duration_sec=15,flags=0,hard_timeout=0,idle_timeout=0,instructions=[OFPInstructionActions(actions=[OFPActionOutput(len=16,max_len=65509,port=4,type=0)],len=24,type=4)],length=112,match=OFPMatch(oxm_fields={'in_port': 3, 'eth_type': 2048, 'ipv4_src': '10.0.0.102', 'ipv4_dst': '10.0.0.5'}),packet_count=1,priority=10,table_id=0), OFPFlowStats(byte_count=98,cookie=0,duration_nsec=610000000,duration_sec=15,flags=0,hard_timeout=0,idle_timeout=0,instructions=[OFPInstructionActions(actions=[OFPActionOutput(len=16,max_len=65509,port=3,type=0)],len=24,type=4)],length=112,match=OFPMatch(oxm_fields={'in_port': 4, 'eth_type': 2048, 'ipv4_src': '10.0.0.4', 'ipv4_dst': '10.0.0.1'}),packet_count=1,priority=10,table_id=0), OFPFlowStats(byte_count=98,cookie=0,duration_nsec=596000000,duration_sec=15,flags=0,hard_timeout=0,idle_timeout=0,instructions=[OFPInstructionActions(actions=[OFPActionOutput(len=16,max_len=65509,port=4,type=0)],len=24,type=4)],length=112,match=OFPMatch(oxm_fields={'in_port': 3, 'eth_type': 2048, 'ipv4_src': '10.0.0.1', 'ipv4_dst': '10.0.0.4'}),packet_count=1,priority=10,table_id=0), OFPFlowStats(byte_count=98,cookie=0,duration_nsec=562000000,duration_sec=15,flags=0,hard_timeout=0,idle_timeout=0,instructions=[OFPInstructionActions(actions=[OFPActionOutput(len=16,max_len=65509,port=1,type=0)],len=24,type=4)],length=112,match=OFPMatch(oxm_fields={'in_port': 4, 'eth_type': 2048, 'ipv4_src': '10.0.0.4', 'ipv4_dst': '10.0.0.2'}),packet_count=1,priority=10,table_id=0), OFPFlowStats(byte_count=98,cookie=0,duration_nsec=556000000,duration_sec=15,flags=0,hard_timeout=0,idle_timeout=0,instructions=[OFPInstructionActions(actions=[OFPActionOutput(len=16,max_len=65509,port=4,type=0)],len=24,type=4)],length=112,match=OFPMatch(oxm_fields={'in_port': 1, 'eth_type': 2048, 'ipv4_src': '10.0.0.2', 'ipv4_dst': '10.0.0.4'}),packet_count=1,priority=10,table_id=0), OFPFlowStats(byte_count=98,cookie=0,duration_nsec=509000000,duration_sec=15,flags=0,hard_timeout=0,idle_timeout=0,instructions=[OFPInstructionActions(actions=[OFPActionOutput(len=16,max_len=65509,port=3,type=0)],len=24,type=4)],length=112,match=OFPMatch(oxm_fields={'in_port': 4, 'eth_type': 2048, 'ipv4_src': '10.0.0.4', 'ipv4_dst': '10.0.0.101'}),packet_count=1,priority=10,table_id=0), OFPFlowStats(byte_count=98,cookie=0,duration_nsec=485000000,duration_sec=15,flags=0,hard_timeout=0,idle_timeout=0,instructions=[OFPInstructionActions(actions=[OFPActionOutput(len=16,max_len=65509,port=4,type=0)],len=24,type=4)],length=112,match=OFPMatch(oxm_fields={'in_port': 3, 'eth_type': 2048, 'ipv4_src': '10.0.0.101', 'ipv4_dst': '10.0.0.4'}),packet_count=1,priority=10,table_id=0), OFPFlowStats(byte_count=98,cookie=0,duration_nsec=434000000,duration_sec=15,flags=0,hard_timeout=0,idle_timeout=0,instructions=[OFPInstructionActions(actions=[OFPActionOutput(len=16,max_len=65509,port=3,type=0)],len=24,type=4)],length=112,match=OFPMatch(oxm_fields={'in_port': 4, 'eth_type': 2048, 'ipv4_src': '10.0.0.4', 'ipv4_dst': '10.0.0.102'}),packet_count=1,priority=10,table_id=0), OFPFlowStats(byte_count=98,cookie=0,duration_nsec=407000000,duration_sec=15,flags=0,hard_timeout=0,idle_timeout=0,instructions=[OFPInstructionActions(actions=[OFPActionOutput(len=16,max_len=65509,port=4,type=0)],len=24,type=4)],length=112,match=OFPMatch(oxm_fields={'in_port': 3, 'eth_type': 2048, 'ipv4_src': '10.0.0.102', 'ipv4_dst': '10.0.0.4'}),packet_count=1,priority=10,table_id=0), OFPFlowStats(byte_count=98,cookie=0,duration_nsec=343000000,duration_sec=15,flags=0,hard_timeout=0,idle_timeout=0,instructions=[OFPInstructionActions(actions=[OFPActionOutput(len=16,max_len=65509,port=1,type=0)],len=24,type=4)],length=112,match=OFPMatch(oxm_fields={'in_port': 3, 'eth_type': 2048, 'ipv4_src': '10.0.0.1', 'ipv4_dst': '10.0.0.2'}),packet_count=1,priority=10,table_id=0), OFPFlowStats(byte_count=98,cookie=0,duration_nsec=338000000,duration_sec=15,flags=0,hard_timeout=0,idle_timeout=0,instructions=[OFPInstructionActions(actions=[OFPActionOutput(len=16,max_len=65509,port=3,type=0)],len=24,type=4)],length=112,match=OFPMatch(oxm_fields={'in_port': 1, 'eth_type': 2048, 'ipv4_src': '10.0.0.2', 'ipv4_dst': '10.0.0.1'}),packet_count=1,priority=10,table_id=0), OFPFlowStats(byte_count=98,cookie=0,duration_nsec=170000000,duration_sec=15,flags=0,hard_timeout=0,idle_timeout=0,instructions=[OFPInstructionActions(actions=[OFPActionOutput(len=16,max_len=65509,port=3,type=0)],len=24,type=4)],length=112,match=OFPMatch(oxm_fields={'in_port': 1, 'eth_type': 2048, 'ipv4_src': '10.0.0.2', 'ipv4_dst': '10.0.0.101'}),packet_count=1,priority=10,table_id=0), OFPFlowStats(byte_count=98,cookie=0,duration_nsec=145000000,duration_sec=15,flags=0,hard_timeout=0,idle_timeout=0,instructions=[OFPInstructionActions(actions=[OFPActionOutput(len=16,max_len=65509,port=1,type=0)],len=24,type=4)],length=112,match=OFPMatch(oxm_fields={'in_port': 3, 'eth_type': 2048, 'ipv4_src': '10.0.0.101', 'ipv4_dst': '10.0.0.2'}),packet_count=1,priority=10,table_id=0), OFPFlowStats(byte_count=98,cookie=0,duration_nsec=108000000,duration_sec=15,flags=0,hard_timeout=0,idle_timeout=0,instructions=[OFPInstructionActions(actions=[OFPActionOutput(len=16,max_len=65509,port=3,type=0)],len=24,type=4)],length=112,match=OFPMatch(oxm_fields={'in_port': 1, 'eth_type': 2048, 'ipv4_src': '10.0.0.2', 'ipv4_dst': '10.0.0.102'}),packet_count=1,priority=10,table_id=0), OFPFlowStats(byte_count=98,cookie=0,duration_nsec=80000000,duration_sec=15,flags=0,hard_timeout=0,idle_timeout=0,instructions=[OFPInstructionActions(actions=[OFPActionOutput(len=16,max_len=65509,port=1,type=0)],len=24,type=4)],length=112,match=OFPMatch(oxm_fields={'in_port': 3, 'eth_type': 2048, 'ipv4_src': '10.0.0.102', 'ipv4_dst': '10.0.0.2'}),packet_count=1,priority=10,table_id=0), OFPFlowStats(byte_count=9059,cookie=0,duration_nsec=392000000,duration_sec=184,flags=0,hard_timeout=0,idle_timeout=0,instructions=[OFPInstructionActions(actions=[OFPActionOutput(len=16,max_len=65535,port=4294967293,type=0)],len=24,type=4)],length=80,match=OFPMatch(oxm_fields={}),packet_count=140,priority=0,table_id=0)],)
+#function to print flow attributes when collecting training data
+def printflows(traffic_type,f):
+    for key,flow in flows.items():
+        outstring = '\t'.join([
+        str(flow.forward_packets),
+        str(flow.forward_bytes),
+        str(flow.forward_delta_packets),
+        str(flow.forward_delta_bytes), 
+        str(flow.forward_inst_pps), 
+        str(flow.forward_avg_pps),
+        str(flow.forward_inst_bps), 
+        str(flow.forward_avg_bps), 
+        str(flow.reverse_packets),
+        str(flow.reverse_bytes),
+        str(flow.reverse_delta_packets),
+        str(flow.reverse_delta_bytes),
+        str(flow.reverse_inst_pps),
+        str(flow.reverse_avg_pps),
+        str(flow.reverse_inst_bps),
+        str(flow.reverse_avg_bps),
+        str(traffic_type)])
+        f.write(outstring+'\n')
 
-"""
+#   run_ryu(p,traffic_type=traffic_type,f=f)        
+def run_ryu(p,traffic_type=None,f=None,model=None):
+    ## run it ##
+    time = 0
+    while True:
+        #print 'going through loop'
+        out = p.stdout.readline()
+        if out == '' and p.poll() != None:
+            break
+        if out != '' and out.startswith(b'data'): #when Ryu 'simple_monitor_AK.py' script returns output
+            print('Head\ttime\t\tdatapath\tin-port\teth_src\t\t\teth-dst\t\t\tout_port\ttotal_packet\ttotal_bytes')
+            #print("out is ",out)                #Ahmed Abdulwhhab
+            fields = out.split(b'\t')[1:] #split the flow details
+            
+            fields = [f.decode(encoding='utf-8', errors='strict') for f in fields] #decode flow details 
+           #print("Head    time            datapath        in-port eth_src                 eth-dst                 out_port        total_packet    total_bytes")
+           #print("      ",1654900961        1              2       00:00:00:00:00:02                       00:00:00:00:00:01                       1       167916          11082460
+            print("      ",fields[0],"\t",fields[1],"\t\t",fields[2],"\t",fields[3],"\t",fields[4],"\t",fields[5],"\t\t",fields[6],"\t",fields[7])                #Ahmed Abdulwhhab
+            unique_id = hash(''.join([fields[1],fields[3],fields[4]])) #create unique ID for flow based on switch ID, source host,and destination host
+            print("unique_id is ",unique_id)                #Ahmed Abdulwhhab
+            if unique_id in flows.keys():
+                flows[unique_id].updateforward(int(fields[6]),int(fields[7]),int(fields[0])) #update forward attributes with time, packet, and byte count
+            else:
+                rev_unique_id = hash(''.join([fields[1],fields[4],fields[3]])) #switch source and destination to generate same hash for src/dst and dst/src
+                if rev_unique_id in flows.keys():
+                    flows[rev_unique_id].updatereverse(int(fields[6]),int(fields[7]),int(fields[0])) #update reverse attributes with time, packet, and byte count
+                else:
+                    flows[unique_id] = Flow(int(fields[0]), fields[1], fields[2], fields[3], fields[4], fields[5], int(fields[6]), int(fields[7])) #create new flow object
+            if not model is None:
+                if time%10==0: #print output of model every 10 seconds
+                    printclassifier(model)
+            else:
+                printflows(traffic_type,f) #for training data
+        time += 1
+ 
+#print help output in case of incorrect options 
+def printHelp():
+    print("Usage: sudo python traffic_classifier.py [subcommand] [options]")
+    print("\tTo collect training data for a certain type of traffic, run: sudo python traffic_classifier.py train [voice|video|ftp]")
+    print("\tTo start a near real time traffic classification application using unsupervised ML, run: sudo python traffic_classifier.py unsupervised")
+    print("\tTo start a near real time traffic classification application using supervised ML, run: sudo python traffic_classifier.py unsupervised")
+    return
+
+#for timer to collect flow training data
+def alarm_handler(signum, frame):
+    print("Finished collecting data.")
+    raise Exception()
+    
+if __name__ == '__main__':
+    SUBCOMMANDS = ('train', 'unsupervised', 'supervised')
+
+    if len(sys.argv) < 2:
+        print("ERROR: Incorrect # of args")
+        print()
+        printHelp()
+        sys.exit();
+    else:
+        if len(sys.argv) == 2:
+            if sys.argv[1] not in SUBCOMMANDS:
+                print("ERROR: Unknown subcommand argument.")
+                print("       Currently subaccepted commands are: %s" % str(SUBCOMMANDS).strip('()'))
+                print()
+                printHelp()
+                sys.exit();
+
+    if len(sys.argv) == 1:
+        # Called with no arguments
+        printHelp()
+    elif len(sys.argv) >= 2:
+        if sys.argv[1] == "train":
+            if len(sys.argv) == 3:
+                p = subprocess.Popen(cmd, shell=True, stdout=subprocess.PIPE, stderr=subprocess.STDOUT) #start Ryu process
+                traffic_type = sys.argv[2]
+                f = open(proj_location+traffic_type+'_training_data.csv', 'w') #open training data output file
+                signal.signal(signal.SIGALRM, alarm_handler) #start signal process
+                signal.alarm(TIMEOUT) #set for 15 minutes
+                try:
+                    headers = 'Forward Packets\tForward Bytes\tDelta Forward Packets\tDelta Forward Bytes\tForward Instantaneous Packets per Second\tForward Average Packets per second\tForward Instantaneous Bytes per Second\tForward Average Bytes per second\tReverse Packets\tReverse Bytes\tDelta Reverse Packets\tDelta Reverse Bytes\tDeltaReverse Instantaneous Packets per Second\tReverse Average Packets per second\tReverse Instantaneous Bytes per Second\tReverse Average Bytes per second\tTraffic Type\n'
+                    f.write(headers)
+                    run_ryu(p,traffic_type=traffic_type,f=f)
+                except Exception:
+                    print('Exiting')
+                    os.killpg(os.getpgid(p.pid), signal.SIGTERM) #kill ryu process on exit
+                    f.close()
+            else:
+                print("ERROR: specify traffic type.\n")
+                printHelp()
+        else:
+            p = subprocess.Popen(cmd, shell=True, stdout=subprocess.PIPE, stderr=subprocess.STDOUT) #start ryu process
+            if sys.argv[1] == 'supervised':
+                infile = open('LogisticRegression','rb') 
+            elif sys.argv[1] == 'unsupervised':
+                infile = open('KMeans_Clustering','rb')
+            model = pickle.load(infile) #unload previously trained ML model (refer to Jupyter notebook for details)
+            infile.close()
+            run_ryu(p,model=model)
+    sys.exit();
