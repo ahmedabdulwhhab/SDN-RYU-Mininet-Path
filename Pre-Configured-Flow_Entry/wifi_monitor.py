@@ -14,7 +14,8 @@
 # limitations under the License.
 
 
-#sudo ryu-manager  /home/ubuntu/sdn/projects/wifi/app1.py --observe-links --ofp-tcp-listen-port 6634
+#sudo ryu-manager wifi_monitor.py ../../sources/flowmanager/flowmanager.py   --observe-links --ofp-tcp-listen-port 6634
+
 
 
 
