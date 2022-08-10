@@ -1,0 +1,180 @@
+https://traffic.comics.unina.it/software/ITG/manual/
+
+Example #6
+Generation of VoIP, Telnet and DNS flows towards two distinct destinations:
+start the receiver on the first destination host:
+        $ ITGRecv -l recv1_log_file
+
+start the receiver on the second destination host:
+        $ ITGRecv -l recv2_log_file
+		
+create the script file
+        $ cat > script_file_1 <<END
+        -a 10.0.0.1 -rp 10003 DNS
+        END
+		
+		create the script file
+        $ cat > script_file_2 <<END
+        -a 10.0.0.3 -rp 10005 DNS
+        END
+		
+start the sender on the source host:
+        $ ITGSend script_file -l sender_log_file_1
+start the sender on the source host:
+        $ ITGSend script_file -l sender_log_file_2
+close the first receiver by pressing Ctrl+C
+
+decode the sender log file:
+        $ ITGDec sender_log_file
+      ----------------------------------------------------------
+      Flow number: 2
+      From 10.0.0.4:33029
+      To    10.0.0.4:10002
+      ----------------------------------------------------------
+      Total time               =      9.998991 s
+      Total packets            =          1139
+      Minimum delay            =      0.000000 s
+      Maximum delay            =      0.000000 s
+      Average delay            =      0.000000 s
+      Average jitter           =      0.000000 s
+      Delay standard deviation =      0.000000 s
+      Bytes received           =          2482
+      Average bitrate          =      1.985800 Kbit/s
+      Average packet rate      =    113.911494 pkt/s
+      Packets dropped          =             0 (0.00 %)
+      ----------------------------------------------------------
+      ----------------------------------------------------------
+      Flow number: 1
+      From 10.0.0.4:34776
+      To    10.0.0.3:10001
+      ----------------------------------------------------------
+      Total time               =      9.980002 s
+      Total packets            =           500
+      Minimum delay            =      0.000000 s
+      Maximum delay            =      0.000000 s
+      Average delay            =      0.000000 s
+      Average jitter           =      0.000000 s
+      Delay standard deviation =      0.000000 s
+      Bytes received           =         56000
+      Average bitrate          =     44.889771 Kbit/s
+      Average packet rate      =     50.100190 pkt/s
+      Packets dropped          =             0 (0.00 %)
+      ----------------------------------------------------------
+      ----------------------------------------------------------
+      Flow number: 3
+      From 10.0.0.4:34775
+      To    10.0.0.4:10003
+      ----------------------------------------------------------
+      Total time               =      8.928575 s
+      Total packets            =             6
+      Minimum delay            =      0.000000 s
+      Maximum delay            =      0.000000 s
+      Average delay            =      0.000000 s
+      Average jitter           =      0.000000 s
+      Delay standard deviation =      0.000000 s
+      Bytes received           =          1507
+      Average bitrate          =      1.350271 Kbit/s
+      Average packet rate      =      0.672000 pkt/s
+      Packets dropped          =             0 (0.00 %)
+      ----------------------------------------------------------
+
+      ****************  TOTAL RESULTS   ******************
+      Number of flows          =             3
+      Total time               =     10.027982 s
+      Total packets            =          1645
+      Minimum delay            =      0.000000 s
+      Maximum delay            =      0.000000 s
+      Average delay            =      0.000000 s
+      Average jitter           =      0.000000 s
+      Delay standard deviation =      0.000000 s
+      Bytes received           =         59989
+      Average bitrate          =     47.857286 Kbit/s
+      Average packet rate      =    164.040981 pkt/s
+      Packets dropped          =             0 (0.00 %)
+      Error lines              =             0
+      ----------------------------------------------------------
+decode the first receiver log file:
+        $ ./ITGDec recv1_log_file
+      ----------------------------------------------------------
+      Flow number: 1
+      From 10.0.0.4:34776
+      To    10.0.0.3:10001
+      ----------------------------------------------------------
+      Total time               =      9.980004 s
+      Total packets            =           500
+      Minimum delay            =   3633.375466 s
+      Maximum delay            =   3633.384447 s
+      Average delay            =   3633.376101 s
+      Average jitter           =      0.000138 s
+      Delay standard deviation =      0.000259 s
+      Bytes received           =         56000
+      Average bitrate          =     44.889762 Kbit/s
+      Average packet rate      =     50.100180 pkt/s
+      Packets dropped          =             0 (0.00 %)
+      ----------------------------------------------------------
+      ****************  TOTAL RESULTS   ******************
+      Number of flows          =             1
+      Total time               =      9.980004 s
+      Total packets            =           500
+      Minimum delay            =   3633.375466 s
+      Maximum delay            =   3633.384447 s
+      Average delay            =   3633.376101 s
+      Average jitter           =      0.000138 s
+      Delay standard deviation =      0.016080 s
+      Bytes received           =         56000
+      Average bitrate          =     44.889762 Kbit/s
+      Average packet rate      =     50.100180 pkt/s
+      Packets dropped          =             0 (0.00 %)
+      Error lines              =             0
+decode the second receiver log file:
+        $ ./ITGDec recv2_log_file
+      ----------------------------------------------------------
+      Flow number: 2
+      From 10.0.0.4:33029
+      To    10.0.0.4:10002
+      ----------------------------------------------------------
+      Total time               =      9.998989 s
+      Total packets            =          1139
+      Minimum delay            =      0.000019 s
+      Maximum delay            =      0.000934 s
+      Average delay            =      0.000034 s
+      Average jitter           =      0.000014 s
+      Delay standard deviation =      0.000056 s
+      Bytes received           =          2482
+      Average bitrate          =      1.985801 Kbit/s
+      Average packet rate      =    113.911516 pkt/s
+      Packets dropped          =             0 (  0 %)
+      ----------------------------------------------------------
+      ----------------------------------------------------------
+      Flow number: 3
+      From 10.0.0.4:34775
+      To    10.0.0.4:10003
+      ----------------------------------------------------------
+      Total time               =      8.928556 s
+      Total packets            =             6
+      Minimum delay            =      0.000023 s
+      Maximum delay            =      0.000042 s
+      Average delay            =      0.000028 s
+      Average jitter           =      0.000005 s
+      Delay standard deviation =      0.000006 s
+      Bytes received           =          1507
+      Average bitrate          =      1.350274 Kbit/s
+      Average packet rate      =      0.672001 pkt/s
+      Packets dropped          =             0 (  0 \%)
+      ----------------------------------------------------------
+
+      ****************  TOTAL RESULTS   ******************
+      Number of flows          =             2
+      Total time               =     10.023268 s
+      Total packets            =          1145
+      Minimum delay            =      0.000019 s
+      Maximum delay            =      0.000934 s
+      Average delay            =      0.000034 s
+      Average jitter           =      0.000014 s
+      Delay standard deviation =      0.007472 s
+      Bytes received           =          3989
+      Average bitrate          =      3.183792 Kbit/s
+      Average packet rate      =    114.234200 pkt/s
+      Packets dropped          =             0 (  0 %)
+      Error lines              =             0
+      ----------------------------------------------------------
