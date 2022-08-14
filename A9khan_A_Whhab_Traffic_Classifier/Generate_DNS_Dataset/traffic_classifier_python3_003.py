@@ -33,7 +33,7 @@ import pickle #to use ML model real-time
 
 proj_location = "/home/ubuntu/sdn/projects/wifi/"
 ## command to run ##
-cmd = "sudo ryu-manager "+proj_location+ "wifi_monitor_001.py    /home/ubuntu/sdn/sources/flowmanager/flowmanager.py   --observe-links --ofp-tcp-listen-port 6634"
+cmd = "sudo ryu-manager "+proj_location+ "wifi_monitor_002.py    ryu.app.ofctl_rest /home/ubuntu/sdn/sources/flowmanager/flowmanager.py   --observe-links --ofp-tcp-listen-port 6634"
 
 flows = {} #empty flow dictionary
 TIMEOUT = 1*15*60 #15 min #how long to collect training data
