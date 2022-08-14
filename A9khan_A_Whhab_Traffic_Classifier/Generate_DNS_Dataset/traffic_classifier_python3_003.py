@@ -131,7 +131,12 @@ def printclassifier(model):
         elif label == 1: label = ['ping']
         elif label == 2: label = ['telnet']
         elif label == 3: label = ['voice']
-        
+        if(label == ['ping']):   
+            import os
+            os.system("echo")
+            os.system("echo let us get flows desc stats of the switch  GET /stats/flowdesc/<dpid>    curl http://localhost:8080/stats/flowdesc/1")
+            os.system("curl http://localhost:8080/stats/flowdesc/1")
+            os.system("echo")
         x.add_row([key, flow.ethsrc, flow.ethdst, label[0],flow.forward_status,flow.reverse_status]) 
     print(x)#print output in pretty mode (i.e. formatted table)
 
