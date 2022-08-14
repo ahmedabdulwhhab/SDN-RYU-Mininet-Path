@@ -134,7 +134,7 @@ def printclassifier(model):
         if(label == ['ping']):   
             import os
             os.system("echo")
-            os.system("echo let us get flows desc stats of the switch  GET /stats/flowdesc/<dpid>    curl http://localhost:8080/stats/flowdesc/1")
+            os.system("echo let us get flows desc stats of the switch  1")
             os.system("curl http://localhost:8080/stats/flowdesc/1")
             os.system("echo")
         x.add_row([key, flow.ethsrc, flow.ethdst, label[0],flow.forward_status,flow.reverse_status]) 
