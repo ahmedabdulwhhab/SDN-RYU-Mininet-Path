@@ -91,6 +91,9 @@
 # POST /stats/flowentry/add     
 #tested ok
 #curl -X POST -d '{"dpid": 1,"cookie": 1,"cookie_mask": 1,"table_id": 0,"idle_timeout": 3000,"hard_timeout": 3000,"priority": 1,"flags": 1,"match":{"in_port": 1,"dl_dst": "00:00:00:00:00:02","dl_src": "00:00:00:00:00:01"},"actions":[{"type":"OUTPUT","port": 2}]}' http://localhost:8080/stats/flowentry/add
+#IP Curl
+#curl -X POST -d '{"dpid": 1,"cookie": 1,"cookie_mask": 1,"table_id": 0,"priority": 10,"flags": 1,"match":{"eth_type" : 2048,        "ipv4_dst":"10.0.0.100","ipv4_src" : "10.0.0.200" },"actions":[{"type":"OUTPUT","port": 2}]}' http://localhost:8080/stats/flowentry/add  
+
 #curl -X POST -d '{"dpid": 1,"cookie": 1,"cookie_mask": 1,"table_id": 0,"priority": 10,"flags": 1,"match":{"eth_type" : 2048,"ipv4_src" : "172.16.20.0/255.255.255.0" },"actions":[{"type":"OUTPUT","port": 2}]}' http://localhost:8080/stats/flowentry/add  
 #curl -X POST -d '{"dpid": 1,"cookie": 1,"cookie_mask": 1,"table_id": 0,"priority": 10,"flags": 1,"match":{"eth_type" : 2048,"ipv4_src" : "172.16.20.0/255.255.255.0" ,"ipv4_dst" : "172.16.20.0/255.255.255.0"},"actions":[{"type":"OUTPUT","port": 2}]}' http://localhost:8080/stats/flowentry/add  
 #curl -X POST -d '{"dpid": 1,"cookie": 1,"cookie_mask": 1,"table_id": 0,"idle_timeout": 3000,"hard_timeout": 3000,"priority": 10,"flags": 1,"match":{"eth_type":2054,"in_port": 1,"dl_dst": "00:00:00:00:00:02","dl_src": "00:00:00:00:00:01"},"actions":[{"type":"DROP"}]}' http://localhost:8080/stats/flowentry/add
