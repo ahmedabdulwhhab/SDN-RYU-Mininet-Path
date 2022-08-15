@@ -346,7 +346,7 @@ class Switch(app_manager.RyuApp):
         self.logger.info('---------------- '
                          '-------- ----------------- '
                          '-------- -------- --------')
-        for stat in sorted([flow for flow in body if flow.priority == 10],
+        for stat in sorted([flow for flow in body if ((flow.priority == 10) or (flow.priority == 11))],
                            key=lambda flow: (flow.match['in_port'],
                                              flow.match['ipv4_dst'])):
             #print details of flows
