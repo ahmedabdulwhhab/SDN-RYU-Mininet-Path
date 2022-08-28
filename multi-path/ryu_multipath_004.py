@@ -575,6 +575,7 @@ class ProjectController(app_manager.RyuApp):
         self.adjacency[s2.dpid][s1.dpid] = s2.port_no
         #print("1: {4: 3, 2: 2} means details of switch s1 is connected to s4 via s1-eth3; and is connected to s2 via s1-eth2")
         #print("EventLinkAdd ; adjacency is ",self.adjacency)
+        self.send_miss_flow_entry_again()        
 
     @set_ev_cls(event.EventLinkDelete, MAIN_DISPATCHER)
     def link_delete_handler(self, event):
