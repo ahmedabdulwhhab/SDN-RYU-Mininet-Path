@@ -148,7 +148,7 @@ class SimpleSwitch13(app_manager.RyuApp):
                 if not self.status_mip_updated:
                     self.mip_status = load_balancer.flag_check(self.ctlr_id, flag='MigrationInProgress')
                     if self.mip_status['status'] == 'True':
-                        print("\n\n\n$$$$$ Start of Migration for Switch {} at Controller {} as Unloaded $$$$$\n\n\n".format)(self.mip_status['dpid'], self.ctlr_id)
+                        print("\n\n\n$$$$$ Start of Migration for Switch {} at Controller {} as Unloaded $$$$$\n\n\n".format(self.mip_status['dpid'], self.ctlr_id))
 
                         self.ActiveMigrationProcess = True
                         load_balancer.update_cmf_status(self.ctlr_id, 1)
@@ -181,7 +181,7 @@ class SimpleSwitch13(app_manager.RyuApp):
                     mig_status, info = load_balancer.check_migration(self.ctlr_id)
                     print("Result of check_migration status:{} info:{}".format(mig_status, info))
                     if mig_status == True and not self.flag_mip_updated:
-                        print("\n\n\n$$$$$ Start of Migration for Switch {} at Controller {} as Loaded $$$$$\n\n\n".format(dpid), self.ctlr_id)
+                        print("\n\n\n$$$$$ Start of Migration for Switch {} at Controller {} as Loaded $$$$$\n\n\n".format(dpid, self.ctlr_id))
                         self.ActiveMigrationProcess = True
                         load_balancer.update_cmf_status(self.ctlr_id, 1)
                         load_balancer.flag_update(self.ctlr_id, flag='MigrationInProgress', status=True, datapath=datapath,
