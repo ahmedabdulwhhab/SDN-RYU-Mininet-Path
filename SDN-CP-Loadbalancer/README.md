@@ -34,7 +34,7 @@ multi_ctlr_topo.py: Topology file for Mininet.
 
 Steps to run:
 --------------------------------------------------
-1) Start mongodb using: sudo mongod
+1) Start mongodb using: sudo sudo mongod --dbpath='/home/ubuntu/sdn/projects/sdn-cp-loadbalancer/data/dp/'
 2) Launch Controller 1 using:
 ryu-manager --verbose --ofp-listen-host <IP address of controller 1> controller_1.py
 3) Launch Controller 2 using:
