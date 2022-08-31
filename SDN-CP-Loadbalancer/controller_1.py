@@ -14,6 +14,23 @@
 # limitations under the License.
 
 
+#sudo apt-get install python3-pip
+#sudo apt-get purge python3-pymongo
+# sudo apt-get install python3-pymongo
+#/usr/bin/python3 -m pip install --upgrade pip
+#cd pymongo && sudo python3 setup.py install
+#wget -qO - https://www.mongodb.org/static/pgp/server-4.2.asc | sudo apt-key add - && echo "deb [ arch=amd64 ] https://repo.mongodb.org/apt/ubuntu bionic/mongodb-org/4.2 multiverse" | sudo tee /etc/apt/sources.list.d/mongodb-org-4.2.list  && sudo apt-get update && sudo apt-get install -y mongodb-org
+
+#sudo mongod
+#sudo service mongod start
+#sudo service mongodb status
+#sudo service mongodb stop
+#sudo chown -R mongodb:mongodb /var/lib/mongodb && sudo chown -R mongodb:mongodb /var/log/mongodb && sudo chown mongodb:mongodb /tmp/mongodb-27017.sock
+#sudo service mongodb stop
+#sudo service mongod start
+#  sudo mn -c && sudo mn --custom multi_ctlr_topo.py --controller=remote --topo mytopo
+
+#ryu-manager --verbose --ofp-tcp-listen-port 6634 controller_1.py
 
 from ryu.base import app_manager
 from ryu.controller import ofp_event
@@ -158,7 +175,7 @@ class SimpleSwitch13(app_manager.RyuApp):
                     print("Result of check_migration status:{} info:{}".format(mig_status, info))
                     if mig_status == True and not self.flag_mip_updated:
                         #datapath_role = pickle.dumps(datapath) # Store datapath within the object
-                        print("\n\n\n$$$$$ Start of Migration for Switch {} at Controller {} as loaded $$$$$\n\n\n".format)(dpid, self.ctlr_id)
+                        print("\n\n\n$$$$$ Start of Migration for Switch {} at Controller {} as loaded $$$$$\n\n\n".format(dpid, self.ctlr_id))
 
                         self.ActiveMigrationProcess = True
                         load_balancer.update_cmf_status(self.ctlr_id, 1)
@@ -186,7 +203,7 @@ class SimpleSwitch13(app_manager.RyuApp):
                 if not self.status_mip_updated:
                     self.mip_status = load_balancer.flag_check(self.ctlr_id, flag='MigrationInProgress')
                     if self.mip_status['status'] == 'True':
-                        print("\n\n\n$$$$$ Start of Migration for Switch {} at Controller {} as Unloaded $$$$$\n\n\n".format)(self.mip_status['dpid'], self.ctlr_id)
+                        print("\n\n\n$$$$$ Start of Migration for Switch {} at Controller {} as Unloaded $$$$$\n\n\n".format(self.mip_status['dpid'], self.ctlr_id))
                         self.ActiveMigrationProcess = True
                         load_balancer.update_cmf_status(self.ctlr_id, 1)
                         #self.start_time = time.time()
