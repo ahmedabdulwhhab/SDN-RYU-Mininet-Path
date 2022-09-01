@@ -38,10 +38,10 @@ Steps to run:
 2) Start mongodb using: sudo mongod --dbpath='/home/ubuntu/sdn/projects/sdn-cp-loadbalancer/data/dp/'
 3) Launch Controller 1 using:
 ryu-manager --verbose --ofp-listen-host <IP address of controller 1> controller_1.py
-ryu-manager --verbose --ofp-tcp-listen-port 6634 controller_1.py
+<br> ryu-manager --verbose --ofp-tcp-listen-port 6634 controller_1.py
 3) Launch Controller 2 using:
 ryu-manager --verbose --ofp-listen-host <IP address of controller 2> controller_2.py
-ryu-manager --verbose --ofp-tcp-listen-port 6633 controller_2.py
+<br> ryu-manager --verbose --ofp-tcp-listen-port 6633 controller_2.py
 4) Update IP addresses of the two remote controllers at net.addController() in mininet topology file.
 5) Launch mininet for remote controllers with the topology file:
 sudo mn --custom multi_ctlr_topo.py --controller=remote --topo mytopo
