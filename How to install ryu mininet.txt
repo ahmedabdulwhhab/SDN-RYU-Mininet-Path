@@ -1,0 +1,52 @@
+download link
+https://releases.ubuntu.com/20.04.1/ubuntu-20.04.1-live-server-amd64.iso
+#############ssh and git
+sudo apt install ssh
+sudo apt install git
+sudo apt install curl
+#############Installing Mininet
+sudo apt-get update
+sudo apt-get upgrade
+sudo git clone git://github.com/mininet/mininet
+cd mininet
+git tag
+sudo git checkout -b 2.3.0rc2
+cd ..
+sudo mininet/util/install.sh -a
+sudo mn --switch ovsbr --test pingall
+## Cannot find required executable ovs-vsctl
+sudo apt-get install openvswitch-switch
+sudo service openvswitch-switch start
+## RYU Install
+sudo git clone https://github.com/faucetsdn/ryu.git
+cd ryu
+sudo pip install -r tools/pip-requires
+sudo apt install python3-ryu
+ryu --version
+pip install eventlet==0.30.2
+
+
+/usr/bin/python3 -m pip install --upgrade pip 
+
+
+## upgrade
+sudo apt-get upgrade
+############## Test
+ryu-manager --verbose --observe-links ryu.app.simple_switch_13
+sudo mn --controller=remote,ip=192.168.1.11 --switch=ovsk,protocols=OpenFlow13 --topo=linear,3
+##############################################
+Steps in following link
+https://drive.google.com/file/d/1B_uWU6eGHAXqJ8-PvjPLNwM9ADgVZ1lz/view?usp=sharing
+############################################
+إذا فشل في ال boot
+single mouse click on ubuntu screen
+then 
+hit enter key
+or
+hit ctrl + d
+أنا لست متخصص في الشبكات وأول مرة أستخدم لينكس،
+لكن اجتهدت وبحثت عنه، ليست كل معلوماتي صحيحة 100٪ لكن جزء منها خطأ.
+خذ منها ما تجده صحيحاً واطرح الخطأ،
+في البداية كانت الفيديوهات بها أخطاء، لذا الفيديوهات الأخيرة أقرب للصحة
+جهد المقل
+أقبل اقتراحاتكم
