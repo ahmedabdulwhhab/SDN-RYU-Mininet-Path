@@ -63,7 +63,7 @@ class SimpleSwitch13(app_manager.RyuApp):
     def __init__(self, *args, **kwargs):
         super(SimpleSwitch13, self).__init__(*args, **kwargs)
         self.mac_to_port = {}
-        self.mac_ip_to_dp = {}
+        self.mac_ip_to_dp = {}            #dict 
         self.datapaths = {}
 
         #self.fields = {'time':'','datapath':'','in-port':'','ipv4_src':'','ipv4_dst':'','out-port':'','total_packets':0,'total_bytes':0,'tp_src':0,'tp_dst':0}
@@ -74,7 +74,7 @@ class SimpleSwitch13(app_manager.RyuApp):
         ####################
 
         self.ddos_oocurs=False
-        self.src_of_DDOS =0
+        self.src_of_DDOS =0     #src mac
         self.monitor_thread = hub.spawn(self._monitor)
 
     def _monitor(self):
@@ -143,7 +143,9 @@ class SimpleSwitch13(app_manager.RyuApp):
 
         dpid = datapath.id
         self.mac_to_port.setdefault(dpid, {})
-        self.mac_ip_to_dp.setdefault(src, {})
+        self.mac_ip_to_dp.setdefault(src, {})           #src as key
+        #self.mac_ip_to_dp =  {'00:00:00:00:00:05': {'10.0.0.5': 0}, '00:00:00:00:00:06': {'10.0.0.6': 0}}
+
 
         # learn a mac address to avoid FLOOD next time.
         self.mac_to_port[dpid][src] = in_port
@@ -166,7 +168,7 @@ class SimpleSwitch13(app_manager.RyuApp):
                 srcip = ip.src
                 dstip = ip.dst
                 protocol = ip.proto
-                self.mac_ip_to_dp[src][ip.src] = 0
+                self.mac_ip_to_dp[src][ip.src] = 0          
                 #print("self.mac_ip_to_dp = ",self.mac_ip_to_dp)
                 #print("len(self.mac_ip_to_dp[src] = ",len(self.mac_ip_to_dp[src]))
                 if(len(self.mac_ip_to_dp[src]) > 50):
