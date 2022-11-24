@@ -152,15 +152,15 @@ class SimpleSwitch13(app_manager.RyuApp):
                     for dp in self.datapaths.values():
                         self.add_flow(dp, 110, match, [], msg.buffer_id, idle=0, hard=100*2)
 
-                    return-2                                        
+                    #return-2                                        
                                         #############################
                 # verify if we have a valid buffer_id, if yes avoid to send both
                 # flow_mod & packet_out
                 if msg.buffer_id != ofproto.OFP_NO_BUFFER:
-                    self.add_flow(datapath, 1, match, actions, msg.buffer_id, idle=50, hard=100*1)
+                    self.add_flow(datapath, 10, match, actions, msg.buffer_id, idle=50, hard=100*1)
                     return
                 else:
-                    self.add_flow(datapath, 1, match, actions, idle=50, hard=100*1)
+                    self.add_flow(datapath, 10, match, actions, idle=50, hard=100*1)
         data = None
         if msg.buffer_id == ofproto.OFP_NO_BUFFER:
             data = msg.data
