@@ -148,10 +148,14 @@ class SimpleSwitch13(app_manager.RyuApp):
                 if(len(self.mac_ip_to_dp[src]) > 50):
                     self.ddos_oocurs=True
                     print("DDos occur from src ", src)
-                    match = parser.OFPMatch( eth_dst=dst, eth_src=src)
+                    match1 = parser.OFPMatch( eth_dst=dst, eth_src=src)
+                    #match2 = parser.OFPMatch( eth_dst=src, eth_src=dst)     #reverse direction
                     for dp in self.datapaths.values():
-                        self.add_flow(dp, 110, match, [], msg.buffer_id, idle=0, hard=100*2)
-
+                        self.add_flow(dp, 110, match1, [], idle=0, hard=100*2)
+                        #self.add_flow(dp, 110, match2, [], idle=0, hard=100*2)
+                    #import time
+                    #time.sleep(20)
+                    #print("sleep duration is finished")
                     #return-2                                        
                                         #############################
                 # verify if we have a valid buffer_id, if yes avoid to send both
