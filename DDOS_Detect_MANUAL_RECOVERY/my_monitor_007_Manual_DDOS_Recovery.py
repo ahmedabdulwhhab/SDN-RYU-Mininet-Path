@@ -151,7 +151,10 @@ class SimpleSwitch13(app_manager.RyuApp):
                     match1 = parser.OFPMatch( eth_dst=dst, eth_src=src)
                     #match2 = parser.OFPMatch( eth_dst=src, eth_src=dst)     #reverse direction
                     for dp in self.datapaths.values():
-                        self.add_flow(dp, 110, match1, [], idle=0, hard=100*2)
+                        if msg.buffer_id != ofproto.OFP_NO_BUFFER:
+                            self.add_flow(dp, 110, match1, [],msg.buffer_id, idle=0, hard=100*2)
+                        else:
+                            self.add_flow(dp, 110, match1, [],idle=0, hard=100*2)
                         #self.add_flow(dp, 110, match2, [], idle=0, hard=100*2)
                     #import time
                     #time.sleep(20)
