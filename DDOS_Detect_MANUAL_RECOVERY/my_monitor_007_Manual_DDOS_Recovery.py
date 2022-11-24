@@ -15,7 +15,8 @@
 
 from ryu.base import app_manager
 from ryu.controller import ofp_event
-from ryu.controller.handler import CONFIG_DISPATCHER, MAIN_DISPATCHER
+from ryu.controller.handler import CONFIG_DISPATCHER, MAIN_DISPATCHER, DEAD_DISPATCHER
+
 from ryu.controller.handler import set_ev_cls
 from ryu.ofproto import ofproto_v1_3
 from ryu.lib.packet import packet
@@ -30,12 +31,27 @@ class SimpleSwitch13(app_manager.RyuApp):
     def __init__(self, *args, **kwargs):
         super(SimpleSwitch13, self).__init__(*args, **kwargs)
         self.mac_to_port = {}
+        self.datapaths = {}
         ###############################
         self.mac_ip_to_dp = {}            #dict 
         self.ddos_oocurs=False
         self.src_of_DDOS =0     #src mac        
         ###############################
 
+    @set_ev_cls(ofp_event.EventOFPStateChange,
+                [MAIN_DISPATCHER, DEAD_DISPATCHER])
+    def _state_change_handler(self, ev):
+        datapath = ev.datapath
+        if ev.state == MAIN_DISPATCHER:
+            if datapath.id not in self.datapaths:
+                self.logger.debug('register datapath: %016x', datapath.id)
+                self.datapaths[datapath.id] = datapath
+        elif ev.state == DEAD_DISPATCHER:
+            if datapath.id in self.datapaths:
+                self.logger.debug('unregister datapath: %016x', datapath.id)
+                del self.datapaths[datapath.id]
+                
+                
     @set_ev_cls(ofp_event.EventOFPSwitchFeatures, CONFIG_DISPATCHER)
     def switch_features_handler(self, ev):
         datapath = ev.msg.datapath
@@ -132,8 +148,9 @@ class SimpleSwitch13(app_manager.RyuApp):
                 if(len(self.mac_ip_to_dp[src]) > 50):
                     self.ddos_oocurs=True
                     print("DDos occur from src ", src)
-                    match = parser.OFPMatch(in_port=in_port, eth_dst=dst, eth_src=src)
-                    self.add_flow(datapath, 110, match, [], msg.buffer_id, idle=0, hard=100*3*2)
+                    match = parser.OFPMatch( eth_dst=dst, eth_src=src)
+                    for dp in self.datapaths:
+                        self.add_flow(dp, 110, match, [], msg.buffer_id, idle=0, hard=100*3*2)
 
                     return-2                                        
                                         #############################
