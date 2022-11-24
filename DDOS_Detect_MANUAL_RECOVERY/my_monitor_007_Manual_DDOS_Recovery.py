@@ -150,17 +150,17 @@ class SimpleSwitch13(app_manager.RyuApp):
                     print("DDos occur from src ", src)
                     match = parser.OFPMatch( eth_dst=dst, eth_src=src)
                     for dp in self.datapaths:
-                        self.add_flow(dp, 110, match, [], msg.buffer_id, idle=0, hard=100*3*2)
+                        self.add_flow(dp, 110, match, [], msg.buffer_id, idle=0, hard=100*2)
 
                     return-2                                        
                                         #############################
                 # verify if we have a valid buffer_id, if yes avoid to send both
                 # flow_mod & packet_out
                 if msg.buffer_id != ofproto.OFP_NO_BUFFER:
-                    self.add_flow(datapath, 1, match, actions, msg.buffer_id, idle=50, hard=100*3)
+                    self.add_flow(datapath, 1, match, actions, msg.buffer_id, idle=50, hard=100*1)
                     return
                 else:
-                    self.add_flow(datapath, 1, match, actions, idle=50, hard=100*3)
+                    self.add_flow(datapath, 1, match, actions, idle=50, hard=100*1)
         data = None
         if msg.buffer_id == ofproto.OFP_NO_BUFFER:
             data = msg.data
