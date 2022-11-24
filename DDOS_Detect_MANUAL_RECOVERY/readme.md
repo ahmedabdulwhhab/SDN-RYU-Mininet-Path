@@ -3,7 +3,7 @@ sh ./topo.sh
 
 
 # controller
-clear && sudo ryu-manager manual_DDos_Recovery.py   --ofp-tcp-listen-port 6633
+clear && sudo ryu-manager my_monitor_006_Manual_DDOS_Recovery.py   --ofp-tcp-listen-port 6633
 
 
 # flood
@@ -11,3 +11,10 @@ clear && sudo ryu-manager manual_DDos_Recovery.py   --ofp-tcp-listen-port 6633
  
  # Video
 https://youtu.be/zMKsdQTPX3g
+
+<br> In controller <br>
+my_monitor_006_Manual_DDOS_Recovery.py              i send flow criterion to only switch that connected to host that cause attack <br>
+
+
+<br> In controller <br>
+my_monitor_007_Manual_DDOS_Recovery.py              i send flow criterion to all switch to block all msgs from this src to this dst  <br>
