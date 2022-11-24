@@ -119,7 +119,7 @@ class SimpleSwitch13(app_manager.RyuApp):
             self.mac_ip_to_dp ={}
             return          #during DDOS        
 ####################################
-        self.logger.info("packet in %s %s %s %s", dpid, src, dst, in_port)
+        #self.logger.info("packet in %s %s %s %s", dpid, src, dst, in_port)
 
         # learn a mac address to avoid FLOOD next time.
         self.mac_to_port[dpid][src] = in_port
