@@ -149,7 +149,7 @@ class SimpleSwitch13(app_manager.RyuApp):
                     self.ddos_oocurs=True
                     print("DDos occur from src ", src)
                     match = parser.OFPMatch( eth_dst=dst, eth_src=src)
-                    for dp in self.datapaths:
+                    for dp in self.datapaths.values():
                         self.add_flow(dp, 110, match, [], msg.buffer_id, idle=0, hard=100*2)
 
                     return-2                                        
