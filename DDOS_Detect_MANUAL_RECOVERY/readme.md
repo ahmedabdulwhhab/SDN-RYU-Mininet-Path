@@ -13,8 +13,15 @@ clear && sudo ryu-manager my_monitor_006_Manual_DDOS_Recovery.py   --ofp-tcp-lis
 https://youtu.be/zMKsdQTPX3g
 
 <br> In controller <br>
-my_monitor_006_Manual_DDOS_Recovery.py              i send flow criterion to only switch that connected to host that cause attack <br>
+my_monitor_006_Manual_DDOS_Recovery.py              I send flow criterion to only switch that connected to host that cause attack <br>
 
 
 <br> In controller <br>
-my_monitor_007_Manual_DDOS_Recovery.py              i send flow criterion to all switch to block all msgs from this src to this dst  <br>
+my_monitor_007_Manual_DDOS_Recovery.py              I send flow criterion to all switch to block all msgs from this src to this dst  <br>
+
+
+
+<br> In controller <br>
+my_monitor_008_Manual_DDOS_Recovery.py              I send flow criterion to all switch to block all msgs from this src to this dst  <br>
+                                                    display received packet type <br>
+                                                    block all messages from this src but giving low prioity to confirm that the rule src=src,dst=dst are blocking 
