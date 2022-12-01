@@ -24,7 +24,7 @@ h4s1 port 4 sw 1	00:00:00:00:00:07		10.1.1.7
 h4s2 port 4 sw 2	00:00:00:00:00:08		10.1.1.8
 
 
-1- cenario 1
+1- Scenario 1
 mininet> h1s1 date
 Thu 01 Dec 2022 05:01:29 AM UTC
 mininet> h4s2 timeout 20s hping3 -S -V -d 120 -w 64 -p 80 --rand-source --flood 10.1.1.1
