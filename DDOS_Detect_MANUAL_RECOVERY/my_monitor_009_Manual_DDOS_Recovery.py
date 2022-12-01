@@ -156,6 +156,30 @@ class SimpleSwitch13(app_manager.RyuApp):
 
         # install a flow to avoid packet_in next time
         if out_port != ofproto.OFPP_FLOOD:
+            #########################################################
+                if(len(self.mac_ip_to_dp[src]) > 5):
+                    self.ddos_oocurs=True
+                    print("DDos occur from src ", src)
+                    match1 = parser.OFPMatch( eth_dst=dst, eth_src=src)
+                    match2 = parser.OFPMatch( eth_src=src)     #block src only with low priority
+                    match3 = parser.OFPMatch(eth_type=ether_types.ETH_TYPE_IP,
+                                            ip_proto=protocol,
+                                            eth_dst=dst, eth_src=src)
+                    self.add_flow(datapath, 114, match3, [],idle=0, hard=100*3)  					
+                    for dp in self.datapaths.values():
+                        if msg.buffer_id != ofproto.OFP_NO_BUFFER:
+                            self.add_flow(dp, 110, match1, [],msg.buffer_id, idle=0, hard=100*2)
+                            self.add_flow(dp, 108, match2, [],msg.buffer_id, idle=0, hard=100*2)
+                            self.add_flow(dp, 112, match3, [], msg.buffer_id, idle=0, hard=100*3) 							
+                        else:
+                            self.add_flow(dp, 110, match1, [],idle=0, hard=100*2)
+                            self.add_flow(dp, 108, match2, [], idle=0, hard=100*2)
+                            self.add_flow(dp, 112, match3, [],idle=0, hard=100*3) 							
+                    #import time
+                    #time.sleep(20)
+                    #print("sleep duration is finished")
+                    #return-2                                        
+                                        #############################            
 
             # check IP Protocol and create a match for IP
             if eth.ethertype == ether_types.ETH_TYPE_IP:
