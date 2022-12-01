@@ -1,4 +1,4 @@
-## DDOS cause buffer of switch to be filled with packets from switches, so after DDOS is finished, the controller is still receving old messages came from switches, while if you use command sudo tcpdump -en -i s2-eth3 which asssuming both switches are connected via port 3, you find there is no flow, while contrller is still receiving from buffer memory.
+## DDOS causes buffer of switch to be filled with packets from switches, so after DDOS is finished, the controller is still receving old messages came from switches, while if you use command sudo tcpdump -en -i s2-eth3 which asssuming both switches are connected via port 3, you find there is no flow, while contrller is still receiving from buffer memory.
 # topo
 sh ./topo.sh
 
