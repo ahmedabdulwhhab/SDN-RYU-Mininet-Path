@@ -1,0 +1,106 @@
+My topo 2 switches, 4 hosts per switch
+sudo mn -c && sudo mn --controller=remote,ip=192.168.1.9:6632 --mac -i 10.1.1.0/24 --switch=ovsk,protocols=OpenFlow13  --topo=linear,2,4
+
+My controller
+ clear && sudo ryu-manager ./sdn/projects/DDos_packet_analysis/my_monitor_009_Manual_DDOS_Recovery  /home/ubuntu/sdn/sources/flowmanager/flowmanager.py  --observe-links --ofp-tcp-listen-port 6632
+
+
+the link between the switches is port 5
+				 _______									 _______
+				|		|                           		|		|
+h1s1--------1---|sw1	|-5-----------------------------5---|sw2	|-4------------------------h4s2
+				|_______|				            		|_______|				
+				
+h1s1 port 1 sw 1	00:00:00:00:00:01		10.1.1.1
+h1s2 port 1 sw 2	00:00:00:00:00:02		10.1.1.2
+
+h2s1 port 2 sw 1	00:00:00:00:00:03		10.1.1.3
+h2s2 port 2 sw 2	00:00:00:00:00:04		10.1.1.4
+
+h3s1 port 3 sw 1	00:00:00:00:00:05		10.1.1.5
+h3s2 port 3 sw 2	00:00:00:00:00:06		10.1.1.6
+
+h4s1 port 4 sw 1	00:00:00:00:00:07		10.1.1.7
+h4s2 port 4 sw 2	00:00:00:00:00:08		10.1.1.8
+
+
+1- cenario 1
+mininet> h1s1 date
+Thu 01 Dec 2022 05:01:29 AM UTC
+mininet> h4s2 timeout 20s hping3 -S -V -d 120 -w 64 -p 80 --rand-source --flood 10.1.1.1
+using h4s2-eth0, addr: 10.1.1.8, MTU: 1500
+HPING 10.1.1.1 (h4s2-eth0 10.1.1.1): S set, 40 headers + 120 data bytes
+hping in flood mode, no replies will be shown
+
+--- 10.1.1.1 hping statistic ---
+497055 packets transmitted, 0 packets received, 100% packet loss
+round-trip min/avg/max = 0.0/0.0/0.0 ms
+mininet> pingall
+*** Ping: testing ping reachability
+h1s1 -> X X X X X X X
+h1s2 -> X X X X X X X
+h2s1 -> h1s1 X X X X h4s1 X
+h2s2 -> h1s1 h1s2 h2s1 h3s1 h3s2 h4s1 X
+h3s1 -> h1s1 h1s2 h2s1 h2s2 h3s2 h4s1 X
+h3s2 -> h1s1 h1s2 h2s1 h2s2 h3s1 h4s1 X
+h4s1 -> h1s1 h1s2 h2s1 h2s2 h3s1 h3s2 X
+h4s2 -> X ^C
+Interrupt
+stopping h4s2
+mininet>
+Interrupt
+mininet> h1s1 date
+Thu 01 Dec 2022 05:03:38 AM UTC
+mininet> pingall
+*** Ping: testing ping reachability
+h1s1 -> h1s2 h2s1 h2s2 h3s1 h3s2 h4s1 h4s2
+h1s2 -> h1s1 h2s1 h2s2 h3s1 h3s2 h4s1 h4s2
+h2s1 -> h1s1 h1s2 h2s2 h3s1 h3s2 h4s1 h4s2
+h2s2 -> h1s1 h1s2 h2s1 h3s1 h3s2 h4s1 h4s2
+h3s1 -> h1s1 h1s2 h2s1 h2s2 h3s2 h4s1 h4s2
+h3s2 -> h1s1 h1s2 h2s1 h2s2 h3s1 h4s1 h4s2
+h4s1 -> h1s1 h1s2 h2s1 h2s2 h3s1 h3s2 h4s2
+h4s2 -> h1s1 h1s2 h2s1 h2s2 h3s1 h3s2 h4s1
+*** Results: 0% dropped (56/56 received)
+mininet> h1s1 date
+Thu 01 Dec 2022 05:04:17 AM UTC
+
+
+
+
+2- Scenario 2
+
+mininet> h1s1 date
+Thu 01 Dec 2022 05:08:07 AM UTC
+mininet> h3s2 timeout 20s hping3 -S -V -d 120 -w 64 -p 80 --rand-source --flood 10.1.1.1
+using h3s2-eth0, addr: 10.1.1.6, MTU: 1500
+HPING 10.1.1.1 (h3s2-eth0 10.1.1.1): S set, 40 headers + 120 data bytes
+hping in flood mode, no replies will be shown
+
+--- 10.1.1.1 hping statistic ---
+500220 packets transmitted, 0 packets received, 100% packet loss
+round-trip min/avg/max = 0.0/0.0/0.0 ms
+mininet> pingall
+*** Ping: testing ping reachability
+h1s1 -> X X X X X X X
+h1s2 -> X X X X X X X
+h2s1 -> h1s1 X X X X X X
+h2s2 -> X h1s2 h2s1 h3s1 X h4s1 h4s2
+h3s1 -> h1s1 h1s2 h2s1 h2s2 X h4s1 h4s2
+h3s2 -> X X X X X X X
+h4s1 -> h1s1 h1s2 h2s1 h2s2 h3s1 X h4s2
+h4s2 -> h1s1 h1s2 h2s1 h2s2 h3s1 X h4s1
+*** Results: 57% dropped (24/56 received)
+mininet> pingall
+*** Ping: testing ping reachability
+h1s1 -> h1s2 h2s1 h2s2 h3s1 h3s2 h4s1 h4s2
+h1s2 -> h1s1 h2s1 h2s2 h3s1 h3s2 h4s1 h4s2
+h2s1 -> h1s1 h1s2 h2s2 h3s1 h3s2 h4s1 h4s2
+h2s2 -> h1s1 h1s2 h2s1 h3s1 h3s2 h4s1 h4s2
+h3s1 -> h1s1 h1s2 h2s1 h2s2 h3s2 h4s1 h4s2
+h3s2 -> h1s1 h1s2 h2s1 h2s2 h3s1 h4s1 h4s2
+h4s1 -> h1s1 h1s2 h2s1 h2s2 h3s1 h3s2 h4s2
+h4s2 -> h1s1 h1s2 h2s1 h2s2 h3s1 h3s2 h4s1
+*** Results: 0% dropped (56/56 received)
+mininet> h1s1 date
+Thu 01 Dec 2022 05:13:12 AM UTC
