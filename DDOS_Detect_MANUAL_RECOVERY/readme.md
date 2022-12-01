@@ -30,4 +30,6 @@ my_monitor_008_Manual_DDOS_Recovery.py              I send flow criterion to all
 <br> In controller <br>
 my_monitor_009_Manual_DDOS_Recovery.py              I send flow criterion to all switch to block all msgs from this src to this dst  <br>
                                                     display received packet type <br>
-                                                    block by Layer 4 tcp message + Mac
+                                                    adding idle time=30 sec causes fast recovery than hard time <br>
+                                                    also don't wait for IP packet to block , once ethernet packet, add flow entry to block.
+
