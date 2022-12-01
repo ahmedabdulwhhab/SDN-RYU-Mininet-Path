@@ -165,16 +165,16 @@ class SimpleSwitch13(app_manager.RyuApp):
                     match3 = parser.OFPMatch(eth_type=ether_types.ETH_TYPE_IP,
                                             ip_proto=protocol,
                                             eth_dst=dst, eth_src=src)
-                    self.add_flow(datapath, 114, match3, [],idle=0, hard=100*3)  					
+                    self.add_flow(datapath, 114, match3, [],idle=30, hard=100*3)  					
                     for dp in self.datapaths.values():
                         if msg.buffer_id != ofproto.OFP_NO_BUFFER:
-                            self.add_flow(dp, 110, match1, [],msg.buffer_id, idle=0, hard=100*2)
-                            self.add_flow(dp, 108, match2, [],msg.buffer_id, idle=0, hard=100*2)
-                            self.add_flow(dp, 112, match3, [], msg.buffer_id, idle=0, hard=100*3) 							
+                            self.add_flow(dp, 110, match1, [],msg.buffer_id, idle=30, hard=100*2)
+                            self.add_flow(dp, 108, match2, [],msg.buffer_id, idle=30, hard=100*2)
+                            self.add_flow(dp, 112, match3, [], msg.buffer_id, idle=30, hard=100*3) 							
                         else:
-                            self.add_flow(dp, 110, match1, [],idle=0, hard=100*2)
-                            self.add_flow(dp, 108, match2, [], idle=0, hard=100*2)
-                            self.add_flow(dp, 112, match3, [],idle=0, hard=100*3) 							
+                            self.add_flow(dp, 110, match1, [],idle=30, hard=100*2)
+                            self.add_flow(dp, 108, match2, [], idle=30, hard=100*2)
+                            self.add_flow(dp, 112, match3, [],idle=30, hard=100*3) 							
                     #import time
                     #time.sleep(20)
                     #print("sleep duration is finished")
@@ -201,16 +201,16 @@ class SimpleSwitch13(app_manager.RyuApp):
                     match3 = parser.OFPMatch(eth_type=ether_types.ETH_TYPE_IP,
                                             ip_proto=protocol,
                                             eth_dst=dst, eth_src=src)
-                    self.add_flow(datapath, 114, match3, [],idle=0, hard=100*3)  					
+                    self.add_flow(datapath, 114, match3, [],idle=30, hard=100*3)  					
                     for dp in self.datapaths.values():
                         if msg.buffer_id != ofproto.OFP_NO_BUFFER:
-                            self.add_flow(dp, 110, match1, [],msg.buffer_id, idle=0, hard=100*2)
-                            self.add_flow(dp, 108, match2, [],msg.buffer_id, idle=0, hard=100*2)
-                            self.add_flow(dp, 112, match3, [], msg.buffer_id, idle=0, hard=100*3) 							
+                            self.add_flow(dp, 110, match1, [],msg.buffer_id, idle=30, hard=100*2)
+                            self.add_flow(dp, 108, match2, [],msg.buffer_id, idle=30, hard=100*2)
+                            self.add_flow(dp, 112, match3, [], msg.buffer_id, idle=30, hard=100*3) 							
                         else:
-                            self.add_flow(dp, 110, match1, [],idle=0, hard=100*2)
-                            self.add_flow(dp, 108, match2, [], idle=0, hard=100*2)
-                            self.add_flow(dp, 112, match3, [],idle=0, hard=100*3) 							
+                            self.add_flow(dp, 110, match1, [],idle=30, hard=100*2)
+                            self.add_flow(dp, 108, match2, [], idle=30, hard=100*2)
+                            self.add_flow(dp, 112, match3, [],idle=30, hard=100*3) 							
                     #import time
                     #time.sleep(20)
                     #print("sleep duration is finished")
