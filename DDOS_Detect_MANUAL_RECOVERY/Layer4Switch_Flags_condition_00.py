@@ -13,6 +13,11 @@
 # See the License for the specific language governing permissions and
 # limitations under the License.
 
+
+
+#    tested by
+#  h2s2 timeout 5s hping3 -S -V -d 120 -w 64 -p 80 --rand-source --flood 10.0.0.1
+
 from ryu.base import app_manager
 from ryu.controller import ofp_event
 from ryu.controller.handler import CONFIG_DISPATCHER, MAIN_DISPATCHER
