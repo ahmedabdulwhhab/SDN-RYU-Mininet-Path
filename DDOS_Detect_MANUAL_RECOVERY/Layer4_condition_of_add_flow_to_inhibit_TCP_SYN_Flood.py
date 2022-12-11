@@ -15,7 +15,7 @@
 
 from ryu.base import app_manager
 from ryu.controller import ofp_event
-from ryu.controller.handler import CONFIG_DISPATCHER, MAIN_DISPATCHER
+from ryu.controller.handler import CONFIG_DISPATCHER, MAIN_DISPATCHER, DEAD_DISPATCHER
 from ryu.controller.handler import set_ev_cls
 from ryu.ofproto import ofproto_v1_3
 from ryu.lib.packet import packet
@@ -37,7 +37,13 @@ class SimpleSwitch13(app_manager.RyuApp):
     def __init__(self, *args, **kwargs):
         super(SimpleSwitch13, self).__init__(*args, **kwargs)
         self.mac_to_port = {}
-        self.file0 = open("file.csv","w")
+        self.datapaths = {}
+        ###############################
+        self.mac_ip_to_dp = {}            #dict
+        self.ddos_oocurs=False
+        self.src_of_DDOS =0     #src mac
+        ###############################
+
 
     @set_ev_cls(ofp_event.EventOFPSwitchFeatures, CONFIG_DISPATCHER)
     def switch_features_handler(self, ev):
@@ -76,7 +82,21 @@ class SimpleSwitch13(app_manager.RyuApp):
         datapath.send_msg(mod)
 
 
-
+    @set_ev_cls(ofp_event.EventOFPStateChange,
+                [MAIN_DISPATCHER, DEAD_DISPATCHER])
+    def _state_change_handler(self, ev):
+        datapath = ev.datapath
+        if ev.state == MAIN_DISPATCHER:
+            if datapath.id not in self.datapaths:
+                self.logger.debug('register datapath: %016x', datapath.id)
+                self.datapaths[datapath.id] = datapath
+        elif ev.state == DEAD_DISPATCHER:
+            if datapath.id in self.datapaths:
+                self.logger.debug('unregister datapath: %016x', datapath.id)
+                del self.datapaths[datapath.id]
+				
+				
+				
     @set_ev_cls(ofp_event.EventOFPPacketIn, MAIN_DISPATCHER)
     def _packet_in_handler(self, ev):
         # If you hit this you might want to increase
@@ -101,6 +121,13 @@ class SimpleSwitch13(app_manager.RyuApp):
 
         dpid = datapath.id
         self.mac_to_port.setdefault(dpid, {})
+		####################################
+        self.mac_ip_to_dp.setdefault(src, {})           #src as key        
+        if(self.src_of_DDOS != src) and self.ddos_oocurs:
+            self.ddos_oocurs = 0
+            self.mac_ip_to_dp ={}
+            return          #during DDOS        
+		####################################
 
         self.logger.info("packet in %s %s %s %s", dpid, src, dst, in_port)
 
@@ -117,24 +144,45 @@ class SimpleSwitch13(app_manager.RyuApp):
 
         # install a flow to avoid packet_in next time
         if out_port != ofproto.OFPP_FLOOD:
-
+            #########################################################
+            if(len(self.mac_ip_to_dp[src]) > 5):
+                    self.ddos_oocurs=True
+                    print("DDos occur from src ", src)
+                    match1 = parser.OFPMatch( eth_dst=dst, eth_src=src)
+                    match2 = parser.OFPMatch( eth_src=src)     #block src only with low priority
+                    self.add_flow(datapath, 114, match1, [],idle=30, hard=100*3)  					
+                    for dp in self.datapaths.values():
+                        if msg.buffer_id != ofproto.OFP_NO_BUFFER:
+                            self.add_flow(dp, 110, match1, [],msg.buffer_id, idle=30, hard=100*2)
+                            self.add_flow(dp, 108, match2, [],msg.buffer_id, idle=30, hard=100*2)
+							
+                        else:
+                            self.add_flow(dp, 110, match1, [],idle=30, hard=100*2)
+                            self.add_flow(dp, 108, match2, [], idle=30, hard=100*2)
+					
+                    #import time
+                    #time.sleep(20)
+                    #print("sleep duration is finished")
+                    return -2                                        
+                                        #############################
             # check IP Protocol and create a match for IP
             if eth.ethertype == ether_types.ETH_TYPE_IP:
                 ip = pkt.get_protocol(ipv4.ipv4)
                 srcip = ip.src
                 dstip = ip.dst
                 protocol = ip.proto
-            
+                self.mac_ip_to_dp[src][srcip]=0
                 # if ICMP Protocol
                 if protocol == in_proto.IPPROTO_ICMP:
                     match = parser.OFPMatch(eth_type=ether_types.ETH_TYPE_IP, ipv4_src=srcip, ipv4_dst=dstip, ip_proto=protocol)
                     no_flowentry= 1
+
             
                 #  if TCP Protocol
                 elif protocol == in_proto.IPPROTO_TCP:
                     t = pkt.get_protocol(tcp.tcp)
                     print("pkt_tcp.bits", t.bits)
-                    self.file0.write("at line 123 {},{}\n" .format(dpid, t.bits))
+
             # show TCP Flags (6bits)
                                                             
                     if t.bits > 2:
@@ -149,7 +197,7 @@ class SimpleSwitch13(app_manager.RyuApp):
                 # verify if we have a valid buffer_id, if yes avoid to send both
                 # flow_mod & packet_out
                 if no_flowentry ==1 and msg.buffer_id != ofproto.OFP_NO_BUFFER:
-                    self.add_flow(datapath, 1, match, actions, msg.buffer_id,idle =30, hard =60)
+                    self.add_flow(datapath, 1, match, actions, msg.buffer_id,idle =3, hard =6)
                     return
                 else:
                     if no_flowentry ==1 :
