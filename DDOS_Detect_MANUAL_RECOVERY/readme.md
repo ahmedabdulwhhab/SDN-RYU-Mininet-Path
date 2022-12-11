@@ -59,13 +59,6 @@ my_monitor_009_Manual_DDOS_Recovery.py              I send flow criterion to all
 					
 					
 
-# in Layer4_condition_of_add_flow_to_inhibit_TCP_SYN_Flood.py
-	condition to create rule in switch is tcp flag bit  > 2 (after complete handshake
-	                #  if TCP Protocol
-                elif protocol == in_proto.IPPROTO_TCP:
-                    t = pkt.get_protocol(tcp.tcp)
-                    print("pkt tcp bits", t.bits)                                                            
-                    if t.bits > 2:
-                        match = parser.OFPMatch(eth_type=ether_types.ETH_TYPE_IP, ipv4_src=srcip, ipv4_dst=dstip, ip_proto=protocol, tcp_src=t.src_port, tcp_dst=t.dst_port,)
-                        no_flowentry= 1
+# in controller 	my_monitor_010_Manual_DDOS_Recovery.py
+		after 20 second release variable DDos_occur to be zero
 
