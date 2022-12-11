@@ -13,6 +13,10 @@
 # See the License for the specific language governing permissions and
 # limitations under the License.
 
+# sudo mn -c ; sudo mn --controller=remote,ip=192.168.1.6:6633 --mac --switch=ovsk,protocols=OpenFlow13 --topo=linear,4,5
+# clear && sudo ryu-manager Layer4_condition_of_add_flow_to_inhibit_TCP_SYN_Flood.py   /home/ubuntu/sdn/sources/flowmanager/flowmanager.py  --observe-links --ofp-tcp-listen-port 6633
+#sudo ovs-ofctl -O openflow13 dump-flows s1
+
 from ryu.base import app_manager
 from ryu.controller import ofp_event
 from ryu.controller.handler import CONFIG_DISPATCHER, MAIN_DISPATCHER, DEAD_DISPATCHER
@@ -192,6 +196,7 @@ class SimpleSwitch13(app_manager.RyuApp):
                 elif protocol == in_proto.IPPROTO_TCP:
                     t = pkt.get_protocol(tcp.tcp)
                     print("pkt_tcp.bits", t.bits)
+                    match = parser.OFPMatch(eth_type=ether_types.ETH_TYPE_IP, ipv4_src=srcip, ipv4_dst=dstip, ip_proto=protocol, tcp_src=t.src_port, tcp_dst=t.dst_port,)                    
             
                 #  If UDP Protocol 
                 elif protocol == in_proto.IPPROTO_UDP:
