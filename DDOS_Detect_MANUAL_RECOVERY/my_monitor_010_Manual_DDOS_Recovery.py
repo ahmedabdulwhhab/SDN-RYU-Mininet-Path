@@ -50,8 +50,8 @@ class SimpleSwitch13(app_manager.RyuApp):
         ###############################
         self.mac_ip_to_dp = {}            #dict
         self.ddos_oocurs=False
-        self.src_of_DDOS =""     #src mac
-        self.wait_time_after_DDOS = 0
+        self.src_of_DDOS =0     #src mac
+        self.wait_time_after_DDOS = ""
         self.monitor_thread = hub.spawn(self._monitor)
         ###############################
 
@@ -64,7 +64,7 @@ class SimpleSwitch13(app_manager.RyuApp):
             if(self.wait_time_after_DDOS > 20):
                 self.mac_ip_to_dp = {}            #dict
                 self.ddos_oocurs=False
-                self.src_of_DDOS =""     #src mac
+                self.src_of_DDOS = ""
             hub.sleep(1)
 
     @set_ev_cls(ofp_event.EventOFPSwitchFeatures, CONFIG_DISPATCHER)
@@ -167,6 +167,7 @@ class SimpleSwitch13(app_manager.RyuApp):
             #########################################################
             if(len(self.mac_ip_to_dp[src]) > 5):
                     self.ddos_oocurs=True
+                    self.src_of_DDOS = src
                     print("DDos occur from src ", src)
                     match1 = parser.OFPMatch( eth_dst=dst, eth_src=src)
                     match2 = parser.OFPMatch( eth_src=src)     #block src only with low priority
