@@ -19,7 +19,8 @@
 # sudo mn -c; sudo mn --controller=remote,ip=192.168.1.7:6633 --mac -i 10.0.0.0/24 --switch=ovsk,protocols=OpenFlow13  --topo=tree,depth=2,fanout=3
 # clear && sudo ryu-manager my_monitor_010_Manual_DDOS_Recovery.py   /home/ubuntu/sdn/sources/flowmanager/flowmanager.py  --observe-links --ofp-tcp-listen-port 6633   --wsapi-port 8080
 #sudo ovs-ofctl -O openflow13 dump-flows s1
-#
+# h4 timeout 20s hping3 -S -V -d 120 -w 64 -p 80 --rand-source --flood 10.0.0.1
+
 
 
 from ryu.base import app_manager
