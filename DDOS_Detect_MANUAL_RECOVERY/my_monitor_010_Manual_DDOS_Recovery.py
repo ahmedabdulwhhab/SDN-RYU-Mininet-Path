@@ -164,7 +164,7 @@ class SimpleSwitch13(app_manager.RyuApp):
         # install a flow to avoid packet_in next time
         if out_port != ofproto.OFPP_FLOOD:
             #########################################################
-            if(len(self.mac_ip_to_dp[src]) > 15):
+            if(len(self.mac_ip_to_dp[src]) > 5):
                     self.ddos_oocurs=True
                     print("DDos occur from src ", src)
                     match1 = parser.OFPMatch( eth_dst=dst, eth_src=src)
