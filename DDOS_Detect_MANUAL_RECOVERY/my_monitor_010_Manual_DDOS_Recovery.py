@@ -13,9 +13,14 @@
 # See the License for the specific language governing permissions and
 # limitations under the License.
 
-# sudo mn -c ; sudo mn --controller=remote,ip=192.168.1.6:6633 --mac --switch=ovsk,protocols=OpenFlow13 --topo=linear,4,5
-# clear && sudo ryu-manager Layer4_condition_of_add_flow_to_inhibit_TCP_SYN_Flood.py   /home/ubuntu/sdn/sources/flowmanager/flowmanager.py  --observe-links --ofp-tcp-listen-port 6633
+# sudo mn -c ; sudo mn --controller=remote,ip=192.168.1.7:6633 --mac -i 10.0.0.0/24 --switch=ovsk,protocols=OpenFlow13 --topo=linear,4,5
+# sudo mn -c ; sudo mn --controller=remote,ip=192.168.1.7:6633 --mac -i 10.0.0.0/24 --switch=ovsk,protocols=OpenFlow13 --topo=linear,5,6
+# sudo mn -c ; sudo mn --controller=remote,ip=192.168.1.7:6633 --mac  -i 10.0.0.0/24 --switch=ovsk,protocols=OpenFlow13 --topo=single,16
+# sudo mn -c; sudo mn --controller=remote,ip=192.168.1.7:6633 --mac -i 10.0.0.0/24 --switch=ovsk,protocols=OpenFlow13  --topo=tree,depth=2,fanout=3
+# clear && sudo ryu-manager my_monitor_010_Manual_DDOS_Recovery.py   /home/ubuntu/sdn/sources/flowmanager/flowmanager.py  --observe-links --ofp-tcp-listen-port 6633
 #sudo ovs-ofctl -O openflow13 dump-flows s1
+#
+
 
 from ryu.base import app_manager
 from ryu.controller import ofp_event
@@ -139,7 +144,7 @@ class SimpleSwitch13(app_manager.RyuApp):
         self.mac_to_port.setdefault(dpid, {})
 		####################################
         self.mac_ip_to_dp.setdefault(src, {})           #src as key        
-        if(self.src_of_DDOS != src) and self.ddos_oocurs:
+        if(self.src_of_DDOS == src) and self.ddos_oocurs:
             return          #during DDOS        
 		####################################
 
@@ -159,7 +164,7 @@ class SimpleSwitch13(app_manager.RyuApp):
         # install a flow to avoid packet_in next time
         if out_port != ofproto.OFPP_FLOOD:
             #########################################################
-            if(len(self.mac_ip_to_dp[src]) > 5):
+            if(len(self.mac_ip_to_dp[src]) > 15):
                     self.ddos_oocurs=True
                     print("DDos occur from src ", src)
                     match1 = parser.OFPMatch( eth_dst=dst, eth_src=src)
@@ -179,6 +184,7 @@ class SimpleSwitch13(app_manager.RyuApp):
                     #print("sleep duration is finished")
                     return -2                                        
                                         #############################
+            add_rule_to_switch =0
             # check IP Protocol and create a match for IP
             if eth.ethertype == ether_types.ETH_TYPE_IP:
                 ip = pkt.get_protocol(ipv4.ipv4)
@@ -189,6 +195,7 @@ class SimpleSwitch13(app_manager.RyuApp):
                 # if ICMP Protocol
                 if protocol == in_proto.IPPROTO_ICMP:
                     match = parser.OFPMatch(eth_type=ether_types.ETH_TYPE_IP, ipv4_src=srcip, ipv4_dst=dstip, ip_proto=protocol)
+                    add_rule_to_switch =1
 
 
             
@@ -196,21 +203,24 @@ class SimpleSwitch13(app_manager.RyuApp):
                 elif protocol == in_proto.IPPROTO_TCP:
                     t = pkt.get_protocol(tcp.tcp)
                     print("pkt_tcp.bits", t.bits)
-                    match = parser.OFPMatch(eth_type=ether_types.ETH_TYPE_IP, ipv4_src=srcip, ipv4_dst=dstip, ip_proto=protocol, tcp_src=t.src_port, tcp_dst=t.dst_port,)                    
+                    if(t.bits >2):
+                        match = parser.OFPMatch(eth_type=ether_types.ETH_TYPE_IP, ipv4_src=srcip, ipv4_dst=dstip, ip_proto=protocol, tcp_src=t.src_port, tcp_dst=t.dst_port,)                    
+                        add_rule_to_switch =1
             
                 #  If UDP Protocol 
                 elif protocol == in_proto.IPPROTO_UDP:
                     u = pkt.get_protocol(udp.udp)
                     match = parser.OFPMatch(eth_type=ether_types.ETH_TYPE_IP, ipv4_src=srcip, ipv4_dst=dstip, ip_proto=protocol, udp_src=u.src_port, udp_dst=u.dst_port,)            
-
+                    add_rule_to_switch =1
                 # verify if we have a valid buffer_id, if yes avoid to send both
                 # flow_mod & packet_out
                 if  msg.buffer_id != ofproto.OFP_NO_BUFFER:
-                    self.add_flow(datapath, 1, match, actions, msg.buffer_id,idle =30, hard =60)
+                    if(add_rule_to_switch):
+                        self.add_flow(datapath, 1, match, actions, msg.buffer_id,idle =30, hard =60)
                     return
                 else:
-
-                    self.add_flow(datapath, 1, match, actions,idle=30,hard =60)
+                    if(add_rule_to_switch):
+                        self.add_flow(datapath, 1, match, actions,idle=30,hard =60)
         data = None
         if msg.buffer_id == ofproto.OFP_NO_BUFFER:
             data = msg.data
