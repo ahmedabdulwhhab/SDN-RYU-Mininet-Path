@@ -50,7 +50,7 @@ class SimpleSwitch13(app_manager.RyuApp):
         ###############################
         self.mac_ip_to_dp = {}            #dict
         self.ddos_oocurs=False
-        self.src_of_DDOS =0     #src mac
+        self.src_of_DDOS =""     #src mac
         self.wait_time_after_DDOS = 0
         self.monitor_thread = hub.spawn(self._monitor)
         ###############################
@@ -64,6 +64,7 @@ class SimpleSwitch13(app_manager.RyuApp):
             if(self.wait_time_after_DDOS > 20):
                 self.mac_ip_to_dp = {}            #dict
                 self.ddos_oocurs=False
+                self.src_of_DDOS =""     #src mac
             hub.sleep(1)
 
     @set_ev_cls(ofp_event.EventOFPSwitchFeatures, CONFIG_DISPATCHER)
