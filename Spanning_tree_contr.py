@@ -41,7 +41,7 @@ class SimpleSwitch13(simple_switch_13.SimpleSwitch13):
                   dpid_lib.str_to_dpid('0000000000000002'):
                   {'bridge': {'priority': 0x8000}},
                   dpid_lib.str_to_dpid('0000000000000003'):
-                  {'bridge': {'priority': 0xa000}}}
+                  {'bridge': {'priority': 0x9000}}}
         self.stp.set_config(config)
 
     def delete_flow(self, datapath):
