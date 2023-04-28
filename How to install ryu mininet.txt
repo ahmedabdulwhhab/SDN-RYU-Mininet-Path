@@ -1,4 +1,9 @@
-download link
+download link 
+for desktop version
+https://www.omgubuntu.co.uk/2021/08/ubuntu-20-04-3-point-release
+####################################
+for server CLI only 
+download link 
 https://releases.ubuntu.com/20.04.1/ubuntu-20.04.1-live-server-amd64.iso
 #############ssh and git
 sudo apt install ssh
