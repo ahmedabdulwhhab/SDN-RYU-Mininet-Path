@@ -41,6 +41,11 @@ pip install eventlet==0.30.2
 /usr/bin/python3 -m pip install --upgrade pip 
 
 
+
+sudo /usr/bin/python3 -m pip install --upgrade pip
+
+فقط اضافة sudo في بداية سطر
+
 ## upgrade
 sudo apt-get upgrade
 ############## Test
