@@ -4,18 +4,31 @@ https://www.youtube.com/watch?embeds_referring_euri=https%3A%2F%2Fwww.google.com
 Low Disk space on "Filesystem root"
 The Volume "Filesystem root" has only 645.5 MB disk space remaining
 
+
+
 1-		Turn off ubuntu Virtual machine
 2-		VMware --> settings ----> Hardisk --> expand to be 20 GB for example
 3-		Power on ubuntu Virtual machine
 4-		from ubuntu desktop only open terminal
 
 		sudo rm /var/lib/dpkg/updates/*
-sudo apt-get update
-sudo apt-get install gparted
-5-		sudo -s
-6-	    sudo apt install gparted -y
-7-		from terminal --> open gparted using sudo gparted
-8-		Expand the partition
+		sudo apt-get update
+		sudo -s
+		sudo apt-get install gparted
+
+5-		from terminal --> open gparted using sudo gparted
+6-		Expand the partition
+
+
+
+
+
+
+
+
+
+
+
 
 
 
