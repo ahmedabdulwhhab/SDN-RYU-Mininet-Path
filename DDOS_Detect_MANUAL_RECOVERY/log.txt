@@ -1,0 +1,45 @@
+1) topo
+
+sudo mn -c ; sudo mn --controller=remote,ip=192.168.1.7:6633 --mac -i 10.0.0.0/24 --switch=ovsk,protocols=OpenFlow13 --topo=linear,4,5
+
+2)
+mininet-wifi> h1s1 ping h3s4 -c3
+PING 10.0.0.12 (10.0.0.12) 56(84) bytes of data.
+64 bytes from 10.0.0.12: icmp_seq=1 ttl=64 time=64.4 ms
+64 bytes from 10.0.0.12: icmp_seq=2 ttl=64 time=2.12 ms
+64 bytes from 10.0.0.12: icmp_seq=3 ttl=64 time=0.172 ms
+
+3)ubuntu@ubuntu:~$  sudo ovs-ofctl -O openflow13 dump-flows s1
+ cookie=0x0, duration=213.682s, table=0, n_packets=159, n_bytes=9540, priority=65535,dl_dst=01:80:c2:00:00:0e,dl_type=0x88cc actions=CONTROLLER:65535
+ cookie=0x0, duration=10.230s, table=0, n_packets=2, n_bytes=196, idle_timeout=30, hard_timeout=60, priority=1,icmp,nw_src=10.0.0.1,nw_dst=10.0.0.12 actions=output:"s1-eth6"
+ cookie=0x0, duration=10.163s, table=0, n_packets=2, n_bytes=196, idle_timeout=30, hard_timeout=60, priority=1,icmp,nw_src=10.0.0.12,nw_dst=10.0.0.1 actions=output:"s1-eth1"
+ cookie=0x0, duration=213.682s, table=0, n_packets=244, n_bytes=21385, priority=0 actions=CONTROLLER:65535
+
+4)
+mininet-wifi> h2s3 timeout 20s hping3 -S -V -d 120 -w 64 -p 80 --rand-source --flood 10.0.0.1
+
+
+5) 
+controller status
+pkt_tcp.bits 2
+packet in 3 00:00:00:00:00:07 00:00:00:00:00:01 2
+pkt_tcp.bits 2
+packet in 3 00:00:00:00:00:07 00:00:00:00:00:01 2
+pkt_tcp.bits 2
+packet in 3 00:00:00:00:00:07 00:00:00:00:00:01 2
+pkt_tcp.bits 2
+packet in 3 00:00:00:00:00:07 00:00:00:00:00:01 2
+pkt_tcp.bits 2
+packet in 3 00:00:00:00:00:07 00:00:00:00:00:01 2
+pkt_tcp.bits 2
+packet in 3 00:00:00:00:00:07 00:00:00:00:00:01 2
+DDos occur from src  00:00:00:00:00:07
+
+
+6)
+ubuntu@ubuntu:~$ sudo ovs-ofctl -O openflow13 dump-flows s1
+ cookie=0x0, duration=313.434s, table=0, n_packets=208, n_bytes=12480, priority=65535,dl_dst=01:80:c2:00:00:0e,dl_type=0x88cc actions=CONTROLLER:65535
+ cookie=0x0, duration=1.032s, table=0, n_packets=0, n_bytes=0, idle_timeout=30, hard_timeout=200, priority=110,dl_src=00:00:00:00:00:07,dl_dst=00:00:00:00:00:01 actions=drop
+ cookie=0x0, duration=1.032s, table=0, n_packets=0, n_bytes=0, idle_timeout=30, hard_timeout=200, priority=108,dl_src=00:00:00:00:00:07 actions=drop
+ cookie=0x0, duration=313.434s, table=0, n_packets=269, n_bytes=23190, priority=0 actions=CONTROLLER:65535
+ubuntu@ubuntu:~$
