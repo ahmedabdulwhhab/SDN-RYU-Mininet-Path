@@ -1,3 +1,17 @@
+Adding VMware VMs to GNS3 Topologies
+https://docs.gns3.com/docs/emulators/adding-vmware-vms-to-gns3-topologies/
+
+
+
+openvswitch management
+https://www.gns3.com/marketplace/appliances/open-vswitch-with-management-interface
+
+
+Docker 
+https://www.gns3.com/marketplace/appliances/ubuntu
+
+
+
 ovs-vsctl set bridge br0 protocols=OpenFlow13
  ovs-vsctl set-controller br0 tcp:192.168.122.163:6633
  ovs-ofctl -O OpenFlow13 dump-flows br0
