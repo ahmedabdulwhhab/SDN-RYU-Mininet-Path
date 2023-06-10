@@ -290,3 +290,118 @@ class SimpleSwitch13(app_manager.RyuApp):
  cookie=0x5, duration=6.769s, table=0, n_packets=6, n_bytes=588, idle_timeout=100, hard_timeout=200, priority=10,icmp,in_port=eth1,dl_src=00:50:79:66:68:00,dl_dst=00:50:79:66:68:01,nw_src=10.0.0.1,nw_dst=10.0.0.2,icmp_type=8,icmp_code=0 actions=output:eth2
  cookie=0x3, duration=7.823s, table=0, n_packets=7, n_bytes=686, idle_timeout=100, hard_timeout=200, priority=10,icmp,in_port=eth2,dl_src=00:50:79:66:68:01,dl_dst=00:50:79:66:68:00,nw_src=10.0.0.2,nw_dst=10.0.0.1,icmp_type=0,icmp_code=0 actions=output:eth1
  cookie=0x1, duration=9.220s, table=0, n_packets=9, n_bytes=652, priority=0 actions=CONTROLLER:65535
+
+
+-----------------------------------------------------------------------------
+OVS Putty after adding Block for mitigation
+OpenvSwitch-1 console is now available... Press RETURN to get started.
+udhcpc (v1.24.2) started
+Sending discover...
+Sending discover...
+Sending discover...
+Sending discover...
+Sending discover...
+udhcpc failed to get a DHCP lease
+No lease, forking to background
+2023-06-10T02:57:14Z|00001|ovs_numa|INFO|Discovered 1 CPU cores on NUMA node 0
+2023-06-10T02:57:14Z|00002|ovs_numa|INFO|Discovered 1 NUMA nodes and 1 CPU cores
+2023-06-10T02:57:14Z|00003|reconnect|INFO|unix:/var/run/openvswitch/db.sock: connecting...
+2023-06-10T02:57:14Z|00004|reconnect|INFO|unix:/var/run/openvswitch/db.sock: connected
+2023-06-10T02:57:14Z|00005|pmd_perf|INFO|Estimated TSC frequency: 2305463 KHz
+2023-06-10T02:57:14Z|00006|dpif_netdev_extract|INFO|Default MFEX Extract implementation is scalar.
+2023-06-10T02:57:14Z|00007|dpif_netdev_impl|INFO|Default DPIF implementation is dpif_scalar.
+2023-06-10T02:57:14Z|00008|ofproto_dpif|INFO|netdev@ovs-netdev: Datapath supports recirculation
+2023-06-10T02:57:14Z|00009|ofproto_dpif|INFO|netdev@ovs-netdev: VLAN header stack length probed as 1
+2023-06-10T02:57:14Z|00010|ofproto_dpif|INFO|netdev@ovs-netdev: MPLS label stack length probed as 3
+2023-06-10T02:57:14Z|00011|ofproto_dpif|INFO|netdev@ovs-netdev: Datapath supports truncate action
+2023-06-10T02:57:14Z|00012|ofproto_dpif|INFO|netdev@ovs-netdev: Datapath supports unique flow ids
+2023-06-10T02:57:14Z|00013|ofproto_dpif|INFO|netdev@ovs-netdev: Datapath supports clone action
+2023-06-10T02:57:14Z|00014|ofproto_dpif|INFO|netdev@ovs-netdev: Max sample nesting level probed as 10
+2023-06-10T02:57:14Z|00015|ofproto_dpif|INFO|netdev@ovs-netdev: Datapath supports eventmask in conntrack action
+2023-06-10T02:57:14Z|00016|ofproto_dpif|INFO|netdev@ovs-netdev: Datapath supports ct_clear action
+2023-06-10T02:57:14Z|00017|ofproto_dpif|INFO|netdev@ovs-netdev: Max dp_hash algorithm probed to be 1
+2023-06-10T02:57:14Z|00018|ofproto_dpif|INFO|netdev@ovs-netdev: Datapath supports check_pkt_len action
+2023-06-10T02:57:14Z|00019|ofproto_dpif|INFO|netdev@ovs-netdev: Datapath supports timeout policy in conntrack action
+2023-06-10T02:57:14Z|00020|ofproto_dpif|INFO|netdev@ovs-netdev: Datapath supports ct_zero_snat
+2023-06-10T02:57:14Z|00021|ofproto_dpif|INFO|netdev@ovs-netdev: Datapath supports add_mpls action
+2023-06-10T02:57:14Z|00022|ofproto_dpif|INFO|netdev@ovs-netdev: Datapath supports ct_state
+2023-06-10T02:57:14Z|00023|ofproto_dpif|INFO|netdev@ovs-netdev: Datapath supports ct_zone
+2023-06-10T02:57:14Z|00024|ofproto_dpif|INFO|netdev@ovs-netdev: Datapath supports ct_mark
+2023-06-10T02:57:14Z|00025|ofproto_dpif|INFO|netdev@ovs-netdev: Datapath supports ct_label
+2023-06-10T02:57:14Z|00026|ofproto_dpif|INFO|netdev@ovs-netdev: Datapath supports ct_state_nat
+2023-06-10T02:57:14Z|00027|ofproto_dpif|INFO|netdev@ovs-netdev: Datapath supports ct_orig_tuple
+2023-06-10T02:57:14Z|00028|ofproto_dpif|INFO|netdev@ovs-netdev: Datapath supports ct_orig_tuple6
+2023-06-10T02:57:14Z|00029|ofproto_dpif|INFO|netdev@ovs-netdev: Datapath supports IPv6 ND Extensions
+2023-06-10T02:57:14Z|00030|ofproto_dpif_upcall|INFO|Setting n-handler-threads to 1, setting n-revalidator-threads to 1
+2023-06-10T02:57:14Z|00031|ofproto_dpif_upcall|INFO|Starting 2 threads
+2023-06-10T02:57:14Z|00032|dpif_netdev|INFO|pmd-rxq-affinity isolates PMD core
+2023-06-10T02:57:14Z|00033|dpif_netdev|INFO|PMD auto load balance interval set to 1 mins
+2023-06-10T02:57:14Z|00034|dpif_netdev|INFO|PMD auto load balance improvement threshold set to 25%
+2023-06-10T02:57:14Z|00035|dpif_netdev|INFO|PMD auto load balance load threshold set to 95%
+2023-06-10T02:57:14Z|00036|dpif_netdev|INFO|PMD auto load balance is disabled.
+2023-06-10T02:57:14Z|00037|bridge|INFO|bridge br3: added interface br3 on port 65534
+2023-06-10T02:57:14Z|00038|bridge|INFO|bridge br0: added interface eth11 on port 12
+2023-06-10T02:57:14Z|00039|bridge|INFO|bridge br0: added interface eth8 on port 9
+2023-06-10T02:57:14Z|00040|bridge|INFO|bridge br0: added interface eth4 on port 5
+2023-06-10T02:57:14Z|00041|bridge|INFO|bridge br0: added interface eth10 on port 11
+2023-06-10T02:57:14Z|00042|bridge|INFO|bridge br0: added interface eth9 on port 10
+2023-06-10T02:57:14Z|00043|bridge|INFO|bridge br0: added interface eth7 on port 8
+2023-06-10T02:57:14Z|00044|bridge|INFO|bridge br0: added interface eth0 on port 1
+2023-06-10T02:57:14Z|00045|bridge|INFO|bridge br0: added interface eth13 on port 14
+2023-06-10T02:57:14Z|00046|bridge|INFO|bridge br0: added interface eth5 on port 6
+2023-06-10T02:57:14Z|00047|bridge|INFO|bridge br0: added interface eth3 on port 4
+2023-06-10T02:57:14Z|00048|bridge|INFO|bridge br0: added interface eth1 on port 2
+2023-06-10T02:57:14Z|00049|bridge|INFO|bridge br0: added interface eth6 on port 7
+2023-06-10T02:57:14Z|00050|bridge|INFO|bridge br0: added interface eth12 on port 13
+2023-06-10T02:57:14Z|00051|bridge|INFO|bridge br0: added interface br0 on port 65534
+2023-06-10T02:57:14Z|00052|bridge|INFO|bridge br0: added interface eth2 on port 3
+2023-06-10T02:57:14Z|00053|bridge|INFO|bridge br0: added interface eth14 on port 15
+2023-06-10T02:57:14Z|00054|bridge|INFO|bridge br0: added interface eth15 on port 16
+2023-06-10T02:57:14Z|00055|bridge|INFO|bridge br2: added interface br2 on port 65534
+2023-06-10T02:57:14Z|00056|bridge|INFO|bridge br1: added interface br1 on port 65534
+2023-06-10T02:57:14Z|00057|bridge|INFO|bridge br3: using datapath ID 00004e24c729f445
+2023-06-10T02:57:14Z|00058|connmgr|INFO|br3: added service controller "punix:/var/run/openvswitch/br3.mgmt"
+2023-06-10T02:57:14Z|00059|bridge|INFO|bridge br0: using datapath ID 00004efa7122cd4f
+2023-06-10T02:57:14Z|00060|connmgr|INFO|br0: added service controller "punix:/var/run/openvswitch/br0.mgmt"
+2023-06-10T02:57:14Z|00061|rconn|INFO|br0<->tcp:192.168.122.163:6633: connecting...
+2023-06-10T02:57:14Z|00062|connmgr|INFO|br0: added primary controller "tcp:192.168.122.163:6633"
+2023-06-10T02:57:14Z|00063|bridge|INFO|bridge br2: using datapath ID 0000ea340e18854f
+2023-06-10T02:57:14Z|00064|connmgr|INFO|br2: added service controller "punix:/var/run/openvswitch/br2.mgmt"
+2023-06-10T02:57:14Z|00065|bridge|INFO|bridge br1: using datapath ID 0000866e6641d74d
+2023-06-10T02:57:14Z|00066|connmgr|INFO|br1: added service controller "punix:/var/run/openvswitch/br1.mgmt"
+/ # ovs-vsctl set bridge br0 protocols=OpenFlow13
+/ # ovs-vsctl set-controller br0 tcp:192.168.122.163:6633
+/ # ovs-vsctl set-fail-mode br0 secure
+/ #  ovs-ofctl -O OpenFlow13 dump-flows br0
+ cookie=0x4, duration=16.673s, table=0, n_packets=6, n_bytes=470, hard_timeout=240, priority=100,in_port=eth0,dl_src=00:0c:29:33:0b:24 actions=drop
+ cookie=0x5, duration=16.672s, table=0, n_packets=6, n_bytes=438, hard_timeout=240, priority=100,in_port=eth0,dl_src=52:54:00:24:14:53 actions=drop
+ cookie=0x1, duration=68.706s, table=0, n_packets=62, n_bytes=3832, priority=0 actions=CONTROLLER:65535
+/ #  ovs-ofctl -O OpenFlow13 dump-flows br0
+ cookie=0x4, duration=21.542s, table=0, n_packets=11, n_bytes=840, hard_timeout=240, priority=100,in_port=eth0,dl_src=00:0c:29:33:0b:24 actions=drop
+ cookie=0x5, duration=21.541s, table=0, n_packets=9, n_bytes=678, hard_timeout=240, priority=100,in_port=eth0,dl_src=52:54:00:24:14:53 actions=drop
+ cookie=0x1, duration=73.575s, table=0, n_packets=64, n_bytes=3936, priority=0 actions=CONTROLLER:65535
+/ #
+
+
+
+
+
+############################## after ping 10.0.0.1
+/ #  ovs-ofctl -O OpenFlow13 dump-flows br0
+ cookie=0x4, duration=151.991s, table=0, n_packets=67, n_bytes=5504, hard_timeout=240, priority=100,in_port=eth0,dl_src=00:0c:29:33:0b:24 actions=drop
+ cookie=0x5, duration=151.990s, table=0, n_packets=49, n_bytes=4142, hard_timeout=240, priority=100,in_port=eth0,dl_src=52:54:00:24:14:53 actions=drop
+ cookie=0x6, duration=27.037s, table=0, n_packets=20, n_bytes=1960, idle_timeout=100, hard_timeout=200, priority=10,icmp,in_port=eth2,dl_src=00:50:79:66:68:01,dl_dst=00:50:79:66:68:00,nw_src=10.0.0.2,nw_dst=10.0.0.1,icmp_type=8,icmp_code=0 actions=output:eth1
+ cookie=0x7, duration=27.029s, table=0, n_packets=20, n_bytes=1960, idle_timeout=100, hard_timeout=200, priority=10,icmp,in_port=eth1,dl_src=00:50:79:66:68:00,dl_dst=00:50:79:66:68:01,nw_src=10.0.0.1,nw_dst=10.0.0.2,icmp_type=0,icmp_code=0 actions=output:eth2
+ cookie=0x1, duration=204.024s, table=0, n_packets=139, n_bytes=8024, priority=0 actions=CONTROLLER:65535
+
+
+
+######################## after ping 10.0.0.2
+/ #  ovs-ofctl -O OpenFlow13 dump-flows br0
+ cookie=0x8, duration=43.457s, table=0, n_packets=16, n_bytes=1248, hard_timeout=240, priority=100,in_port=eth0,dl_src=00:0c:29:33:0b:24 actions=drop
+ cookie=0xb, duration=38.546s, table=0, n_packets=12, n_bytes=1158, hard_timeout=240, priority=100,in_port=eth0,dl_src=52:54:00:24:14:53 actions=drop
+ cookie=0x6, duration=158.762s, table=0, n_packets=151, n_bytes=14798, idle_timeout=100, hard_timeout=200, priority=10,icmp,in_port=eth2,dl_src=00:50:79:66:68:01,dl_dst=00:50:79:66:68:00,nw_src=10.0.0.2,nw_dst=10.0.0.1,icmp_type=8,icmp_code=0 actions=output:eth1
+ cookie=0x7, duration=158.754s, table=0, n_packets=151, n_bytes=14798, idle_timeout=100, hard_timeout=200, priority=10,icmp,in_port=eth1,dl_src=00:50:79:66:68:00,dl_dst=00:50:79:66:68:01,nw_src=10.0.0.1,nw_dst=10.0.0.2,icmp_type=0,icmp_code=0 actions=output:eth2
+ cookie=0xc, duration=8.732s, table=0, n_packets=4, n_bytes=392, idle_timeout=100, hard_timeout=200, priority=10,icmp,in_port=eth1,dl_src=00:50:79:66:68:00,dl_dst=00:50:79:66:68:01,nw_src=10.0.0.1,nw_dst=10.0.0.2,icmp_type=8,icmp_code=0 actions=output:eth2
+ cookie=0xd, duration=8.723s, table=0, n_packets=4, n_bytes=392, idle_timeout=100, hard_timeout=200, priority=10,icmp,in_port=eth2,dl_src=00:50:79:66:68:01,dl_dst=00:50:79:66:68:00,nw_src=10.0.0.2,nw_dst=10.0.0.1,icmp_type=0,icmp_code=0 actions=output:eth1
+ cookie=0x1, duration=335.749s, table=0, n_packets=209, n_bytes=11780, priority=0 actions=CONTROLLER:65535
